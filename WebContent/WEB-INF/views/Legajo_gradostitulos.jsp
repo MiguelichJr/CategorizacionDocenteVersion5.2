@@ -44,9 +44,9 @@
 							<label>Grado</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_grados}" var="pr">
+              
+										<option value="${pr.idgrd}" style="text-align: center">${pr.nombre_grado}</option>
 
 									</c:forEach>
 								</select>
@@ -58,9 +58,9 @@
 							<label>Especialidad</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_especialidad}" var="pr">
+ 
+										<option value="${pr.idespc}" style="text-align: center">${pr.nombre_especialidad}</option>
 
 									</c:forEach>
 								</select>
@@ -72,10 +72,10 @@
 							<label>Institución</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_institucion}" var="pr">
 
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
-
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
+  
 									</c:forEach>
 								</select>
 							</div>
@@ -145,18 +145,18 @@
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
 							<label>Tesis</label>
-							<div class="select" style="text-align: center">
+							<div class="select" style="text-align: center" id="valor_tesis">   
 								<select style="text-align: center" class="form-control">
-									<option value="SI" style="text-align: center">SI</option>
 									<option value="NO" style="text-align: center">NO</option>
+									<option value="SI" style="text-align: center">SI</option>
 								</select>
-							</div>
+							</div>  
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group" style="text-align: center">
 							<label>Archivo</label> <input style="text-align: center"
-								type="file" class="form-control">
+								type="file" class="form-control" >       
 
 						</div>
 					</div>
@@ -320,8 +320,8 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group" style="text-align: center">
-							<label>Lugar</label> <input style="text-align: center"
-								type="text" class="form-control">
+							<label>Lugar</label> <input id="sisisi" style="text-align: center"
+								type="text" class="form-control">   
 
 						</div>
 					</div>
@@ -1627,7 +1627,7 @@
 	<!-- Page specific javascripts-->
 	<!-- Google analytics script-->
 	<script type="text/javascript">
-		if (document.location.hostname == 'pratikborsadiya.in') {
+		/*if (document.location.hostname == 'pratikborsadiya.in') {
 			(function(i, s, o, g, r, a, m) {
 				i['GoogleAnalyticsObject'] = r;
 				i[r] = i[r] || function() {
@@ -1642,6 +1642,25 @@
 			ga('create', 'UA-72504830-1', 'auto');
 			ga('send', 'pageview');
 		}
+		     
+		             
+		
+		$("#sisisi").keyup(function(){
+			var aaa=$("#sisisi").val;   
+			alert("ainsoabs");       
+		});  */     
+		/*
+		$(document).ready(function (){
+			//alert("si funciona el script");
+			//$("#valor_tesis").attr('disabled','true');  
+		});              
+		$("#valor_tesis").change( function() {
+	        if ($(this).val() === "SI") {
+	            $("#valor_tesis").prop("disabled", false);
+	        } else {
+	            $("#valor_tesis").prop("disabled", true);  
+	        }
+	    }); */
 	</script>
 </body>
 </html>
