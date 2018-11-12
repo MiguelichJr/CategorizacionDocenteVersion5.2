@@ -25,37 +25,37 @@ public class TipoAtributoDaoImp implements TipoAtributoDao {
 	@Override
 	public List<Map<String, Object>> readAll_tipodedicacion() {
 		// TODO Auto-generated method stub
-		return jta.queryForList("SELECT NOMBRE_ATRIBUTO FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=1");
+		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=1");
 	}
 
 	@Override
 	public List<Map<String, Object>> readAll_tipoidioma() {
 		// TODO Auto-generated method stub
-		return jta.queryForList("SELECT NOMBRE_ATRIBUTO FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=2");
+		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=2");
 	}
              
 	@Override
 	public List<Map<String, Object>> readAll_nivelidioma() {
 		// TODO Auto-generated method stub
-		return jta.queryForList("SELECT NOMBRE_ATRIBUTO FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=3");
+		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=3");
 	}
   
 	@Override
 	public List<Map<String, Object>> readAll_dominioidioma() {
 		// TODO Auto-generated method stub
-		return jta.queryForList("SELECT NOMBRE_ATRIBUTO FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=4");
+		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=4");
 	}
-
+     
 	@Override
 	public List<Map<String, Object>> readAll_tipocurso() {
 		// TODO Auto-generated method stub
-		return jta.queryForList("SELECT NOMBRE_ATRIBUTO FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=9");
+		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=9");
 	}  
 
 	@Override
 	public List<Map<String, Object>> readAll_modalidadeducativa() {
 		// TODO Auto-generated method stub
-		return jta.queryForList("SELECT NOMBRE_ATRIBUTO FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=10");
+		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=10");
 	}
 	
 }

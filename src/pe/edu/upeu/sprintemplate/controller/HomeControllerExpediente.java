@@ -81,14 +81,17 @@ public class HomeControllerExpediente {
 	}   
 	@GetMapping("/investi")
 	public String investigaciones() {
+		
 
 		return "Legajo_investigacion";
 	}
    
 	@GetMapping("/exten")
-	public String extensiones123() {
-
-		return "Legajo_extension";
+	public ModelAndView extensiones123() {
+		ModelAndView gg= new ModelAndView();
+		gg.setViewName("Legajo_extension");      
+		gg.addObject("lista_institucion",institucionDao.readAll());
+		return gg; 
 	}
 
 	@GetMapping("/filo")

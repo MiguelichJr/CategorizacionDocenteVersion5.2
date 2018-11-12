@@ -266,7 +266,11 @@
 							<label>Institucion</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
+									<c:forEach items="${lista_institucion}" var="pr">
 
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
+  
+									</c:forEach>  
    
 								</select>
 							</div>
