@@ -12,4 +12,7 @@ public interface TipoAtributoService {
 	List<Map<String,Object>> readAll_modalidadeducativa();
 	List<Map<String,Object>> readAll_tipoponencia();
 	List<Map<String,Object>> readAll_tipocapacitacion();
+	List<Map<String,Object>> readAll_tipopublicaciones();
+	List<Map<String,Object>> readAll_tipopublicaciones_espe(); 
+	List<Map<String,Object>> readAll_nivelasesoria();  
 }

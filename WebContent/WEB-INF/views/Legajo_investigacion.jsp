@@ -187,10 +187,10 @@
 							<label>Tipo de Publicación</label>   
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_tipopublicaciones}" var="pr">
 
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
-
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
+ 
 									</c:forEach>
 								</select>
 							</div>
@@ -416,9 +416,9 @@
 							<label>Tipo de Publicación</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_tipopublicaciones_espe}" var="pr">
   
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
 									</c:forEach>
 								</select>
@@ -558,9 +558,9 @@
 							<label>Nivel de Asesoria</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-  
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_nivelasesoria}" var="pr">
+   
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
 									</c:forEach>
 								</select>

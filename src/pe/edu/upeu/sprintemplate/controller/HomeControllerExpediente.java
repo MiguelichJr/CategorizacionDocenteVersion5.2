@@ -84,10 +84,13 @@ public class HomeControllerExpediente {
 		return grad;     
 	}   
 	@GetMapping("/investi")
-	public String investigaciones() {
-		
-
-		return "Legajo_investigacion";
+	public ModelAndView investigaciones() {
+		ModelAndView gi= new ModelAndView();       
+		gi.setViewName("Legajo_investigacion");     
+		gi.addObject("lista_tipopublicaciones",tipoatributoDao.readAll_tipopublicaciones());
+		gi.addObject("lista_tipopublicaciones_espe",tipoatributoDao.readAll_tipopublicaciones_espe());
+		gi.addObject("lista_nivelasesoria",tipoatributoDao.readAll_nivelasesoria()); 
+		return gi; 
 	}
    
 	@GetMapping("/exten")
