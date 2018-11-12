@@ -51,4 +51,16 @@ public class TipoAtributoServiceImp implements TipoAtributoService {
 		return tipoatributoDao.readAll_modalidadeducativa();   
 	}
 
+	@Override
+	public List<Map<String, Object>> readAll_tipoponencia() {
+		// TODO Auto-generated method stub
+		return tipoatributoDao.readAll_tipoponencia();           
+	}
+
+	@Override
+	public List<Map<String, Object>> readAll_tipocapacitacion() {
+		// TODO Auto-generated method stub
+		return tipoatributoDao.readAll_tipocapacitacion(); 
+	}
+
 }

@@ -10,4 +10,6 @@ public interface TipoAtributoService {
 	List<Map<String,Object>> readAll_dominioidioma();
 	List<Map<String,Object>> readAll_tipocurso();
 	List<Map<String,Object>> readAll_modalidadeducativa();
+	List<Map<String,Object>> readAll_tipoponencia();
+	List<Map<String,Object>> readAll_tipocapacitacion();
 }

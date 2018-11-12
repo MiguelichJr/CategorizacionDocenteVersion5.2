@@ -82,9 +82,9 @@
 							<label>Ponencia</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_tipoponencia}" var="pr">
+       
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
 									</c:forEach>
 								</select>
@@ -103,9 +103,9 @@
 							<label>Entidad Organizadora</label>       
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-  
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_institucion}" var="pr">
+    
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
 									</c:forEach>
 								</select>
@@ -285,9 +285,9 @@
 							<label>Entidad Organizadora</label>       
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-  
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_institucion}" var="pr">
+    
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
 									</c:forEach>
 								</select>
@@ -448,12 +448,12 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Tipo Ponencia</label>          
+							<label>Tipo Capacitacion</label>          
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_tipocapacitacion}" var="pr">
   
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
 									</c:forEach>
 								</select>
@@ -472,9 +472,9 @@
 							<label>Entidad Organizadora</label>          
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_institucion}" var="pr">
   
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
 									</c:forEach>
 								</select>
@@ -570,7 +570,7 @@
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Año</th>
-					<th scope="col">Tipo de Ponencia</th>
+					<th scope="col">Tipo de Capacitacion</th>
 					<th scope="col">Nombre del Evento</th>
 					<th scope="col">Entidad Organizadora</th>
 					<th scope="col">Horas</th>
@@ -614,9 +614,9 @@
 							<label>Entidad Organizadora</label>          
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_institucion}" var="pr">
   
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
 									</c:forEach>
 								</select>

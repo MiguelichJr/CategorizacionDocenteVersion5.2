@@ -57,5 +57,17 @@ public class TipoAtributoDaoImp implements TipoAtributoDao {
 		// TODO Auto-generated method stub
 		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=10");
 	}
+
+	@Override
+	public List<Map<String, Object>> readAll_tipoponencia() {
+		// TODO Auto-generated method stub
+		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=11");     
+	}
+
+	@Override
+	public List<Map<String, Object>> readAll_tipocapacitacion() {
+		// TODO Auto-generated method stub
+		return jta.queryForList("SELECT * FROM ATRIBUTOS WHERE CATE_ATRI_IDCAATRI=8");  
+	}
 	
 }

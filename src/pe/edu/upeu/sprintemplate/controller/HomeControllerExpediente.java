@@ -50,9 +50,13 @@ public class HomeControllerExpediente {
 	}
 
 	@GetMapping("/actua")
-	public String actualizacion() {
-
-		return "Legajo_actua";
+	public ModelAndView actualizacion() {
+		ModelAndView c= new ModelAndView();
+		c.setViewName("Legajo_actua");
+		c.addObject("lista_institucion",institucionDao.readAll());
+		c.addObject("lista_tipoponencia",tipoatributoDao.readAll_tipoponencia());
+		c.addObject("lista_tipocapacitacion",tipoatributoDao.readAll_tipocapacitacion());
+		return c;    
 	}
 
 	@GetMapping("/docpersonal")
