@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndView;
 
+import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp;
@@ -28,6 +29,8 @@ public class HomeControllerExpediente {
 	private InstitucionDaoImp institucionDao;
 	@Autowired
 	private TipoAtributoDaoImp tipoatributoDao;
+	@Autowired
+	private CategoriaDaoImp categoriaDao;
 	  
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
@@ -72,6 +75,8 @@ public class HomeControllerExpediente {
 		grad.addObject("lista_dominioidioma",tipoatributoDao.readAll_dominioidioma());
 		grad.addObject("lista_tipocurso",tipoatributoDao.readAll_tipocurso());  
 		grad.addObject("lista_tipomodalidadeducativa",tipoatributoDao.readAll_modalidadeducativa());
+		grad.addObject("lista_tipocategoria",categoriaDao.readAll());   
+		//categoriaDao
 		return grad;     
 	}   
 	@GetMapping("/investi")

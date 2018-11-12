@@ -467,9 +467,9 @@
 							<label>Categoría</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_tipocategoria}" var="pr">
+  
+										<option value="${pr.idcate}" style="text-align: center">${pr.nombre_categoria}</option>
 
 									</c:forEach>
 								</select>
@@ -645,9 +645,9 @@
 							<label>Categoria</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_tipocategoria}" var="pr">
+  
+										<option value="${pr.idcate}" style="text-align: center">${pr.nombre_categoria}</option>
 
 									</c:forEach>
 								</select>
@@ -1136,9 +1136,9 @@
 							<label>Régimen</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_tipodedicacion}" var="pr">
 
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
 									</c:forEach>
 								</select>
@@ -1646,7 +1646,7 @@
 				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
 				a.async = 1;
 				a.src = g;
-				m.parentNode.insertBefore(a, m)
+				m.parentNode.insertBefore(a, m) 
 			})(window, document, 'script',
 					'//www.google-analytics.com/analytics.js', 'ga');
 			ga('create', 'UA-72504830-1', 'auto');
