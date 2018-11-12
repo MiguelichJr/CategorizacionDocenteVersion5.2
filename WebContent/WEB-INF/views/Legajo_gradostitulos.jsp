@@ -257,15 +257,15 @@
 								type="text" class="form-control">
 
 						</div>
-					</div>
+					</div>  
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Tipo de Dedicación</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_tipodedicacion}" var="pr">
+   
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
 									</c:forEach>
 								</select>
@@ -453,11 +453,11 @@
 							<label>Institución</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_institucion}" var="pr">
 
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
-									</c:forEach>
+									</c:forEach> 
 								</select>
 							</div>
 						</div>
@@ -630,14 +630,14 @@
 							<label>Institución</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_institucion}" var="pr">
 
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
 									</c:forEach>
 								</select>
 							</div>
-						</div>
+						</div> 
 					
 					</div>
 					<div class="col-sm-3">
@@ -805,11 +805,11 @@
 							<label>Institución</label>  
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_institucion}" var="pr">
 
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
-									</c:forEach>
+									</c:forEach> 
 								</select>
 							</div>
 						</div>
@@ -964,9 +964,9 @@
 							<label>Institución</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_institucion}" var="pr">
+ 
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
 									</c:forEach>
 								</select>
@@ -1107,9 +1107,9 @@
 							<label>Institución</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
-
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+									<c:forEach items="${lista_institucion}" var="pr">
+ 
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
 
 									</c:forEach>
 								</select>
@@ -1122,10 +1122,10 @@
 							<div class="select">
 								<select style="text-align: center" class="form-control">
 									
-										<option value="" style="text-align: center">Director EP. Sistemas</option>
-										<option value="" style="text-align: center">Director EP. Ambiental</option>
-										<option value="" style="text-align: center">Director EP. Civil</option>
-
+										<option value="" style="text-align: center">Ayudador</option>
+										<option value="" style="text-align: center">Colaborador</option>
+										<option value="" style="text-align: center">Director de proyecto</option>
+ 
 									    
 								</select>
 							</div>
@@ -1304,9 +1304,9 @@
 							<label>Idioma</label>    
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_tipoidioma}" var="pr">
 
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
 									</c:forEach>
 								</select>   
@@ -1318,11 +1318,12 @@
 							<label>Nivel</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									
-										<option value="" style="text-align: center">Basico</option>
-										<option value="" style="text-align: center">Intermedio</option>
-										<option value="" style="text-align: center">Avanzado</option>
+									<c:forEach items="${lista_nivelidioma}" var="pr">
+ 
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
+									</c:forEach>
+										
 									    
 								</select>
 							</div>
@@ -1333,9 +1334,12 @@
 							<label>Dominio</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<option value="" style="text-align: center">Lee</option>
-										<option value="" style="text-align: center">Habla</option>
-										<option value="" style="text-align: center">Escribe</option>
+								<c:forEach items="${lista_dominioidioma}" var="pr">
+
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
+
+									</c:forEach>
+								
 								</select>   
 							</div>
 						</div>
@@ -1345,9 +1349,11 @@
 							<label>Institución</label>  
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<option value="" style="text-align: center">Icpna</option>
-										<option value="" style="text-align: center">Britanico</option>
-										<option value="" style="text-align: center">Upeu</option>
+								<c:forEach items="${lista_institucion}" var="pr">
+ 
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
+
+									</c:forEach>
 								</select>      
 							</div>
 
@@ -1464,13 +1470,13 @@
 							<label>Curso</label>    
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_tipocurso}" var="pr">
 
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
 									</c:forEach>
 								</select>   
-							</div>
+							</div> 
 						</div>
 					</div>
 					<div class="col-sm-3">  
@@ -1478,12 +1484,12 @@
 							<label>Nivel</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									
-										<option value="" style="text-align: center">Basico</option>
-										<option value="" style="text-align: center">Intermedio</option>
-										<option value="" style="text-align: center">Avanzado</option>
+									<c:forEach items="${lista_nivelidioma}" var="pr">
 
-									    
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
+
+									</c:forEach>
+												    
 								</select>
 							</div>
 						</div>
@@ -1492,10 +1498,12 @@
 						<div class="form-group" style="text-align: center">
 							<label>Modalidad de Estudio</label>
 							<select style="text-align: center" class="form-control">
-									<option value="" style="text-align: center">Presencial</option>
-										<option value="" style="text-align: center">Semi-presencial</option>
-										<option value="" style="text-align: center">Virtual</option>   
-								</select> 
+							<c:forEach items="${lista_tipomodalidadeducativa}" var="pr">
+
+										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
+
+									</c:forEach>
+							</select> 
 						</div>
 					</div>  
 					<div class="col-sm-3">
@@ -1503,9 +1511,11 @@
 							<label>Institución</label>     
 							<div class="select">  
 								<select style="text-align: center" class="form-control">
-									<option value="" style="text-align: center">Upeu</option>
-										<option value="" style="text-align: center">Icpna</option>
-										<option value="" style="text-align: center">UPC</option>   
+								<c:forEach items="${lista_institucion}" var="pr">
+
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
+
+									</c:forEach>
 								</select>            
 							</div>
 

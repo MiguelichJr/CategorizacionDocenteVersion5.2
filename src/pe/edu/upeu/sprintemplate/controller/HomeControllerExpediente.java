@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
   
 //import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
 //import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
@@ -24,7 +25,9 @@ public class HomeControllerExpediente {
 	@Autowired  
 	private EspecialidadDaoImp especialidadDao;
 	@Autowired
-	private InstitucionDaoImp institucionDao;   
+	private InstitucionDaoImp institucionDao;
+	@Autowired
+	private TipoAtributoDaoImp tipoatributoDao;
 	  
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
@@ -62,9 +65,15 @@ public class HomeControllerExpediente {
 		grad.setViewName("Legajo_gradostitulos");  
 		grad.addObject("lista_grados",gradoDao.readAll());
 		grad.addObject("lista_institucion",institucionDao.readAll());
-		grad.addObject("lista_especialidad",especialidadDao.readAll());     
+		grad.addObject("lista_especialidad",especialidadDao.readAll());
+		grad.addObject("lista_tipodedicacion",tipoatributoDao.readAll_tipodedicacion()); 
+		grad.addObject("lista_tipoidioma",tipoatributoDao.readAll_tipoidioma()); 
+		grad.addObject("lista_nivelidioma",tipoatributoDao.readAll_nivelidioma()); 
+		grad.addObject("lista_dominioidioma",tipoatributoDao.readAll_dominioidioma());
+		grad.addObject("lista_tipocurso",tipoatributoDao.readAll_tipocurso());  
+		grad.addObject("lista_tipomodalidadeducativa",tipoatributoDao.readAll_modalidadeducativa());
 		return grad;     
-	}
+	}   
 	@GetMapping("/investi")
 	public String investigaciones() {
 

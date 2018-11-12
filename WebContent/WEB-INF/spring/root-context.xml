@@ -41,8 +41,11 @@
 	</bean>        
 	<bean id="institucionDao" class="pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp">        
 		<property name="ji" ref="jdbcTemplate" /> 
-	</bean>        
-	      
+	</bean>
+	<bean id="tipoatributoDao" class="pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp">        
+		<property name="jta" ref="jdbcTemplate" /> 
+	</bean>       
+	          
 	<!-- <bean id="institucionDao" class="pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp">             
 		<property name="ji" ref="jdbcTemplate" /> 
 	</bean>
