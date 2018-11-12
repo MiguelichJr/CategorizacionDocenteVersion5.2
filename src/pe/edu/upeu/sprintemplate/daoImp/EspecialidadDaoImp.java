@@ -10,28 +10,37 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upeu.sprintemplate.dao.EspecialidadDao;
 @Repository
 public class EspecialidadDaoImp implements EspecialidadDao {
-/*
+
 	@Autowired
-	private JdbcTemplate j;       
+	private JdbcTemplate je;       
 	
 	
 	
-	public JdbcTemplate getJ() {
-		return j;
-	}
+	     
 
-
-
-	public void setJ(JdbcTemplate j) {
-		this.j = j;
-	}
-
-*/
 
 	@Override      
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub   
-		return null;//j.queryForList("select * from especialidad");
+		return je.queryForList("select * from especialidad");
+	}
+
+
+
+
+
+
+	public JdbcTemplate getJe() {
+		return je;
+	}
+
+
+
+
+
+
+	public void setJe(JdbcTemplate je) {
+		this.je = je;
 	}
 
 }

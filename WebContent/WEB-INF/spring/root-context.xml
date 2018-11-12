@@ -30,8 +30,23 @@
 	
 	<!-- Configuracion de los DaoIMp-->       
 	<bean id="usuarioDao" class="pe.edu.upeu.sprintemplate.daoImp.UsuarioDaoImp"> 
-		<property name="jdbcTemplate" ref="jdbcTemplate" /> 
-	</bean>          
+		<property name="jdbcTemplate" ref="jdbcTemplate" />           
+	</bean>   
+	    
+	<bean id="gradoDao" class="pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp">        
+		<property name="j" ref="jdbcTemplate" /> 
+	</bean> 
+  	<bean id="especialidadDao" class="pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp">        
+		<property name="je" ref="jdbcTemplate" /> 
+	</bean>        
+	<bean id="institucionDao" class="pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp">        
+		<property name="ji" ref="jdbcTemplate" /> 
+	</bean>        
+	      
+	<!-- <bean id="institucionDao" class="pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp">             
+		<property name="ji" ref="jdbcTemplate" /> 
+	</bean>
+	    -->                       
 	<!--    
 	<bean id="rolDaoImp" class="pe.edu.upeu.jdbc.daoImp.RolDaoImp"> 
 		<property name="jdbcTemplate" ref="jdbcTemplate" /> 

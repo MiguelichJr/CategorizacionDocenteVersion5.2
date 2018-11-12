@@ -10,28 +10,34 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upeu.sprintemplate.dao.GradosDao;
 @Repository
 public class GradosDaoImp implements GradosDao {
-	/*
+	
 	@Autowired
-	private JdbcTemplate g;
+	private JdbcTemplate j; 
 	
-	
-
-	public JdbcTemplate getG() {
-		return g;
-	}
-
-
-
-	public void setG(JdbcTemplate g) {
-		this.g = g;
-	}
-
-*/
+	  
+    
+	       
   
+	public JdbcTemplate getJ() {
+		return j;
+	}
+
+
+          
+
+
+	public void setJ(JdbcTemplate j) {
+		this.j = j;
+	}
+
+
+
+
+
 	@Override
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub      
-		return null; //g.queryForList("select * from grado");
+		return j.queryForList("select * from grado");
 	}
 
 }

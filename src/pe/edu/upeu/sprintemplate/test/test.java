@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import pe.edu.upeu.sprintemplate.dao.EspecialidadDao;
+import pe.edu.upeu.sprintemplate.dao.GradosDao;
 //import pe.edu.upeu.sprintemplate.dao.EspecialidadDao;
 //import pe.edu.upeu.sprintemplate.dao.GradosDao;
 import pe.edu.upeu.sprintemplate.dao.InstitucionDao;
@@ -16,16 +18,16 @@ public class test {
   
 	 
 	 public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bd/root-context.xml");
 		System.out.println(context);
 		/*RolDao dao = (RolDao)context.getBean("rolDaoImp");*/
-		UsuarioDao dao=(UsuarioDao)context.getBean("usuarioDao", UsuarioDaoImp.class);                     
-		//InstitucionDao dao=(InstitucionDao)context.getBean("insDaoImp");
-		//GradosDao dao=(GradosDao)context.getBean("gradosDaoImp");  
-		//EspecialidadDao dao=(EspecialidadDao)context.getBean("espeDaoImp");
+		//UsuarioDao dao=(UsuarioDao)context.getBean("usuarioDao", UsuarioDaoImp.class);                     
+		InstitucionDao dao=(InstitucionDao)context.getBean("institucionDao");
+		//GradosDao dao=(GradosDao)context.getBean("gradoDao");   
+		//EspecialidadDao dao=(EspecialidadDao)context.getBean("especialidadDao");
 		//System.out.println(dao.update(new Rol(13, "camote")));   
-		  
+		        
        //List<Map<String, Object>> lista = dao.readAll();
 
        // for(Map<String,Object> map:lista) {
@@ -33,12 +35,12 @@ public class test {
         //	System.out.println(map.get("idint")+"/"+map.get("nombre_institucion")); 
         //}                            
         //Rol rr = dao.read(14);
-        //System.out.println("Error: "+rr.getNomrol());
+        //System.out.println("Error: "+rr.getNomrol());  
         //  dao.delete(3);     
-		System.out.println(dao.readAll()); 
-        context.close();  
+		System.out.println(dao.readAll());        
+        context.close();    
 	}     	 
-	 
+	      
 	
 		
 }
