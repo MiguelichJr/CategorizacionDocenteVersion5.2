@@ -12,7 +12,7 @@ public class UsuarioServiceImp implements UsuarioService {
 
 	@Autowired
 	private UsuarioDao usuarioDao; 
-
+      
 	@Override   
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub
