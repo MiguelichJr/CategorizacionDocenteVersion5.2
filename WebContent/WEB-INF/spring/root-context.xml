@@ -53,8 +53,9 @@
 	</bean>
 	<bean id="legDao" class="pe.edu.upeu.sprintemplate.daoImp.LegDaoImp">        
 		<property name="jlegg" ref="jdbcTemplate" />  
-	</bean>                 
-	          
+	</bean>
+	<!-- jojolete -->      
+	            
 	<!-- <bean id="institucionDao" class="pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp">             
 		<property name="ji" ref="jdbcTemplate" /> 
 	</bean>
