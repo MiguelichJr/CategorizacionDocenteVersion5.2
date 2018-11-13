@@ -234,7 +234,8 @@
 		<legend style="text-align: center"> Experiencia Profesional </legend>
 		<hr>
 		<!-- Text input-->
-		<div class="row">
+		<form action="crearLegExperienciaProfe" method="POST">
+		<div class="row">    
 			<div class="col-1"></div>
 			<div class="col-10">
 				<div class="row">
@@ -242,7 +243,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Institución</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" name="institucion">
 									<c:forEach items="${lista_institucion}" var="pr">
 
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -255,7 +256,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Cargo</label> <input style="text-align: center"
-								type="text" class="form-control">
+								type="text" class="form-control" name="cargo"> 
 
 						</div>
 					</div>  
@@ -263,7 +264,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Tipo de Dedicación</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" name="categoria">
 									<c:forEach items="${lista_tipodedicacion}" var="pr">
    
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -276,7 +277,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Fecha Inicio</label> <input style="text-align: center"
-								type="date" class="form-control">
+								type="date" class="form-control" name="fecha_inicio">
 
 						</div>
 					</div>
@@ -294,35 +295,35 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Fecha Término</label> <input style="text-align: center"
-								type="date" class="form-control">
+								type="date" class="form-control" name="fecha_fin">
 
 						</div>
 					</div>
 					<div class="col-sm-1">
 						<div class="form-group" style="text-align: center">
 							<label>Años</label> <input style="text-align: center" type="text"
-								class="form-control">
+								class="form-control" name="años">
 
 						</div>
 					</div>
 					<div class="col-sm-1">
 						<div class="form-group" style="text-align: center">
 							<label>Meses</label> <input style="text-align: center"
-								type="text" class="form-control">
+								type="text" class="form-control" name="meses">
 
 						</div>
 					</div>
 					<div class="col-sm-1">
 						<div class="form-group" style="text-align: center">
 							<label>Días</label> <input style="text-align: center" type="text"
-								class="form-control">
+								class="form-control" name="dias">
 
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group" style="text-align: center">
 							<label>Lugar</label> <input id="sisisi" style="text-align: center"
-								type="text" class="form-control">   
+								type="text" class="form-control" name="lugar">   
 
 						</div>
 					</div>
@@ -348,9 +349,9 @@
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
 									<label>Archivo</label> <input style="text-align: center"
-										type="file" class="form-control">
+										type="file" class="form-control" name="url">
 
-								</div>
+								</div>  
 							</div>
 							<div class="col-sm-1">
 								<div class="form-group" style="text-align: center"></div>
@@ -388,11 +389,11 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button type="submit" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
-							</div>
+							</div> 
 						</div>
 						<div class="col-sm-4">
 							<div class="form-group" style="text-align: center"></div>
@@ -406,8 +407,8 @@
 				</div>
 			</div>
 			<div class="col-1"></div>
-		</div>
-
+		</div>      
+		</form>
 
 		<!--lista de todo los registros -->
 		<table class="table table-bordered"
@@ -1099,7 +1100,8 @@
 		<legend style="text-align: center"> Experiencia Académico-Administrativa</legend>
 		<hr>   
 		<!-- Text input-->
-		<div class="row">
+		<form action="crearLegExperienciaAcademicoAdnimin" method="POST">
+		<div class="row">  
 			<div class="col-1"></div>
 			<div class="col-10">
 				<div class="row">
@@ -1107,7 +1109,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Institución</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" name="institucion">
 									<c:forEach items="${lista_institucion}" var="pr">
  
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -1121,12 +1123,12 @@
 						<div class="form-group" style="text-align: center">
 							<label>Cargo/Función</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" name="cargo">
 									
-										<option value="" style="text-align: center">Ayudador</option>
-										<option value="" style="text-align: center">Colaborador</option>
-										<option value="" style="text-align: center">Director de proyecto</option>
- 
+										<option value="Ayudador" style="text-align: center">Ayudador</option>
+										<option value="Colaborador" style="text-align: center">Colaborador</option>
+										<option value="Director de proyecto" style="text-align: center">Director de proyecto</option>
+   
 									    
 								</select>
 							</div>
@@ -1136,7 +1138,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Régimen</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" name="categoria">
 									<c:forEach items="${lista_tipodedicacion}" var="pr">
 
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -1149,7 +1151,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Fecha Inicio</label> <input style="text-align: center"
-								type="date" class="form-control">
+								type="date" class="form-control" name="fecha_inicio">
 
 						</div>
 					</div>
@@ -1167,21 +1169,21 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Fecha Fin</label> <input style="text-align: center" type="date"   
-								class="form-control">
+								class="form-control" name="fecha_fin">
 
 						</div>
 					</div>
 					<div class="col-sm-4">     
 						<div class="form-group" style="text-align: center">
 							<label>Resolución</label> <input style="text-align: center"
-								type="text" class="form-control">
+								type="text" class="form-control" name="resolucion">
 
 						</div>
 					</div>
 					<div class="col-sm-5">
 						<div class="form-group" style="text-align: center">
 							<label>Lugar</label> <input style="text-align: center"
-								type="text" class="form-control">
+								type="text" class="form-control" name="lugar">
 
 						</div>
 					</div>
@@ -1206,7 +1208,7 @@
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
 									<label>Archivo</label> <input style="text-align: center"
-										type="file" class="form-control">
+										type="file" class="form-control" name="url">
 
 								</div>
 							</div>
@@ -1245,7 +1247,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button type="submit" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -1255,7 +1257,7 @@
 							<div class="form-group" style="text-align: center"></div>
 						</div>
 
-					</div>
+					</div>       
 				</div>
 
 				<div class="col-sm-3">
@@ -1264,7 +1266,7 @@
 			</div>
 			<div class="col-1"></div>
 		</div>
-
+		</form>  
 
 		<!--lista de todo los registros -->
 		<table class="table table-bordered"

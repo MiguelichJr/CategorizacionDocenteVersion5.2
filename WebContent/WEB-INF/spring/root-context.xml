@@ -50,7 +50,10 @@
 	</bean>
 	<bean id="leggradosDao" class="pe.edu.upeu.sprintemplate.daoImp.Leg_Grados_TitulosDaoImp">        
 		<property name="jleg" ref="jdbcTemplate" />  
-	</bean>             
+	</bean>
+	<bean id="legDao" class="pe.edu.upeu.sprintemplate.daoImp.LegDaoImp">        
+		<property name="jlegg" ref="jdbcTemplate" />  
+	</bean>                 
 	          
 	<!-- <bean id="institucionDao" class="pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp">             
 		<property name="ji" ref="jdbcTemplate" /> 

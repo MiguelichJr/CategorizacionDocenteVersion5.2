@@ -106,11 +106,10 @@ public class Leg {
 	public void setCategoria(int categoria) {
 		this.categoria = categoria;
 	}
-	public Leg(int idleg, String cargo, String fecha_inicio, String fecha_fin, int años, int meses, int dias,
-			String lugar, String resolucion, String estado, String url, int institucion, int docente, String tipo,
-			int categoria) {
+	 
+	public Leg(String cargo, String fecha_inicio, String fecha_fin, int años, int meses, int dias, String lugar,
+			String resolucion, String estado, String url, int institucion, int docente, String tipo, int categoria) {
 		super();
-		this.idleg = idleg;
 		this.cargo = cargo;
 		this.fecha_inicio = fecha_inicio;
 		this.fecha_fin = fecha_fin;
@@ -131,7 +130,7 @@ public class Leg {
 	}
 	@Override
 	public String toString() {
-		return "Leg [idleg=" + idleg + ", cargo=" + cargo + ", fecha_inicio=" + fecha_inicio + ", fecha_fin="
+		return "Leg [cargo=" + cargo + ", fecha_inicio=" + fecha_inicio + ", fecha_fin="
 				+ fecha_fin + ", años=" + años + ", meses=" + meses + ", dias=" + dias + ", lugar=" + lugar
 				+ ", resolucion=" + resolucion + ", estado=" + estado + ", url=" + url + ", institucion=" + institucion
 				+ ", docente=" + docente + ", tipo=" + tipo + ", categoria=" + categoria + "]";

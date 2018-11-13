@@ -21,8 +21,10 @@ import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.LegDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_Grados_TitulosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
+import pe.edu.upeu.sprintemplate.entity.Leg;
 import pe.edu.upeu.sprintemplate.entity.Leg_Grados_Titulos;
 import pe.edu.upeu.sprintemplate.entity.Usuario; 
   
@@ -45,6 +47,8 @@ public class HomeControllerExpediente {
 	private CategoriaDaoImp categoriaDao;
 	@Autowired
 	private Leg_Grados_TitulosDaoImp leggradosDao;
+	@Autowired
+	private LegDaoImp legDao;       
 	  
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
@@ -57,7 +61,15 @@ public class HomeControllerExpediente {
 	public String index() {
 		return "index";     
 	}
+	
 
+	//metodo del login
+	@PostMapping("/home")
+	public String main2() {
+		return "main";
+	}
+	//metodo del login
+	 
 	/*
 	@PostMapping("/validar")  
 	public String ValidarUsuario(HttpServletRequest HttpServletRequest,Usuario user) {
@@ -80,16 +92,29 @@ public class HomeControllerExpediente {
 		leggradosDao.create(l);              
 		//usp.create(user);
 		return "redirect:/gra";        
-	}               
-	                  
-  
+	} 
 	
-	
-	//metodo del login
-	@PostMapping("/home")
-	public String main2() {
-		return "main";
+	@PostMapping("/crearLegExperienciaProfe")
+	public String crearLegExperienciaProfe2(Model model, Leg l) throws SQLException {
+		l.setEstado("completado");
+		l.setDocente(1);    
+		l.setTipo("E. profesional");        
+		System.out.println(l.toString());
+		legDao.create(l);  
+		return "redirect:/gra";        
 	}
+	 
+	@PostMapping("/crearLegExperienciaAcademicoAdnimin")
+	public String crearLegAcademicoAdministrativa(Model model, Leg l) throws SQLException {
+		l.setEstado("completado");
+		l.setDocente(1);      
+		l.setTipo("E. AcademicoAdministrativa");        
+		System.out.println(l.toString());
+		legDao.create(l);     
+		return "redirect:/gra";        
+	}
+	                  
+   
 	
 	
 	
@@ -98,7 +123,49 @@ public class HomeControllerExpediente {
 	
 	
 	
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//para llevar datos a las vista de los selects 
 	@GetMapping("/actua")
 	public ModelAndView actualizacion() {
 		ModelAndView c= new ModelAndView();
