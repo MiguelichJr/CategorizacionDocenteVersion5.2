@@ -1,18 +1,30 @@
 package pe.edu.upeu.sprintemplate.controller;
 
+
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg_Grados_TitulosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
+import pe.edu.upeu.sprintemplate.entity.Leg_Grados_Titulos;
+import pe.edu.upeu.sprintemplate.entity.Usuario; 
   
 //import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
 //import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
@@ -21,7 +33,7 @@ import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
 @Controller            
 public class HomeControllerExpediente {
 	   
-	@Autowired
+	@Autowired 
 	private GradosDaoImp gradoDao;
 	@Autowired  
 	private EspecialidadDaoImp especialidadDao;
@@ -31,23 +43,61 @@ public class HomeControllerExpediente {
 	private TipoAtributoDaoImp tipoatributoDao;
 	@Autowired
 	private CategoriaDaoImp categoriaDao;
+	@Autowired
+	private Leg_Grados_TitulosDaoImp leggradosDao;
 	  
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
+	
+	
+	
+	//
+	
 	
 	@GetMapping("/")
 	public String index() {
 		return "index";     
 	}
 
-	@PostMapping("/home")
-	public String main1() {
+	/*
+	@PostMapping("/validar")  
+	public String ValidarUsuario(HttpServletRequest HttpServletRequest,Usuario user) {
+		HttpSession httpSession = HttpServletRequest.getSession();
+		ModelAndView a= new ModelAndView();
+		try {
+			
+		}catch(Exception e){
+			  
+		}
 		return "main";
 	}
-
-	@GetMapping("/home")
+	*/    
+	
+	@PostMapping("/crearLegGrados")
+	public String crearLegGrados2(Model model, Leg_Grados_Titulos l) throws SQLException {
+		l.setEstado("completado");
+		l.setDocente(1);  
+		System.out.println(l.toString());
+		leggradosDao.create(l);              
+		//usp.create(user);
+		return "redirect:/gra";        
+	}               
+	                  
+  
+	
+	
+	//metodo del login
+	@PostMapping("/home")
 	public String main2() {
 		return "main";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@GetMapping("/actua")
 	public ModelAndView actualizacion() {
@@ -64,7 +114,7 @@ public class HomeControllerExpediente {
 
 		return "Legajo_docpersonal";
 	}
-
+	
 	 
 	@GetMapping("/gra")
 	public ModelAndView gradosytitulos() {
@@ -89,8 +139,9 @@ public class HomeControllerExpediente {
 		gi.setViewName("Legajo_investigacion");     
 		gi.addObject("lista_tipopublicaciones",tipoatributoDao.readAll_tipopublicaciones());
 		gi.addObject("lista_tipopublicaciones_espe",tipoatributoDao.readAll_tipopublicaciones_espe());
-		gi.addObject("lista_nivelasesoria",tipoatributoDao.readAll_nivelasesoria()); 
-		return gi; 
+		gi.addObject("lista_nivelasesoria",tipoatributoDao.readAll_nivelasesoria());
+		gi.addObject("lista_especialidad",especialidadDao.readAll());
+		return gi;    
 	}
    
 	@GetMapping("/exten")

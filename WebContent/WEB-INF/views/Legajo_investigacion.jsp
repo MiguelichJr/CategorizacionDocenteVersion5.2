@@ -599,9 +599,9 @@
 							<label>Especialidad</label>
 							<div class="select">
 								<select style="text-align: center" class="form-control">
-									<c:forEach items="${listacategoria}" var="pr">
+									<c:forEach items="${lista_especialidad}" var="pr"> 
   
-										<option value="${pr.idcategoria}" style="text-align: center">${pr.nom_categoria}</option>
+										<option value="${pr.idespc}" style="text-align: center">${pr.nombre_especialidad}</option>
 
 									</c:forEach>
 								</select>

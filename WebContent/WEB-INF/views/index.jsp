@@ -14,13 +14,13 @@
 
 </head>
 <body>  
-	<section class="material-half-bg" >   
+	<section class="material-half-bg" >  
 		<div class="cover" style="background-color:#992e45"></div>     
 	</section>                           
 	<section class="login-content" >  
 		<div class="logo">   
 			<h1>Categorización Docente Upeu</h1>
-		</div>
+		</div>        
 		<div class="login-box" style="border-radius:20px"       >  
 			<form class="login-form" action="home" method="post" >
 				<h3 class="login-head" style="text-align:center">
@@ -28,11 +28,11 @@
 				</h3>
 				<div class="form-group" style="text-align:center">
 					<label class="control-label" >USUARIO</label> 
-					<input	class="form-control" type="text"  >
+					<input	class="form-control" type="text" name="nom_user" >
 				</div>          
 				<div class="form-group" style="text-align:center">   
-					<label class="control-label">CONTRASEÑA</label> <input     
-						class="form-control" type="password" >
+					<label class="control-label">CONTRASEÑA</label> <input       
+						class="form-control" type="password" name="clave" >
 				</div>
 				  <hr style="margin-top:10px">        
 				<div class="form-group btn-container" style="background-color:#992e45">
