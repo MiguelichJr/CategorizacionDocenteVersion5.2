@@ -44,13 +44,21 @@ public class LegDaoImp implements LegDao {
 	@Override
 	public Leg read(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return null; 
 	}
 
-	@Override
-	public List<Map<String, Object>> readAll() {
+	@Override  
+	public List<Map<String, Object>> readAllExperienciaProfesional(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return jlegg.queryForList("select i.nombre_institucion,l.cargo,a.nombre_atributo,l.fecha_inicio,l.fecha_termino,l.anios,l.meses,l.dias,l.lugar,l.url from institucion i,leg l,ATRIBUTOS a where l.INSTITUCION_IDINT=i.IDINT and l.CAATRI=a.IDATRI and l.TIPO='E. profesional' and"
+				+ "  l.DOCE_POR_CONV_IDDOCON="+id);   
+	}  
+
+	@Override
+	public List<Map<String, Object>> readAllExperienciaAcademicoAdministrativa(int id) {
+		// TODO Auto-generated method stub     
+		return jlegg.queryForList("select i.nombre_institucion,l.cargo,a.nombre_atributo,l.fecha_inicio,l.fecha_termino from institucion i,leg l,ATRIBUTOS a where l.INSTITUCION_IDINT=i.IDINT and l.CAATRI=a.IDATRI and l.TIPO='E. AcademicoAdministrativa' and"
+				+ "  l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 
 }

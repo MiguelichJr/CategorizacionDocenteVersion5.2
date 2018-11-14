@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import pe.edu.upeu.sprintemplate.dao.LegDao;
 import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
@@ -54,6 +55,8 @@ public class HomeControllerExpediente {
 	private CategoriaDaoImp categoriaDao;
 	@Autowired
 	private Leg_Grados_TitulosDaoImp leggradosDao;
+	@Autowired
+	private LegDao legDao;
 	       
 	  
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
@@ -127,16 +130,17 @@ public @ResponseBody void crearGradosEstudios(HttpServletRequest request) {
 	int g=Integer.parseInt(request.getParameter("g"));
 	int e=Integer.parseInt(request.getParameter("e"));
 	int i=Integer.parseInt(request.getParameter("i"));
+	int idprofesor=Integer.parseInt(request.getParameter("x"));
 	String ft=request.getParameter("ft");
 	String u1=request.getParameter("u1");
 	String t=request.getParameter("t");
 	String u2=request.getParameter("u2");
-	String es="completado";
-	int d=1;
-	Leg_Grados_Titulos lg=new Leg_Grados_Titulos(ft,es,t,u1,u2,i,g,e,d);
+	String es="completado"; 
+	System.out.println("si trajo el id en el metodo crear: " + idprofesor);
+	//int d=1;  
+	Leg_Grados_Titulos lg=new Leg_Grados_Titulos(ft,es,t,u1,u2,i,g,e,idprofesor);
 	leggradosDao.create(lg); 
-	   
-	
+	   	
 }
 
 @RequestMapping(path="/listarLeg_Grados", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -147,7 +151,43 @@ public @ResponseBody String listarLeg_Grado(HttpServletRequest request) {
 	return g.toJson(leggradosDao.readAll(idprofesor));
 }
 	
-	
+
+
+
+
+
+
+
+
+@RequestMapping(path="/guardar_experiencia_profesional", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_experiencia_profesional2(HttpServletRequest request) {
+	int i=Integer.parseInt(request.getParameter("i"));
+	String c=request.getParameter("c");
+	int td=Integer.parseInt(request.getParameter("td"));
+	String fi=request.getParameter("fi");
+	String ft=request.getParameter("ft");
+	int a=Integer.parseInt(request.getParameter("a"));
+	int m=Integer.parseInt(request.getParameter("m"));
+	int d=Integer.parseInt(request.getParameter("d"));
+	String l=request.getParameter("l");
+	String a2=request.getParameter("a2");
+	int idprofesor=Integer.parseInt(request.getParameter("x"));
+	String es="completado";
+	String tipo="E. profesional";  
+	System.out.println("si trajo el id: " + idprofesor);
+	//int d=1;
+	Leg lg=new Leg(c,fi,ft,a,m,d,l,es,a2,i,idprofesor,tipo,td);
+	legDao.create(lg);   
+	   	  
+} 
+
+@RequestMapping(path="/listarExProfe", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarExperienciaProfesional2(HttpServletRequest request) {
+	Gson g = new Gson();
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor);
+	return g.toJson(legDao.readAllExperienciaProfesional(idprofesor));
+}  
 	
 	
 	
@@ -197,6 +237,7 @@ public @ResponseBody String listarLeg_Grado(HttpServletRequest request) {
 	
 	
 	//para llevar datos a las vista de los selects 
+
 	@GetMapping("/actua")
 	public ModelAndView actualizacion() {
 		ModelAndView c= new ModelAndView();

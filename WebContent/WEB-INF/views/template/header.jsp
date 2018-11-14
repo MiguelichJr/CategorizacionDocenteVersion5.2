@@ -31,8 +31,9 @@
           </ul>
         </li>
       </ul>    
-    </header>    
-    <!-- Sidebar menu-->
+    </header>
+     
+    <!-- Sidebar menu--> 
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>        
     <aside class="app-sidebar">                        
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="./recursos/img/sisi.jpg" alt="User Image">
@@ -42,17 +43,8 @@
         </div>     
       </div>                        
       <ul class="app-menu">      
-                          
-      	<li class="treeview"  class="collapsed active"><a class="app-menu__item"  href="#" data-toggle="treeview"><i class="fa fa-pencil-square-o"></i><span class="app-menu__label" style="margin-left:4%">Convocatoria</span></a>
-        	<li><a class="treeview-item" href="crearconvo"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Crear Convocatoria</a></li>    
-            <li><a class="treeview-item" href="#"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Configurar Docentes</a></li>   
-            <li><a class="treeview-item" href="#"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Configurar Instrumento</a></li>  
-            <li><a class="treeview-item" href="#"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Designación de Evaluaciones</a></li>
-            <li><a class="treeview-item" href="#"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Extension Cultural y Proyección Social</a></li>
-            <li><a class="treeview-item" href="#"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Filosofía y Misión</a></li>
-            <li><a class="treeview-item" href="#"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Logros Extras</a></li> 
-                       
-        </li>
+                           
+      	    
       
   		                                   
         <li class="treeview"  class="collapsed active"><a class="app-menu__item"  href="#" data-toggle="treeview"><i class="app-menu__icon fas fa-book"></i><span class="app-menu__label">Convocatoria Docente</span></a>

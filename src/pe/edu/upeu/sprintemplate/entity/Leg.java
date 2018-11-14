@@ -1,6 +1,7 @@
 package pe.edu.upeu.sprintemplate.entity;
 
 public class Leg {
+	
 	private int idleg;
 	private String cargo;
 	private  String fecha_inicio;
@@ -16,6 +17,7 @@ public class Leg {
 	private int docente;
 	private String tipo;
 	private int categoria;
+	 
 	public int getIdleg() {
 		return idleg;
 	}
@@ -107,6 +109,24 @@ public class Leg {
 		this.categoria = categoria;
 	}
 	 
+	
+	public Leg(String cargo, String fecha_inicio, String fecha_fin, int años, int meses, int dias, String lugar,
+			String estado, String url, int institucion, int docente, String tipo, int categoria) {
+		super();
+		this.cargo = cargo;
+		this.fecha_inicio = fecha_inicio;
+		this.fecha_fin = fecha_fin;
+		this.años = años;
+		this.meses = meses;
+		this.dias = dias;
+		this.lugar = lugar;
+		this.estado = estado;
+		this.url = url;
+		this.institucion = institucion;
+		this.docente = docente;
+		this.tipo = tipo;
+		this.categoria = categoria;
+	}
 	public Leg(String cargo, String fecha_inicio, String fecha_fin, int años, int meses, int dias, String lugar,
 			String resolucion, String estado, String url, int institucion, int docente, String tipo, int categoria) {
 		super();
@@ -127,7 +147,7 @@ public class Leg {
 	}
 	public Leg() {
 		super();
-	}
+	}            
 	@Override
 	public String toString() {
 		return "Leg [cargo=" + cargo + ", fecha_inicio=" + fecha_inicio + ", fecha_fin="

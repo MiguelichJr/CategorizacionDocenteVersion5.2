@@ -182,7 +182,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button id="registrar_grados"       class="btn btn-primary btn-block"
+									<button id="registrar_grados"  class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -216,7 +216,7 @@
 					<th scope="col">Archivo</th>
 					<th scope="col">Tesis</th>
 					<th scope="col">Archivo</th>
-					<th scope="col" colspan="2">Acción</th>
+					<th scope="col" >Acción</th>  
 				</tr>
 			</thead>
 			<tbody>
@@ -234,7 +234,7 @@
 		<legend style="text-align: center"> Experiencia Profesional </legend>
 		<hr>
 		<!-- Text input-->
-		<form action="crearLegExperienciaProfe" method="POST">
+		
 		<div class="row">    
 			<div class="col-1"></div>
 			<div class="col-10">
@@ -243,7 +243,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Institución</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control" name="institucion">
+								<select style="text-align: center" class="form-control" id="insti2">
 									<c:forEach items="${lista_institucion}" var="pr">
 
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -256,7 +256,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Cargo</label> <input style="text-align: center"
-								type="text" class="form-control" name="cargo"> 
+								type="text" class="form-control" id="cargo2"> 
 
 						</div>
 					</div>  
@@ -264,7 +264,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Tipo de Dedicación</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control" name="categoria">
+								<select style="text-align: center" class="form-control" id="td2">
 									<c:forEach items="${lista_tipodedicacion}" var="pr">
    
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -277,7 +277,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Fecha Inicio</label> <input style="text-align: center"
-								type="date" class="form-control" name="fecha_inicio">
+								type="date" class="form-control" id="fi2">
 
 						</div>
 					</div>
@@ -295,35 +295,35 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Fecha Término</label> <input style="text-align: center"
-								type="date" class="form-control" name="fecha_fin">
+								type="date" class="form-control" id="ft2">
 
 						</div>
 					</div>
 					<div class="col-sm-1">
 						<div class="form-group" style="text-align: center">
 							<label>Años</label> <input style="text-align: center" type="text"
-								class="form-control" name="años">
+								class="form-control" id="aos2">
 
 						</div>
-					</div>
+					</div> 
 					<div class="col-sm-1">
 						<div class="form-group" style="text-align: center">
 							<label>Meses</label> <input style="text-align: center"
-								type="text" class="form-control" name="meses">
+								type="text" class="form-control" id="meses2">
 
 						</div>
 					</div>
 					<div class="col-sm-1">
 						<div class="form-group" style="text-align: center">
 							<label>Días</label> <input style="text-align: center" type="text"
-								class="form-control" name="dias">
+								class="form-control" id="dias2">
 
-						</div>
+						</div>    
 					</div>
 					<div class="col-sm-6">
 						<div class="form-group" style="text-align: center">
-							<label>Lugar</label> <input id="sisisi" style="text-align: center"
-								type="text" class="form-control" name="lugar">   
+							<label>Lugar</label> <input  style="text-align: center"
+								type="text" class="form-control" id="lugar2">   
 
 						</div>
 					</div>
@@ -349,7 +349,7 @@
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
 									<label>Archivo</label> <input style="text-align: center"
-										type="file" class="form-control" name="url">
+										type="file" class="form-control" id="archi2">
 
 								</div>  
 							</div>
@@ -389,7 +389,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button type="submit" class="btn btn-primary btn-block"
+									<button id="registrar_experiencia_profesional" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -409,11 +409,11 @@
 			<div class="col-1"></div>
 		</div>      
 		</form>
-
+        
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tablaexpe" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
-			<thead>
+			<thead>            
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Institución</th>
@@ -427,7 +427,7 @@
 					<th scope="col">Días</th>
 					<th scope="col">Lugar</th>
 					<th scope="col">Archivo</th>
-					<th scope="col" colspan="2">Acción</th>
+					<th scope="col">Acción</th>
 				</tr>
 			</thead>
 			<tbody>

@@ -50,7 +50,11 @@ public class Leg_Grados_TitulosDaoImp implements Leg_Grados_TitulosDao {
 	@Override
 	public List<Map<String, Object>> readAll(int idprofesor) {
 		// TODO Auto-generated method stub
-		return jleg.queryForList("select * from LEG_GRA_TI_ES where DOCE_POR_CONV_IDDOCON=" + idprofesor);
+		return jleg.queryForList("select ga.nombre_grado,e.nombre_especialidad,"
+				+ "i.nombre_institucion,leg.fecha_termino,leg.URL,leg.TESIS,leg.URL_2_2 "
+				+ "from LEG_GRA_TI_ES  leg,GRADO  ga,ESPECIALIDAD e,INSTITUCION i"
+				+ " where leg.grado_idgrd=ga.idgrd and leg.especialidad_idespc=e.IDESPC "
+				+ "and leg.INSTITUCION_IDINT=i.IDINT and leg.DOCE_POR_CONV_IDDOCON=" + idprofesor);
 	}
 
 }
