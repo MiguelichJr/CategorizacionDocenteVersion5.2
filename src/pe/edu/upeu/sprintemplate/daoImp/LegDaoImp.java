@@ -5,10 +5,11 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.sprintemplate.dao.LegDao;
 import pe.edu.upeu.sprintemplate.entity.Leg;
-
+@Repository
 public class LegDaoImp implements LegDao {
 	  
 	@Autowired

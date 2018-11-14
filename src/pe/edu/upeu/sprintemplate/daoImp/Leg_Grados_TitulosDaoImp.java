@@ -5,10 +5,11 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.sprintemplate.dao.Leg_Grados_TitulosDao;
 import pe.edu.upeu.sprintemplate.entity.Leg_Grados_Titulos;
-
+@Repository
 public class Leg_Grados_TitulosDaoImp implements Leg_Grados_TitulosDao {
  
 	@Autowired

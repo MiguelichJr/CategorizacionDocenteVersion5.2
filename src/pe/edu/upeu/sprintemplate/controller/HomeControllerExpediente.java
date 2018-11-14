@@ -26,7 +26,7 @@ import com.google.gson.Gson;
 
 import pe.edu.upeu.sprintemplate.dao.LegDao;
 import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
-import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;  
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp;
@@ -44,7 +44,7 @@ import pe.edu.upeu.sprintemplate.entity.Usuario;
 
 @Controller            
 public class HomeControllerExpediente {
-	        
+	       
 	@Autowired 
 	private GradosDaoImp gradoDao;
 	@Autowired  
@@ -62,7 +62,7 @@ public class HomeControllerExpediente {
 	@Autowired
 	private Leg2DaoImp leg2Dao;   
 	       
-	  
+  
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
 	
@@ -191,8 +191,9 @@ public @ResponseBody void guardar_experiencia_profesional2(HttpServletRequest re
 	//legDao.create(lg);  
 	                
 	return c+"/"+l; 
-	*/  	  
+	  	  
 } 
+*/ 
 
 @RequestMapping(path="/listarExProfe", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody String listarExperienciaProfesional2(HttpServletRequest request) {
@@ -256,7 +257,7 @@ public @ResponseBody String listarExperienciaAcademico2(HttpServletRequest reque
 	
 	
 	
-	
+	 
 
 @RequestMapping(path="/guardar_categoriadocente", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody void guardar_categoriadocente2(HttpServletRequest request) {
@@ -280,7 +281,7 @@ public @ResponseBody void guardar_categoriadocente2(HttpServletRequest request) 
 }
 
 	
-*/	
+	
 	
 	     
 	

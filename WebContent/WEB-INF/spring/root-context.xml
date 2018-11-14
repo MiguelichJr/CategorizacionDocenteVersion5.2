@@ -53,13 +53,13 @@
 	</bean>
 	<bean id="legDao" class="pe.edu.upeu.sprintemplate.daoImp.LegDaoImp">        
 		<property name="jlegg" ref="jdbcTemplate" />  
-	</bean>
-	 
+	</bean>   
+	<!--
 	<bean id="leg2Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp">        
 		<property name="jleg2" ref="jdbcTemplate" />  
 	</bean>
-	      
-	<!-- jojolete -->      
+	    
+	  jojolete -->      
 	            
 	<!-- <bean id="institucionDao" class="pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp">             
 		<property name="ji" ref="jdbcTemplate" /> 
