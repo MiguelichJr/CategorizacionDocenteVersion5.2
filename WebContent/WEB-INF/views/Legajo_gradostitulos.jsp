@@ -35,7 +35,7 @@
 			Estudios </legend>
 		<hr>  
 		<!-- Text input-->
-		<form action="crearLegGrados" method="POST">
+		
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10">
@@ -44,7 +44,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Grado</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control" name="grado">
+								<select style="text-align: center" class="form-control" id="grado1">
 									<c:forEach items="${lista_grados}" var="pr">
               
 										<option value="${pr.idgrd}" style="text-align: center">${pr.nombre_grado}</option>
@@ -58,7 +58,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Especialidad</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control" name="especialidad">
+								<select style="text-align: center" class="form-control" id="espe1"> 
 									<c:forEach items="${lista_especialidad}" var="pr">
  
 										<option value="${pr.idespc}" style="text-align: center">${pr.nombre_especialidad}</option>
@@ -72,7 +72,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Institución</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control" name="institucion">
+								<select style="text-align: center" class="form-control" id="insti1">
 									<c:forEach items="${lista_institucion}" var="pr">
 
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -85,7 +85,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Fecha Término</label> <input style="text-align: center"
-								type="date" class="form-control" name="fecha_termino">
+								type="date" class="form-control" id="f_t1">
 
 						</div>
 					</div>
@@ -110,7 +110,7 @@
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
 									<label>Archivo</label> <input style="text-align: center"
-										type="file" class="form-control" name="url">
+										type="file" class="form-control" id="url1">
 
 								</div>
 							</div>
@@ -147,7 +147,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Tesis</label>
 							<div class="select" style="text-align: center" id="valor_tesis">   
-								<select style="text-align: center" class="form-control" name="tesis">
+								<select style="text-align: center" class="form-control" id="tesis1">
 									<option value="NO" style="text-align: center">NO</option>
 									<option value="SI" style="text-align: center">SI</option>
 								</select>
@@ -157,7 +157,7 @@
 					<div class="col-sm-6">
 						<div class="form-group" style="text-align: center">
 							<label>Archivo</label> <input style="text-align: center"
-								type="file" class="form-control" name="url2" >       
+								type="file" class="form-control" id="url2">       
 
 						</div>
 					</div>
@@ -182,7 +182,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button type="submit"  class="btn btn-primary btn-block"
+									<button id="registrar_grados"       class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -201,11 +201,11 @@
 			</div>
 			<div class="col-1"></div>
 		</div>
-		</form>  
+		          
 
 		<!--lista de todo los registros -->
 		<table class="table table-bordered"
-			style="max-width: 100%; text-align: center; margin-bottom: 5%">
+			style="max-width: 100%; text-align: center; margin-bottom: 5%" id="tblXD">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
@@ -1626,7 +1626,7 @@
 			</tbody>
 		</table>
 	</div>
-	
+	<input type="text" id="idprofe" value="1">
 	
 	
 	</main>
@@ -1635,45 +1635,14 @@
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
 	<script src="${urlrecursos}/js/main.js"></script>
+	<script src="${urlrecursos}/js/script_expediente.js"></script>
 	<!-- The javascript plugin to display page loading on top-->
 	<script src="${urlrecursos}/js/plugins/pace.min.js"></script>
-	<!-- Page specific javascripts-->
+	<!-- Page specific javascripts-->       
 	<!-- Google analytics script-->
 	<script type="text/javascript">
-		/*if (document.location.hostname == 'pratikborsadiya.in') {
-			(function(i, s, o, g, r, a, m) {
-				i['GoogleAnalyticsObject'] = r;
-				i[r] = i[r] || function() {
-					(i[r].q = i[r].q || []).push(arguments)
-				}, i[r].l = 1 * new Date();
-				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-				a.async = 1;
-				a.src = g;
-				m.parentNode.insertBefore(a, m) 
-			})(window, document, 'script',
-					'//www.google-analytics.com/analytics.js', 'ga');
-			ga('create', 'UA-72504830-1', 'auto');
-			ga('send', 'pageview');
-		}
-		     
-		             
+		   
 		
-		$("#sisisi").keyup(function(){
-			var aaa=$("#sisisi").val;   
-			alert("ainsoabs");       
-		});  */     
-		/*
-		$(document).ready(function (){
-			//alert("si funciona el script");
-			//$("#valor_tesis").attr('disabled','true');  
-		});              
-		$("#valor_tesis").change( function() {
-	        if ($(this).val() === "SI") {
-	            $("#valor_tesis").prop("disabled", false);
-	        } else {
-	            $("#valor_tesis").prop("disabled", true);  
-	        }
-	    }); */
 	</script>
 </body>
 </html>

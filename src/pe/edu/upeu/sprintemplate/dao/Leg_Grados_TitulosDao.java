@@ -12,5 +12,5 @@ public interface Leg_Grados_TitulosDao {
 	int update(Leg_Grados_Titulos l);
 	int delete(int id);                    
 	Leg_Grados_Titulos read(int id);
-	List<Map<String,Object>> readAll();  
+	List<Map<String,Object>> readAll(int idprofesor);  
 }

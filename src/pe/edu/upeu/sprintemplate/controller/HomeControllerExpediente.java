@@ -3,19 +3,26 @@ package pe.edu.upeu.sprintemplate.controller;
 
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 //import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 
 import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;
@@ -47,8 +54,7 @@ public class HomeControllerExpediente {
 	private CategoriaDaoImp categoriaDao;
 	@Autowired
 	private Leg_Grados_TitulosDaoImp leggradosDao;
-	@Autowired
-	private LegDaoImp legDao;       
+	       
 	  
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
@@ -83,7 +89,7 @@ public class HomeControllerExpediente {
 		return "main";
 	}
 	*/    
-	
+	/*
 	@PostMapping("/crearLegGrados")
 	public String crearLegGrados2(Model model, Leg_Grados_Titulos l) throws SQLException {
 		l.setEstado("completado");
@@ -114,7 +120,32 @@ public class HomeControllerExpediente {
 		return "redirect:/gra";        
 	}
 	                  
-   
+   */ 
+	
+@RequestMapping(path="/guardar_grados_titulos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void crearGradosEstudios(HttpServletRequest request) {
+	int g=Integer.parseInt(request.getParameter("g"));
+	int e=Integer.parseInt(request.getParameter("e"));
+	int i=Integer.parseInt(request.getParameter("i"));
+	String ft=request.getParameter("ft");
+	String u1=request.getParameter("u1");
+	String t=request.getParameter("t");
+	String u2=request.getParameter("u2");
+	String es="completado";
+	int d=1;
+	Leg_Grados_Titulos lg=new Leg_Grados_Titulos(ft,es,t,u1,u2,i,g,e,d);
+	leggradosDao.create(lg); 
+	   
+	
+}
+
+@RequestMapping(path="/listarLeg_Grados", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarLeg_Grado(HttpServletRequest request) {
+	Gson g = new Gson();
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor);
+	return g.toJson(leggradosDao.readAll(idprofesor));
+}
 	
 	
 	

@@ -25,7 +25,7 @@ public class Leg_Grados_TitulosDaoImp implements Leg_Grados_TitulosDao {
 
 	@Override
 	public int create(Leg_Grados_Titulos l) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub  
 		return jleg.update("call crear_LEgGradosTitulosEstudios(?,?,?,?,?,?,?,?,?)",l.getFecha_termino(),l.getEstado(),l.getTesis(),l.getUrl(),l.getUrl2(),l.getInstitucion(),l.getGrado(),l.getEspecialidad(),l.getDocente());
 	}
 
@@ -48,9 +48,9 @@ public class Leg_Grados_TitulosDaoImp implements Leg_Grados_TitulosDao {
 	}
 
 	@Override
-	public List<Map<String, Object>> readAll() {
+	public List<Map<String, Object>> readAll(int idprofesor) {
 		// TODO Auto-generated method stub
-		return null;
+		return jleg.queryForList("select * from LEG_GRA_TI_ES where DOCE_POR_CONV_IDDOCON=" + idprofesor);
 	}
 
 }

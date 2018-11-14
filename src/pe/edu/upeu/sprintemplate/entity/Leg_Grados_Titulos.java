@@ -75,10 +75,11 @@ public class Leg_Grados_Titulos {
 		this.docente = docente;
 	}
 	
-	public Leg_Grados_Titulos(int idgro, String fecha_termino, String estado, String tesis, String url, String url2,
+	
+	
+	public Leg_Grados_Titulos(String fecha_termino, String estado, String tesis, String url, String url2,
 			int institucion, int grado, int especialidad, int docente) {
 		super();
-		this.idgro = idgro;
 		this.fecha_termino = fecha_termino;
 		this.estado = estado;
 		this.tesis = tesis;
@@ -89,6 +90,7 @@ public class Leg_Grados_Titulos {
 		this.especialidad = especialidad;
 		this.docente = docente;
 	}
+	    
 	public String getUrl2() {
 		return url2;
 	}
