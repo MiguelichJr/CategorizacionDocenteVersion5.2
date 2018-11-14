@@ -57,7 +57,7 @@ function listarLeg_Grados() {
 }
 
 
-/*
+
 
 //tabla experiencia profesional
 
@@ -102,17 +102,17 @@ $("#registrar_experiencia_profesional").click(function() {
 		x:x
 		
 	},function(data){
-		alert(data);
+		    
 		alert("si devuelve del controlador");    
 		//listarLeg_Grados();   
 	});
+	         
 	
-	
-});
+});  
  
 
 
-/*
+
 function listarExperienciaProfesional() {
 	var x = parseInt($("#idprofe").val());
 	alert(x);
@@ -127,8 +127,8 @@ function listarExperienciaProfesional() {
 }
   
 
-
-
+   
+    
 
 //tabla experiencia academico administrativa
 
@@ -176,21 +176,24 @@ $("#registrar_experiencia_academico_profesional").click(function() {
 	
 	
 });
-
+  
 function listarExperienciaAcademico() {
 	var x = parseInt($("#idprofe").val());
-	alert(x);
+	alert(x+"listar academico ");
 	//alert("hola si funciona el funciton");
-	$.get("listarExProfe", {idprofe:x}, function(datita) {
+	$.get("listarExperienciaAcademico", {idprofe:x}, function(datita) {
 		//alert(datita);       
 		for(var i in datita){               
-			$("#tableacademico tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].CARGO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].FECHA_INICIO+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].RESOLUCION+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tableacademico4 tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].CARGO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].FECHA_INICIO+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].RESOLUCION+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
 		}  
-		
+		 
 	}); 
 }
 
 
+
+
+/*    
 
 //tabla categoria docente
   

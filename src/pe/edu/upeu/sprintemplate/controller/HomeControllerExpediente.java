@@ -160,7 +160,7 @@ public @ResponseBody String listarLeg_Grado(HttpServletRequest request) {
 
 
 
-/*  
+ 
 
 
 @RequestMapping(path="/guardar_experiencia_profesional", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -182,18 +182,16 @@ public @ResponseBody void guardar_experiencia_profesional2(HttpServletRequest re
 	System.out.println(fi);
 	System.out.println(ft);
 	System.out.println(a);
-	/*
+	  
 	String es="completado";
 	String tipo="E. profesional";  
 	System.out.println("si trajo el id: " + idprofesor+" pjajajajaj");
-	//int d=1;  
-	//Leg lg=new Leg(c,fi,ft,a,m,d,l,es,a2,i,idprofesor,tipo,td);
-	//legDao.create(lg);  
-	                
-	return c+"/"+l; 
-	  	  
+	//int d=1;       
+	Leg lg=new Leg(c,fi,ft,a,m,d,l,es,a2,i,idprofesor,tipo,td);
+	legDao.create(lg);  
+	                  
 } 
-*/ 
+
 
 @RequestMapping(path="/listarExProfe", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody String listarExperienciaProfesional2(HttpServletRequest request) {
@@ -214,9 +212,9 @@ public @ResponseBody String listarExperienciaProfesional2(HttpServletRequest req
 
 
 
-
+   
 @RequestMapping(path="/guardar_experiencia_academico", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody String guardar_experiencia_academico2(HttpServletRequest request) {
+public @ResponseBody void guardar_experiencia_academico2(HttpServletRequest request) {
 	int i=Integer.parseInt(request.getParameter("i"));
 	String c=request.getParameter("c");
 	int r=Integer.parseInt(request.getParameter("r"));
@@ -224,7 +222,7 @@ public @ResponseBody String guardar_experiencia_academico2(HttpServletRequest re
 	String ft=request.getParameter("ft");   
 	String re=request.getParameter("re");
 	String l=request.getParameter("l"); 
-	String u3=request.getParameter("u3");
+	String u3=request.getParameter("u3");   
 	int idprofesor=Integer.parseInt(request.getParameter("x"));
 	String es="completado";
 	String tipo="E. AcademicoAdministrativa";   
@@ -232,16 +230,17 @@ public @ResponseBody String guardar_experiencia_academico2(HttpServletRequest re
 	//int d=1;
 	Leg lg=new Leg(c,fi,ft,l,re,es,u3,i,idprofesor,tipo,r); 
 	legDao.create(lg);
-	return "si trajo el id: " + idprofesor+" en el metodo que devuelve guardar_expe";   
+	//return "si trajo el id: " + idprofesor+" en el metodo que devuelve guardar_expe";   
 	   	  
-}
+} 
 
 
 //listarExperienciaAcademico
 	
 @RequestMapping(path="/listarExperienciaAcademico", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody String listarExperienciaAcademico2(HttpServletRequest request) {
-	Gson g = new Gson();   
+	Gson g = new Gson();
+	
 	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
 	System.out.println("si trajo el id: " + idprofesor+"listar experiencia academico");              
 	return g.toJson(legDao.readAllExperienciaAcademicoAdministrativa(idprofesor));
@@ -258,7 +257,7 @@ public @ResponseBody String listarExperienciaAcademico2(HttpServletRequest reque
 	
 	
 	 
-
+/*
 @RequestMapping(path="/guardar_categoriadocente", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody void guardar_categoriadocente2(HttpServletRequest request) {
 	int i=Integer.parseInt(request.getParameter("i"));
@@ -272,7 +271,7 @@ public @ResponseBody void guardar_categoriadocente2(HttpServletRequest request) 
 	String u4=request.getParameter("u4"); 
 	int idprofesor=Integer.parseInt(request.getParameter("x"));
 	String es="completado";
-	String tipo="Cate Docente";     
+	String tipo="Cate Docente";          
 	System.out.println("si trajo el id: " + idprofesor+"pes owen jajajajaj xd");
 	//int d=1;
 	// lg=new Leg2(fi,ft,a,m,d,l,es,tipo,u4,c,i,idprofesor); 
@@ -280,7 +279,7 @@ public @ResponseBody void guardar_categoriadocente2(HttpServletRequest request) 
 	   	  
 }
 
-	
+*/ 		
 	
 	
 	     

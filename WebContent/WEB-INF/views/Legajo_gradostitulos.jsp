@@ -392,7 +392,7 @@
 									<button id="registrar_experiencia_profesional" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
-								</div>
+								</div>  
 							</div> 
 						</div>
 						<div class="col-sm-4">
@@ -1268,7 +1268,7 @@
 		  
  
 		<!--lista de todo los registros -->
-		<table id="tableacademico" class="table table-bordered"
+		<table id="tableacademico4" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>

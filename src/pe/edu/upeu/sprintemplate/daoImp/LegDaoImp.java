@@ -53,13 +53,12 @@ public class LegDaoImp implements LegDao {
 		// TODO Auto-generated method stub
 		return jlegg.queryForList("select i.nombre_institucion,l.cargo,a.nombre_atributo,l.fecha_inicio,l.fecha_termino,l.anios,l.meses,l.dias,l.lugar,l.url from institucion i,leg l,ATRIBUTOS a where l.INSTITUCION_IDINT=i.IDINT and l.CAATRI=a.IDATRI and l.TIPO='E. profesional' and"
 				+ "  l.DOCE_POR_CONV_IDDOCON="+id);   
-	}  
+	}      
 
-	@Override
+	@Override 
 	public List<Map<String, Object>> readAllExperienciaAcademicoAdministrativa(int id) {
 		// TODO Auto-generated method stub       
-		return jlegg.queryForList("select i.nombre_institucion,l.cargo,a.nombre_atributo,l.fecha_inicio,l.fecha_termino,l.resolucion,l.lugar,l.url from institucion i,leg l,ATRIBUTOS a where l.INSTITUCION_IDINT=i.IDINT and l.CAATRI=a.IDATRI and l.TIPO='E. AcademicoAdministrativa' and"
-				+ "  l.DOCE_POR_CONV_IDDOCON="+id);
+		return jlegg.queryForList("select i.nombre_institucion,l.cargo,a.nombre_atributo,l.fecha_inicio,l.fecha_termino,l.anios,l.meses,l.dias,l.lugar,l.url from institucion i,leg l,ATRIBUTOS a where l.INSTITUCION_IDINT=i.IDINT and l.CAATRI=a.IDATRI and l.TIPO='E. AcademicoAdministrativa' and  l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 
 }
