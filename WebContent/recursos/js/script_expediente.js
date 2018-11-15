@@ -1,10 +1,16 @@
+
 $(document).ready(function() {
 	//alert("si funciona el script pe xd");
 	// $("#valor_tesis").attr('disabled','true');
 	listarLeg_Grados();
 	listarExperienciaProfesional();
 	listarExperienciaAcademico();
+	listarCategoriaDocente();
+	listarEnPresenciales();
+	listarEnEntornosVirtuales();
+	listarDocenteComplementaria();
 });
+ 
 
 //tabla de grados y estudios
 $("#registrar_grados").click(function() {
@@ -193,10 +199,12 @@ function listarExperienciaAcademico() {
 
 
 
-/*    
+   
 
 //tabla categoria docente
-  
+
+
+ 
 
 $("#registrar_categoriadocente").click(function() {
 	alert("si funka el boton categoria academico");
@@ -218,14 +226,14 @@ $("#registrar_categoriadocente").click(function() {
 	alert(ft);
 	alert(a);
 	alert(m);
-	alert(d);
+	alert(d);  
 	alert(l);
 	alert(u4); 
 	      
 	
 	alert("el id del prode es: "+x);
 	 
-	
+	  
 	$.post("guardar_categoriadocente", {
 		i : i,
 		c:c,
@@ -243,6 +251,205 @@ $("#registrar_categoriadocente").click(function() {
 		//listarLeg_Grados();   
 	}); 
 	 
-	
+	   
 }); 
-*/   
+
+
+function listarCategoriaDocente() {
+	var x = parseInt($("#idprofe").val());
+	alert(x+"listar categoria docente ");
+	//alert("hola si funciona el funciton");
+	$.get("listarCategoriaDoo", {idprofe:x}, function(datita) {
+		//alert(datita);       
+		for(var i in datita){                        
+			$("#tablecategoria tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].NOMBRE_CATEGORIA+"</td><td>"+datita[i].FECHA_INICIO+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].ANIOS+"</td><td>"+datita[i].MESES+"</td><td>"+datita[i].DIAS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+		}  
+		 
+	}); 
+}
+  
+
+
+
+$("#registrar_ED_presenciales").click(function() {
+	alert("si funka el boton expe docencia en presenciales");
+	var i = $("#insti6").val(); 
+	var c = $("#cate6").val();  
+	var fi = $("#fi6").val();
+	var ft = $("#ff6").val();
+	var a = $("#a6").val();
+	var m = $("#m6").val();
+	var d = $("#d6").val();
+	var l = $("#l6").val();
+	var u4 = $("#archi6").val();
+           
+	var x = parseInt($("#idprofe").val()); 
+
+	alert(i);
+	alert(c);
+	alert(fi);
+	alert(ft);
+	alert(a);
+	alert(m);
+	alert(d);  
+	alert(l);
+	alert(u4); 
+	      
+	
+	alert("el id del prode es: "+x);
+	 
+	  
+	$.post("guardar_EDrpesenciales", {
+		i : i,
+		c:c,
+		fi:fi,
+		ft:ft,   
+		a:a,
+		m:m,
+		d:d,
+		l:l,
+		u4:u4,
+		x:x  
+		             
+	},function(data){
+		
+		//listarLeg_Grados();   
+	}); 
+	 
+	   
+});
+
+
+function listarEnPresenciales() {
+	var x = parseInt($("#idprofe").val());
+	alert(x+"listar presenciales docente ");
+	//alert("hola si funciona el funciton");
+	$.get("listarpresen", {idprofe:x}, function(datita) {
+		//alert(datita);         
+		for(var i in datita){                        
+			$("#tablepresenciales tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].NOMBRE_CATEGORIA+"</td><td>"+datita[i].FECHA_INICIO+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].ANIOS+"</td><td>"+datita[i].MESES+"</td><td>"+datita[i].DIAS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+		}  
+		    
+	}); 
+}
+
+
+
+
+
+
+$("#registrar_ED_EntornosVirtusld").click(function() {
+	alert("si funka el boton expe docencia en ENTORNOS VIRTUALES"); 
+	var i = $("#insti9").val();  
+	var fi = $("#fi9").val();
+	var ft = $("#ff9").val();
+	var a = $("#a9").val();
+	var m = $("#m9").val();
+	var d = $("#d9").val();
+	var l = $("#l9").val();
+	var u4 = $("#archi9").val();
+             
+	var x = parseInt($("#idprofe").val()); 
+
+	alert(i);
+	alert(fi);
+	alert(ft);
+	alert(a);
+	alert(m);
+	alert(d);  
+	alert(l);
+	alert(u4);    
+	      
+	
+	alert("el id del prode es: "+x);
+	 
+	   
+	$.post("guardar_EDentornosVirtuales", {
+		i : i,  
+		fi:fi,
+		ft:ft,   
+		a:a,
+		m:m,
+		d:d,
+		l:l,
+		u4:u4,
+		x:x  
+		               
+	},function(data){
+		
+		//listarLeg_Grados();   
+	}); 
+	 
+	   
+});
+
+
+function listarEnEntornosVirtuales() {
+	var x = parseInt($("#idprofe").val());
+	alert(x+"listar entornos virtuales docente ");
+	//alert("hola si funciona el funciton");
+	$.get("listarvirtuales", {idprofe:x}, function(datita) {
+		//alert(datita);                  
+		for(var i in datita){                        
+			$("#tablevirtual tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].FECHA_INICIO+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].ANIOS+"</td><td>"+datita[i].MESES+"</td><td>"+datita[i].DIAS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+		}  
+		    
+	});    
+}
+
+
+
+
+
+$("#registrar_ED_DocenteComplementaria").click(function() {
+	alert("si funka el boton expe docencia en Docentecomplementaria");   
+	var i = $("#insti10").val();
+	var c=$("#cargo10").val();
+	var fi = $("#fi10").val();
+	var ft = $("#ff10").val();
+	var l = $("#l10").val();
+	var u4 = $("#archi10").val();
+             
+	var x = parseInt($("#idprofe").val()); 
+
+	alert(i);
+	alert(c);
+	alert(fi);
+	alert(ft);   
+	alert(l);
+	alert(u4);    
+	      
+	
+	alert("el id del prode es: "+x);
+	   
+	   
+	$.post("guardar_Docentecomplementaria", {
+		i : i,
+		c:c,
+		fi:fi,
+		ft:ft,  
+		l:l,
+		u4:u4,
+		x:x    
+		               
+	},function(data){
+		
+		//listarLeg_Grados();   
+	}); 
+	 
+	   
+});
+
+function listarDocenteComplementaria() {
+	var x = parseInt($("#idprofe").val());
+	alert(x+"listar edocente complementaria ");
+	//alert("hola si funciona el funciton");
+	$.get("listarcomplementaria", {idprofe:x}, function(datita) {
+		//alert(datita);                                    
+		for(var i in datita){                                 
+			$("#tablecomplementaria tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].CARGO+"</td><td>"+datita[i].FECHA_INICIO+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+		}  
+		    
+	});    
+} 
+

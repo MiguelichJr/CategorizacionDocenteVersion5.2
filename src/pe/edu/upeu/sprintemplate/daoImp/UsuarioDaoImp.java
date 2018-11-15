@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.sprintemplate.dao.UsuarioDao;
+import pe.edu.upeu.sprintemplate.entity.Usuario;
 
 
 @Repository
@@ -24,13 +25,14 @@ public class UsuarioDaoImp implements UsuarioDao {
 	public void setjdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate; 
 	}
-     
 
-	@Override     
-	public List<Map<String, Object>> readAll() {
+	@Override
+	public List<Map<String, Object>> readAll(Usuario u) {
 		// TODO Auto-generated method stub
-		//System.out.println("loloo");
-		return jdbcTemplate.queryForList("select *from usuario"); 
-	}
+		return null;
+	}     
+    //oye amigo no sabes nada pe jajajajajj xd        
+
+	
 	
 }

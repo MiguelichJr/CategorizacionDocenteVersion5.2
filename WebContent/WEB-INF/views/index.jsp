@@ -22,21 +22,21 @@
 			<h1>Categorización Docente Upeu</h1>
 		</div>        
 		<div class="login-box" style="border-radius:20px"       >  
-			<form class="login-form" action="home" method="post" >
+			<form class="login-form" >
 				<h3 class="login-head" style="text-align:center">
 					<i class="fa fa-lg fa-fw fa-user" style="color:#992e45"></i>Login SCDO      
 				</h3>
 				<div class="form-group" style="text-align:center">
 					<label class="control-label" >USUARIO</label> 
-					<input	class="form-control" type="text" name="nom_user" >
+					<input	class="form-control" type="text" id="usuario">
 				</div>          
 				<div class="form-group" style="text-align:center">   
 					<label class="control-label">CONTRASEÑA</label> <input       
-						class="form-control" type="password" name="clave" >
+						class="form-control" type="password" id="clave">  
 				</div>
-				  <hr style="margin-top:10px">        
+				  <hr style="margin-top:10px">          
 				<div class="form-group btn-container" style="background-color:#992e45">
-					<button class="btn btn-primary btn-block" style="background-color:#992e45;border-top:#992e45;border-right:#992e45;border-bottom:#992e45;border-left:#992e45" >
+					<button id="ValidarLogin" class="btn btn-primary btn-block" style="background-color:#992e45;border-top:#992e45;border-right:#992e45;border-bottom:#992e45;border-left:#992e45" >
 						<i class="fa fa-sign-in fa-lg fa-fw" ></i>Ingresar 
 					</button>
 				</div>
@@ -44,5 +44,9 @@
 			 
 		</div>
 	</section>
-</body>
+	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
+	<script src="${urlrecursos}/js/popper.min.js"></script>
+	<script src="${urlrecursos}/js/bootstrap.min.js"></script>    
+	<script src="${urlrecursos}/js/login.js"></script>    
+</body>   
 </html>

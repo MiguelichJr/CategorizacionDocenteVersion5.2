@@ -24,17 +24,21 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import pe.edu.upeu.sprintemplate.dao.Leg2Dao;
+import pe.edu.upeu.sprintemplate.dao.Leg3Dao;
 import pe.edu.upeu.sprintemplate.dao.LegDao;
 import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;  
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg3DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.LegDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_Grados_TitulosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
 import pe.edu.upeu.sprintemplate.entity.Leg;
 import pe.edu.upeu.sprintemplate.entity.Leg2;
+import pe.edu.upeu.sprintemplate.entity.Leg3;
 import pe.edu.upeu.sprintemplate.entity.Leg_Grados_Titulos;
 import pe.edu.upeu.sprintemplate.entity.Usuario; 
   
@@ -57,17 +61,19 @@ public class HomeControllerExpediente {
 	private CategoriaDaoImp categoriaDao;
 	@Autowired
 	private Leg_Grados_TitulosDaoImp leggradosDao;
-	@Autowired
+	@Autowired                
 	private LegDao legDao;
 	@Autowired
-	private Leg2DaoImp leg2Dao;   
-	       
+	private Leg2DaoImp leg2Dao; 
+	@Autowired
+	private Leg3DaoImp leg3Dao;                   
+	         
   
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
 	
 	
-	//
+	//      
 	
 	
 	@GetMapping("/")
@@ -77,10 +83,10 @@ public class HomeControllerExpediente {
 	
 
 	//metodo del login
-	@PostMapping("/home")
+	/*@PostMapping("/")
 	public String main2() {
 		return "main";
-	}
+	}*/  
 	//metodo del login
 	 
 	/*
@@ -191,7 +197,7 @@ public @ResponseBody void guardar_experiencia_profesional2(HttpServletRequest re
 	legDao.create(lg);  
 	                  
 } 
-
+   
 
 @RequestMapping(path="/listarExProfe", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody String listarExperienciaProfesional2(HttpServletRequest request) {
@@ -254,10 +260,7 @@ public @ResponseBody String listarExperienciaAcademico2(HttpServletRequest reque
 
 //guardar_categoriadocente
 	
-	
-	
-	 
-/*
+
 @RequestMapping(path="/guardar_categoriadocente", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody void guardar_categoriadocente2(HttpServletRequest request) {
 	int i=Integer.parseInt(request.getParameter("i"));
@@ -270,29 +273,173 @@ public @ResponseBody void guardar_categoriadocente2(HttpServletRequest request) 
 	String l=request.getParameter("l"); 
 	String u4=request.getParameter("u4"); 
 	int idprofesor=Integer.parseInt(request.getParameter("x"));
-	String es="completado";
-	String tipo="Cate Docente";          
+	String es="completado";  
+	String tipo="Cate Docente";              
 	System.out.println("si trajo el id: " + idprofesor+"pes owen jajajajaj xd");
 	//int d=1;
-	// lg=new Leg2(fi,ft,a,m,d,l,es,tipo,u4,c,i,idprofesor); 
-	//leg2Dao.create(lg);                 
-	   	  
+	System.out.println(i);
+	System.out.println(c);
+	System.out.println(fi);
+	System.out.println(ft);         
+	Leg2 lgg=new Leg2(fi,ft,a,m,d,l,es,tipo,u4,c,i,idprofesor);
+	leg2Dao.create(lgg);    
+	//leg2Dao.create(lg);                            
+	      	  
 }
+//listarCategoriaDocente
 
-*/ 		
+@RequestMapping(path="/listarCategoriaDoo", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarCategoriaDoo2(HttpServletRequest request) {
+	Gson g = new Gson();
+	
+	
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar categoria docente");              
+	return g.toJson(leg2Dao.readAllCategoriaDocente(idprofesor));   
+}
+	
+		
 	
 	
 	     
 	
+// tabla  ED  En presenciales
+
+@RequestMapping(path="/guardar_EDrpesenciales", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_EDrpesenciales2(HttpServletRequest request) {
+	int i=Integer.parseInt(request.getParameter("i"));
+	int c=Integer.parseInt(request.getParameter("c"));
+	String fi=request.getParameter("fi");      
+	String ft=request.getParameter("ft");
+	int a=Integer.parseInt(request.getParameter("a"));
+	int m=Integer.parseInt(request.getParameter("m"));
+	int d=Integer.parseInt(request.getParameter("d"));
+	String l=request.getParameter("l"); 
+	String u4=request.getParameter("u4"); 
+	int idprofesor=Integer.parseInt(request.getParameter("x"));
+	String es="completado";  
+	String tipo="EDU en Presencial";                
+	System.out.println("si trajo el id: " + idprofesor+"pes owen presenciales jajajajaj xd");
+	//int d=1;
+	System.out.println(i);
+	System.out.println(c);
+	System.out.println(fi);   
+	System.out.println(ft);         
+	Leg2 lgg=new Leg2(fi,ft,a,m,d,l,es,tipo,u4,c,i,idprofesor);
+	leg2Dao.create(lgg);           
+	//leg2Dao.create(lg);                            
+	      	  
+}  
+	
+@RequestMapping(path="/listarpresen", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarpresen2(HttpServletRequest request) {
+	Gson g = new Gson();
+	
+	   
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar en presenciales");                 
+	return g.toJson(leg2Dao.readAllCategoriaDocente(idprofesor));   
+}	   
+
 	
 	
 	
+// tabla Ed en Entornos Virtuales   
+
+@RequestMapping(path="/guardar_EDentornosVirtuales", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_EDentornosVirtuales2(HttpServletRequest request) {
+	int i=Integer.parseInt(request.getParameter("i"));
+	String fi=request.getParameter("fi");      
+	String ft=request.getParameter("ft");
+	int a=Integer.parseInt(request.getParameter("a"));
+	int m=Integer.parseInt(request.getParameter("m"));
+	int d=Integer.parseInt(request.getParameter("d"));
+	String l=request.getParameter("l"); 
+	String u4=request.getParameter("u4"); 
+	int idprofesor=Integer.parseInt(request.getParameter("x"));
+	String es="completado";  
+	String tipo="EDU en Entornos Virtuales";                
+	System.out.println("si trajo el id: " + idprofesor+"pes owen entornos virtuales jajajajaj xd");
+	//int d=1;
+	System.out.println(i);
+	System.out.println(fi);     
+	System.out.println(ft);         
+	Leg3 lgg=new Leg3(fi,ft,a,m,d,l,es,tipo,u4,i,idprofesor);
+	leg3Dao.create(lgg);                            
+	//leg2Dao.create(lg);                            
+	      	  
+} 
+
+@RequestMapping(path="/listarvirtuales", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarvirtuales2(HttpServletRequest request) {
+	Gson g = new Gson();
 	
+	   
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar en entornos virtuales");                    
+	return g.toJson(leg3Dao.readAllEDUEnEntornosVirtuales(idprofesor));   
+}
 	
+
+
+
+// tabla docente complementaria
+
+   
+@RequestMapping(path="/guardar_Docentecomplementaria", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_Docentecomplementaria2(HttpServletRequest request) {
+	int i=Integer.parseInt(request.getParameter("i"));
+	String c=request.getParameter("c");   
+	String fi=request.getParameter("fi");      
+	String ft=request.getParameter("ft");  
+	String l=request.getParameter("l"); 
+	String u4=request.getParameter("u4"); 
+	int idprofesor=Integer.parseInt(request.getParameter("x"));
+	String es="completado";    
+	String tipo="EDU en Complementaria";                  
+	System.out.println("si trajo el id: " + idprofesor+"pes owen en complemenataria jajajajaj xd");
+	//int d=1;
+	System.out.println(i);
+	System.out.println(fi);     
+	System.out.println(ft);                   
+	Leg3 lgd=new Leg3(fi,ft,l,c,es,tipo,u4,i,idprofesor);
+	leg3Dao.create(lgd);                                 
+	//leg2Dao.create(lg);                            
+	      	     
+} 
+
+@RequestMapping(path="/listarcomplementaria", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarcomplementaria3(HttpServletRequest request) {
+	Gson g = new Gson();
 	
-	
-	
-	
+	   
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar en docente complementaria");                    
+	return g.toJson(leg3Dao.readAllEDUEnComplementarias(idprofesor));   
+}   
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 	
