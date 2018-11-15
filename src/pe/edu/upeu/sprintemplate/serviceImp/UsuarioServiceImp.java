@@ -11,15 +11,18 @@ import pe.edu.upeu.sprintemplate.service.UsuarioService;
 public class UsuarioServiceImp implements UsuarioService {
 
 	@Autowired
-	private UsuarioDao usuarioDao; 
-      
-	@Override   
+	private UsuarioDao usuarioDao;
+
+	@Override
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub
-		return usuarioDao.readAll(); 
-	}
+		return null;
+	} 
+        
+	
 	 
 	
 	
 	
 }
+  

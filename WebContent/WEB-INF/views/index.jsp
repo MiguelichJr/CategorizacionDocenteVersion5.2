@@ -22,7 +22,7 @@
 			<h1>Categorización Docente Upeu</h1>
 		</div>        
 		<div class="login-box" style="border-radius:20px"       >  
-			<form class="login-form" >
+			<form class="login-form" action="home" method="GET">
 				<h3 class="login-head" style="text-align:center">
 					<i class="fa fa-lg fa-fw fa-user" style="color:#992e45"></i>Login SCDO      
 				</h3>
@@ -36,9 +36,9 @@
 				</div>
 				  <hr style="margin-top:10px">          
 				<div class="form-group btn-container" style="background-color:#992e45">
-					<button id="ValidarLogin" class="btn btn-primary btn-block" style="background-color:#992e45;border-top:#992e45;border-right:#992e45;border-bottom:#992e45;border-left:#992e45" >
+					<button type="submit" class="btn btn-primary btn-block" style="background-color:#992e45;border-top:#992e45;border-right:#992e45;border-bottom:#992e45;border-left:#992e45" >
 						<i class="fa fa-sign-in fa-lg fa-fw" ></i>Ingresar 
-					</button>
+					</button>         
 				</div>
 			</form>
 			 

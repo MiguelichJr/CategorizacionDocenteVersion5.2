@@ -2,7 +2,7 @@ package pe.edu.upeu.sprintemplate.entity;
 
 public class Leg4 {
 	private int idleg4;
-	private String fecha;
+	private int fecha;
 	private String estado;
 	private String tipo;
 	private String url;
@@ -17,10 +17,11 @@ public class Leg4 {
 	public void setIdleg4(int idleg4) {
 		this.idleg4 = idleg4;
 	}
-	public String getFecha() {
+	    
+	public int getFecha() {
 		return fecha;
 	}
-	public void setFecha(String fecha) {
+	public void setFecha(int fecha) {
 		this.fecha = fecha;
 	}
 	public String getEstado() {
@@ -71,7 +72,7 @@ public class Leg4 {
 	public void setAtri3(int atri3) {
 		this.atri3 = atri3;
 	}
-	public Leg4(String fecha, String estado, String tipo, String url, int institucion, int doce, int atri1, int atri2,
+	public Leg4(int fecha, String estado, String tipo, String url, int institucion, int doce, int atri1, int atri2,
 			int atri3) {
 		super();
 		this.fecha = fecha;
@@ -84,10 +85,25 @@ public class Leg4 {
 		this.atri2 = atri2;
 		this.atri3 = atri3;
 	}
+	public Leg4(String estado, String tipo, String url, int institucion, int doce, int atri1, int atri2, int atri3) {
+		super();
+		this.estado = estado;
+		this.tipo = tipo;
+		this.url = url;
+		this.institucion = institucion;
+		this.doce = doce;
+		this.atri1 = atri1;
+		this.atri2 = atri2;
+		this.atri3 = atri3;
+	}             
+	
+	
+	   
+	
 	     
 	
 	
 	
-	
+	  
 
 }

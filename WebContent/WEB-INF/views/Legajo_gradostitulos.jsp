@@ -1305,7 +1305,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Idioma</label>    
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="idioma11">
 									<c:forEach items="${lista_tipoidioma}" var="pr">
 
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -1319,7 +1319,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Nivel</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="nivel11">
 									<c:forEach items="${lista_nivelidioma}" var="pr">
  
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -1335,7 +1335,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Dominio</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="dominio11">
 								<c:forEach items="${lista_dominioidioma}" var="pr">
 
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -1350,7 +1350,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Institución</label>  
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="insti11">
 								<c:forEach items="${lista_institucion}" var="pr">
  
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -1380,14 +1380,14 @@
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
 							<label>Año</label> <input style="text-align: center"
-								type="text" class="form-control">
-
+								type="text" class="form-control" id="anio11">
+  
 						</div>
 					</div>
 					<div class="col-sm-5">
 						<div class="form-group" style="text-align: center">
 							<label>Archivo</label> <input style="text-align: center"
-								type="file" class="form-control">
+								type="file" class="form-control" id="archivo11">
 
 						</div>
 					</div>
@@ -1413,9 +1413,9 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_Idiomas"   class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
-										REGISTRAR</button>
+										REGISTRAR</button>           
 								</div>
 							</div>
 						</div>
@@ -1471,7 +1471,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Curso</label>    
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="curso12">
 									<c:forEach items="${lista_tipocurso}" var="pr">
 
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -1485,7 +1485,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Nivel</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="nivel12">    
 									<c:forEach items="${lista_nivelidioma}" var="pr">
 
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -1499,8 +1499,8 @@
 					<div class="col-sm-3">   
 						<div class="form-group" style="text-align: center">
 							<label>Modalidad de Estudio</label>
-							<select style="text-align: center" class="form-control">
-							<c:forEach items="${lista_tipomodalidadeducativa}" var="pr">
+							<select style="text-align: center" class="form-control" id="moda12">     
+							<c:forEach items="${lista_tipomodalidadeducativa}" var="pr" >
 
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
 
@@ -1512,7 +1512,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Institución</label>     
 							<div class="select">  
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="insti12">
 								<c:forEach items="${lista_institucion}" var="pr">
 
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -1533,7 +1533,7 @@
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10">
-				<div class="row">
+				<div class="row">    
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center"></div>
 					</div>
@@ -1544,8 +1544,8 @@
 							</div>
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
-									<label>Archivo</label> <input style="text-align: center"
-										type="file" class="form-control">
+									<label>Archivo</label> <input id="archi12" style="text-align: center"
+										type="file" class="form-control">  
 
 								</div>
 							</div>
@@ -1560,7 +1560,7 @@
 						<div class="form-group" style="text-align: center"></div>
 					</div>
 				</div>
-
+ 
 				<div class="col-sm-3">
 					<div class="form-group" style="text-align: center"></div>
 				</div>
@@ -1569,7 +1569,7 @@
 		</div>     
     
 
-		<div class="row">
+		<div class="row"> 
 			<div class="col-1"></div>
 			<div class="col-10">
 				<div class="row">
@@ -1584,7 +1584,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_dominiosenlatecnologia" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -1633,8 +1633,8 @@
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
-	<script src="${urlrecursos}/js/main.js"></script>
-	<script src="${urlrecursos}/js/script_expediente.js"></script>
+	<script src="${urlrecursos}/js/main.js"></script>    
+	<script src="${urlrecursos}/js/script_expediente_formacionacademica.js"></script>
 	<!-- The javascript plugin to display page loading on top-->
 	<script src="${urlrecursos}/js/plugins/pace.min.js"></script>
 	<!-- Page specific javascripts-->       

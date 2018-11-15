@@ -33,12 +33,14 @@ import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.InstitucionDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg3DaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg4DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.LegDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_Grados_TitulosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
 import pe.edu.upeu.sprintemplate.entity.Leg;
 import pe.edu.upeu.sprintemplate.entity.Leg2;
 import pe.edu.upeu.sprintemplate.entity.Leg3;
+import pe.edu.upeu.sprintemplate.entity.Leg4;
 import pe.edu.upeu.sprintemplate.entity.Leg_Grados_Titulos;
 import pe.edu.upeu.sprintemplate.entity.Usuario; 
   
@@ -66,20 +68,32 @@ public class HomeControllerExpediente {
 	@Autowired
 	private Leg2DaoImp leg2Dao; 
 	@Autowired
-	private Leg3DaoImp leg3Dao;                   
+	private Leg3DaoImp leg3Dao; 
+	@Autowired
+	private Leg4DaoImp leg4Dao; 
 	         
   
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
 	
-	
+	 
 	//      
-	
+	    
 	
 	@GetMapping("/")
 	public String index() {
 		return "index";     
 	}
+	
+	@GetMapping("/home") 
+	public String home4() {
+		return "main";       
+	}    
+	/*
+	@RequestMapping(path="/cargarmodulos", method = RequestMethod.GET)
+	public String cargarmodulos2() {
+		return "main";         
+	}*/ 
 	
 
 	//metodo del login
@@ -420,14 +434,62 @@ public @ResponseBody String listarcomplementaria3(HttpServletRequest request) {
  
 
 
+   
+
+// tabla idiomas
+
+@RequestMapping(path="/guardar_Idiomas", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_Idiomas3(HttpServletRequest request) {
+	int idiomas=Integer.parseInt(request.getParameter("idiomas"));
+	int nivel=Integer.parseInt(request.getParameter("nivel"));
+	int dominio=Integer.parseInt(request.getParameter("dominio"));
+	int insti=Integer.parseInt(request.getParameter("insti"));
+	int anio=Integer.parseInt(request.getParameter("anio")); 
+	String u4=request.getParameter("u4"); 
+	int idprofesor=Integer.parseInt(request.getParameter("x"));
+	String es="completado";    
+	String tipo="IDIOMA";                    
+	System.out.println("si trajo el id: " + idprofesor+"pes owen en idiomas jajajajaj xd");
+	//int d=1;
+	System.out.println(anio);
+	System.out.println(dominio);     
+	System.out.println(idiomas);
+	System.out.println(es);   
+	Leg4 lgd=new Leg4(anio,es,tipo,u4,insti,idprofesor,idiomas,nivel,dominio);  
+	leg4Dao.create(lgd);                            
+		   
+}
 
 
 
 
 
 
+//tabla dominios en la tecnologia de la informacion y comunicacion para la educacion univesitaria
+
+@RequestMapping(path="/guardar_DominiosTecnologia", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_DominiosTecnologia5(HttpServletRequest request) {
+	int curso=Integer.parseInt(request.getParameter("curso"));
+	int nivel=Integer.parseInt(request.getParameter("nivel"));
+	int modalidad=Integer.parseInt(request.getParameter("modalidad"));
+	int insti=Integer.parseInt(request.getParameter("insti")); 
+	String u4=request.getParameter("u4");       
+	int idprofesor=Integer.parseInt(request.getParameter("x"));
+	String es="completado";   
+	String tipo="DOMINIOS TECNOLOGIA";                      
+	System.out.println("si trajo el id: " + idprofesor+"pes owen en dominios en la tecnologia  jajajajaj xd");
+	//int d=1;
+	System.out.println(curso);
+	System.out.println(modalidad);     
+	System.out.println(nivel);
+	System.out.println(es);     
+	Leg4 lgeed=new Leg4(es,tipo,u4,insti,idprofesor,curso,nivel,modalidad);     
+	leg4Dao.create(lgeed);                               
+		   
+}   
 
 
+//tabla de organizacion de eventos  
 
 
 

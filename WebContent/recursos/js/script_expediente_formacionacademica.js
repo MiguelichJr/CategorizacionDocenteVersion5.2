@@ -1,6 +1,6 @@
 
-$(document).ready(function() {
-	//alert("si funciona el script pe xd");
+$(document).ready(function() {  
+	alert("si funciona el script  de formacion academica xd");
 	// $("#valor_tesis").attr('disabled','true');
 	listarLeg_Grados();
 	listarExperienciaProfesional();
@@ -8,9 +8,11 @@ $(document).ready(function() {
 	listarCategoriaDocente();
 	listarEnPresenciales();
 	listarEnEntornosVirtuales();
-	listarDocenteComplementaria();
+	listarDocenteComplementaria(); 
 });
  
+
+//todo el jsp de grados y titulos
 
 //tabla de grados y estudios
 $("#registrar_grados").click(function() {
@@ -453,3 +455,102 @@ function listarDocenteComplementaria() {
 	});    
 } 
 
+
+
+
+
+
+$("#registrar_Idiomas").click(function() {
+	alert("si funka el boton en Idiomas ");       
+	var idiomas = $("#idioma11").val();
+	var nivel=$("#nivel11").val();
+	var dominio = $("#dominio11").val();
+	var insti = $("#insti11").val();
+	var anio = $("#anio11").val();
+	var u4 = $("#archivo11").val();
+             
+	var x = parseInt($("#idprofe").val()); 
+
+	alert(idiomas);
+	alert(nivel);
+	alert(dominio);
+	alert(insti);   
+	alert(anio); 
+	alert(u4);    
+	      
+	
+	alert("el id del prode es: "+x);
+	   
+	   
+	$.post("guardar_Idiomas", {
+		idiomas : idiomas,
+		nivel:nivel,
+		dominio:dominio,
+		insti:insti,        
+		anio:anio,
+		u4:u4,   
+		x:x    
+		               
+	},function(data){
+		
+		//listarLeg_Grados();   
+	}); 
+	   
+	   
+});
+
+
+
+
+
+
+
+
+          
+$("#registrar_dominiosenlatecnologia").click(function() {
+	alert("si funka el boton en dominios en la tecnologia ");       
+	var curso = $("#curso12").val();
+	var nivel=$("#nivel12").val();
+	var modalidad = $("#moda12").val();
+	var insti = $("#insti12").val();       
+	var u4 = $("#archi12").val();
+               
+	var x = parseInt($("#idprofe").val()); 
+
+	alert(curso);
+	alert(nivel);
+	alert(modalidad);
+	alert(insti);
+	alert(u4);    
+	      
+	
+	alert("el id del prode es: "+x);
+	   
+	   
+	$.post("guardar_DominiosTecnologia", {
+		curso : curso, 
+		nivel:nivel,
+		modalidad:modalidad,
+		insti:insti,
+		u4:u4,     
+		x:x    
+		               
+	},function(data){
+		     
+		//listarLeg_Grados();   
+	}); 
+	   
+	   
+});
+
+
+
+
+
+
+
+
+
+
+
+  
