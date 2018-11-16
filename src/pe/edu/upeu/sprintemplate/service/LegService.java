@@ -9,6 +9,8 @@ public interface LegService {
 	int create(Leg l); 
 	int update(Leg l);
 	int delete(int id);                    
-	Leg read(int id); 
-	List<Map<String,Object>> readAll();   
+	Leg read(int id);   
+	List<Map<String,Object>> readAllExperienciaProfesional(int id);
+	List<Map<String,Object>> readAllExperienciaAcademicoAdministrativa(int id); 
+  
 }

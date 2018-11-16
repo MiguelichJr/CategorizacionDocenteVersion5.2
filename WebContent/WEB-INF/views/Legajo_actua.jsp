@@ -25,7 +25,7 @@
 		<div>
 			<h1>Actualizacion Docente Profesional</h1>
 
-		</div>
+		</div>    
 	</div>
 	<div
 		style="border-radius: 20px; background-color: white; padding: 10px">
@@ -254,28 +254,28 @@
 
 
 		</div>
-		--%>
+		--%> 
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10">
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Año</label> <input style="text-align: center" type="text"
+							<label>Año</label> <input id="anio14" style="text-align: center" type="text"
 								class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Fecha</label> <input style="text-align: center"
+							<label>Fecha</label> <input id="fecha14" style="text-align: center"
 								type="date" class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Nombre del Evento</label> <input
+							<label>Nombre del Evento</label> <input id="nombreevento14"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>
@@ -284,7 +284,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Entidad Organizadora</label>       
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="insti14">
 									<c:forEach items="${lista_institucion}" var="pr">
     
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -307,27 +307,27 @@
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
 							<label>Horas</label> <input style="text-align: center"
-								type="text" class="form-control">
+								type="text" class="form-control" id="horas14">
 
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
 							<label>Creditos</label> <input style="text-align: center"
-								type="text" class="form-control">
+								type="text" class="form-control" id="creditos14">
 
 						</div>
 					</div>   
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Lugar</label> <input
+							<label>Lugar</label> <input id="lugar14"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>        
 					</div>
-					<div class="col-sm-5">     
+					<div class="col-sm-5">      
 						<div class="form-group" style="text-align: center">
-							<label>Archivo</label> <input       
+							<label>Archivo</label> <input id="archi14"         
 								style="text-align: center" type="file" class="form-control">
 
 						</div>
@@ -343,7 +343,7 @@
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10">
-				<div class="row">
+				<div class="row">  
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center"></div>
 					</div>
@@ -354,10 +354,11 @@
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
-
-									<button class="btn btn-primary btn-block"
+     	   
+									<button id="registrar_eventos_academicos" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
-										REGISTRAR</button>
+										REGISTRAR
+										</button>
 								</div>
 							</div>
 						</div>
@@ -376,7 +377,7 @@
 		<div class="col-1"></div>
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tableeventosacademicos"  class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>
@@ -613,7 +614,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Entidad Organizadora</label>          
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" class="form-control" id="insti15">
 									<c:forEach items="${lista_institucion}" var="pr">
   
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -625,21 +626,21 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Nombre del Evento</label> <input style="text-align: center"
+							<label>Nombre del Evento</label> <input id="nombrevento15" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Fecha Inicio</label> <input
+							<label>Fecha Inicio</label> <input id="fi15"
 								style="text-align: center" type="date" class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Fecha Fin</label> <input   
+							<label>Fecha Fin</label> <input  id="ff15" 
 								style="text-align: center" type="date" class="form-control">
 
 						</div>
@@ -656,28 +657,28 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
-							<label>Horas</label> <input style="text-align: center"
+							<label>Horas</label> <input  id="h15" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
-							<label>Creditos</label> <input style="text-align: center"
+							<label>Creditos</label> <input id="c15" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
 					</div>   
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Lugar</label> <input
+							<label>Lugar</label> <input id="l15"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>        
 					</div>
 					<div class="col-sm-5">     
 						<div class="form-group" style="text-align: center">
-							<label>Archivo</label> <input       
+							<label>Archivo</label> <input  id="archi15"         
 								style="text-align: center" type="file" class="form-control">
 
 						</div>
@@ -701,14 +702,14 @@
 								<div class="form-group" style="text-align: center"></div>
 							</div>
 							<div class="col-sm-4">
-								<div class="form-group" style="text-align: center">
-
-									<button class="btn btn-primary btn-block"
+								<div class="form-group" style="text-align: center">       
+ 
+									<button id="registrar_capcianios" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
-								</div>
+								</div> 
 							</div>
-						</div>
+						</div>   
 						<div class="col-sm-4">
 							<div class="form-group" style="text-align: center"></div>
 						</div>
@@ -724,7 +725,7 @@
 		<div class="col-1"></div>
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tablecapacitaciones5anios" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>
@@ -744,15 +745,15 @@
 
 			</tbody>
 		</table>
-	</div>
-
-
+	</div>  	
+	<input  id="idprofe" value="1"/>
+           
 	</main>
 	<!-- Essential javascripts for application to work-->
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
-	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
-	<script src="${urlrecursos}/js/main.js"></script>  
+	<script src="${urlrecursos}/js/bootstrap.min.js"></script>   
+	<script src="${urlrecursos}/js/main.js"></script>            
 	<script src="${urlrecursos}/js/script_expediente_actualizaciondocente.js"></script>
 	<!-- The javascript plugin to display page loading on top-->
 	<script src="${urlrecursos}/js/plugins/pace.min.js"></script>

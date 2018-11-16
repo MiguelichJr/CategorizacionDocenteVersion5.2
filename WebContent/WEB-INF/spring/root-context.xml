@@ -65,7 +65,11 @@
 	
 	<bean id="leg4Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg4DaoImp">            
 		<property name="leg4" ref="jdbcTemplate" />  
-	</bean>          
+	</bean>
+	
+	<bean id="leg5Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg5DaoImp">              
+		<property name="leg5" ref="jdbcTemplate" />  
+	</bean>             
 	 <!--               
 	 <bean id="leg2Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp">              
 		<property name="jdrre" ref="jdbcTemplate" />  

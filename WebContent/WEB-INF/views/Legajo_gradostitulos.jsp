@@ -408,8 +408,8 @@
 			</div>
 			<div class="col-1"></div>
 		</div>      
-		</form>
-        
+		      
+          
 		<!--lista de todo los registros -->
 		<table id="tablaexpe" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">

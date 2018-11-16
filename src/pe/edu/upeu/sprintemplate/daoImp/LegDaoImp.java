@@ -27,9 +27,11 @@ public class LegDaoImp implements LegDao {
 	@Override
 	public int create(Leg l) {
 		// TODO Auto-generated method stub
+		System.out.println("llegue a l");      
+		System.out.println(l.getCargo());
 		return jlegg.update("call CREAR_LEG(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",l.getCargo(),l.getFecha_inicio(),l.getFecha_fin(),l.getAños(),l.getMeses(),l.getDias(),l.getLugar(),l.getResolucion(),l.getEstado(),l.getUrl(),l.getInstitucion(),l.getDocente(),l.getTipo(),l.getCategoria());
 	}
-
+  
 	@Override
 	public int update(Leg l) {
 		// TODO Auto-generated method stub
@@ -45,7 +47,7 @@ public class LegDaoImp implements LegDao {
 	@Override
 	public Leg read(int id) {
 		// TODO Auto-generated method stub
-		return null; 
+		return null;  
 	}
 
 	@Override  

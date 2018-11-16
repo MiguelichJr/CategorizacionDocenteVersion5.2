@@ -18,6 +18,27 @@ public class Leg {
 	private String tipo;
 	private int categoria;
 	 
+	public Leg() {
+		super();
+	}
+	 
+	public Leg(String cargo, String fecha_inicio, String fecha_fin, String lugar, String resolucion, String estado,
+			String url, int institucion, int docente, String tipo, int categoria) {
+		super();
+		this.cargo = cargo;
+		this.fecha_inicio = fecha_inicio;
+		this.fecha_fin = fecha_fin;
+		this.lugar = lugar;
+		this.resolucion = resolucion;
+		this.estado = estado;
+		this.url = url;
+		this.institucion = institucion;
+		this.docente = docente;
+		this.tipo = tipo;
+		this.categoria = categoria;
+	}
+	
+	
 	public int getIdleg() {
 		return idleg;
 	}
@@ -145,25 +166,7 @@ public class Leg {
 		this.tipo = tipo;
 		this.categoria = categoria;
 	}
-	public Leg() {
-		super();
-	}
-	 
-	public Leg(String cargo, String fecha_inicio, String fecha_fin, String lugar, String resolucion, String estado,
-			String url, int institucion, int docente, String tipo, int categoria) {
-		super();
-		this.cargo = cargo;
-		this.fecha_inicio = fecha_inicio;
-		this.fecha_fin = fecha_fin;
-		this.lugar = lugar;
-		this.resolucion = resolucion;
-		this.estado = estado;
-		this.url = url;
-		this.institucion = institucion;
-		this.docente = docente;
-		this.tipo = tipo;
-		this.categoria = categoria;
-	}
+	
 	@Override
 	public String toString() {
 		return "Leg [cargo=" + cargo + ", fecha_inicio=" + fecha_inicio + ", fecha_fin="

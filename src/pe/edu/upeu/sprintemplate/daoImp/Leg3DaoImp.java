@@ -27,8 +27,9 @@ public class Leg3DaoImp implements Leg3Dao {
 	@Override
 	public int create(Leg3 l) {
 		// TODO Auto-generated method stub
+		System.out.println("si llega al metodo");     
 		return leg3.update("call crear_LEG33(?,?,?,?,?,?,?,?,?,?,?,?)",l.getFecha_inicio(),l.getFecha_termino(),l.getAnios(),l.getMeses(),l.getDias(),l.getLugar(),l.getCargo(),l.getEstado(),l.getTpo(),l.getUrl(),l.getInstitucion(),l.getDoce());
-	}       
+	}         
          
 	@Override
 	public int update(Leg3 l) {

@@ -2,15 +2,16 @@
 $(document).ready(function() {  
 	alert("si funciona el script  de formacion academica xd");
 	// $("#valor_tesis").attr('disabled','true');
-	listarLeg_Grados();
+	listarLeg_Grados();   
 	listarExperienciaProfesional();
 	listarExperienciaAcademico();
 	listarCategoriaDocente();
 	listarEnPresenciales();
 	listarEnEntornosVirtuales();
-	listarDocenteComplementaria(); 
-});
- 
+	listarDocenteComplementaria();             
+	
+});           
+       
 
 //todo el jsp de grados y titulos
 
@@ -109,9 +110,8 @@ $("#registrar_experiencia_profesional").click(function() {
 		a2:a2,
 		x:x
 		
-	},function(data){
-		    
-		alert("si devuelve del controlador");    
+	},function(data){		    
+  
 		//listarLeg_Grados();   
 	});
 	         
@@ -123,8 +123,8 @@ $("#registrar_experiencia_profesional").click(function() {
 
 function listarExperienciaProfesional() {
 	var x = parseInt($("#idprofe").val());
-	alert(x);
-	//alert("hola si funciona el funciton");
+	alert(x);    
+	alert("hola si funciona el funciton  para listar experiencia profesinoal");
 	$.get("listarExProfe", {idprofe:x}, function(datita) {
 		//alert(datita);   
 		for(var i in datita){          
@@ -141,7 +141,7 @@ function listarExperienciaProfesional() {
 //tabla experiencia academico administrativa
 
 $("#registrar_experiencia_academico_profesional").click(function() {
-	alert("si funka el boton academico admin");
+	alert("si funka el boton academico expereincia acaemico profesional");
 	var i = $("#insti3").val();
 	var c = $("#cargo3").val();
 	var r = $("#regimen3").val();
@@ -163,7 +163,7 @@ $("#registrar_experiencia_academico_profesional").click(function() {
 	alert(u3);
 	      
 	
-	alert("el id del prode es: "+x);
+	alert("el id del profe es: "+x);
 	
 	
 	$.post("guardar_experiencia_academico", {
@@ -271,7 +271,7 @@ function listarCategoriaDocente() {
 }
   
 
-
+//tabla en ED presenciales
 
 $("#registrar_ED_presenciales").click(function() {
 	alert("si funka el boton expe docencia en presenciales");
@@ -338,7 +338,7 @@ function listarEnPresenciales() {
 
 
 
-
+//tabla en entornos virtuales
 
 $("#registrar_ED_EntornosVirtusld").click(function() {
 	alert("si funka el boton expe docencia en ENTORNOS VIRTUALES"); 
@@ -400,7 +400,7 @@ function listarEnEntornosVirtuales() {
 }
 
 
-
+//tabla de docente complementaria 
 
 
 $("#registrar_ED_DocenteComplementaria").click(function() {
@@ -458,7 +458,7 @@ function listarDocenteComplementaria() {
 
 
 
-
+//tabla idiomas
 
 $("#registrar_Idiomas").click(function() {
 	alert("si funka el boton en Idiomas ");       
@@ -543,14 +543,4 @@ $("#registrar_dominiosenlatecnologia").click(function() {
 	   
 });
 
-
-
-
-
-
-
-
-
-
-
-  
+            
