@@ -1,7 +1,9 @@
 $(document).ready(function() {  
 	alert("si funciona el script  de actualizacion docente pes owenxd");   
 	listarorganizacinodeeventosacademicso();
-	listarcapacitacionenladocenciaenlosultimosanios();  
+	listarcapacitacionenladocenciaenlosultimosanios();
+	listarponenciasencongresos();
+	listarformalcertificadaaaa();    
 });
 
 
@@ -107,11 +109,98 @@ function listarcapacitacionenladocenciaenlosultimosanios() {
 	});      
 } 
 
+// tabla capacitacion  en ponencias o en congresos
+
+$("#registrar_ponenciasencongresos").click(function() {
+	alert("si funka el boton ponencias en congresos u otras cosas mas");    
+	var a = $("#anio18").val();  
+	var c = $("#categoria18").val();
+	var ne = $("#nombre_even18").val();
+	var i = $("#insti18").val();
+	var h = $("#h18").val();
+	var credi = $("#c18").val();
+	var l = $("#l18").val();
+	var u = $("#u18").val();  
+	var x = parseInt($("#idprofe").val());    
+	alert(a);
+	alert(c);
+	alert(ne);
+	alert(i);
+	alert(h);    
+	alert(credi);
+	alert(l);
+	alert(u);       
+	alert(x);           
+                               
+                 
+	$.post("guardar_ponenecias_congresos", {a:a,c:c,ne:ne,i:i,h:h,credi:credi,l:l,u:u,x:x},function(data){
+		                    
+		//listarLeg_Grados();     
+	});  
+	                                                            
+	  
+});
+
+function listarponenciasencongresos() {
+	var x = parseInt($("#idprofe").val());
+	alert(x+" listar ponenciasssssssss ");  
+	     
+	$.get("listarponenciaaaaa", {idprofe:x}, function(datita) {
+		//alert(datita);                                    
+		for(var i in datita){                                      
+			$("#tableponencias tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
+		}      
+		        
+	});      
+} 
 
 
+// tabla de formal certificada
+ 
 
-
-
+$("#registrar_formalcertifici").click(function() {
+	alert("si funka el boton formal certificadao xd xd xd xd");    
+	var a = $("#anio20").val();  
+	var c = $("#cate20").val();
+	var ne = $("#ne20").val();
+	var i = $("#entidad20").val();      
+	var h = $("#h20").val();
+	var credi = $("#cre20").val();
+	var l = $("#l20").val();
+	var u = $("#archi20").val();  
+	var x = parseInt($("#idprofe").val());    
+	alert(a);           
+	alert(c);
+	alert(ne);
+	alert(i);
+	alert(h);    
+	alert(credi);
+	alert(l);
+	alert(u);       
+	alert(x);           
+     
+	
+                 
+	$.post("guardar_formar_certificadas", {a:a,c:c,ne:ne,i:i,h:h,credi:credi,l:l,u:u,x:x},function(data){
+		                    
+		//listarLeg_Grados();     
+	});  
+	                                                                          
+	  
+});
   
-    
+function listarformalcertificadaaaa() {
+	var x = parseInt($("#idprofe").val());
+	alert(x+" listar formal certificadas ");    
+	       
+	$.get("listarforcertificada", {idprofe:x}, function(datita) {
+		//alert(datita);                                    
+		for(var i in datita){                                      
+			$("#tableforceertiiii tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
+		}      
+		         
+	});      
+}    
+
+
          

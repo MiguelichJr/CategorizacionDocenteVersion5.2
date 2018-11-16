@@ -2,44 +2,54 @@ package pe.edu.upeu.sprintemplate.entity;
 
 public class Leg5_1 {
 	private int idlg5_1;
-	private String anio;
+	private int anio;
 	private String nombre_evento;
-	private String horas;
-	private String creditos;
+	private int horas;
+	private int creditos;
 	private String lugar;
 	private int institucion;
-	private int doce;
+	private int doce; 
 	private int cateatributo;
 	private String estado;
 	private String tipo;
+	private String url;
+	
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	public int getIdlg5_1() {
 		return idlg5_1;
 	}
 	public void setIdlg5_1(int idlg5_1) {
 		this.idlg5_1 = idlg5_1;
 	}
-	public String getAnio() {
-		return anio;
-	}
-	public void setAnio(String anio) {
-		this.anio = anio;
-	}
+	
 	public String getNombre_evento() {
 		return nombre_evento;
 	}
 	public void setNombre_evento(String nombre_evento) {
 		this.nombre_evento = nombre_evento;
 	}
-	public String getHoras() {
+	  
+	public int getAnio() {
+		return anio;
+	}
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+	public int getHoras() {
 		return horas;
 	}
-	public void setHoras(String horas) {
+	public void setHoras(int horas) {
 		this.horas = horas;
 	}
-	public String getCreditos() {
+	public int getCreditos() {
 		return creditos;
 	}
-	public void setCreditos(String creditos) {
+	public void setCreditos(int creditos) {
 		this.creditos = creditos;
 	}
 	public String getLugar() {
@@ -78,8 +88,8 @@ public class Leg5_1 {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public Leg5_1(String anio, String nombre_evento, String horas, String creditos, String lugar, int institucion,
-			int doce, int cateatributo, String estado, String tipo) {
+	public Leg5_1(int anio, String nombre_evento, int horas, int creditos, String lugar, int institucion, int doce,
+			int cateatributo, String estado, String tipo, String url) {
 		super();
 		this.anio = anio;
 		this.nombre_evento = nombre_evento;
@@ -91,7 +101,11 @@ public class Leg5_1 {
 		this.cateatributo = cateatributo;
 		this.estado = estado;
 		this.tipo = tipo;
+		this.url = url;
 	}
+	
+	  
+	 
 	
 	   
 }

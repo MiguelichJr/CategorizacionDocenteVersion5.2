@@ -35,6 +35,7 @@ import pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg3DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg4DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg5DaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg5_1DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.LegDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_Grados_TitulosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
@@ -43,6 +44,7 @@ import pe.edu.upeu.sprintemplate.entity.Leg2;
 import pe.edu.upeu.sprintemplate.entity.Leg3;
 import pe.edu.upeu.sprintemplate.entity.Leg4;
 import pe.edu.upeu.sprintemplate.entity.Leg5;
+import pe.edu.upeu.sprintemplate.entity.Leg5_1;
 import pe.edu.upeu.sprintemplate.entity.Leg_Grados_Titulos;
 import pe.edu.upeu.sprintemplate.entity.Usuario;
 import pe.edu.upeu.sprintemplate.serviceImp.LegServiceImp; 
@@ -76,7 +78,9 @@ public class HomeControllerExpediente {
 	private Leg4DaoImp leg4Dao;
 	@Autowired
 	private Leg5DaoImp leg5Dao;
-	         
+	@Autowired
+	private Leg5_1DaoImp leg5_1Dao;     
+	       
   
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
@@ -553,7 +557,141 @@ public @ResponseBody String listarcapacitacionDocencia4(HttpServletRequest reque
 
 
 
-   
+//tabla ponencias en congresos
+
+@RequestMapping(path="/guardar_ponenecias_congresos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_ponenecias_congresos5(HttpServletRequest request) {
+	 
+	System.out.println("si funciona el controlador de ponencias y congresos :");    
+	    
+	 
+	int a=Integer.parseInt(request.getParameter("a"));
+	System.out.println(a);
+	
+	int c=Integer.parseInt(request.getParameter("c"));
+	System.out.println(c);          
+	
+	String ne=request.getParameter("ne");
+	System.out.println(ne);    
+	    
+	int i=Integer.parseInt(request.getParameter("i"));
+	System.out.println(i);
+	
+	int h=Integer.parseInt(request.getParameter("h"));
+	System.out.println(h); 
+	
+	int credi=Integer.parseInt(request.getParameter("credi"));
+	System.out.println(credi); 
+	 
+	String l=request.getParameter("l"); 
+	System.out.println(l);    
+	    
+	String u=request.getParameter("u");
+	System.out.println(u);     
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);
+	
+	String es="completado";   
+	String tipo="Ponencia Congreso";                                
+	System.out.println("si trajo el id: " + idprofesor+"pes owen ponencias en congreso   jajajajaj xd");
+	   
+       
+	System.out.println(es);         
+	System.out.println(tipo);         
+	Leg5_1 lhy=new Leg5_1(a,ne,h,credi,l,i,idprofesor,c,es,tipo,u);        
+	leg5_1Dao.create(lhy);         
+	//leg5Dao.create(lhy);             
+	                                              
+}  
+
+
+@RequestMapping(path="/listarponenciaaaaa", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarponenciaaaaa6(HttpServletRequest request) {
+	Gson g = new Gson();
+	
+	   
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar en ponencias jajajajja poneneicas");                    
+	return g.toJson(leg5_1Dao.readAllCyPPonenciasCongresos(idprofesor));             
+} 
+
+// tabla en formal certificada
+
+
+
+@RequestMapping(path="/guardar_formar_certificadas", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_formar_certificadas7(HttpServletRequest request) {
+	 
+	System.out.println("si funciona el controlador de formal certificada :");    
+	      
+	 
+	int a=Integer.parseInt(request.getParameter("a"));
+	System.out.println(a);
+	
+	int c=Integer.parseInt(request.getParameter("c"));
+	System.out.println(c);          
+	
+	String ne=request.getParameter("ne");
+	System.out.println(ne);    
+	    
+	int i=Integer.parseInt(request.getParameter("i"));
+	System.out.println(i);
+	
+	int h=Integer.parseInt(request.getParameter("h"));
+	System.out.println(h); 
+	
+	int credi=Integer.parseInt(request.getParameter("credi"));
+	System.out.println(credi); 
+	 
+	String l=request.getParameter("l"); 
+	System.out.println(l);    
+	    
+	String u=request.getParameter("u");
+	System.out.println(u);     
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);
+	
+	String es="completado";   
+	String tipo="Capa Formal Certifi";                                   
+	System.out.println("si trajo el id: " + idprofesor+"pes owen capacitacion fromal certificada   jajajajaj xd");
+	   
+       
+	System.out.println(es);         
+	System.out.println(tipo);              
+	Leg5_1 lhy=new Leg5_1(a,ne,h,credi,l,i,idprofesor,c,es,tipo,u);        
+	leg5_1Dao.create(lhy);         
+	//leg5Dao.create(lhy);             
+	                                              
+} 
+
+
+@RequestMapping(path="/listarforcertificada", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarforcertificada34(HttpServletRequest request) {
+	Gson g = new Gson();
+	
+	     
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar en for certificadass jajajajja ");                    
+	return g.toJson(leg5_1Dao.readAllCyPCapacitacionFormalCertificada(idprofesor));                
+} 
+      
+
+
+
+
+  
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
@@ -565,23 +703,31 @@ public @ResponseBody String listarcapacitacionDocencia4(HttpServletRequest reque
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//para llevar datos a las vista de los selects 
+
 
 	@GetMapping("/actua")
 	public ModelAndView actualizacion() {
