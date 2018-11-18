@@ -73,7 +73,32 @@
 	
 	<bean id="leg5_1Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg5_1DaoImp">              
 		<property name="leg5_1" ref="jdbcTemplate" />  
-	</bean>              
+	</bean> 
+	
+	<bean id="legInvestiDao" class="pe.edu.upeu.sprintemplate.daoImp.Leg_InvestiDaoImp">              
+		<property name="leg_investi" ref="jdbcTemplate" />    
+	</bean> 
+	  
+	<bean id="legPubliDao" class="pe.edu.upeu.sprintemplate.daoImp.Leg_PubliDaoImp">               
+		<property name="leg_publi" ref="jdbcTemplate" />    
+	</bean>  
+	      
+	<bean id="legAsesotaTesisDao" class="pe.edu.upeu.sprintemplate.daoImp.Leg_Asesora_Tesis_DaoImp">                
+		<property name="leg_tesis" ref="jdbcTemplate" />    
+	</bean>
+	
+	<bean id="legExtensionCulturalDao" class="pe.edu.upeu.sprintemplate.daoImp.Leg7DaoImp">                 
+		<property name="leg_extension" ref="jdbcTemplate" />    
+	</bean>
+	
+	<bean id="leg_ReconciDao" class="pe.edu.upeu.sprintemplate.daoImp.Leg_ReconociDaoImp">                 
+		<property name="leg_reconocimiento" ref="jdbcTemplate" />    
+	</bean>
+	
+	<bean id="leg_FilosoDao" class="pe.edu.upeu.sprintemplate.daoImp.Leg_FilosofiaDaoImp">                  
+		<property name="leg_filosofiamision" ref="jdbcTemplate" />    
+	</bean>  
+	                 
 	 <!--               
 	 <bean id="leg2Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp">              
 		<property name="jdrre" ref="jdbcTemplate" />  

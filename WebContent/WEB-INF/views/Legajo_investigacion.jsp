@@ -38,23 +38,23 @@
 		<div class="row">
 			<div class="col-2"></div>
 			<div class="col-9">
-				<div class="row">
+				<div class="row"> 
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">          
-							<label>Año</label> <input style="text-align: center"
+							<label>Año</label> <input id="anios13" style="text-align: center"
 								type="text" class="form-control">
 						</div> 
 					</div>
 					<div class="col-sm-5">   
 						<div class="form-group" style="text-align: center">
-							<label>Titulo</label> <input style="text-align: center"
+							<label>Titulo</label> <input id="titulo13" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
 					</div>  
 					<div class="col-sm-4">      
 						<div class="form-group" style="text-align: center">
-							<label>N° Resolución</label> <input
+							<label>N° Resolución</label> <input id="resolucion13"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>      
@@ -79,8 +79,8 @@
 							</div>
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
-									<label>Archivo</label> <input style="text-align: center"
-										type="file" class="form-control">
+									<label>Archivo</label> <input id="archi13" style="text-align: center"
+										type="file" class="form-control">   
 
 								</div>
 							</div>
@@ -117,8 +117,8 @@
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
-
-									<button class="btn btn-primary btn-block"
+  
+									<button id="registrar_Investigaciones_anios" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -137,15 +137,15 @@
 			</div>
 		</div>
 		<div class="col-1"></div>
-
+  
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tableinvestiiii" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>
 					<th scope="col">#</th> 
 					<th scope="col">Año</th>
-					<th scope="col">Titulo</th>
+					<th scope="col">Titulo</th>  
 					<th scope="col">N° Resolución</th>    
 					<th scope="col">Archivo</th>     
 					<th scope="col" colspan="2">Acción</th>
@@ -177,7 +177,7 @@
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Año Publicación</label> <input style="text-align: center" type="text"
+							<label>Año Publicación</label> <input id="anio15" style="text-align: center" type="text"
 								class="form-control">
 
 						</div>
@@ -186,7 +186,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Tipo de Publicación</label>   
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" id="categria_Atributo15" class="form-control">
 									<c:forEach items="${lista_tipopublicaciones}" var="pr">
 
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -198,14 +198,14 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Título</label> <input
+							<label>Título</label> <input id="titulo15"
 								style="text-align: center" type="text" class="form-control">
   
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center;margin-top:-22px">                
-							<label>Medio de Comunicación(Nombre)</label><input
+							<label>Medio de Comunicación(Nombre)</label><input id="nombremedio15"
 								style="text-align: center" type="text" class="form-control">      
 						</div>
 					</div>
@@ -223,28 +223,28 @@
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Editorial</label> <input style="text-align: center" type="text"
+							<label>Editorial</label> <input id="editorial15" style="text-align: center" type="text"
 								class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>ISBN</label><input   
+							<label>ISBN</label><input  id="isbn15" 
 								style="text-align: center" type="text" class="form-control">
 							
 						</div>
 					</div>   
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>N° de Páginas</label> <input
+							<label>N° de Páginas</label> <input id="npaginas15" 
 								style="text-align: center" type="text" class="form-control">
 
 						</div>
 					</div>  
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Lugar</label><input
+							<label>Lugar</label><input id="lugar15" 
 								style="text-align: center" type="text" class="form-control">  
 						</div>
 					</div>
@@ -268,8 +268,8 @@
 							</div>
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
-									<label>Archivo</label> <input style="text-align: center"
-										type="file" class="form-control">
+									<label>Archivo</label> <input id="archi15" style="text-align: center"
+										type="file" class="form-control"> 
 
 								</div>
 							</div>
@@ -311,7 +311,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_articulos"  class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -334,7 +334,7 @@
 	          
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tablearituclos" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>
@@ -399,14 +399,14 @@
 				<div class="row">   
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Año Publicación</label> <input style="text-align: center" type="text"
+							<label>Año Publicación</label> <input id="anio20" style="text-align: center" type="text"
 								class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Titulo</label> <input style="text-align: center"
+							<label>Titulo</label> <input id="titulo20" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>     
@@ -415,7 +415,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Tipo de Publicación</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select  id="cate20" style="text-align: center" class="form-control">
 									<c:forEach items="${lista_tipopublicaciones_espe}" var="pr">
   
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -428,7 +428,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Editorial</label>          
-							<input
+							<input id="editorial20"
 								style="text-align: center" type="text" class="form-control">
 							  
 						</div>       
@@ -446,14 +446,14 @@
 				<div class="row">   
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>ISBN</label> <input style="text-align: center" type="text"
+							<label>ISBN</label> <input id="isbn20" style="text-align: center" type="text"
 								class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>N° de Páginas</label> <input style="text-align: center"
+							<label>N° de Páginas</label> <input id="npaginas20" style="text-align: center"
 								type="text" class="form-control">
    
 						</div>     
@@ -462,7 +462,7 @@
 					<div class="col-sm-6">   
 						<div class="form-group" style="text-align: center">
 							<label>Archivo</label>          
-							<input
+							<input id="archivo20"
 								style="text-align: center" type="file" class="form-control">
 							  
 						</div>       
@@ -492,9 +492,9 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_libros" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
-										REGISTRAR</button>
+										REGISTRAR</button> 
 								</div>
 							</div>
 						</div>
@@ -511,9 +511,9 @@
 			</div>
 		</div>
 		<div class="col-1"></div>
-
+    
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tablelibros" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>
@@ -548,7 +548,7 @@
 				<div class="row">   
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Año Inicio</label> <input style="text-align: center" type="text"
+							<label>Año Inicio</label> <input id="anio21" style="text-align: center" type="text"
 								class="form-control">
   
 						</div>
@@ -557,7 +557,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Nivel de Asesoria</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select id="cate21" style="text-align: center" class="form-control">
 									<c:forEach items="${lista_nivelasesoria}" var="pr">
    
 										<option value="${pr.idatri}" style="text-align: center">${pr.nombre_atributo}</option>
@@ -570,7 +570,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Nombre de la Tesis</label>
-							 <input   
+							 <input   id="nombre21"
 								style="text-align: center" type="text" class="form-control">
 							     
 						</div>
@@ -578,7 +578,7 @@
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Autor</label>              
-							<input
+							<input id="autor21"
 								style="text-align: center" type="text" class="form-control">
 							  
 						</div>       
@@ -598,7 +598,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Especialidad</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select id="espe21" style="text-align: center" class="form-control">
 									<c:forEach items="${lista_especialidad}" var="pr"> 
   
 										<option value="${pr.idespc}" style="text-align: center">${pr.nombre_especialidad}</option>
@@ -611,15 +611,15 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
-							<label>Año</label> <input style="text-align: center"
+							<label>Año</label> <input id="anio212" style="text-align: center"
 								type="text" class="form-control">
-
+      
 						</div>     
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
 							<label>Resolución</label>   
-							<input
+							<input id="reso21"
 								style="text-align: center" type="text" class="form-control">
 							
 						</div>
@@ -627,7 +627,7 @@
 					<div class="col-sm-4">         
 						<div class="form-group" style="text-align: center">
 							<label>Archivo</label>          
-							<input
+							<input id="archi21"     
 								style="text-align: center" type="text" class="form-control">
 							  
 						</div>       
@@ -655,8 +655,8 @@
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
-
-									<button class="btn btn-primary btn-block"
+ 
+									<button id="registrar_asesoramiento" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -677,7 +677,7 @@
 		<div class="col-1"></div>
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tableasesoramiento" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>
@@ -698,33 +698,20 @@
 			</tbody>
 		</table>
 	</div>      
-
+	<input type="text" id="idprofe" value="1">     	
 	</main>
 	<!-- Essential javascripts for application to work-->
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
-	<script src="${urlrecursos}/js/main.js"></script>
+	<script src="${urlrecursos}/js/main.js"></script>            
+	<script src="${urlrecursos}/js/script_expediente_investigacionyaporte.js"></script>
 	<!-- The javascript plugin to display page loading on top-->
 	<script src="${urlrecursos}/js/plugins/pace.min.js"></script>
 	<!-- Page specific javascripts-->
 	<!-- Google analytics script-->
 	<script type="text/javascript">
-		if (document.location.hostname == 'pratikborsadiya.in') {
-			(function(i, s, o, g, r, a, m) {
-				i['GoogleAnalyticsObject'] = r;
-				i[r] = i[r] || function() {
-					(i[r].q = i[r].q || []).push(arguments)
-				}, i[r].l = 1 * new Date();
-				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-				a.async = 1;
-				a.src = g;
-				m.parentNode.insertBefore(a, m)
-			})(window, document, 'script',
-					'//www.google-analytics.com/analytics.js', 'ga');
-			ga('create', 'UA-72504830-1', 'auto');
-			ga('send', 'pageview');
-		}
+		
 	</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
- <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <spring:url value="/" var="urlRoot" />
 <!DOCTYPE html>
@@ -47,20 +47,20 @@
 					
 					<div class="col-sm-8">       
 						<div class="form-group" style="text-align: center">
-							<label>Declaración</label> <input
+							<label>Declaración</label> <input id="decla"
 								style="text-align: center" type="text" class="form-control">
-
+  
 						</div>
 					</div>    
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
 						<div class="select">
 								<label>Documento</label>     
-								<select style="text-align: center" class="form-control">
+								<select style="text-align: center" id="documento33" class="form-control">
 
      
-									<option value="" style="text-align: center">SI</option>
-									<option value="" style="text-align: center">NO</option>
+									<option value="SI" style="text-align: center">SI</option>
+									<option value="NO" style="text-align: center">NO</option>
 
 								</select>
 							</div>	    
@@ -93,7 +93,7 @@
 							</div>
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
-									<label>Archivo</label> <input style="text-align: center"
+									<label>Archivo</label> <input  id="archi33" style="text-align: center"
 										type="file" class="form-control">
 
 								</div>
@@ -132,7 +132,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_cosmovision" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -153,7 +153,7 @@
 		<div class="col-1"></div>
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tablecosmoooooo" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>   
@@ -191,7 +191,7 @@
 					  
 					<div class="col-sm-8">       
 						<div class="form-group" style="text-align: center">
-							<label>IFE</label> <input
+							<label>IFE</label> <input id="ifee"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>
@@ -200,11 +200,11 @@
 						<div class="form-group" style="text-align: center">
 						<div class="select">
 								<label>Formación</label>     
-								<select style="text-align: center" class="form-control">
+								<select id="formacion" style="text-align: center" class="form-control">
 
      
-									<option value="" style="text-align: center">SI</option>
-									<option value="" style="text-align: center">NO</option>
+									<option value="SI" style="text-align: center">SI</option>
+									<option value="NO" style="text-align: center">NO</option>
 
 								</select>
 							</div>	    
@@ -237,7 +237,7 @@
 							</div>
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
-									<label>Archivo</label> <input style="text-align: center"
+									<label>Archivo</label> <input id="archi45" style="text-align: center"
 										type="file" class="form-control">
 
 								</div>
@@ -276,7 +276,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_ife" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -297,7 +297,7 @@
 		<div class="col-1"></div>
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tableifeee"   class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>   
@@ -335,7 +335,7 @@
 					
 					<div class="col-sm-8">         
 						<div class="form-group" style="text-align: center">
-							<label>Servicio</label> <input
+							<label>Servicio</label> <input id="servicio"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>
@@ -344,13 +344,13 @@
 						<div class="form-group" style="text-align: center">
 						<div class="select">
 								<label>Formación</label>         
-								<select style="text-align: center" class="form-control">
+								<select id="formacion34" style="text-align: center" class="form-control">
 
      
-									<option value="" style="text-align: center">SI</option>
-									<option value="" style="text-align: center">NO</option>
+									<option value="SI" style="text-align: center">SI</option>
+									<option value="NO" style="text-align: center">NO</option>
 
-								</select>
+								</select>  
 							</div>	    
 						</div>
 					</div>
@@ -381,7 +381,7 @@
 							</div>
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
-									<label>Archivo</label> <input style="text-align: center"
+									<label>Archivo</label> <input id="archi98" style="text-align: center"
 										type="file" class="form-control">
 
 								</div>
@@ -420,7 +420,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_servicio" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -441,7 +441,7 @@
 		<div class="col-1"></div>
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tableserviciope"  class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>   
@@ -459,33 +459,20 @@
 	</div>
 	  
 
-
+<input type="text" id="idprofe" value="1">       
 	</main>
 	<!-- Essential javascripts for application to work-->
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
 	<script src="${urlrecursos}/js/main.js"></script>
+	<script src="${urlrecursos}/js/script_expediente_filosofiamision.js"></script>
 	<!-- The javascript plugin to display page loading on top-->
 	<script src="${urlrecursos}/js/plugins/pace.min.js"></script>
 	<!-- Page specific javascripts-->
 	<!-- Google analytics script-->
 	<script type="text/javascript">
-		if (document.location.hostname == 'pratikborsadiya.in') {
-			(function(i, s, o, g, r, a, m) {
-				i['GoogleAnalyticsObject'] = r;
-				i[r] = i[r] || function() {
-					(i[r].q = i[r].q || []).push(arguments)
-				}, i[r].l = 1 * new Date();
-				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-				a.async = 1;
-				a.src = g;
-				m.parentNode.insertBefore(a, m)
-			})(window, document, 'script',
-					'//www.google-analytics.com/analytics.js', 'ga');
-			ga('create', 'UA-72504830-1', 'auto');
-			ga('send', 'pageview');
-		}
+		  
 	</script>
 </body>
 </html>

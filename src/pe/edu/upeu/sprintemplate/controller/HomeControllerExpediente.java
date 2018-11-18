@@ -27,6 +27,7 @@ import com.google.gson.Gson;
 import pe.edu.upeu.sprintemplate.dao.Leg2Dao;
 import pe.edu.upeu.sprintemplate.dao.Leg3Dao;
 import pe.edu.upeu.sprintemplate.dao.LegDao;
+import pe.edu.upeu.sprintemplate.dao.Leg_FiloDao;
 import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;  
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
@@ -36,8 +37,13 @@ import pe.edu.upeu.sprintemplate.daoImp.Leg3DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg4DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg5DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg5_1DaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg7DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.LegDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg_Asesora_Tesis_DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_Grados_TitulosDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg_InvestiDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg_PubliDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.Leg_ReconociDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
 import pe.edu.upeu.sprintemplate.entity.Leg;
 import pe.edu.upeu.sprintemplate.entity.Leg2;
@@ -45,7 +51,13 @@ import pe.edu.upeu.sprintemplate.entity.Leg3;
 import pe.edu.upeu.sprintemplate.entity.Leg4;
 import pe.edu.upeu.sprintemplate.entity.Leg5;
 import pe.edu.upeu.sprintemplate.entity.Leg5_1;
+import pe.edu.upeu.sprintemplate.entity.Leg7;
+import pe.edu.upeu.sprintemplate.entity.Leg_Asesora_Tesis;
+import pe.edu.upeu.sprintemplate.entity.Leg_Filosofia_Mision;
 import pe.edu.upeu.sprintemplate.entity.Leg_Grados_Titulos;
+import pe.edu.upeu.sprintemplate.entity.Leg_Investi;
+import pe.edu.upeu.sprintemplate.entity.Leg_Publi;
+import pe.edu.upeu.sprintemplate.entity.Leg_Reconocimientos;
 import pe.edu.upeu.sprintemplate.entity.Usuario;
 import pe.edu.upeu.sprintemplate.serviceImp.LegServiceImp; 
   
@@ -79,7 +91,19 @@ public class HomeControllerExpediente {
 	@Autowired
 	private Leg5DaoImp leg5Dao;
 	@Autowired
-	private Leg5_1DaoImp leg5_1Dao;     
+	private Leg5_1DaoImp leg5_1Dao;
+	@Autowired
+	private Leg_InvestiDaoImp legInvestiDao;
+	@Autowired
+	private Leg_PubliDaoImp legPubliDao;
+	@Autowired
+	private Leg_Asesora_Tesis_DaoImp legAsesotaTesisDao;
+	@Autowired
+	private Leg7DaoImp legExtensionCulturalDao;
+	@Autowired
+	private Leg_ReconociDaoImp leg_ReconciDao;
+	@Autowired
+	private Leg_FiloDao leg_FilosoDao;
 	       
   
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
@@ -676,34 +700,465 @@ public @ResponseBody String listarforcertificada34(HttpServletRequest request) {
 } 
       
 
+// tabla investigacione en los ultimos 5 anios
 
+@RequestMapping(path="/guardar_investigaciones_aniossssss", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_investigaciones_aniossssss8(HttpServletRequest request) {
+	 
+	System.out.println("si funciona el controlador de investigaciones por anio :");    
+	        
+	    
+	int a=Integer.parseInt(request.getParameter("anios"));
+	System.out.println(a);
+	         
+	
+	String t=request.getParameter("t");
+	System.out.println(t);    
+	    
+	int re=Integer.parseInt(request.getParameter("resolu"));
+	System.out.println(re);
+		 
+	String u=request.getParameter("u4"); 
+	System.out.println(u);    
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);
+	
+	String es="completado";                                    
+	System.out.println("si trajo el id: " + idprofesor+"pes oweninvestigacoines en ls ultimos    jajajajaj xd");
+	   
+       
+	System.out.println(es);                 
+	Leg_Investi leg= new Leg_Investi(a,t,re,es,u,idprofesor);
+	legInvestiDao.create(leg);     
+	//leg5Dao.create(lhy);             
+	                                              
+} 
+
+@RequestMapping(path="/listarcinevstigaaaa", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarcinevstigaaaa8(HttpServletRequest request) {
+	Gson g = new Gson();
+	  
+	     
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar en investigaciones en los utlimos 5 anios jajajajja ");                    
+	return g.toJson(legInvestiDao.readAllLegInvestigaciones(idprofesor));                      
+}
 
 
   
+// tabla articulos
 
+@RequestMapping(path="/guardar_articulos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_articulos7(HttpServletRequest request) {
+	 
+	System.out.println("si funciona el articuloss");    
+	        
+	    
+	int a=Integer.parseInt(request.getParameter("anio"));
+	System.out.println(a);
+	
+	int c=Integer.parseInt(request.getParameter("cate"));
+	System.out.println(c);
+	         
+	
+	String t=request.getParameter("titulo");
+	System.out.println(t);
+	
+	String nm=request.getParameter("nombremedio");
+	System.out.println(nm);
+	
+	String edito=request.getParameter("edito");
+	System.out.println(edito);
+	
+	String isbn=request.getParameter("isbn");
+	System.out.println(isbn);
+	    
+	int npa=Integer.parseInt(request.getParameter("npagi"));
+	System.out.println(npa);
+		 
+	String l=request.getParameter("lugar"); 
+	System.out.println(l);
+	
+	String archi=request.getParameter("archi"); 
+	System.out.println(archi);
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);
+	String tipo="ARTICULOS";  
+	String es="completado";                                    
+	System.out.println("si trajo el id: " + idprofesor+"pes owen artitculos  jajajajaj xd");
+	   
+    System.out.println(tipo); 
+	System.out.println(es);                 
+	Leg_Publi leg=new Leg_Publi(a,t,nm,edito,isbn,npa,l,es,tipo,archi,idprofesor,c);
+	legPubliDao.create(leg);   
+	//leg5Dao.create(lhy);             
+	                                              
+} 
 
+@RequestMapping(path="/listararticulos", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listararticulos9(HttpServletRequest request) {
+	Gson g = new Gson();
+	   
+	     
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar <rticulos jajajajja ");                    
+	return g.toJson(legPubliDao.readAllLeg_Publi_Articulos(idprofesor));                         
+}
+
+// tabla libros
+
+@RequestMapping(path="/guardar_libros", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_libros9(HttpServletRequest request) {
+	 
+	System.out.println("si funciona el libros");     
+	        
+	    
+	int a=Integer.parseInt(request.getParameter("anio"));
+	System.out.println(a);
+	
+	int c=Integer.parseInt(request.getParameter("cate"));
+	System.out.println(c);
+	         
+	
+	String t=request.getParameter("titulo");
+	System.out.println(t);
+		
+	String edito=request.getParameter("edito");
+	System.out.println(edito);
+	
+	String isbn=request.getParameter("isbn");
+	System.out.println(isbn);
+	    
+	int npa=Integer.parseInt(request.getParameter("npagi"));
+	System.out.println(npa);
+	
+	String archi=request.getParameter("archi"); 
+	System.out.println(archi);
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);
+	String tipo="LIBROS";   
+	String es="completado";                                    
+	System.out.println("si trajo el id: " + idprofesor+"pes owen libros  jajajajaj xd");
+	   
+    System.out.println(tipo); 
+	System.out.println(es);                           
+	Leg_Publi leg=new Leg_Publi(a,t,edito,isbn,npa,es,tipo,archi,idprofesor,c);
+	legPubliDao.create(leg);   
+	//leg5Dao.create(lhy);             
+	                                              
+} 
+  
+@RequestMapping(path="/listarlibrosss", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarlibrosss9(HttpServletRequest request) {
+	Gson g = new Gson();
+	   
+	     
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar libros jajajajja ");                    
+	return g.toJson(legPubliDao.readAllLeg_Publi_Libros(idprofesor));                           
+}
 	
 	
+// tabla asesoramiento tesis
+
 	
+@RequestMapping(path="/guardar_asesoramiento", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_asesoramiento9(HttpServletRequest request) {
+	 
+	System.out.println("si funciona asesoramiento tesis");     
+	        
+	    
+	int a=Integer.parseInt(request.getParameter("anio"));
+	System.out.println(a);
 	
+	int c=Integer.parseInt(request.getParameter("cate"));
+	System.out.println(c);
 	
+	int a2=Integer.parseInt(request.getParameter("anio2"));
+	System.out.println(a2);
 	
+	int espe=Integer.parseInt(request.getParameter("espe"));
+	System.out.println(espe);
+	         
 	
+	String t=request.getParameter("titulo");
+	System.out.println(t);
+		
+	String autor=request.getParameter("autor");
+	System.out.println(autor);
 	
+	String reso=request.getParameter("reso");
+	System.out.println(reso);    
 	
+	String archi=request.getParameter("archi"); 
+	System.out.println(archi);
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);     
+	String es="completado";                                    
+	System.out.println("si trajo el id: " + idprofesor+"pes owen asesorameitno tesis  jajajajaj xd");
+	   
+    
+	System.out.println(es);          
+	Leg_Asesora_Tesis leg= new Leg_Asesora_Tesis(a,t,autor,a2,reso,es,archi,espe,idprofesor,c);  
+	 
+	legAsesotaTesisDao.create(leg); 
+	          
+	                                                 
+} 
+
+
+@RequestMapping(path="/listarasesoramiento", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarasesoramiento999(HttpServletRequest request) {
+	Gson g = new Gson();
+	      
+	      
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar asesoramiento jajajajja ");                    
+	return g.toJson(legAsesotaTesisDao.readAllLegAsesoraTesisss(idprofesor));                             
+}
 	
 
+// tabla proyectos de proyeccion social
+
+
+@RequestMapping(path="/guardar_tiposdeproyeccionsocial", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_tiposdeproyeccionsocial987(HttpServletRequest request) {
+	 
+	System.out.println("si funciona tipos de proyeccion social");        
+	        
+	    
+	int a=Integer.parseInt(request.getParameter("anio"));
+	System.out.println(a);
+	
+	int nparticipantes=Integer.parseInt(request.getParameter("nparticipantes"));
+	System.out.println(nparticipantes);
+	      
+	String po=request.getParameter("po");
+	System.out.println(po); 
+	         
+	String t=request.getParameter("t");
+	System.out.println(t);    
+	
+	String tp=request.getParameter("tp");
+	System.out.println(tp);
+		
+	String l=request.getParameter("l");
+	System.out.println(l);    
+	
+	String u4=request.getParameter("u4"); 
+	System.out.println(u4);
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);     
+	String es="completado";                                     
+	System.out.println("si trajo el id: " + idprofesor+"pes owen tipo de proyeccion social jajajajaj xd");
+    
+	System.out.println(es);  
+	
+	Leg7 leg= new Leg7(a,t,po,l,nparticipantes,es,tp,u4,idprofesor);  
+	legExtensionCulturalDao.create(leg);
+	 
+	          
+	                                                 
+}
+	
+@RequestMapping(path="/listartiposproyeccion", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listartiposproyeccion222(HttpServletRequest request) {
+	Gson g = new Gson();
+	      
+	      
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar tipos de proyeccion social jajajajja ");                    
+	return g.toJson(legExtensionCulturalDao.readAllLeg7ExtensionCultural(idprofesor));                              
+}
+	
+
+//tabla de reconocimientos
 
 
 
+@RequestMapping(path="/guardar_reconocimientos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_reconocimientosdsd(HttpServletRequest request) {
+	 
+	System.out.println("si funciona reconocimientos");        
+	        
+	    
+	int a=Integer.parseInt(request.getParameter("a"));
+	System.out.println(a);
+	      
+	int i=Integer.parseInt(request.getParameter("i")); 
+	System.out.println(i); 
+	         
+	String t=request.getParameter("t");
+	System.out.println(t);    
+	
+	String f=request.getParameter("f");
+	System.out.println(f);
+		
+	String c=request.getParameter("c");
+	System.out.println(c);
+	String r=request.getParameter("r");
+	System.out.println(r);
+	String l=request.getParameter("l");
+	System.out.println(l); 
+	
+	String u4=request.getParameter("u4"); 
+	System.out.println(u4); 
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);     
+	String es="completado";                                     
+	System.out.println("si trajo el id: " + idprofesor+"pes owen reconocimientos jajajajaj xd");
+    
+	System.out.println(es);  
+	Leg_Reconocimientos leg= new Leg_Reconocimientos(f,a,c,r,l,es,t,u4,i,idprofesor);  
+	leg_ReconciDao.create(leg);   
+	 
+	          
+	                                                 
+}
+
+@RequestMapping(path="/listarreconooo", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarreconooo986(HttpServletRequest request) {
+	Gson g = new Gson();
+	      
+	      
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar en reconocimeintos pe jajajajja ");                    
+	return g.toJson(leg_ReconciDao.readAllLeg_Reconocimientos(idprofesor));                                  
+}
+
+// tabla de cosmovision
+
+@RequestMapping(path="/guardar_cosmovision", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_cosmovision654(HttpServletRequest request) {
+	 
+	System.out.println("si funciona cosmovision");         
+	        
+	 
+	   
+	String decla=request.getParameter("decla");
+	System.out.println(decla);
+	
+	String docu=request.getParameter("docu");
+	System.out.println(docu);
+	
+	String archi=request.getParameter("archi"); 
+	System.out.println(archi);  
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);
+	String tipo="Cosmovision"; 
+	String es="completado";                                     
+	System.out.println("si trajo el id: " + idprofesor+"pes owen cosmovision jajajajaj xd");
+    
+	System.out.println(es);  
+	Leg_Filosofia_Mision leg= new Leg_Filosofia_Mision(decla,tipo,archi,docu,es,idprofesor);
+	leg_FilosoDao.create(leg);     
+	 
+	           
+	                                                 
+}
+
+@RequestMapping(path="/listarcosmovision", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarcosmovision345(HttpServletRequest request) {
+	Gson g = new Gson();
+	      
+	        
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar cosmovisionjajajja ");                    
+	return g.toJson(leg_FilosoDao.readAllLeg_Cosmovision(idprofesor));                                    
+}
+
+// tabla fe integracion enseñanza
 
 
+@RequestMapping(path="/guardar_ife", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_ife87(HttpServletRequest request) {
+	 
+	System.out.println("si funciona ifeeeeee");         
+	        
+	 
+	   
+	String decla=request.getParameter("decla");
+	System.out.println(decla);
+	
+	String docu=request.getParameter("docu");
+	System.out.println(docu);
+	
+	String archi=request.getParameter("archi"); 
+	System.out.println(archi);  
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);
+	String tipo="Integracion Fe";                   	
+	String es="completado";                                     
+	System.out.println("si trajo el id: " + idprofesor+"pes owen ifeeeee jajajajaj xd");
+    
+	System.out.println(es);  
+	Leg_Filosofia_Mision leg= new Leg_Filosofia_Mision(decla,tipo,archi,docu,es,idprofesor);
+	leg_FilosoDao.create(leg);     
+	 
+	           
+	                                                 
+}
+
+@RequestMapping(path="/listarife", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarife4534(HttpServletRequest request) {
+	Gson g = new Gson();
+	         
+	                      
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar ifeeeeeeee jajajja ");                    
+	return g.toJson(leg_FilosoDao.readAllLeg_IntegracionEnseñanza(idprofesor));                                    
+}
+
+// tabla servicio aprendizaje
 
 
+@RequestMapping(path="/guardar_servicio", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_servicio9976(HttpServletRequest request) {
+	 
+	System.out.println("si funciona servicio aprendizaje");         
+	        
+	 
+	   
+	String decla=request.getParameter("decla");
+	System.out.println(decla);
+	
+	String docu=request.getParameter("docu");
+	System.out.println(docu); 
+	
+	String archi=request.getParameter("archi"); 
+	System.out.println(archi);  
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);
+	String tipo="Servicio Aprendizaje";                         	
+	String es="completado";                                     
+	System.out.println("si trajo el id: " + idprofesor+"pes owen servicios jajajajaj xd");
+    
+	System.out.println(es);  
+	Leg_Filosofia_Mision leg= new Leg_Filosofia_Mision(decla,tipo,archi,docu,es,idprofesor);
+	leg_FilosoDao.create(leg);     
+	 
+	           
+	                                                 
+}
 
-
-
-
+@RequestMapping(path="/listarserviii", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarserviii5656(HttpServletRequest request) {
+	Gson g = new Gson();
+	         
+	                      
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar servicio jajajja ");                    
+	return g.toJson(leg_FilosoDao.readAllLeg_ServicioApredizaje(idprofesor));                                      
+} 
 
 
 
@@ -801,3 +1256,9 @@ public @ResponseBody String listarforcertificada34(HttpServletRequest request) {
 	}
 
 }
+
+ 
+
+  
+
+

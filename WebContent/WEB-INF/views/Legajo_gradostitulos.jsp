@@ -1624,11 +1624,12 @@
 
 			</tbody>
 		</table>
-	</div>
-	<input type="text" id="idprofe" value="1">
+	</div>        
 	
 	
+	<input type="text" id="idprofe" value="1">                
 	</main>
+	     
 	<!-- Essential javascripts for application to work-->
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>

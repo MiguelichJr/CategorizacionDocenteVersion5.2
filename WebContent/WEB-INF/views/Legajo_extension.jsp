@@ -48,15 +48,12 @@
 						<div class="form-group" style="text-align: center">
 							<label>Programa</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select id="tipo_proyeccion22" style="text-align: center" class="form-control">
 
 
-									<option value="" style="text-align: center">Proyección
-										Social</option>
-									<option value="" style="text-align: center">Extensión
-										Cultural</option>
-									<option value="" style="text-align: center">Clubes
-										Socios</option>
+									<option value="Proyección Social" style="text-align: center">Proyección Social</option>
+									<option value="Extensión Cultural" style="text-align: center">Extensión Cultural</option>
+									<option value="Clubes Socios" style="text-align: center">Clubes Socios</option>
 
 								</select>
 							</div>
@@ -65,7 +62,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Título del Programa</label> <input
+							<label>Título del Programa</label> <input id="titulo22"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>
@@ -74,12 +71,12 @@
 						<div class="form-group" style="text-align: center">
 							<label>Población Objetiva</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select id="poblacion_objetiva22" style="text-align: center" class="form-control">
 
 
-									<option value="" style="text-align: center">Niños</option>
-									<option value="" style="text-align: center">Jóvenes</option>
-									<option value="" style="text-align: center">Adultos</option>
+									<option value="Niños" style="text-align: center">Niños</option>
+									<option value="Jóvenes" style="text-align: center">Jóvenes</option>
+									<option value="Adultos" style="text-align: center">Adultos</option>
 
 
 								</select>
@@ -88,7 +85,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="form-group" style="text-align: center">
-							<label>Lugar</label> <input style="text-align: center"
+							<label>Lugar</label> <input id="lugar22" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
@@ -108,22 +105,22 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
-							<label>Año</label> <input style="text-align: center" type="text"
+							<label>Año</label> <input id="anio22" style="text-align: center" type="text"
 								class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
-							<label>N° Participantes</label> <input style="text-align: center"
+							<label>N° Participantes</label> <input id="nparticipantes22" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
 					</div>
 
-					<div class="col-sm-6">
+					<div class="col-sm-6">   
 						<div class="form-group" style="text-align: center">
-							<label>Archivo</label> <input style="text-align: center"
+							<label>Archivo</label> <input id="archivo22" style="text-align: center"
 								type="file" class="form-control">
 
 						</div>
@@ -151,7 +148,7 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_proyectosdeproyeccion"  class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -174,9 +171,9 @@
 
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table  id="tabletiposproyeccionsocial" class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
-			<thead>
+			<thead>  
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Programa</th>
@@ -215,7 +212,7 @@
 		<!-- Text input-->
 		<div class="row">
 			<div class="col-1"></div>
-			<div class="col-10">
+			<div class="col-10"> 
 				<div class="row">
 					<div class="col-sm-1">   
 						<div class="form-group" style="text-align: center">
@@ -225,12 +222,12 @@
 					<div class="col-sm-4">      
 						<div class="form-group" style="text-align: center">
 							<label>Tipo</label>
-							<div class="select">
-								<select style="text-align: center" class="form-control">
+							<div class="select"> 
+								<select id="tipo24"  style="text-align: center" class="form-control">
 
   
-									<option value="${pr.idcategoria}" style="text-align: center">Reconocimientos</option>
-									<option value="${pr.idcategoria}" style="text-align: center">Representacion Institucional</option>
+									<option value="Reconocimientos" style="text-align: center">Reconocimientos</option>
+									<option value="Representacion Institucional" style="text-align: center">Representacion Institucional</option>
 
 								</select>
 							</div>
@@ -238,7 +235,7 @@
 					</div>
 					<div class="col-sm-3">   
 						<div class="form-group" style="text-align: center">
-							<label>Año</label> <input
+							<label>Año</label> <input id="anio24"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>
@@ -246,7 +243,7 @@
 					
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Fecha </label> <input style="text-align: center"
+							<label>Fecha </label> <input id="fecha24" style="text-align: center"
 								type="date" class="form-control">
 
 						</div>
@@ -265,7 +262,7 @@
 						<div class="form-group" style="text-align: center">
 							<label>Institucion</label>
 							<div class="select">
-								<select style="text-align: center" class="form-control">
+								<select id="isntitucion24" style="text-align: center" class="form-control">
 									<c:forEach items="${lista_institucion}" var="pr">
 
 										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
@@ -279,21 +276,21 @@
 					</div>
 					<div class="col-sm-3">   
 						<div class="form-group" style="text-align: center">
-							<label>Cargo</label> <input style="text-align: center"
+							<label>Cargo</label> <input id="cargo24" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
 					</div>        
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Reconocimiento</label> <input style="text-align: center"
+							<label>Reconocimiento</label> <input id="reconocimientos24" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Lugar</label> <input style="text-align: center"
+							<label>Lugar</label> <input id="lugar24" style="text-align: center"
 								type="text" class="form-control">
   
 						</div>
@@ -318,10 +315,10 @@
 							</div>
 							<div class="col-sm-10">
 								<div class="form-group" style="text-align: center">
-									<label>Archivo</label> <input style="text-align: center"
+									<label>Archivo</label> <input id="archivo24" style="text-align: center"
 										type="file" class="form-control">
 
-								</div>
+								</div>  
 							</div>
 							<div class="col-sm-1">
 								<div class="form-group" style="text-align: center"></div>
@@ -357,9 +354,9 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button class="btn btn-primary btn-block"
+									<button id="registrar_reconociemitnos"  class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
-										REGISTRAR</button>
+										REGISTRAR</button>  	
 								</div>
 							</div>
 						</div>
@@ -378,13 +375,13 @@
 		<div class="col-1"></div>
 
 		<!--lista de todo los registros -->
-		<table class="table table-bordered"
+		<table id="tablereconocimientosss"  class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Tipo</th>
-					<th scope="col">Año</th>
+					<th scope="col">Año</th>  
 					<th scope="col">Fecha</th>
 					<th scope="col">Institución</th>      
 					<th scope="col">Cargo</th>
@@ -399,34 +396,22 @@
 			</tbody>
 		</table>
 	</div>
-
-
+             
+ <input type="hidden" id="idprofe" value="1">    
 	</main>
+	     
 	<!-- Essential javascripts for application to work-->
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
-	<script src="${urlrecursos}/js/main.js"></script>
+	<script src="${urlrecursos}/js/main.js"></script>   
+	<script src="${urlrecursos}/js/script_expediente_extensioncultural.js"></script>
 	<!-- The javascript plugin to display page loading on top-->
 	<script src="${urlrecursos}/js/plugins/pace.min.js"></script>
 	<!-- Page specific javascripts-->
 	<!-- Google analytics script-->
 	<script type="text/javascript">
-		if (document.location.hostname == 'pratikborsadiya.in') {
-			(function(i, s, o, g, r, a, m) {
-				i['GoogleAnalyticsObject'] = r;
-				i[r] = i[r] || function() {
-					(i[r].q = i[r].q || []).push(arguments)
-				}, i[r].l = 1 * new Date();
-				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-				a.async = 1;
-				a.src = g;
-				m.parentNode.insertBefore(a, m)
-			})(window, document, 'script',
-					'//www.google-analytics.com/analytics.js', 'ga');
-			ga('create', 'UA-72504830-1', 'auto');
-			ga('send', 'pageview');
-		}
+		     
 	</script>
 </body>
 </html>
