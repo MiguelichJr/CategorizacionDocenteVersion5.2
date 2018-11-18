@@ -438,7 +438,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-1"></div>
+		<div class="col-1"></div> 
 
 		<!--lista de todo los registros -->
 		<table id="tableserviciope"  class="table table-bordered"
@@ -456,7 +456,7 @@
 
 			</tbody>
 		</table>  
-	</div>
+	</div>   
 	  
 
 <input type="text" id="idprofe" value="1">       

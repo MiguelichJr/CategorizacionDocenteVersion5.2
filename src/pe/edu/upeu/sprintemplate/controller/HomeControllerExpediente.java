@@ -39,6 +39,7 @@ import pe.edu.upeu.sprintemplate.daoImp.Leg5DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg5_1DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg7DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.LegDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.LegExtraDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_Asesora_Tesis_DaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_Grados_TitulosDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_InvestiDaoImp;
@@ -53,6 +54,7 @@ import pe.edu.upeu.sprintemplate.entity.Leg5;
 import pe.edu.upeu.sprintemplate.entity.Leg5_1;
 import pe.edu.upeu.sprintemplate.entity.Leg7;
 import pe.edu.upeu.sprintemplate.entity.Leg_Asesora_Tesis;
+import pe.edu.upeu.sprintemplate.entity.Leg_Extras;
 import pe.edu.upeu.sprintemplate.entity.Leg_Filosofia_Mision;
 import pe.edu.upeu.sprintemplate.entity.Leg_Grados_Titulos;
 import pe.edu.upeu.sprintemplate.entity.Leg_Investi;
@@ -104,6 +106,8 @@ public class HomeControllerExpediente {
 	private Leg_ReconociDaoImp leg_ReconciDao;
 	@Autowired
 	private Leg_FiloDao leg_FilosoDao;
+	@Autowired
+	private LegExtraDaoImp leg_extraDao; 
 	       
   
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
@@ -1161,12 +1165,46 @@ public @ResponseBody String listarserviii5656(HttpServletRequest request) {
 } 
 
 
+// tabla extrasssss
 
 
+@RequestMapping(path="/guardar_extras", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void guardar_extras898989(HttpServletRequest request) {
+	 
+	System.out.println("si funciona logros extras");         
+	        
+	 
+	   
+	       
+	
+	String docu=request.getParameter("docu");
+	System.out.println(docu); 
+	
+	String archi=request.getParameter("archi"); 
+	System.out.println(archi);  
+	    
+	int idprofesor=Integer.parseInt(request.getParameter("x"));  
+	System.out.println(idprofesor);                           	
+	String es="completado";                                     
+	System.out.println("si trajo el id: " + idprofesor+"pes owen logros extras jajajajaj xd");
+    
+	System.out.println(es);  
+	Leg_Extras leg= new Leg_Extras(docu,archi,idprofesor,es);
+	leg_extraDao.create(leg);  
+	 
+	           
+	                                                 
+}
 
-
-
-
+@RequestMapping(path="/listarextrasssssssssssssssssss", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody String listarextrasssssssssssssssssss44(HttpServletRequest request) {
+	Gson g = new Gson();
+	         
+	                      
+	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
+	System.out.println("si trajo el id: " + idprofesor+"listar extras pe señor jajaj controadorjajajja ");                    
+	return g.toJson(leg_extraDao.readAllLeg_Extras(idprofesor));                                        
+}
 
 
 

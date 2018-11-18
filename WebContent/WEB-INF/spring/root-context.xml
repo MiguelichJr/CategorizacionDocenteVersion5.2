@@ -97,7 +97,11 @@
 	
 	<bean id="leg_FilosoDao" class="pe.edu.upeu.sprintemplate.daoImp.Leg_FilosofiaDaoImp">                  
 		<property name="leg_filosofiamision" ref="jdbcTemplate" />    
-	</bean>  
+	</bean> 
+	 
+	<bean id="leg_extraDao" class="pe.edu.upeu.sprintemplate.daoImp.LegExtraDaoImp">                   
+		<property name="leg_extrassss" ref="jdbcTemplate" />    
+	</bean> 
 	                 
 	 <!--               
 	 <bean id="leg2Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp">              

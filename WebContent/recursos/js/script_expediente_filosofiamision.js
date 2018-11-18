@@ -3,6 +3,7 @@ $(document).ready(function() {
 	listarCOSMO();
 	listarIFE();
 	listarServicioApre();
+	 listarLogrosExtrasaas(); 
 }); 
  
 
@@ -147,4 +148,50 @@ function listarServicioApre() {
 	        
 }  
 
-//termien todo pe ajja xd
+//termien todo pe ajja xd	
+
+// table de logros extras peeee aca nomas jajajja xd
+
+$("#registrar_extras").click(function() {
+	alert("si funka el boton de logros extras");     
+	  
+	var docu=$("#declaextra").val();
+	var archi=$("#urlextra").val();
+	
+                  
+	var x = parseInt($("#idprofe").val()); 
+
+  
+	alert(docu);
+	alert(archi); 
+	      
+	 
+	alert("el id del prode es: "+x);   
+	            
+	          
+	$.post("guardar_extras", {
+		
+		docu:docu,
+		archi:archi,        
+		x:x       
+		               
+	},function(data){
+		
+		//listarLeg_Grados();   
+	}); 
+	   
+	    
+});
+function listarLogrosExtrasaas() {
+	var x = parseInt($("#idprofe").val());  
+	alert(x+"listar logros extras pe señor compadre");   
+	//alert("hola si funciona el funciton");
+	$.get("listarextrasssssssssssssssssss", {idprofe:x}, function(datita) {
+		//alert(datita);                                            
+		for(var i in datita){                                            
+			$("#tablelogrosextraspe tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].DECLARACION+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+		}  
+		        
+	});  
+	        
+}
