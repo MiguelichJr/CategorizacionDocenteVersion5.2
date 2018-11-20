@@ -22,17 +22,17 @@
 			<h1>Categorización Docente Upeu</h1>
 		</div>        
 		<div class="login-box" style="border-radius:20px"       >  
-			<form class="login-form" action="home" method="GET">
+			<form class="login-form" action="home" method="POST">
 				<h3 class="login-head" style="text-align:center">
 					<i class="fa fa-lg fa-fw fa-user" style="color:#992e45"></i>Login SCDO      
 				</h3>
 				<div class="form-group" style="text-align:center">
 					<label class="control-label" >USUARIO</label> 
-					<input	class="form-control" type="text" id="usuario">
-				</div>          
+					<input	class="form-control" type="text" name="nom_user" style="text-align:center">
+				</div>            
 				<div class="form-group" style="text-align:center">   
-					<label class="control-label">CONTRASEÑA</label> <input       
-						class="form-control" type="password" id="clave">  
+					<label class="control-label">CONTRASEÑA</label> <input         
+						class="form-control" type="password" name="clave" style="text-align:center">    
 				</div>
 				  <hr style="margin-top:10px">          
 				<div class="form-group btn-container" style="background-color:#992e45">

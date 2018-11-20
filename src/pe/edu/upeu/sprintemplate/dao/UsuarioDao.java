@@ -6,5 +6,7 @@ import java.util.Map;
 import pe.edu.upeu.sprintemplate.entity.Usuario;
 
 public interface UsuarioDao {
-		List<Map<String,Object>> readAll(Usuario u);      
+		List<Map<String,Object>> readAllLogin(Usuario u);
+		List<Map<String,Object>> readAllModulos(Usuario u);
+		List<Map<String,Object>> readAllPrivilegios(Usuario u);  
 }

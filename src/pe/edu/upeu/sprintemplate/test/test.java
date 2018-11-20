@@ -23,7 +23,7 @@ public class test {
 		System.out.println(context);
 		/*RolDao dao = (RolDao)context.getBean("rolDaoImp");*/
 		//UsuarioDao dao=(UsuarioDao)context.getBean("usuarioDao", UsuarioDaoImp.class);                     
-		InstitucionDao dao=(InstitucionDao)context.getBean("institucionDao");
+		//InstitucionDao dao=(InstitucionDao)context.getBean("institucionDao");
 		//GradosDao dao=(GradosDao)context.getBean("gradoDao");   
 		//EspecialidadDao dao=(EspecialidadDao)context.getBean("especialidadDao");
 		//System.out.println(dao.update(new Rol(13, "camote")));   
@@ -37,9 +37,9 @@ public class test {
         //Rol rr = dao.read(14);
         //System.out.println("Error: "+rr.getNomrol());  
         //  dao.delete(3);     
-		System.out.println(dao.readAll());        
+		//System.out.println(dao.readAll());        
         context.close();    
-	}     	 
+	}     	   
 	      
 	
 		

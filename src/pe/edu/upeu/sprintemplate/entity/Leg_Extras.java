@@ -43,6 +43,11 @@ public class Leg_Extras {
 		this.docente = docente;
 		this.estado = estado;
 	}
+	public Leg_Extras(int id, String url) {
+		super();
+		this.id = id;
+		this.url = url;
+	}
 	
 	 
 	

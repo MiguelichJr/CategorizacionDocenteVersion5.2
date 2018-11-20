@@ -5,13 +5,13 @@ $("#ValidarLogin").click(function() {
 	alert("la clave es:"+y);   
 	$.get("cargarmodulos", function(datita) {
 		
-		
+	 	
 	});     
 });
 
 
 $(document).ready(function() {
-	alert("si funciona el script del login xd");      
+	//alert("si funciona el script del login xd");      
 	// $("#valor_tesis").attr('disabled','true');
-	  
+	    
 });

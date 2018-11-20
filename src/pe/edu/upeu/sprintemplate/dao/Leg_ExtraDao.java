@@ -8,7 +8,7 @@ import pe.edu.upeu.sprintemplate.entity.Leg_Extras;
 
 
 public interface Leg_ExtraDao {
-	int create(Leg_Extras l);   
+	String create(Leg_Extras l);   
 	int update(Leg_Extras l);
 	int delete(int id);                     
 	Leg_Extras read(int id);                           

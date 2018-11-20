@@ -19,7 +19,8 @@
 </head>
 <body class="app sidebar-mini rtl">
 	<!-- Navbar-->
-	<jsp:include page="template/header.jsp"></jsp:include>
+	<jsp:include page="template/cabezera.jsp"></jsp:include>
+	<jsp:include page="template/menu.jsp"></jsp:include>
 	<main class="app-content">
 	<div class="app-title">
 		<div>
@@ -79,11 +80,14 @@
 								<div class="form-group" style="text-align: center"></div>
 							</div>
 							<div class="col-sm-10">
+								<form id="formid" method="post" action="/cat/guardar_img_logrosextras" enctype="multipart/form-data">
 								<div class="form-group" style="text-align: center">
 									<label>Archivo</label> <input id="urlextra" style="text-align: center"
-										type="file" class="form-control">
-
+										type="file" name="archi" class="form-control">
+										<input type="hidden" value="" name="id" id="id_logro_extra">
+										<button type="submit" id="enviar_archivo" style="display:none;"></button>
 								</div>
+								</form>  
 							</div>
 							<div class="col-sm-1">
 								<div class="form-group" style="text-align: center"></div>

@@ -15,24 +15,8 @@
   </head> 
   <body class="app sidebar-mini rtl">   
   <!-- Navbar-->        
-         <header class="app-header" style="background-color:#992e45">      	                                    
-     <!-- Sidebar toggle button--><img alt="" src="./recursos/img/upeu.jpg" style="margin-left:4px;margin-top:3px;margin-bottom:5px;border-radius:10px"      >  
-                
-    <a class="app-header__logo" href="#" style="width:30%;background-color:#992e45">Categorización Docente Upeu</a>
-       <!-- Navbar Right Menu-->   
-      <ul class="app-nav">
+           
        
-        
-        <!-- User Menu-->
-        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-          <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i>Perfil</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out fa-lg"></i>Cerrar Sesión</a></li>
-          </ul>
-        </li>
-      </ul>    
-    </header>
-     
     <!-- Sidebar menu--> 
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>        
     <aside class="app-sidebar">                        
@@ -42,7 +26,7 @@
           <p class="app-sidebar__user-designation">Alumno</p>   
         </div>     
       </div>                        
-      <ul class="app-menu">      
+      <ul class="app-menu">           
                            
       	    
       
@@ -68,8 +52,9 @@
         
                            
       </ul>
-    </aside>
-                        
+              
+    </aside>   
+                             
     
       
     

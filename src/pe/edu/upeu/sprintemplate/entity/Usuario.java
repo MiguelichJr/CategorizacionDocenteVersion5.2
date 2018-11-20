@@ -5,7 +5,17 @@ public class Usuario {
 	private String nom_user;
 	private String clave;
 	private int persona_idpers;
+	private int idmodulo;
 	
+	  
+	public int getIdmodulo() {
+		return idmodulo;
+	}
+
+	public void setIdmodulo(int idmodulo) {
+		this.idmodulo = idmodulo;
+	}
+
 	public Usuario(int iduser, String nom_user, String clave, int persona_idpers) {
 		super();
 		this.iduser = iduser;
@@ -41,6 +51,17 @@ public class Usuario {
 	}
 	public void setPersona_idpers(int persona_idpers) {
 		this.persona_idpers = persona_idpers;
+	}
+
+	public Usuario(String nom_user, String clave) {
+		super();
+		this.nom_user = nom_user;
+		this.clave = clave;
+	}
+
+	public Usuario(int idmodulo) {
+		super();
+		this.idmodulo = idmodulo;
 	}
 	
 	

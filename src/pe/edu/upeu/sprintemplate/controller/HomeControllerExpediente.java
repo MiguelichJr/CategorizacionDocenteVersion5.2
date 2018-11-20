@@ -2,23 +2,32 @@ package pe.edu.upeu.sprintemplate.controller;
 
 
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse; 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import org.apache.commons.io.FilenameUtils; 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 //import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -46,6 +55,7 @@ import pe.edu.upeu.sprintemplate.daoImp.Leg_InvestiDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_PubliDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_ReconociDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
+import pe.edu.upeu.sprintemplate.daoImp.UsuarioDaoImp;
 import pe.edu.upeu.sprintemplate.entity.Leg;
 import pe.edu.upeu.sprintemplate.entity.Leg2;
 import pe.edu.upeu.sprintemplate.entity.Leg3;
@@ -69,7 +79,10 @@ import pe.edu.upeu.sprintemplate.serviceImp.LegServiceImp;
 
 @Controller            
 public class HomeControllerExpediente {
-	       
+	 
+	
+	@Autowired
+	private UsuarioDaoImp usuarioDao;
 	@Autowired 
 	private GradosDaoImp gradoDao;
 	@Autowired  
@@ -121,38 +134,51 @@ public class HomeControllerExpediente {
 	public String index() {
 		return "index";     
 	}
-	
+	/*
 	@GetMapping("/home") 
 	public String home4() {
 		return "main";       
-	}    
-	/*
-	@RequestMapping(path="/cargarmodulos", method = RequestMethod.GET)
-	public String cargarmodulos2() {
-		return "main";         
-	}*/ 
-	
-
-	//metodo del login
-	/*@PostMapping("/")
-	public String main2() {
-		return "main";
-	}*/  
-	//metodo del login
-	 
-	/*
-	@PostMapping("/validar")  
-	public String ValidarUsuario(HttpServletRequest HttpServletRequest,Usuario user) {
-		HttpSession httpSession = HttpServletRequest.getSession();
-		ModelAndView a= new ModelAndView();
-		try {
-			
-		}catch(Exception e){
-			  
-		}
-		return "main";
 	}
-	*/    
+	*/ 
+	@RequestMapping(path="/home",method=RequestMethod.POST) 
+	public String home4(HttpSession session, @RequestParam("nom_user") String nom_user, @RequestParam("clave") String clave) {
+		System.out.println("si llega al controlador del login pues owen");
+		  
+		 String retornar= ""; 
+		 Usuario usuuuuu=new Usuario(nom_user,clave);
+		 List<Map<String,Object>> lista = (usuarioDao.readAllLogin(usuuuuu));
+		 System.out.println(lista);
+		 if(lista.size()==0) {
+			 System.out.println("Usuario/Contraseña incorrecto");
+			 retornar="redirect:/";   
+		 }else {  
+			 System.out.println("si entra en el controlador");
+			 	for (Map<String,Object> mm :lista) {
+			 		System.out.println("llego al ciclo for");
+			 		session.setAttribute("nombre", mm.get("NOMBRE"));
+			 		session.setAttribute("apellido", mm.get("APELLIDO"));
+			 		String a= (String) mm.get("NOMBRE");
+			 		System.out.println(a);
+			 		String b= mm.get("IDROL").toString();
+			 		 int numero=Integer.parseInt(b);
+			 		 System.out.println(numero); 
+			 		 Usuario usucontructor=new Usuario(numero);
+			 		List<Map<String,Object>> listamodulos=(usuarioDao.readAllModulos(usucontructor));
+			 		System.out.println(listamodulos);     
+			 		//int numero=Integer.parseInt(b);       
+			 		//int numero=Integer.valueOf(((Integer) mm.get("IDROL")).intValue()); 
+			 		//System.out.println("El numero que trae del idro es:"+numero);
+			 		//System.out.println(a);     
+			 		//String num= (String) mm.get("IDROL");
+			 		//int nnn=Integer.parseInt(num);
+			 		//System.out.println("El id del rol es:"+nnn);          
+			 	}
+			 retornar="main";
+			 
+		 }
+		return retornar;         
+	}  
+ 
 	
 	
 	
@@ -1167,22 +1193,20 @@ public @ResponseBody String listarserviii5656(HttpServletRequest request) {
 
 // tabla extrasssss
 
-
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 @RequestMapping(path="/guardar_extras", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_extras898989(HttpServletRequest request) {
+public @ResponseBody String guardar_extras898989(HttpServletRequest request) {
 	 
 	System.out.println("si funciona logros extras");         
-	        
-	 
-	   
-	       
-	
 	String docu=request.getParameter("docu");
 	System.out.println(docu); 
 	
 	String archi=request.getParameter("archi"); 
 	System.out.println(archi);  
-	    
+	     
 	int idprofesor=Integer.parseInt(request.getParameter("x"));  
 	System.out.println(idprofesor);                           	
 	String es="completado";                                     
@@ -1190,17 +1214,17 @@ public @ResponseBody void guardar_extras898989(HttpServletRequest request) {
     
 	System.out.println(es);  
 	Leg_Extras leg= new Leg_Extras(docu,archi,idprofesor,es);
-	leg_extraDao.create(leg);  
-	 
+	  
+	Gson g = new Gson(); 
 	           
-	                                                 
+	return g.toJson(leg_extraDao.create(leg));                                                     
 }
 
 @RequestMapping(path="/listarextrasssssssssssssssssss", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody String listarextrasssssssssssssssssss44(HttpServletRequest request) {
 	Gson g = new Gson();
 	         
-	                      
+	                        
 	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
 	System.out.println("si trajo el id: " + idprofesor+"listar extras pe señor jajaj controadorjajajja ");                    
 	return g.toJson(leg_extraDao.readAllLeg_Extras(idprofesor));                                        
@@ -1208,13 +1232,90 @@ public @ResponseBody String listarextrasssssssssssssssssss44(HttpServletRequest 
 
 
 
+@RequestMapping(value="/guardar_img_logrosextras", method = RequestMethod.POST)
+
+public String LogrosExtras_Imagenes(@RequestParam("archi") List<MultipartFile> file, @RequestParam("id") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {
+	ServletContext cntx = request.getServletContext();
+	String result = null;    
+	System.out.println("si entra en el controlador de ajax pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+          
+	int res = 0;
+	System.out.println(file + " , " + id);
+	if (!file.isEmpty()) {
+ 
+		try {  
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGEXTRA_"+id.replace(" ","");
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+//				Leg_Extras leg= new Leg_Extras(id,nombre);
+//				leg_extraDao.update(leg); 
+				System.out.println("respuesta de update" + res);
+				result = "redirect:/ex";
+			}
+
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();
+		}
+		
+
+		System.out.println(res);
+
+	}
+	  
+
+	//System.out.println(result);
+	return result;
+}
+
+ 
 
 
 
 
 
 
-	   
+
+
+/////////////////////////////////////////////////////////////////////////////////////7
+////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

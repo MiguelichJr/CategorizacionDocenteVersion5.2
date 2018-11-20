@@ -20,7 +20,7 @@ $("#registrar_cosmovision").click(function() {
 	alert(decla);
 	alert(docu);
 	alert(archi); 
-	      
+	        
 	 
 	alert("el id del prode es: "+x);   
 	   
@@ -141,8 +141,8 @@ function listarServicioApre() {
 	$.get("listarserviii", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
 		for(var i in datita){                                            
-			$("#tableserviciope tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
-		}  
+			$("#tableserviciope").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+		}        
 		        
 	});  
 	        
@@ -157,8 +157,9 @@ $("#registrar_extras").click(function() {
 	  
 	var docu=$("#declaextra").val();
 	var archi=$("#urlextra").val();
-	
-                  
+	var form=$("#formid")[0];
+	var data = new FormData(form);  
+                              
 	var x = parseInt($("#idprofe").val()); 
 
   
@@ -173,25 +174,67 @@ $("#registrar_extras").click(function() {
 		
 		docu:docu,
 		archi:archi,        
-		x:x       
+		x:x         
 		               
-	},function(data){
+	},function(data){ 
+		if(data!=null){     
+			alert("Registro exitoso actualizado otr");    
+			limpiarLegExtras();                  
+			listarLogrosExtrasaas();               
+			var id=data;  
+			$("#id_logro_extra").val(data);
+			$("#enviar_archivo").click();
+			
+//			alert("El id de la data del metodo es: "+id);
+			       
+//			if (archi != "") {  
+//				$.ajax({
+//					type : "POST", 
+//					enctype : 'multipart/form-data',
+//					url : "cat/guardar_img_logrosextras",
+//					data : data,   
+//					processData : false,  
+//					contentType : false,
+//					cache : false,
+//					timeout : 600000, 
+//					beforeSend : function(xhr, data) {
+//						xhr.setRequestHeader(csrfHeader, csrfToken);
+//					}
+//				  
+//				});
+//			} else {
+//				alert("El archivo esta vacio"); 
+//			}
+			
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}
 		
-		//listarLeg_Grados();   
-	}); 
+	
+		    
+	});
+	
+	
 	   
 	    
 });
 function listarLogrosExtrasaas() {
+	 
 	var x = parseInt($("#idprofe").val());  
-	alert(x+"listar logros extras pe señor compadre");   
-	//alert("hola si funciona el funciton");
+	alert(x+"listar logros extras pe señor compadre con append");   
+	//alert("hola si funciona el funciton");  
 	$.get("listarextrasssssssssssssssssss", {idprofe:x}, function(datita) {
 		//alert(datita);                                            
 		for(var i in datita){                                            
-			$("#tablelogrosextraspe tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].DECLARACION+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
-		}  
+			$("#tablelogrosextraspe").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].DECLARACION+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+		}        
 		        
 	});  
 	        
 }
+
+function limpiarLegExtras(){       
+	$("#tablelogrosextraspe tbody tr").remove();   	
+}    
+
+

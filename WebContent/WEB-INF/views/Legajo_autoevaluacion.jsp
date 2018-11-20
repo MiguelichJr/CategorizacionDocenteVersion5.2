@@ -26,7 +26,8 @@
 </head>
 <body class="app sidebar-mini rtl">
 	<!-- Navbar-->
-	<jsp:include page="template/header.jsp"></jsp:include>
+	<jsp:include page="template/cabezera.jsp"></jsp:include>
+	<jsp:include page="template/menu.jsp"></jsp:include>
 	<main class="app-content">
 	<div class="app-title">
 		<div>
