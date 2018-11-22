@@ -91,8 +91,13 @@ public class Leg_Asesora_Tesis {
 		this.especialidad = especialidad;
 		this.doce = doce;
 		this.categoria_atributo = categoria_atributo;
+	}
+	public Leg_Asesora_Tesis(int idlegtesis, String url) {
+		super();
+		this.idlegtesis = idlegtesis;
+		this.url = url;
 	} 
 	
-	     
+	      
 
 }

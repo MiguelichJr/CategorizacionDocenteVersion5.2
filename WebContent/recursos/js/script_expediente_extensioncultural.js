@@ -40,7 +40,19 @@ $("#registrar_proyectosdeproyeccion").click(function() {
 		x:x       
 		               
 	},function(data){
-		
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                       
+			//listarLogrosExtrasaas();                
+			var id=data;              
+			$("#id_proyeccionsocial").val(data);     
+			$("#enviar_archivo22").click();  
+
+			                   
+		}else{   
+			alert("Ops ocurrio un error"); 
+		} 
 		//listarLeg_Grados();   
 	}); 
 	   
@@ -101,7 +113,19 @@ $("#registrar_reconociemitnos").click(function() {
 		x:x       
 		               
 	},function(data){
-		
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;          
+			$("#id_reconocimientos").val(data);     
+			$("#enviar_archivo24").click();  
+
+			                   
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}  
 		//listarLeg_Grados();   
 	}); 
 	   

@@ -124,7 +124,12 @@ public class Leg_Publi {
 		this.doce = doce;
 		this.catatributo = catatributo;
 	}
+	public Leg_Publi(int idpublicacion, String url) {
+		super();
+		this.idpublicacion = idpublicacion;
+		this.url = url;
+	}
 	
-	 
+	   
 	     
 }

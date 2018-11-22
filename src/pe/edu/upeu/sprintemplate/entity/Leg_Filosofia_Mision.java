@@ -61,6 +61,11 @@ public class Leg_Filosofia_Mision {
 		this.estado = estado;
 		this.docente = docente;
 	}
+	public Leg_Filosofia_Mision(int idfilosifia, String url) {
+		super();
+		this.idfilosifia = idfilosifia;
+		this.url = url;
+	}
 	
 	  
 	

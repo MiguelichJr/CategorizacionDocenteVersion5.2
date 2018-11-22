@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Extensión</title>
-<meta charset="utf-8">
+<title>Premios o Reconocimientos</title>
+<meta charset="utf-8">  
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -27,67 +27,51 @@
 			<h1>Extensión Cultural y Proyección Social</h1>
 
 		</div>
-	</div>
+	</div>             
+	     
+
+
 	<div
-		style="border-radius: 20px; background-color: white; padding: 10px">
+		style="border-radius: 20px; background-color: white; padding: 10px; margin-top: 20px">
 		<!-- Form Name -->
-		<legend style="text-align: center">Organización y/o Ponente
-			en Eventos de Extensión</legend>
-		<legend style="text-align: center">Cultural y Proyección
-			Cultural</legend>
+		<legend style="text-align: center">Premios o Reconocimientos</legend>
 		<hr>
-		<legend>
-			<i class="icon fas fa-caret-right" style="margin-left: 3%"></i>Proyectos
-			de Proyección Social/Extensión Cultural/Clubes Socios Humanitarios
-		</legend>
-		<hr>
+		<!-- Text input-->
 		<div class="row">
 			<div class="col-1"></div>
-			<div class="col-10">
+			<div class="col-10"> 
 				<div class="row">
-					<div class="col-sm-3">
+					<div class="col-sm-1">   
 						<div class="form-group" style="text-align: center">
-							<label>Programa</label>
-							<div class="select">
-								<select id="tipo_proyeccion22" style="text-align: center" class="form-control">
+							   
+						</div>
+					</div>
+					<div class="col-sm-4">      
+						<div class="form-group" style="text-align: center">
+							<label>Tipo</label>
+							<div class="select"> 
+								<select id="tipo24"  style="text-align: center" class="form-control">
 
-
-									<option value="Proyección Social" style="text-align: center">Proyección Social</option>
-									<option value="Extensión Cultural" style="text-align: center">Extensión Cultural</option>
-									<option value="Clubes Socios" style="text-align: center">Clubes Socios</option>
+  
+									<option value="Reconocimientos" style="text-align: center">Reconocimientos</option>
+									<option value="Representacion Institucional" style="text-align: center">Representacion Institucional</option>
 
 								</select>
 							</div>
-
 						</div>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-3">   
 						<div class="form-group" style="text-align: center">
-							<label>Título del Programa</label> <input id="titulo22"
+							<label>Año</label> <input id="anio24"
 								style="text-align: center" type="text" class="form-control">
 
 						</div>
-					</div>
-					<div class="col-sm-2">
+					</div>    
+					
+					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Población Objetiva</label>
-							<div class="select">
-								<select id="poblacion_objetiva22" style="text-align: center" class="form-control">
-
-
-									<option value="Niños" style="text-align: center">Niños</option>
-									<option value="Jóvenes" style="text-align: center">Jóvenes</option>
-									<option value="Adultos" style="text-align: center">Adultos</option>
-
-
-								</select>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="form-group" style="text-align: center">
-							<label>Lugar</label> <input id="lugar22" style="text-align: center"
-								type="text" class="form-control">
+							<label>Fecha </label> <input id="fecha24" style="text-align: center"
+								type="date" class="form-control">
 
 						</div>
 					</div>
@@ -101,42 +85,90 @@
 			<div class="col-1"></div>
 			<div class="col-10">
 				<div class="row">
-					<div class="col-sm-1">
-						<div class="form-group" style="text-align: center"></div>
-					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-3">  
 						<div class="form-group" style="text-align: center">
-							<label>Año</label> <input id="anio22" style="text-align: center" type="text"
-								class="form-control">
+							<label>Institucion</label>
+							<div class="select">
+								<select id="isntitucion24" style="text-align: center" class="form-control">
+									<c:forEach items="${lista_institucion}" var="pr">
+
+										<option value="${pr.idint}" style="text-align: center">${pr.nombre_institucion}</option>
+  
+									</c:forEach>  
+   
+								</select>
+							</div>
 
 						</div>
 					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-3">   
 						<div class="form-group" style="text-align: center">
-							<label>N° Participantes</label> <input id="nparticipantes22" style="text-align: center"
+							<label>Cargo</label> <input id="cargo24" style="text-align: center"
+								type="text" class="form-control">
+
+						</div>
+					</div>        
+					<div class="col-sm-3">
+						<div class="form-group" style="text-align: center">
+							<label>Reconocimiento</label> <input id="reconocimientos24" style="text-align: center"
 								type="text" class="form-control">
 
 						</div>
 					</div>
-
-					<div class="col-sm-6">
-					<form method="post" action="/cat/guardar_img_proyeccionsocial" enctype="multipart/form-data"> 
+					<div class="col-sm-3">
 						<div class="form-group" style="text-align: center">
-							<label>Archivo</label> <input id="archivo22"  name="archi22"  style="text-align: center"
-								type="file" class="form-control">
-							<input type="hidden" value="" name="id22" id="id_proyeccionsocial">
-							<button type="submit" id="enviar_archivo22" style="display:none;"></button>
-
-						</div>   
-					</form> 
+							<label>Lugar</label> <input id="lugar24" style="text-align: center"
+								type="text" class="form-control">
+  
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-1"></div>
 
 		</div>
+		
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="form-group" style="text-align: center"></div>
+					</div>
+					<div class="col-sm-6 ">
+						<div class="row">
+							<div class="col-sm-1">
+								<div class="form-group" style="text-align: center"></div>
+							</div>
+							<div class="col-sm-10">
+							<form method="post" action="/cat/guardar_img_premiosrecnco" enctype="multipart/form-data">
+								<div class="form-group" style="text-align: center">
+									<label>Archivo</label> <input id="archivo24" name="archi24" style="text-align: center"
+										type="file" class="form-control">
+									<input type="hidden" value="" name="id24" id="id_reconocimientos">
+										<button type="submit" id="enviar_archivo24" style="display:none;"></button>
+								
+								</div>
+							</form>   
+							</div>
+							<div class="col-sm-1">
+								<div class="form-group" style="text-align: center"></div>
+							</div>
+						</div>
 
 
+					</div>
+					<div class="col-sm-3">
+						<div class="form-group" style="text-align: center"></div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="form-group" style="text-align: center"></div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>      
 
 		<div class="row">
 			<div class="col-1"></div>
@@ -153,9 +185,9 @@
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button id="registrar_proyectosdeproyeccion"  class="btn btn-primary btn-block"
+									<button id="registrar_reconociemitnos"  class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
-										REGISTRAR</button>
+										REGISTRAR</button>  	
 								</div>
 							</div>
 						</div>
@@ -170,23 +202,22 @@
 					<div class="form-group" style="text-align: center"></div>
 				</div>
 			</div>
-			<div class="col-1"></div>
 		</div>
-
-
+		<div class="col-1"></div>
 
 		<!--lista de todo los registros -->
-		<table  id="tabletiposproyeccionsocial" class="table table-bordered"
+		<table id="tablereconocimientosss"  class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
-			<thead>  
+			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Programa</th>
-					<th scope="col">Titulo del Programa</th>
-					<th scope="col">Población Objetiva</th>
+					<th scope="col">Tipo</th>
+					<th scope="col">Año</th>  
+					<th scope="col">Fecha</th>
+					<th scope="col">Institución</th>      
+					<th scope="col">Cargo</th>
+					<th scope="col">Reconocimiento</th>
 					<th scope="col">Lugar</th>
-					<th scope="col">Año</th>
-					<th scope="col">N° Participantes</th>
 					<th scope="col">Archivo</th>
 					<th scope="col" colspan="2">Acción</th>
 				</tr>
@@ -195,13 +226,7 @@
 
 			</tbody>
 		</table>
-
 	</div>
-
-
-
-
-
              
  <input type="hidden" id="idprofe" value="1">    
 	</main>

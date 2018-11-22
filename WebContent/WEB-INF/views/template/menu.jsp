@@ -20,40 +20,41 @@
     <!-- Sidebar menu--> 
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>        
     <aside class="app-sidebar">                        
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="./recursos/img/sisi.jpg" alt="User Image">
-        <div>     
-          <p class="app-sidebar__user-name">Owen Mejia</p>  
-          <p class="app-sidebar__user-designation">Alumno</p>   
-        </div>     
-      </div>                        
+                               
       <ul class="app-menu">           
                            
       	    
       
   		                                   
-        <li class="treeview"  class="collapsed active"><a class="app-menu__item"  href="#" data-toggle="treeview"><i class="app-menu__icon fas fa-book"></i><span class="app-menu__label">Convocatoria Docente</span></a>
-        	<li><a class="treeview-item" href="docpersonal"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Documentos Personales</a></li>
-            <li><a class="treeview-item" href="gra"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Formación Académica Profesional y Docente</a></li>
-            <li><a class="treeview-item" href="actua"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Actualización Docente Profesional</a></li>
-            <li><a class="treeview-item" href="investi"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Investigación y aporte al Conocimiento</a></li>
-            <li><a class="treeview-item" href="exten"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Extension Cultural y Proyección Social</a></li>
-            <li><a class="treeview-item" href="filo"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Filosofía y Misión</a></li>
-            <li><a class="treeview-item" href="ex"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Logros Extras</a></li> 
+        
+        	<li><a class="treeview-item" href="docpersonal"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Documentos Personales</a></li>
+            <li><a class="treeview-item" href="gra"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Formación Académica Profesional y Docente</a></li>
+            
+            <li><a class="treeview-item" href="actua"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Capacitacion y Perfeccionamiento</a></li>
+            <li><a class="treeview-item" href="capadocencia"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Capacitacion en la Docencia</a></li>
                
-        </li>
-        	                
-           
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Evaluaciones</span></a>
+            <li><a class="treeview-item" href="investi"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Investigación</a></li>
+            <li><a class="treeview-item" href="publiii"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Publicaciones</a></li>
+            <li><a class="treeview-item" href="asesoratesis"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Asesoria de Tesis</a></li>
+            
+            <li><a class="treeview-item" href="exten"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Extension Cultural y Proyección Social</a></li>
+            <li><a class="treeview-item" href="premios"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Premios y Reconocimientos</a></li>
+            
+            <li><a class="treeview-item" href="filo"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Cosmovision</a></li>
+            <li><a class="treeview-item" href="integraaa"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Integracion Fe-Enseñanza</a></li>
+            <li><a class="treeview-item" href="serviii"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Servicio Aprendizaje</a></li>
+            
+            <li><a class="treeview-item" href="ex"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Logros Extras</a></li>   
+               
           
-            <li><a class="treeview-item" href="auto"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Auto-Evaluación</a></li>         
-                                                   
-        </li> 
+        	                 
+      
         
         
                            
-      </ul>
+      </ul>  
               
-    </aside>   
+    </aside>         
                              
     
       

@@ -9,7 +9,7 @@
 <title>LoginSCDO</title>
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<spring:url value="/recursos" var="urlrecursos"></spring:url>
+<spring:url value="/recursos" var="urlrecursos"></spring:url> 
 <link href="${urlrecursos}/css/template.css" rel="stylesheet">
 
 </head>
@@ -43,7 +43,7 @@
 			</form>
 			 
 		</div>
-	</section>
+	</section>     
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>    

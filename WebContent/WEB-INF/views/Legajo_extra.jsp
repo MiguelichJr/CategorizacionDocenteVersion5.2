@@ -22,14 +22,14 @@
 	<jsp:include page="template/cabezera.jsp"></jsp:include>
 	<jsp:include page="template/menu.jsp"></jsp:include>
 	<main class="app-content">
-	<div class="app-title">
+	<div class="app-title"> 
 		<div>
 			<h1>Logros Extras</h1>
 
 		</div>   
-	</div>
+	</div> 
 	    
-  
+    
 	<div
 		style="border-radius: 20px; background-color: white; padding: 10px ">
 		<!-- Form Name -->
@@ -169,6 +169,7 @@
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>      
 	<script src="${urlrecursos}/js/main.js"></script>
 	<script src="${urlrecursos}/js/script_expediente_filosofiamision.js"></script>
 	 

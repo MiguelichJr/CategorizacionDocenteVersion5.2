@@ -60,7 +60,12 @@ public class Leg_Investi {
 		this.url = url;
 		this.doce = doce;
 	}
+	public Leg_Investi(int idleg_investigaciones, String url) {
+		super();
+		this.idleg_investigaciones = idleg_investigaciones;
+		this.url = url;
+	}
 	
-	     
+	      
 	
 }

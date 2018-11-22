@@ -5,7 +5,11 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SqlOutParameter;
+import org.springframework.jdbc.core.SqlParameter;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 
+import oracle.jdbc.internal.OracleTypes;
 import pe.edu.upeu.sprintemplate.dao.Leg_Asesora_TesisDao;
 import pe.edu.upeu.sprintemplate.entity.Leg_Asesora_Tesis;
 
@@ -24,15 +28,39 @@ public class Leg_Asesora_Tesis_DaoImp implements Leg_Asesora_TesisDao {
 	}
 
 	@Override  
-	public int create(Leg_Asesora_Tesis l) {
+	public String create(Leg_Asesora_Tesis l) {
+		String sql="crear_LEG_ASETESIS";
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_tesis).withProcedureName(sql);
+		jdbcCall.addDeclaredParameter(new SqlParameter("anio2",OracleTypes.INTEGER));
+		jdbcCall.addDeclaredParameter(new SqlParameter("nombre2",OracleTypes.VARCHAR));
+		jdbcCall.addDeclaredParameter(new SqlParameter("autor",OracleTypes.VARCHAR));
+		jdbcCall.addDeclaredParameter(new SqlParameter("anio_3",OracleTypes.INTEGER));  
+		jdbcCall.addDeclaredParameter(new SqlParameter("reso",OracleTypes.VARCHAR)); 
+		jdbcCall.addDeclaredParameter(new SqlParameter("esta",OracleTypes.VARCHAR));
+		jdbcCall.addDeclaredParameter(new SqlParameter("url2",OracleTypes.VARCHAR));
+		jdbcCall.addDeclaredParameter(new SqlParameter("espe",OracleTypes.INTEGER));
+		jdbcCall.addDeclaredParameter(new SqlParameter("doce",OracleTypes.INTEGER));
+		jdbcCall.addDeclaredParameter(new SqlParameter("cate",OracleTypes.INTEGER));
+		jdbcCall.addDeclaredParameter(new SqlOutParameter("lista", OracleTypes.VARCHAR));   
+		Map<String,Object> leg= jdbcCall.execute(l.getAnio_1(),l.getTitulo(),l.getAutor(),l.getAnio_2(),l.getResolucion(),l.getEstado(),l.getUrl(),l.getEspecialidad(),l.getDoce(),l.getCategoria_atributo()); 
+		String resultado=(String) leg.get("lista");
+		return resultado;  
 		// TODO Auto-generated method stub
-		return leg_tesis.update("call crear_LEG_ASETESIS(?,?,?,?,?,?,?,?,?,?)",l.getAnio_1(),l.getTitulo(),l.getAutor(),l.getAnio_2(),l.getResolucion(),l.getEstado(),l.getUrl(),l.getEspecialidad(),l.getDoce(),l.getCategoria_atributo()); 
+		//return leg_tesis.update("call crear_LEG_ASETESIS(?,?,?,?,?,?,?,?,?,?)",l.getAnio_1(),l.getTitulo(),l.getAutor(),l.getAnio_2(),l.getResolucion(),l.getEstado(),l.getUrl(),l.getEspecialidad(),l.getDoce(),l.getCategoria_atributo()); 
 	}
 
 	@Override
 	public int update(Leg_Asesora_Tesis l) {
-		// TODO Auto-generated method stub
-		return 0;
+		int x = 0;   
+		String sql = "update LEG_ASETESIS set url=? where IDLGTESIS=?";
+		try {         
+			leg_tesis.update(sql, new Object[] { l.getUrl(),l.getIdlegtesis()}); 
+			x = 1;     
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error: " + e);
+		}
+		return x;
 	}
 
 	@Override

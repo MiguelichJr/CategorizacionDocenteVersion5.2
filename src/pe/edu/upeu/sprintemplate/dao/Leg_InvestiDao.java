@@ -6,7 +6,7 @@ import java.util.Map;
 import pe.edu.upeu.sprintemplate.entity.Leg_Investi;
 
 public interface Leg_InvestiDao {
-	int create(Leg_Investi l); 
+	String create(Leg_Investi l); 
 	int update(Leg_Investi l);
 	int delete(int id);                    
 	Leg_Investi read(int id);                  

@@ -733,10 +733,10 @@ public @ResponseBody String listarforcertificada34(HttpServletRequest request) {
 // tabla investigacione en los ultimos 5 anios
 
 @RequestMapping(path="/guardar_investigaciones_aniossssss", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_investigaciones_aniossssss8(HttpServletRequest request) {
+public @ResponseBody String guardar_investigaciones_aniossssss8(HttpServletRequest request) {
 	 
 	System.out.println("si funciona el controlador de investigaciones por anio :");    
-	        
+	Gson g = new Gson();      
 	    
 	int a=Integer.parseInt(request.getParameter("anios"));
 	System.out.println(a);
@@ -760,9 +760,9 @@ public @ResponseBody void guardar_investigaciones_aniossssss8(HttpServletRequest
        
 	System.out.println(es);                 
 	Leg_Investi leg= new Leg_Investi(a,t,re,es,u,idprofesor);
-	legInvestiDao.create(leg);     
+	     
 	//leg5Dao.create(lhy);             
-	                                              
+	 return g.toJson(legInvestiDao.create(leg));                                              
 } 
 
 @RequestMapping(path="/listarcinevstigaaaa", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -775,15 +775,83 @@ public @ResponseBody String listarcinevstigaaaa8(HttpServletRequest request) {
 	return g.toJson(legInvestiDao.readAllLegInvestigaciones(idprofesor));                      
 }
 
+ 
+@RequestMapping(value="/guardar_img_investiiiirgt", method = RequestMethod.POST)
+
+public String Inevtaigacioens_PE_Imagenes(@RequestParam("archi13") List<MultipartFile> file, @RequestParam("id13") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {  
+	ServletContext cntx = request.getServletContext();
+	String result = null;         
+	System.out.println("si entra en el controlador de investigaciones pe jjajajaxd tesis de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+           
+	int res = 0;
+	System.out.println(file + " , " + id); 
+	if (!file.isEmpty()) {
+         
+		try {    
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGINVESTI_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				//Leg_Reconocimientos leg=new Leg_Reconocimientos(idint,nombre);
+				//Leg_Asesora_Tesis leg= new Leg_Asesora_Tesis(idint,nombre); 
+				//legAsesotaTesisDao.update(leg);  
+				//Leg_Publi leg=new Leg_Publi(idint,nombre);
+				//legPubliDao.update(leg);    
+				Leg_Investi leg= new Leg_Investi(idint,nombre);
+				legInvestiDao.update(leg);   
+				
+				//Leg7 leg= new Leg7(idint,nombre);    
+				//legExtensionCulturalDao.update(leg);   
+				//Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				//leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);    
+				result = "redirect:/investi";          
+			}              
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();     
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	        
+ 
+	//System.out.println(result);
+	return result;
+}
+
+
+
+
 
   
 // tabla articulos
 
 @RequestMapping(path="/guardar_articulos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_articulos7(HttpServletRequest request) {
+public @ResponseBody String guardar_articulos7(HttpServletRequest request) {
 	 
 	System.out.println("si funciona el articuloss");    
-	        
+	Gson g = new Gson();     
 	    
 	int a=Integer.parseInt(request.getParameter("anio"));
 	System.out.println(a);
@@ -822,8 +890,10 @@ public @ResponseBody void guardar_articulos7(HttpServletRequest request) {
     System.out.println(tipo); 
 	System.out.println(es);                 
 	Leg_Publi leg=new Leg_Publi(a,t,nm,edito,isbn,npa,l,es,tipo,archi,idprofesor,c);
-	legPubliDao.create(leg);   
-	//leg5Dao.create(lhy);             
+	  
+	//leg5Dao.create(lhy);
+	      
+	return g.toJson(legPubliDao.create(leg));
 	                                              
 } 
 
@@ -837,13 +907,83 @@ public @ResponseBody String listararticulos9(HttpServletRequest request) {
 	return g.toJson(legPubliDao.readAllLeg_Publi_Articulos(idprofesor));                         
 }
 
+
+@RequestMapping(value="/guardar_img_articuloo", method = RequestMethod.POST)
+
+public String ARticulossos_Imagenes(@RequestParam("archi15") List<MultipartFile> file, @RequestParam("id15") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {  
+	ServletContext cntx = request.getServletContext();
+	String result = null;         
+	System.out.println("si entra en el controlador de articulos tesis de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+           
+	int res = 0;
+	System.out.println(file + " , " + id); 
+	if (!file.isEmpty()) {
+         
+		try {    
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGARTICU_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				//Leg_Reconocimientos leg=new Leg_Reconocimientos(idint,nombre);
+				//Leg_Asesora_Tesis leg= new Leg_Asesora_Tesis(idint,nombre); 
+				//legAsesotaTesisDao.update(leg);  
+				Leg_Publi leg=new Leg_Publi(idint,nombre);
+				legPubliDao.update(leg);    
+				//Leg7 leg= new Leg7(idint,nombre);    
+				//legExtensionCulturalDao.update(leg);   
+				//Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				//leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);    
+				result = "redirect:/publiii";     
+			}              
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();     
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	        
+ 
+	//System.out.println(result);
+	return result;
+}
+
+
+
+
+
+
+
+
+
 // tabla libros
 
 @RequestMapping(path="/guardar_libros", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_libros9(HttpServletRequest request) {
+public @ResponseBody String guardar_libros9(HttpServletRequest request) {
 	 
 	System.out.println("si funciona el libros");     
-	        
+	Gson g = new Gson();        
 	    
 	int a=Integer.parseInt(request.getParameter("anio"));
 	System.out.println(a);
@@ -876,9 +1016,9 @@ public @ResponseBody void guardar_libros9(HttpServletRequest request) {
     System.out.println(tipo); 
 	System.out.println(es);                           
 	Leg_Publi leg=new Leg_Publi(a,t,edito,isbn,npa,es,tipo,archi,idprofesor,c);
-	legPubliDao.create(leg);   
-	//leg5Dao.create(lhy);             
-	                                              
+	  
+	//leg5Dao.create(lhy);               
+	return g.toJson(legPubliDao.create(leg));                                              
 } 
   
 @RequestMapping(path="/listarlibrosss", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -890,16 +1030,89 @@ public @ResponseBody String listarlibrosss9(HttpServletRequest request) {
 	System.out.println("si trajo el id: " + idprofesor+"listar libros jajajajja ");                    
 	return g.toJson(legPubliDao.readAllLeg_Publi_Libros(idprofesor));                           
 }
-	
+
+
+
+@RequestMapping(value="/guardar_img_libros", method = RequestMethod.POST)
+
+public String Librososos_Imagenes(@RequestParam("archi20") List<MultipartFile> file, @RequestParam("id20") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {  
+	ServletContext cntx = request.getServletContext();
+	String result = null;         
+	System.out.println("si entra en el controlador de libros tesis de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+            
+	int res = 0;
+	System.out.println(file + " , " + id);    
+	if (!file.isEmpty()) {
+         
+		try {    
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGLIBRO_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				//Leg_Reconocimientos leg=new Leg_Reconocimientos(idint,nombre);
+				//Leg_Asesora_Tesis leg= new Leg_Asesora_Tesis(idint,nombre); 
+				//legAsesotaTesisDao.update(leg);  
+				Leg_Publi leg=new Leg_Publi(idint,nombre);
+				legPubliDao.update(leg);            
+				//Leg7 leg= new Leg7(idint,nombre);    
+				//legExtensionCulturalDao.update(leg);   
+				//Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				//leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);    
+				result = "redirect:/publiii";     
+			}              
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();     
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	        
+ 
+	//System.out.println(result);
+	return result;
+}
+
+
+
+
+
+
+
+
+
+
+
 	
 // tabla asesoramiento tesis
 
 	
 @RequestMapping(path="/guardar_asesoramiento", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_asesoramiento9(HttpServletRequest request) {
+public @ResponseBody String guardar_asesoramiento9(HttpServletRequest request) {
 	 
 	System.out.println("si funciona asesoramiento tesis");     
-	        
+	Gson g = new Gson();          
 	    
 	int a=Integer.parseInt(request.getParameter("anio"));
 	System.out.println(a);
@@ -935,9 +1148,9 @@ public @ResponseBody void guardar_asesoramiento9(HttpServletRequest request) {
 	System.out.println(es);          
 	Leg_Asesora_Tesis leg= new Leg_Asesora_Tesis(a,t,autor,a2,reso,es,archi,espe,idprofesor,c);  
 	 
-	legAsesotaTesisDao.create(leg); 
+	    
 	          
-	                                                 
+	return g.toJson(legAsesotaTesisDao.create(leg));                                                 
 } 
 
 
@@ -950,16 +1163,82 @@ public @ResponseBody String listarasesoramiento999(HttpServletRequest request) {
 	System.out.println("si trajo el id: " + idprofesor+"listar asesoramiento jajajajja ");                    
 	return g.toJson(legAsesotaTesisDao.readAllLegAsesoraTesisss(idprofesor));                             
 }
-	
+
+
+@RequestMapping(value="/guardar_img_asesoriatesis", method = RequestMethod.POST)
+
+public String AsesoramientoTesis_Imagenes(@RequestParam("archi21") List<MultipartFile> file, @RequestParam("id21") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {  
+	ServletContext cntx = request.getServletContext();
+	String result = null;         
+	System.out.println("si entra en el controlador de asesoramiento tesis de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+           
+	int res = 0;
+	System.out.println(file + " , " + id); 
+	if (!file.isEmpty()) {
+         
+		try {    
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGASESO_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				//Leg_Reconocimientos leg=new Leg_Reconocimientos(idint,nombre);
+				Leg_Asesora_Tesis leg= new Leg_Asesora_Tesis(idint,nombre); 
+				legAsesotaTesisDao.update(leg);  
+				
+				//Leg7 leg= new Leg7(idint,nombre);   
+				//legExtensionCulturalDao.update(leg);   
+				//Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				//leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);    
+				result = "redirect:/asesoratesis";    
+			}              
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	        
+ 
+	//System.out.println(result);
+	return result;
+}
+
+
+
+
+
+
 
 // tabla proyectos de proyeccion social
 
-
+            
 @RequestMapping(path="/guardar_tiposdeproyeccionsocial", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_tiposdeproyeccionsocial987(HttpServletRequest request) {
+public @ResponseBody String guardar_tiposdeproyeccionsocial987(HttpServletRequest request) {
 	 
 	System.out.println("si funciona tipos de proyeccion social");        
-	        
+	Gson g = new Gson();        
 	    
 	int a=Integer.parseInt(request.getParameter("anio"));
 	System.out.println(a);
@@ -990,9 +1269,9 @@ public @ResponseBody void guardar_tiposdeproyeccionsocial987(HttpServletRequest 
 	System.out.println(es);  
 	
 	Leg7 leg= new Leg7(a,t,po,l,nparticipantes,es,tp,u4,idprofesor);  
-	legExtensionCulturalDao.create(leg);
+	
 	 
-	          
+	return g.toJson(legExtensionCulturalDao.create(leg));            
 	                                                 
 }
 	
@@ -1005,6 +1284,74 @@ public @ResponseBody String listartiposproyeccion222(HttpServletRequest request)
 	System.out.println("si trajo el id: " + idprofesor+"listar tipos de proyeccion social jajajajja ");                    
 	return g.toJson(legExtensionCulturalDao.readAllLeg7ExtensionCultural(idprofesor));                              
 }
+
+
+
+@RequestMapping(value="/guardar_img_proyeccionsocial", method = RequestMethod.POST)
+
+public String ProyeccionSocial_Imagenes(@RequestParam("archi22") List<MultipartFile> file, @RequestParam("id22") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {  
+	ServletContext cntx = request.getServletContext();
+	String result = null;         
+	System.out.println("si entra en el controlador de proyeccion social de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+           
+	int res = 0;
+	System.out.println(file + " , " + id); 
+	if (!file.isEmpty()) {
+         
+		try {    
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGPROYEC_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				//Leg_Reconocimientos leg=new Leg_Reconocimientos(idint,nombre);
+				Leg7 leg= new Leg7(idint,nombre);  
+				legExtensionCulturalDao.update(leg);   
+				//Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				//leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);    
+				result = "redirect:/exten";    
+			}            
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	        
+ 
+	//System.out.println(result);
+	return result;
+}
+
+
+
+
+
+
+
+
+
 	
 
 //tabla de reconocimientos
@@ -1012,10 +1359,10 @@ public @ResponseBody String listartiposproyeccion222(HttpServletRequest request)
 
 
 @RequestMapping(path="/guardar_reconocimientos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_reconocimientosdsd(HttpServletRequest request) {
+public @ResponseBody String guardar_reconocimientosdsd(HttpServletRequest request) {
 	 
 	System.out.println("si funciona reconocimientos");        
-	        
+	Gson g = new Gson();       
 	    
 	int a=Integer.parseInt(request.getParameter("a"));
 	System.out.println(a);
@@ -1046,10 +1393,10 @@ public @ResponseBody void guardar_reconocimientosdsd(HttpServletRequest request)
     
 	System.out.println(es);  
 	Leg_Reconocimientos leg= new Leg_Reconocimientos(f,a,c,r,l,es,t,u4,i,idprofesor);  
-	leg_ReconciDao.create(leg);   
+	   
 	 
 	          
-	                                                 
+	return g.toJson(leg_ReconciDao.create(leg));                                                         
 }
 
 @RequestMapping(path="/listarreconooo", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -1062,21 +1409,82 @@ public @ResponseBody String listarreconooo986(HttpServletRequest request) {
 	return g.toJson(leg_ReconciDao.readAllLeg_Reconocimientos(idprofesor));                                  
 }
 
+@RequestMapping(value="/guardar_img_premiosrecnco", method = RequestMethod.POST)
+
+public String Reconocmimeintos_Imagenes(@RequestParam("archi24") List<MultipartFile> file, @RequestParam("id24") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {  
+	ServletContext cntx = request.getServletContext();
+	String result = null;         
+	System.out.println("si entra en el controlador de reconocimientos de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+           
+	int res = 0;
+	System.out.println(file + " , " + id); 
+	if (!file.isEmpty()) {
+         
+		try {    
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGRECONO_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				Leg_Reconocimientos leg=new Leg_Reconocimientos(idint,nombre);
+				leg_ReconciDao.update(leg);      
+				//Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				//leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);    
+				result = "redirect:/premios";    
+			}            
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	  
+ 
+	//System.out.println(result);
+	return result;
+}
+
+
+
+
+
+
 // tabla de cosmovision
 
 @RequestMapping(path="/guardar_cosmovision", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_cosmovision654(HttpServletRequest request) {
-	 
+public @ResponseBody String guardar_cosmovision654(HttpServletRequest request) {
+	                                     
 	System.out.println("si funciona cosmovision");         
-	        
+	Gson g = new Gson();            
 	 
 	   
 	String decla=request.getParameter("decla");
 	System.out.println(decla);
-	
+	  
 	String docu=request.getParameter("docu");
 	System.out.println(docu);
-	
+	  
 	String archi=request.getParameter("archi"); 
 	System.out.println(archi);  
 	    
@@ -1088,10 +1496,11 @@ public @ResponseBody void guardar_cosmovision654(HttpServletRequest request) {
     
 	System.out.println(es);  
 	Leg_Filosofia_Mision leg= new Leg_Filosofia_Mision(decla,tipo,archi,docu,es,idprofesor);
-	leg_FilosoDao.create(leg);     
-	 
-	           
-	                                                 
+	
+	   
+	System.out.println("Si llega al final del controlador sin acciones");
+	                     
+	return g.toJson(leg_FilosoDao.create(leg));                                                               
 }
 
 @RequestMapping(path="/listarcosmovision", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -1102,13 +1511,71 @@ public @ResponseBody String listarcosmovision345(HttpServletRequest request) {
 	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
 	System.out.println("si trajo el id: " + idprofesor+"listar cosmovisionjajajja ");                    
 	return g.toJson(leg_FilosoDao.readAllLeg_Cosmovision(idprofesor));                                    
+} 
+
+@RequestMapping(value="/guardar_img_cosmovision_2", method = RequestMethod.POST)
+
+public String Cosmovision_Imagenes(@RequestParam("archi33") List<MultipartFile> file, @RequestParam("id33") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {
+	ServletContext cntx = request.getServletContext();
+	String result = null;         
+	System.out.println("si entra en el controlador de cosmovision de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+           
+	int res = 0;
+	System.out.println(file + " , " + id); 
+	if (!file.isEmpty()) {
+         
+		try {  
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGFILO_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);    
+				result = "redirect:/filo";   
+			}            
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	  
+ 
+	//System.out.println(result);
+	return result;
 }
+
+
+
+
 
 // tabla fe integracion enseñanza
 
 
 @RequestMapping(path="/guardar_ife", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_ife87(HttpServletRequest request) {
+public @ResponseBody String guardar_ife87(HttpServletRequest request) {
 	 
 	System.out.println("si funciona ifeeeeee");         
 	        
@@ -1131,10 +1598,10 @@ public @ResponseBody void guardar_ife87(HttpServletRequest request) {
     
 	System.out.println(es);  
 	Leg_Filosofia_Mision leg= new Leg_Filosofia_Mision(decla,tipo,archi,docu,es,idprofesor);
-	leg_FilosoDao.create(leg);     
-	 
+	    
+	Gson g = new Gson(); 
 	           
-	                                                 
+	return g.toJson(leg_FilosoDao.create(leg));                                                   
 }
 
 @RequestMapping(path="/listarife", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -1147,15 +1614,74 @@ public @ResponseBody String listarife4534(HttpServletRequest request) {
 	return g.toJson(leg_FilosoDao.readAllLeg_IntegracionEnseñanza(idprofesor));                                    
 }
 
+@RequestMapping(value="/guardar_img_feintegracion", method = RequestMethod.POST)
+
+public String FeINtegracion_Imagenes(@RequestParam("archi45") List<MultipartFile> file, @RequestParam("id45") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {
+	ServletContext cntx = request.getServletContext();
+	String result = null;     
+	System.out.println("si entra en el controlador de fe integracion de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+           
+	int res = 0;
+	System.out.println(file + " , " + id); 
+	if (!file.isEmpty()) {
+     
+		try {  
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGFILO_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);    
+				result = "redirect:/integraaa";   
+			}        
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	  
+ 
+	//System.out.println(result);
+	return result;
+}
+
+
+
+
+
+
 // tabla servicio aprendizaje
 
 
 @RequestMapping(path="/guardar_servicio", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-public @ResponseBody void guardar_servicio9976(HttpServletRequest request) {
+public @ResponseBody String guardar_servicio9976(HttpServletRequest request) {
 	 
 	System.out.println("si funciona servicio aprendizaje");         
 	        
-	 
+	    
 	   
 	String decla=request.getParameter("decla");
 	System.out.println(decla);
@@ -1165,7 +1691,7 @@ public @ResponseBody void guardar_servicio9976(HttpServletRequest request) {
 	
 	String archi=request.getParameter("archi"); 
 	System.out.println(archi);  
-	    
+	     
 	int idprofesor=Integer.parseInt(request.getParameter("x"));  
 	System.out.println(idprofesor);
 	String tipo="Servicio Aprendizaje";                         	
@@ -1174,10 +1700,10 @@ public @ResponseBody void guardar_servicio9976(HttpServletRequest request) {
     
 	System.out.println(es);  
 	Leg_Filosofia_Mision leg= new Leg_Filosofia_Mision(decla,tipo,archi,docu,es,idprofesor);
-	leg_FilosoDao.create(leg);     
-	 
-	           
-	                                                 
+	    
+	Gson g = new Gson(); 
+	 return g.toJson(leg_FilosoDao.create(leg));          
+	                                                  
 }
 
 @RequestMapping(path="/listarserviii", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -1188,7 +1714,61 @@ public @ResponseBody String listarserviii5656(HttpServletRequest request) {
 	int idprofesor = Integer.parseInt(request.getParameter("idprofe"));
 	System.out.println("si trajo el id: " + idprofesor+"listar servicio jajajja ");                    
 	return g.toJson(leg_FilosoDao.readAllLeg_ServicioApredizaje(idprofesor));                                      
-} 
+}
+
+@RequestMapping(value="/guardar_img_cosmovision", method = RequestMethod.POST)
+ 
+public String Servi_Imagenes(@RequestParam("archi98") List<MultipartFile> file, @RequestParam("id98") String id,
+		HttpServletResponse response,  HttpServletRequest request) throws IOException {
+	ServletContext cntx = request.getServletContext();
+	String result = null;    
+	System.out.println("si entra en el controlador de servisss de imagenes pues owen" + file);
+	//System.out.println("entro en el controlador de ajax:"+id);         
+           
+	int res = 0;
+	System.out.println(file + " , " + id);
+	if (!file.isEmpty()) {
+     
+		try {  
+			for (MultipartFile fi : file) {
+				System.out.println(file);
+				String path = cntx.getRealPath("/WEB-INF/") + File.separator + fi.getOriginalFilename();
+				String nome= fi.getOriginalFilename();
+				nome="LGFILO_"+id.replace(" ","");     
+				FilenameUtils fich = new FilenameUtils(); 
+				path = cntx.getRealPath("/recursos/files/" + nome+"."+FilenameUtils.getExtension(path));
+				System.out.println("ruta del archivo: " + path);  
+				File destFile = new File(path);
+				fi.transferTo(destFile);
+				String nombre = destFile.getName();
+				String url = destFile.getPath();  
+				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
+				System.out.println(nombre);
+				//res = vd.subirDocumento("", "", nombre, idvac);
+				Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(idint,nombre); 
+				leg_FilosoDao.update(leg); 
+				/*Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);*/                   
+				System.out.println("respuesta de update" + res);
+				result = "redirect:/serviii";
+			}        
+ 
+		} catch (IOException | IllegalStateException ec) {
+			ec.getMessage();
+			ec.printStackTrace();
+		}
+		
+     
+		System.out.println(res);
+
+	}
+	  
+ 
+	//System.out.println(result);
+	return result;
+}
 
 
 // tabla extrasssss
@@ -1231,9 +1811,9 @@ public @ResponseBody String listarextrasssssssssssssssssss44(HttpServletRequest 
 }
 
 
-
+   
 @RequestMapping(value="/guardar_img_logrosextras", method = RequestMethod.POST)
-
+    
 public String LogrosExtras_Imagenes(@RequestParam("archi") List<MultipartFile> file, @RequestParam("id") String id,
 		HttpServletResponse response,  HttpServletRequest request) throws IOException {
 	ServletContext cntx = request.getServletContext();
@@ -1259,34 +1839,34 @@ public String LogrosExtras_Imagenes(@RequestParam("archi") List<MultipartFile> f
 				String nombre = destFile.getName();
 				String url = destFile.getPath();  
 				System.out.println("controller: " +id);
+				 int idint=Integer.parseInt(id);
+				 System.out.println("Si convirtio el id que es: "+idint);
 				System.out.println(nombre);
 				//res = vd.subirDocumento("", "", nombre, idvac);
-//				Leg_Extras leg= new Leg_Extras(id,nombre);
-//				leg_extraDao.update(leg); 
+				Leg_Extras leg= new Leg_Extras(idint,nombre);
+				leg_extraDao.update(leg);                   
 				System.out.println("respuesta de update" + res);
 				result = "redirect:/ex";
-			}
+			}        
 
 		} catch (IOException | IllegalStateException ec) {
 			ec.getMessage();
 			ec.printStackTrace();
 		}
 		
-
+     
 		System.out.println(res);
 
 	}
 	  
-
+ 
 	//System.out.println(result);
 	return result;
-}
+}       
 
- 
+     
 
-
-
-
+///////////////probando jpa en cosmovision
 
 
 
@@ -1305,7 +1885,7 @@ public String LogrosExtras_Imagenes(@RequestParam("archi") List<MultipartFile> f
 
 
 
-
+   
 
 
 
@@ -1327,6 +1907,16 @@ public String LogrosExtras_Imagenes(@RequestParam("archi") List<MultipartFile> f
 	public ModelAndView actualizacion() {
 		ModelAndView c= new ModelAndView();
 		c.setViewName("Legajo_actua");
+		c.addObject("lista_institucion",institucionDao.readAll());
+		c.addObject("lista_tipoponencia",tipoatributoDao.readAll_tipoponencia());
+		c.addObject("lista_tipocapacitacion",tipoatributoDao.readAll_tipocapacitacion());
+		return c;    
+	}
+	
+	@GetMapping("/capadocencia")
+	public ModelAndView capadocencia345() {
+		ModelAndView c= new ModelAndView();    
+		c.setViewName("Legajo_capacitaciondocenciape");
 		c.addObject("lista_institucion",institucionDao.readAll());
 		c.addObject("lista_tipoponencia",tipoatributoDao.readAll_tipoponencia());
 		c.addObject("lista_tipocapacitacion",tipoatributoDao.readAll_tipocapacitacion());
@@ -1367,6 +1957,27 @@ public String LogrosExtras_Imagenes(@RequestParam("archi") List<MultipartFile> f
 		gi.addObject("lista_especialidad",especialidadDao.readAll());
 		return gi;    
 	}
+	
+	@GetMapping("/publiii")
+	public ModelAndView publiii987() {
+		ModelAndView gi= new ModelAndView();       
+		gi.setViewName("Legajo_todopublicaciones");       
+		gi.addObject("lista_tipopublicaciones",tipoatributoDao.readAll_tipopublicaciones());
+		gi.addObject("lista_tipopublicaciones_espe",tipoatributoDao.readAll_tipopublicaciones_espe());
+		gi.addObject("lista_nivelasesoria",tipoatributoDao.readAll_nivelasesoria());
+		gi.addObject("lista_especialidad",especialidadDao.readAll());
+		return gi;     
+	}
+	@GetMapping("/asesoratesis")
+	public ModelAndView asesoratesis987() {
+		ModelAndView gi= new ModelAndView();        
+		gi.setViewName("Legajo_asesoriadetesis");        
+		gi.addObject("lista_tipopublicaciones",tipoatributoDao.readAll_tipopublicaciones());
+		gi.addObject("lista_tipopublicaciones_espe",tipoatributoDao.readAll_tipopublicaciones_espe());
+		gi.addObject("lista_nivelasesoria",tipoatributoDao.readAll_nivelasesoria());
+		gi.addObject("lista_especialidad",especialidadDao.readAll());
+		return gi;     
+	} 
    
 	@GetMapping("/exten")
 	public ModelAndView extensiones123() {
@@ -1375,18 +1986,40 @@ public String LogrosExtras_Imagenes(@RequestParam("archi") List<MultipartFile> f
 		gg.addObject("lista_institucion",institucionDao.readAll());
 		return gg; 
 	}
+	
+	@GetMapping("/premios")
+	public ModelAndView premios345() {
+		ModelAndView gg= new ModelAndView();
+		gg.setViewName("Legajo_premiosoreconocimientos");        
+		gg.addObject("lista_institucion",institucionDao.readAll());
+		return gg; 
+	}
 
 	@GetMapping("/filo")
-	public String filsofia123() {
+	public String filsofia123() { 
 
 		return "Legajo_filosofia";
 	}
+	
+	@GetMapping("/integraaa")
+	public String integraaa987() {
+   
+		return "Legajo_feintegracion";
+	}
+	
+	@GetMapping("/serviii")
+	public String serviii657() {
+   
+		return "Legajo_servicioaprendizaje";   
+	}
 
-	@GetMapping("/ex")
+	@GetMapping("/ex")  
 	public String extra123() {
 
 		return "Legajo_extra";
 	}
+	
+	      
 
 	@GetMapping("/auto")
 	public String auto123() {

@@ -9,8 +9,8 @@ $(document).ready(function() {
 
 // tabla filsofia misio pero en cosmovision
 $("#registrar_cosmovision").click(function() {
-	alert("si funka el boton de cosmovision");   
-	var decla = $("#decla").val();   
+	alert("si funka el boton de cosmovision sin acciones");   
+	var decla = $("#decla").val();      
 	var docu=$("#documento33").val();
 	var archi=$("#archi33").val();
 	
@@ -32,10 +32,21 @@ $("#registrar_cosmovision").click(function() {
 		x:x       
 		               
 	},function(data){
-		
-		//listarLeg_Grados();   
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;    
+			$("#id_cosmovisionpeeee").val(data);     
+			$("#enviar_archivo33").click();  
+
+			                   
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}
 	}); 
-	   
+	    
 	   
 });   
   
@@ -47,7 +58,7 @@ function listarCOSMO() {
 		//alert(datita);                                          
 		for(var i in datita){                                            
 			$("#tablecosmoooooo tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
-		}  
+		}    
 		    
 	});  
 	        
@@ -79,6 +90,20 @@ $("#registrar_ife").click(function() {
 		x:x       
 		               
 	},function(data){
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;    
+			$("#id_logro_feintegracion").val(data);     
+			$("#enviar_archivo45").click();  
+
+			               
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}
+		
 		
 		//listarLeg_Grados();   
 	}); 
@@ -127,6 +152,19 @@ $("#registrar_servicio").click(function() {
 		x:x       
 		               
 	},function(data){
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;    
+			$("#id_logro_extra98").val(data);     
+			$("#enviar_archivo98").click();
+
+			               
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}
 		
 		//listarLeg_Grados();   
 	}); 
@@ -178,33 +216,13 @@ $("#registrar_extras").click(function() {
 		               
 	},function(data){ 
 		if(data!=null){     
-			alert("Registro exitoso actualizado otr");    
-			limpiarLegExtras();                  
-			listarLogrosExtrasaas();               
+			swal("Registro Exitoso", "", "success");    
+			limpiarLegExtras();                      
+			listarLogrosExtrasaas();                
 			var id=data;  
-			$("#id_logro_extra").val(data);
+			$("#id_logro_extra").val(data);     
 			$("#enviar_archivo").click();
-			
-//			alert("El id de la data del metodo es: "+id);
-			       
-//			if (archi != "") {  
-//				$.ajax({
-//					type : "POST", 
-//					enctype : 'multipart/form-data',
-//					url : "cat/guardar_img_logrosextras",
-//					data : data,   
-//					processData : false,  
-//					contentType : false,
-//					cache : false,
-//					timeout : 600000, 
-//					beforeSend : function(xhr, data) {
-//						xhr.setRequestHeader(csrfHeader, csrfToken);
-//					}
-//				  
-//				});
-//			} else {
-//				alert("El archivo esta vacio"); 
-//			}
+
 			
 		}else{   
 			alert("Ops ocurrio un error"); 
@@ -216,7 +234,7 @@ $("#registrar_extras").click(function() {
 	
 	
 	   
-	    
+	      
 });
 function listarLogrosExtrasaas() {
 	 

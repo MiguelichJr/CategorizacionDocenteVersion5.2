@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Cosmovision</title>
+<title>Servicio Aprendizaje</title>
 <meta charset="utf-8"> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,40 +81,43 @@ body {
 	</div>
 	
 	
-	<div             
-		style="border-radius: 20px; background-color: white; padding: 10px; ">
+     
+	 
+	
+	<div 
+		style="border-radius: 20px; background-color: white; padding: 10px; margin-top: 20px">
 		<!-- Form Name -->
-		<legend style="text-align: center">Cosmovisión</legend>
+		<legend style="text-align: center">Servicio Aprendizaje</legend>      
 		<hr>
 		<!-- Text input-->
-		<div class="row">    
+		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10">
-				<div class="row"> 
+				<div class="row">
 					<div class="col-sm-1">   
 						<div class="form-group" style="text-align: center">
 							   
 						</div>
 					</div>
 					
-					<div class="col-sm-8">       
+					<div class="col-sm-8">         
 						<div class="form-group" style="text-align: center">
-							<label>Declaración</label> <input id="decla"
+							<label>Servicio</label> <input id="servicio"
 								style="text-align: center" type="text" class="form-control">
-  
+
 						</div>
 					</div>    
 					<div class="col-sm-2">
 						<div class="form-group" style="text-align: center">
 						<div class="select">
-								<label>Documento</label>     
-								<select style="text-align: center" id="documento33" class="form-control">
+								<label>Formación</label>         
+								<select id="formacion34" style="text-align: center" class="form-control">
 
      
 									<option value="SI" style="text-align: center">SI</option>
 									<option value="NO" style="text-align: center">NO</option>
 
-								</select>
+								</select>  
 							</div>	    
 						</div>
 					</div>
@@ -132,7 +135,7 @@ body {
 		    
 		
 		<div class="row">
-			<div class="col-1"></div>	 
+			<div class="col-1"></div>
 			<div class="col-10">
 				<div class="row">
 					<div class="col-sm-3">
@@ -144,15 +147,16 @@ body {
 								<div class="form-group" style="text-align: center"></div>
 							</div>
 							<div class="col-sm-10">
-							<form method="post" action="/cat/guardar_img_cosmovision_2" enctype="multipart/form-data">
+							<form method="post" action="/cat/guardar_img_cosmovision" enctype="multipart/form-data">
 								<div class="form-group" style="text-align: center">
-									<label>Archivo</label> <input  id="archi33" name="archi33" style="text-align: center"
-										type="file" class="form-control">
-									<input type="hidden" value="" name="id33" id="id_cosmovisionpeeee">
-										<button type="submit" id="enviar_archivo33" style="display:none;"></button>
-								</div>
-							</form>
-							</div>
+									<label>Archivo</label> <input id="archi98" name="archi98" style="text-align: center"
+										type="file" class="form-control"> 
+									<input type="hidden" value="" name="id98" id="id_logro_extra98">  
+										<button type="submit" id="enviar_archivo98" style="display:none;"></button>
+								
+								</div> 
+							</form> 
+							</div>  
 							<div class="col-sm-1">
 								<div class="form-group" style="text-align: center"></div>
 							</div>
@@ -187,7 +191,7 @@ body {
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
 
-									<button id="registrar_cosmovision" class="btn btn-primary btn-block"
+									<button id="registrar_servicio" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
@@ -205,29 +209,30 @@ body {
 				</div>
 			</div>
 		</div>
-		<div class="col-1"></div>
+		<div class="col-1"></div> 
 
 		<!--lista de todo los registros -->
-		<table id="tablecosmoooooo" class="table table-bordered"
+		<table id="tableserviciope"  class="table table-bordered"
 			style="max-width: 100%; text-align: center; margin-bottom: 5%">
 			<thead>
 				<tr>   
 					<th scope="col">#</th>
-					<th scope="col">Declaración</th>
-					<th scope="col">Documento</th>   
+					<th scope="col">Servicio</th>   
+					<th scope="col">Formación</th>      
 					<th scope="col">Archivo</th>
 					<th scope="col" colspan="2">Acción</th>
 				</tr>
 			</thead>
-			<tbody> 
+			<tbody>
 
 			</tbody>
 		</table>
 		
-			   
-	</div>
-	 
-	     
+		
+		    
+		
+		  
+	</div>    
 
 	
   <input type="hidden" id="idprofe" value="1"> 

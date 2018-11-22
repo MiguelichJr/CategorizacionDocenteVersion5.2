@@ -84,5 +84,12 @@ public class Leg7 {
 		this.url = url;
 		this.docente = docente;
 	}
+	public Leg7(int idleg7, String url) {
+		super();
+		this.idleg7 = idleg7;
+		this.url = url;
+	}
+	
+	  
 	 	
 }

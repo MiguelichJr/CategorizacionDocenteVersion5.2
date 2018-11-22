@@ -35,7 +35,19 @@ $("#registrar_Investigaciones_anios").click(function() {
 		x:x       
 		               
 	},function(data){
-		
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;        
+			$("#id_pinvestigacionesetr").val(data);     
+			$("#enviar_archivo13").click();  
+ 
+			                   
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}  
 		//listarLeg_Grados();   
 	}); 
 	   
@@ -100,7 +112,19 @@ $("#registrar_articulos").click(function() {
 		x:x       
 		               
 	},function(data){
-		
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;       
+			$("#id_articulosss").val(data);     
+			$("#enviar_archivo15").click();  
+
+			                   
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}  
 		//listarLeg_Grados();   
 	}); 
 	       
@@ -114,7 +138,7 @@ function listarArticulos() {
 		//alert(datita);                                       
 		for(var i in datita){                                          
 			$("#tablearituclos tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO_PUBLICACION+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_PUBLICACION+"</td><td>"+datita[i].NOMBRE_MEDIO_COMUNICACION+"</td><td>"+datita[i].EDITORIAL+"</td><td>"+datita[i].ISBN+"</td><td>"+datita[i].NPAGINAS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
-		}  
+		}      
 		    
 	});          
 } 
@@ -159,7 +183,19 @@ $("#registrar_libros").click(function() {
 		x:x       
 		               
 	},function(data){
-		
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;       
+			$("#id_libros").val(data);      
+			$("#enviar_archivo20").click();  
+              
+			                   
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}  
 		//listarLeg_Grados();   
 	}); 
 	       
@@ -222,7 +258,19 @@ $("#registrar_asesoramiento").click(function() {
 		x:x       
 		               
 	},function(data){
-		
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;     
+			$("#id_asesoriatesis").val(data);     
+			$("#enviar_archivo21").click();  
+
+			                   
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}  
 		//listarLeg_Grados();   
 	}); 
 	       

@@ -92,7 +92,12 @@ public class Leg_Reconocimientos {
 		this.institucion = institucion;
 		this.docente = docente;
 	}
+	public Leg_Reconocimientos(int idreconoci, String url) {
+		super();
+		this.idreconoci = idreconoci;
+		this.url = url;
+	}
 	 
-	
+	  
 }
   
