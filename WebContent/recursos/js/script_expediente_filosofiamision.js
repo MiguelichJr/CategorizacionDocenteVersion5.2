@@ -3,8 +3,8 @@ $(document).ready(function() {
 	listarCOSMO();
 	listarIFE();
 	listarServicioApre();
-	 listarLogrosExtrasaas(); 
-}); 
+	listarLogrosExtrasaas(); 
+});           
  
 
 // tabla filsofia misio pero en cosmovision
@@ -151,7 +151,7 @@ $("#registrar_servicio").click(function() {
 		archi:archi,        
 		x:x       
 		               
-	},function(data){
+	},function(data){ 
 		if(data!=null){
 			alert("registro exitoso");     
 			//swal("Registro Exitoso", "", "success");    
@@ -217,8 +217,8 @@ $("#registrar_extras").click(function() {
 	},function(data){ 
 		if(data!=null){     
 			swal("Registro Exitoso", "", "success");    
-			limpiarLegExtras();                      
-			listarLogrosExtrasaas();                
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
 			var id=data;  
 			$("#id_logro_extra").val(data);     
 			$("#enviar_archivo").click();
@@ -239,7 +239,7 @@ $("#registrar_extras").click(function() {
 function listarLogrosExtrasaas() {
 	 
 	var x = parseInt($("#idprofe").val());  
-	alert(x+"listar logros extras pe señor compadre con append");   
+	alert(x+"listar logros extras solo cuando el estado es completado");      
 	//alert("hola si funciona el funciton");  
 	$.get("listarextrasssssssssssssssssss", {idprofe:x}, function(datita) {
 		//alert(datita);                                            

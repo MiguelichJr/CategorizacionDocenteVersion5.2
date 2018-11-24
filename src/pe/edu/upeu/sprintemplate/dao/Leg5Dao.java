@@ -6,7 +6,7 @@ import java.util.Map;
 import pe.edu.upeu.sprintemplate.entity.Leg5;
 
 public interface Leg5Dao {
-	int create(Leg5 l); 
+	String create(Leg5 l); 
 	int update(Leg5 l);
 	int delete(int id);                    
 	Leg5 read(int id);                  

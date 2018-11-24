@@ -22,7 +22,14 @@
     <a class="app-header__logo" href="#" style="width:30%;background-color:#992e45">Categorización Docente Upeu</a>
        <!-- Navbar Right Menu-->   
       <ul class="app-nav">
-       
+          
+       	<li class="dropdown" style="margin-top:1%">
+       	   <h1 class="logo-wrapper"> 
+          <input value="Owen Mejia Guerra"  class="form-control" style="text-align:center;text-transform: uppercase;font-family:serif;" disabled/>
+        	</h1>     
+        </li>         
+					          
+	   
         
         <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>

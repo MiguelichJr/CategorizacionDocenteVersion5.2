@@ -28,7 +28,7 @@ public class LegExtraDaoImp implements Leg_ExtraDao {
 
 	@Override 
 	public String create(Leg_Extras l) {
-		
+		 
 		String sql="CREAR_LEG_LOGEXTS";
 		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_extrassss).withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("decla",OracleTypes.VARCHAR));
@@ -54,9 +54,9 @@ public class LegExtraDaoImp implements Leg_ExtraDao {
 			// TODO: handle exception
 			System.out.println("Error: " + e);
 		}
-		return x;
-	}    
-
+		return x;   
+	}       
+         
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
@@ -66,14 +66,15 @@ public class LegExtraDaoImp implements Leg_ExtraDao {
 	@Override
 	public Leg_Extras read(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return null;    
 	}
 
-	@Override
+	@Override            
+	 
 	public List<Map<String, Object>> readAllLeg_Extras(int id) {
-		// TODO Auto-generated method stub   
-		return leg_extrassss.queryForList("select * from leg_logexts l where l.DOCE_POR_CONV_IDDOCON="+id);
-	}
+		// TODO Auto-generated method stub               
+		return leg_extrassss.queryForList("select * from leg_logexts l where l.DOCE_POR_CONV_IDDOCON="+id+" and l.estado='completado'");                
+	}      
 	
 
 }

@@ -126,10 +126,15 @@ public class Leg5 {
 		this.institucion = institucion;
 		this.doce = doce;
 	}
+	public Leg5(int idlg5, String url) {
+		super();
+		this.idlg5 = idlg5;
+		this.url = url;
+	}
 	  
 	
 	 
-	    
+	  
 	
 	
 	

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>LoginSCDO</title>
+<title>Login  SCDO</title> 
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <spring:url value="/recursos" var="urlrecursos"></spring:url> 

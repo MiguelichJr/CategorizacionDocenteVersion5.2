@@ -1,7 +1,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <spring:url value="/" var="urlRoot" />
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="es"> 
 <head>
 <title>Capacitacion en la Docencia</title> 
@@ -104,14 +104,18 @@
 							<label>Lugar</label> <input id="l15"
 								style="text-align: center" type="text" class="form-control">
 
-						</div>        
+						</div>          
 					</div>
-					<div class="col-sm-5">     
+					<div class="col-sm-5">  
+					<form method="post" action="/cat/guardar_img_capcitaciondocenciasjdn" enctype="multipart/form-data">   
 						<div class="form-group" style="text-align: center">
-							<label>Archivo</label> <input  id="archi15"         
+							<label>Archivo</label> <input  id="archi15" name="archi15"        
 								style="text-align: center" type="file" class="form-control">
-
+							<input type="hidden" value="" name="id15" id="id_capcitaciondocenciaasj">
+							<button type="submit" id="enviar_archivo15" style="display:none;"></button>     
+							
 						</div>
+					</form>
 					</div>
 				</div>
 			</div>
@@ -137,7 +141,7 @@
 									<button id="registrar_capcianios" class="btn btn-primary btn-block"
 										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
-								</div> 
+								</div>   
 							</div>
 						</div>   
 						<div class="col-sm-4">

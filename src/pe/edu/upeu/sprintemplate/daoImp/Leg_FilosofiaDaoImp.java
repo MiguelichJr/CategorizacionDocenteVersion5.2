@@ -76,19 +76,22 @@ public class Leg_FilosofiaDaoImp implements Leg_FiloDao {
 	@Override 
 	public List<Map<String, Object>> readAllLeg_Cosmovision(int id) {
 		// TODO Auto-generated method stub
-		return leg_filosofiamision.queryForList("select l.NOMBRE,l.DOCUMENTO_SI_NO,l.URL from leg_filmisi l where l.TIPO_FILOSOFIA='Cosmovision' and l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg_filosofiamision.queryForList("select * from leg_filmisi l where l.estado='completado' and l.TIPO_FILOSOFIA='Cosmovision' "
+				+ "and l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 
 	@Override
 	public List<Map<String, Object>> readAllLeg_IntegracionEnseñanza(int id) {
 		// TODO Auto-generated method stub
-		return leg_filosofiamision.queryForList("select l.NOMBRE,l.DOCUMENTO_SI_NO,l.URL from leg_filmisi l where l.TIPO_FILOSOFIA='Integracion Fe' and l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg_filosofiamision.queryForList("select * from leg_filmisi l where l.estado='completado' and l.TIPO_FILOSOFIA='Integracion Fe' "
+				+ "and l.DOCE_POR_CONV_IDDOCON="+id); 
 	}
  
-	@Override
-	public List<Map<String, Object>> readAllLeg_ServicioApredizaje(int id) {
+	@Override            
+	public List<Map<String, Object>> readAllLeg_ServicioApredizaje(int id) {   
 		// TODO Auto-generated method stub
-		return leg_filosofiamision.queryForList("select l.NOMBRE,l.DOCUMENTO_SI_NO,l.URL from leg_filmisi l where l.TIPO_FILOSOFIA='Servicio Aprendizaje' and l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg_filosofiamision.queryForList("select * from leg_filmisi l where l.estado='completado' and l.TIPO_FILOSOFIA='Servicio Aprendizaje' "
+				+ "and l.DOCE_POR_CONV_IDDOCON="+id);
 	} 
 
 }

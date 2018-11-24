@@ -74,11 +74,14 @@ public class Leg_Asesora_Tesis_DaoImp implements Leg_Asesora_TesisDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-   
+      
 	@Override
 	public List<Map<String, Object>> readAllLegAsesoraTesisss(int id) {
 		// TODO Auto-generated method stub
-		return leg_tesis.queryForList("select l.ANIO,l.TITULO,l.AUTOR,l.ANIO_1,l.RESOLUCION,l.ESTADO,l.URL,e.NOMBRE_ESPECIALIDAD,l.DOCE_POR_CONV_IDDOCON,a.NOMBRE_ATRIBUTO from leg_asetesis l,ATRIBUTOS a, ESPECIALIDAD e where l.ESPECIALIDAD_IDESPC=e.IDESPC and l.CAATRI=a.IDATRI and l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg_tesis.queryForList("select l.ANIO,l.TITULO,l.AUTOR,l.ANIO_1,l.RESOLUCION,l.ESTADO,l.URL,e.NOMBRE_ESPECIALIDAD,"
+				+ "l.DOCE_POR_CONV_IDDOCON,a.NOMBRE_ATRIBUTO from leg_asetesis l,ATRIBUTOS a, ESPECIALIDAD e where "
+				+ "l.ESPECIALIDAD_IDESPC=e.IDESPC and l.estado='completado' "  
+				+ "and l.CAATRI=a.IDATRI and l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 
 }

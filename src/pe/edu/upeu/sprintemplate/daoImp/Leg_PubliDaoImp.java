@@ -80,13 +80,19 @@ public class Leg_PubliDaoImp implements Leg_PubliDao {
 	@Override
 	public List<Map<String, Object>> readAllLeg_Publi_Articulos(int id) {
 		// TODO Auto-generated method stub
-		return leg_publi.queryForList("select l.ANIO_PUBLICACION,a.NOMBRE_ATRIBUTO,l.NOMBRE_PUBLICACION,l.NOMBRE_MEDIO_COMUNICACION,l.EDITORIAL,l.ISBN,l.NPAGINAS,l.LUGAR,l.TIPO,l.URL from leg_publi l, atributos a where l.CATEATRI=a.IDATRI and l.TIPO='ARTICULOS' and l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg_publi.queryForList("select l.ANIO_PUBLICACION,a.NOMBRE_ATRIBUTO,l.NOMBRE_PUBLICACION,l.NOMBRE_MEDIO_COMUNICACION,"
+				+ "l.EDITORIAL,l.ISBN,l.NPAGINAS,l.LUGAR,l.TIPO,l.URL from leg_publi l, atributos a where "
+				+ "l.CATEATRI=a.IDATRI and l.TIPO='ARTICULOS' and l.estado='completado' "
+				+ "and l.DOCE_POR_CONV_IDDOCON="+id);
 	}
-
+     
 	@Override
 	public List<Map<String, Object>> readAllLeg_Publi_Libros(int id) {
 		// TODO Auto-generated method stub     
-		return leg_publi.queryForList("select l.ANIO_PUBLICACION,a.NOMBRE_ATRIBUTO,l.NOMBRE_PUBLICACION,l.NOMBRE_MEDIO_COMUNICACION,l.EDITORIAL,l.ISBN,l.NPAGINAS,l.LUGAR,l.TIPO,l.URL from leg_publi l, atributos a where l.CATEATRI=a.IDATRI and l.TIPO='LIBROS' and l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg_publi.queryForList("select l.ANIO_PUBLICACION,a.NOMBRE_ATRIBUTO,l.NOMBRE_PUBLICACION,l.NOMBRE_MEDIO_COMUNICACION,"
+				+ "l.EDITORIAL,l.ISBN,l.NPAGINAS,l.LUGAR,l.TIPO,l.URL from leg_publi l, atributos a where "
+				+ "l.CATEATRI=a.IDATRI and l.TIPO='LIBROS' and l.estado='completado' "
+				+ "and l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 
 }

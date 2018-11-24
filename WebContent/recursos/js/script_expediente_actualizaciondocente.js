@@ -42,8 +42,19 @@ $("#registrar_eventos_academicos").click(function() {
 		u4:u4,     
 		x : x
 	},function(data){
-		
-		//listarLeg_Grados();   
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;          
+			$("#id_eventosacademicossss").val(data);     
+			$("#enviar_archivo14").click();
+               
+			               
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}  
 	});
 	
 	
@@ -88,8 +99,21 @@ $("#registrar_capcianios").click(function() {
 	alert(x);           
                           
                
-	$.post("guardar_capacitaciones_aca", {i:i,ne15:ne15,fi:fi,ff:ff,h:h,c:c,l:l,a15:a15,x:x},function(data){
-		                    
+	$.post("guardar_capacitaciones_aca", {i:i,ne15:ne15,fi:fi,ff:ff,h:h,c:c,l:l,a15:a15,x:x},
+			function(data){
+			if(data!=null){ 
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;          
+			$("#id_capcitaciondocenciaasj").val(data);     
+			$("#enviar_archivo15").click();  
+               
+			               
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}     
 		//listarLeg_Grados();     
 	});  
 	                                                            
@@ -106,7 +130,7 @@ function listarcapacitacionenladocenciaenlosultimosanios() {
 			$("#tablecapacitaciones5anios tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].FECHA+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
 		}  
 		        
-	});      
+	});       
 } 
 
 // tabla capacitacion  en ponencias o en congresos
@@ -133,8 +157,22 @@ $("#registrar_ponenciasencongresos").click(function() {
 	alert(x);           
                                
                  
-	$.post("guardar_ponenecias_congresos", {a:a,c:c,ne:ne,i:i,h:h,credi:credi,l:l,u:u,x:x},function(data){
-		                    
+	$.post("guardar_ponenecias_congresos", {a:a,c:c,ne:ne,i:i,h:h,credi:credi,l:l,u:u,x:x},
+			function(data){
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;       
+			 
+			$("#id_enlasponenecias").val(data);     
+			$("#enviar_archivo18").click();
+
+			               
+		}else{   
+			alert("Ops ocurrio un error"); 
+		}   
 		//listarLeg_Grados();     
 	});  
 	                                                            
@@ -183,7 +221,20 @@ $("#registrar_formalcertifici").click(function() {
                  
 	$.post("guardar_formar_certificadas", {a:a,c:c,ne:ne,i:i,h:h,credi:credi,l:l,u:u,x:x},function(data){
 		                    
-		//listarLeg_Grados();     
+		if(data!=null){
+			alert("registro exitoso");     
+			//swal("Registro Exitoso", "", "success");    
+			//limpiarLegExtras();                      
+			//listarLogrosExtrasaas();                
+			var id=data;       
+			       
+			$("#id_formalcertficada").val(data);     
+			$("#enviar_archivo20").click();
+
+			               
+		}else{   
+			alert("Ops ocurrio un error"); 
+		} 
 	});  
 	                                                                          
 	  

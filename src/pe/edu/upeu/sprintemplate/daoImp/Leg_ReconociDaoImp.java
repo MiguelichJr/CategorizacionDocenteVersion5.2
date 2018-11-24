@@ -76,9 +76,11 @@ public class Leg_ReconociDaoImp implements Leg_ReconociDao {
 	} 
   
 	@Override
-	public List<Map<String, Object>> readAllLeg_Reconocimientos(int id) {
+	public List<Map<String, Object>> readAllLeg_Reconocimientos(int id) { 
 		// TODO Auto-generated method stub
-		return leg_reconocimiento.queryForList("select l.FECHA,l.ANIO,l.LABOR,l.RECONOCIMIENTO_DESCRIPCION,l.LUGAR,l.ESTADO,l.TIPO,l.URL,i.NOMBRE_INSTITUCION,l.DOCE_POR_CONV_IDDOCON  from lgreconoci l,institucion i where l.INSTITUCION_IDINT=i.IDINT and l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg_reconocimiento.queryForList("select l.FECHA,l.ANIO,l.LABOR,l.RECONOCIMIENTO_DESCRIPCION,l.LUGAR,l.ESTADO,"
+				+ "l.TIPO,l.URL,i.NOMBRE_INSTITUCION,l.DOCE_POR_CONV_IDDOCON  from lgreconoci l,institucion i where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT "
+				+ "and l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 
 }

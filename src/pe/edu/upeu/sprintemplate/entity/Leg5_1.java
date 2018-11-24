@@ -103,9 +103,14 @@ public class Leg5_1 {
 		this.tipo = tipo;
 		this.url = url;
 	}
+	public Leg5_1(int idlg5_1, String url) {
+		super();
+		this.idlg5_1 = idlg5_1;
+		this.url = url;
+	}
 	
 	  
-	 
+	    
 	
 	   
 }

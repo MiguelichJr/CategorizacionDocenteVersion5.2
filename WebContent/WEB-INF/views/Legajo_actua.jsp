@@ -144,12 +144,16 @@
 
 						</div>        
 					</div>
-					<div class="col-sm-5">     
+					<div class="col-sm-5">
+					<form method="post" action="/cat/guardar_img_ponenciascongresos" enctype="multipart/form-data">     
 						<div class="form-group" style="text-align: center">
-							<label>Archivo</label> <input    id="u18"   
+							<label>Archivo</label> <input    id="u18"   name="archi18"
 								style="text-align: center" type="file" class="form-control">
-
+							<input type="hidden" value="" name="id18" id="id_enlasponenecias">
+							<button type="submit" id="enviar_archivo18" style="display:none;"></button>     
+							 
 						</div>
+					</form>
 					</div>
 				</div>
 			</div>
@@ -300,12 +304,16 @@
 
 						</div>        
 					</div>
-					<div class="col-sm-5">      
+					<div class="col-sm-5">
+					<form method="post" action="/cat/guardar_img_eventosacademicos" enctype="multipart/form-data"> 
 						<div class="form-group" style="text-align: center">
-							<label>Archivo</label> <input id="archi14"         
+							<label>Archivo</label> <input id="archi14" name="archi14"         
 								style="text-align: center" type="file" class="form-control">
-
+							<input type="hidden" value="" name="id14" id="id_eventosacademicossss">
+							<button type="submit" id="enviar_archivo14" style="display:none;"></button>     
+							   	
 						</div>
+					</form>    
 					</div>
 				</div>
 			</div>
@@ -462,12 +470,16 @@
 
 						</div>        
 					</div>
-					<div class="col-sm-5">     
+					<div class="col-sm-5"> 
+					<form method="post" action="/cat/guardar_img_formalcertifi" enctype="multipart/form-data">    
 						<div class="form-group" style="text-align: center">
-							<label>Archivo</label> <input id="archi20"       
+							<label>Archivo</label> <input id="archi20" name="archi20"      
 								style="text-align: center" type="file" class="form-control">
-
-						</div>
+								<input type="hidden" value="" name="id20" id="id_formalcertficada"> 
+							<button type="submit" id="enviar_archivo20" style="display:none;"></button>     
+							
+						</div> 
+					</form> 
 					</div>
 				</div>
 			</div>

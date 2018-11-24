@@ -214,11 +214,11 @@ ik<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 			<thead>
 				<tr>
 					<th scope="col">#</th>  
-					<th scope="col">Año Publicación</th>
-					<th scope="col">Tipo de Publicación</th>
-					<th scope="col">Título</th>
-					<th scope="col">Medio de Comunicación(Nombre)</th>
-					<th scope="col">Editorial</th>
+					<th scope="col">Año</th>
+					<th scope="col">Tipo</th>
+					<th scope="col">Título</th>  
+					<th scope="col">Medio Comunicacion</th> 
+					<th scope="col">Editorial</th> 
 					<th scope="col">ISBN</th>        
 					<th scope="col">N° de Páginas</th>
 					<th scope="col">Lugar</th>

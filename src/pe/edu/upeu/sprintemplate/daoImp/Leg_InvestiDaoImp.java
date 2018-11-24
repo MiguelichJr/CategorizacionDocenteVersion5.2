@@ -73,9 +73,9 @@ public class Leg_InvestiDaoImp implements Leg_InvestiDao {
 	}
      
 	@Override
-	public List<Map<String, Object>> readAllLegInvestigaciones(int id) {
+	public List<Map<String, Object>> readAllLegInvestigaciones(int id) {   
 		// TODO Auto-generated method stub    
-		return leg_investi.queryForList("select * from LEG_INVESTI where DOCE_POR_CONV_IDDOCON="+id);
-	}
+		return leg_investi.queryForList("select * from LEG_INVESTI where estado='completado' and DOCE_POR_CONV_IDDOCON="+id);
+	}   
 
 }

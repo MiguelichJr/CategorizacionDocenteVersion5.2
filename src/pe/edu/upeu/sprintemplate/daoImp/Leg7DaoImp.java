@@ -76,10 +76,11 @@ public class Leg7DaoImp implements Leg7Dao{
 		// TODO Auto-generated method stub
 		return null;
 	}
-   
+     
 	@Override
-	public List<Map<String, Object>> readAllLeg7ExtensionCultural(int id) {
+	public List<Map<String, Object>> readAllLeg7ExtensionCultural(int id) { 
 		// TODO Auto-generated method stub
-		return leg_extension.queryForList("select l.ANIO,l.TITULO,l.POBLACION_OBJETIVA,l.LUGAR,l.NPARTICIPANTES,l.ESTADO,l.TIPO,l.URL,l.DOCE_POR_CONV_IDDOCON  from leg7_extn_cul l where  l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg_extension.queryForList("select l.ANIO,l.TITULO,l.POBLACION_OBJETIVA,l.LUGAR,l.NPARTICIPANTES,"
+				+ "l.ESTADO,l.TIPO,l.URL,l.DOCE_POR_CONV_IDDOCON  from leg7_extn_cul l where l.estado='completado' and  l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 }

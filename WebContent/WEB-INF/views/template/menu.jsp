@@ -30,25 +30,32 @@
         	<li><a class="treeview-item" href="docpersonal"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Documentos Personales</a></li>
             <li><a class="treeview-item" href="gra"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Formación Académica Profesional y Docente</a></li>
             
-            <li><a class="treeview-item" href="actua"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Capacitacion y Perfeccionamiento</a></li>
-            <li><a class="treeview-item" href="capadocencia"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Capacitacion en la Docencia</a></li>
-               
-            <li><a class="treeview-item" href="investi"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Investigación</a></li>
-            <li><a class="treeview-item" href="publiii"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Publicaciones</a></li>
-            <li><a class="treeview-item" href="asesoratesis"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Asesoria de Tesis</a></li>
+                  
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fas fa-book"></i><span class="app-menu__label">Actualizacion Docente</span><i class="treeview-indicator fa fa-angle-right"></i></a>  
+            <li><a class="treeview-item" href="actua"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Capacitacion y Perfeccionamiento</a></li>
+            <li><a class="treeview-item" href="capadocencia"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Capacitacion en la Docencia</a></li>
+             
             
-            <li><a class="treeview-item" href="exten"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Extension Cultural y Proyección Social</a></li>
-            <li><a class="treeview-item" href="premios"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Premios y Reconocimientos</a></li>
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fas fa-book"></i><span class="app-menu__label">Inves. y Conocimiento</span><i class="treeview-indicator fa fa-angle-right"></i></a>  
+            <li><a class="treeview-item" href="investi"><i class="icon fa fa-circle-o " style="margin-left:3%"></i>Investigación</a></li>
+            <li><a class="treeview-item" href="publiii"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Publicaciones</a></li>
+            <li><a class="treeview-item" href="asesoratesis"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Asesoria de Tesis</a></li>
             
-            <li><a class="treeview-item" href="filo"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Cosmovision</a></li>
-            <li><a class="treeview-item" href="integraaa"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Integracion Fe-Enseñanza</a></li>
-            <li><a class="treeview-item" href="serviii"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Servicio Aprendizaje</a></li>
             
-            <li><a class="treeview-item" href="ex"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Logros Extras</a></li>   
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fas fa-book"></i><span class="app-menu__label">Extension Cultural</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <li><a class="treeview-item" href="exten"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Extension Cultural y Proyección Social</a></li>
+            <li><a class="treeview-item" href="premios"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Premios y Reconocimientos</a></li>
+            
+            
+            
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fas fa-book"></i><span class="app-menu__label">Filosofia y Mision</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <li><a class="treeview-item" href="filo"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Cosmovision</a></li>
+            <li><a class="treeview-item" href="integraaa"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Integracion Fe-Enseñanza</a></li>
+            <li><a class="treeview-item" href="serviii"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Servicio Aprendizaje</a></li> 
+            <li><a class="treeview-item" href="ex"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Logros Extras</a></li>   
                
           
-        	                 
-      
+             
         
         
                            
