@@ -57,7 +57,7 @@ function listarCOSMO() {
 	$.get("listarcosmovision", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
 		for(var i in datita){                                            
-			$("#tablecosmoooooo tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tablecosmoooooo").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
 		}    
 		    
 	});  
@@ -119,9 +119,9 @@ function listarIFE() {
 	$.get("listarife", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
 		for(var i in datita){                                            
-			$("#tableifeee tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tableifeee").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
 		}  
-		        
+		         
 	});  
 	        
 } 
@@ -178,18 +178,33 @@ function listarServicioApre() {
 	//alert("hola si funciona el funciton");
 	$.get("listarserviii", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
-		for(var i in datita){                                            
-			$("#tableserviciope").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+		for(var i in datita){                                             
+			$("#tableserviciope").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' onclick='CambiarEstadoServicioAprendizaje("+datita[i].ID_FILOSOFIA+")' ><i class='fa fa-trash-o'></i></td></tr>");
 		}        
 		        
 	});  
 	        
-}  
+}
 
+
+
+function CambiarEstadoServicioAprendizaje(id){       
+	alert("si entra en el cambiar de estado servicio: "+id);  
+$.post("cambiarestado_servicio", {
+		 
+		id:id         
+		               
+	},function(data){ 
+		$("#tableserviciope tbody tr").remove();
+		listarServicioApre();     
+		//listarLogrosExtrasaas();       
+	});
+}             
+    
 //termien todo pe ajja xd	
 
 // table de logros extras peeee aca nomas jajajja xd
-
+ 
 $("#registrar_extras").click(function() {
 	alert("si funka el boton de logros extras");     
 	  
@@ -230,7 +245,7 @@ $("#registrar_extras").click(function() {
 		
 	
 		    
-	});
+	});    
 	
 	
 	   
@@ -244,15 +259,31 @@ function listarLogrosExtrasaas() {
 	$.get("listarextrasssssssssssssssssss", {idprofe:x}, function(datita) {
 		//alert(datita);                                            
 		for(var i in datita){                                            
-			$("#tablelogrosextraspe").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].DECLARACION+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
-		}        
+			$("#tablelogrosextraspe").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].DECLARACION+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' onclick='CambiarEstadoLogrosExtras("+datita[i].IDLOGROS+")' ><i class='fa fa-trash-o'></i></td></tr>");
+		}             
 		        
 	});  
 	        
-}
+}       
+
+
 
 function limpiarLegExtras(){       
 	$("#tablelogrosextraspe tbody tr").remove();   	
-}    
+}
+
+
+
+function CambiarEstadoLogrosExtras(id){
+	alert("si entra en el cambiar de estado: "+id);  
+$.post("cambiarestado_extra", {
+		
+		id:id         
+		               
+	},function(data){ 
+		$("#tablelogrosextraspe tbody tr").remove();
+		listarLogrosExtrasaas();       
+	});
+}
 
 

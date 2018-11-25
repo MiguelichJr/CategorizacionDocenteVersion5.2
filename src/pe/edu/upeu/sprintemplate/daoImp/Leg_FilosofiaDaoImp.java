@@ -61,10 +61,18 @@ public class Leg_FilosofiaDaoImp implements Leg_FiloDao {
 		return x; 
 	}
 
-	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	@Override    
+	public int delete(Leg_Filosofia_Mision l) {     
+		int x = 0; 
+		String sql = "update leg_filmisi set estado=? where ID_FILOSOFIA=?";
+		try {   
+			leg_filosofiamision.update(sql, new Object[] { l.getEstado(),l.getIdfilosifia()}); 
+			x = 1;            
+		} catch (Exception e) { 
+			// TODO: handle exception  
+			System.out.println("Error: " + e);
+		}  
+		return x;   
 	}
 
 	@Override
@@ -85,7 +93,7 @@ public class Leg_FilosofiaDaoImp implements Leg_FiloDao {
 		// TODO Auto-generated method stub
 		return leg_filosofiamision.queryForList("select * from leg_filmisi l where l.estado='completado' and l.TIPO_FILOSOFIA='Integracion Fe' "
 				+ "and l.DOCE_POR_CONV_IDDOCON="+id); 
-	}
+	} 
  
 	@Override            
 	public List<Map<String, Object>> readAllLeg_ServicioApredizaje(int id) {   

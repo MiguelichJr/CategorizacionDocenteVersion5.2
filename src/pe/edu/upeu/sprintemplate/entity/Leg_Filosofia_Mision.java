@@ -66,9 +66,21 @@ public class Leg_Filosofia_Mision {
 		this.idfilosifia = idfilosifia;
 		this.url = url;
 	}
+	public Leg_Filosofia_Mision(String estado, int idfilosifia) {
+		super();
+		
+		this.estado = estado;
+		this.idfilosifia = idfilosifia;    
+	}
+	@Override
+	public String toString() {
+		return "Leg_Filosofia_Mision [idfilosifia=" + idfilosifia + ", nombre=" + nombre + ", tipo_filosofia="
+				+ tipo_filosofia + ", url=" + url + ", documento=" + documento + ", estado=" + estado + ", docente="
+				+ docente + "]";
+	}
 	
 	  
-	
+	   
 	   
 	
 	

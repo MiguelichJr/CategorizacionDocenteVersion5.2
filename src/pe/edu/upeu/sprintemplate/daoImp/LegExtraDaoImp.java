@@ -54,13 +54,22 @@ public class LegExtraDaoImp implements Leg_ExtraDao {
 			// TODO: handle exception
 			System.out.println("Error: " + e);
 		}
-		return x;   
+		return x;    
 	}       
          
 	@Override
-	public int delete(int id) {
+	public int delete(Leg_Extras l) {
 		// TODO Auto-generated method stub
-		return 0;
+		int x = 0; 
+		String sql = "update leg_logexts set estado=? where Idlogros=?";
+		try {   
+			leg_extrassss.update(sql, new Object[] { l.getEstado(),l.getId()}); 
+			x = 1;                
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error: " + e);
+		}
+		return x;               
 	}
 
 	@Override
@@ -76,5 +85,5 @@ public class LegExtraDaoImp implements Leg_ExtraDao {
 		return leg_extrassss.queryForList("select * from leg_logexts l where l.DOCE_POR_CONV_IDDOCON="+id+" and l.estado='completado'");                
 	}      
 	
-
+ 
 }

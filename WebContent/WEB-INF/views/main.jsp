@@ -19,7 +19,7 @@
                        
     <div style="margin-left:1%;margin-right:1%;height:570px;background-color:rgba(153, 46, 69,0.3);width:1337px;margin-top: 5%;border-radius:20px">
                                       
-         
+          
     </div>        
            
       

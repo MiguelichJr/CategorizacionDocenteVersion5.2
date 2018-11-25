@@ -2068,7 +2068,24 @@ public String Servi_Imagenes(@RequestParam("archi98") List<MultipartFile> file, 
  
 	//System.out.println(result);
 	return result;
+} 
+
+@RequestMapping(path = "/cambiarestado_servicio", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void ELiminarServicio(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson(); 
+	System.out.println("si entra el id en el controlador servicio: "+id);
+	String es="incompleto";
+	Leg_Filosofia_Mision leg=new Leg_Filosofia_Mision(es,id);  
+	System.out.println(leg.toString());
+	leg_FilosoDao.delete(leg);            
+	//leg_FilosoDao.update(leg);    
+	//Leg_Extras l=new Leg_Extras(es, id);           
+	//System.out.println(l.toString());        
+	//leg_extraDao.delete(l); 
+	//return g.toJson();   
 }
+
 
 
 // tabla extrasssss
@@ -2164,7 +2181,27 @@ public String LogrosExtras_Imagenes(@RequestParam("archi") List<MultipartFile> f
 	return result;
 }       
 
-     
+ 
+@RequestMapping(path = "/cambiarestado_extra", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void eliminarDocente(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson();
+	System.out.println("si entra el id en el controlador: "+id);
+	String es="incompleto";  
+	Leg_Extras l=new Leg_Extras(es, id);           
+	System.out.println(l.toString());        
+	leg_extraDao.delete(l); 
+	//return g.toJson();   
+} 
+
+
+
+
+
+
+
+
+
 
 ///////////////probando jpa en cosmovision
 

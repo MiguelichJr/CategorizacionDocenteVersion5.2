@@ -48,8 +48,19 @@ public class Leg_Extras {
 		this.id = id;
 		this.url = url;
 	}
-	
-	 
+	@Override
+	public String toString() {
+		return "Leg_Extras [id=" + id + ", declaracion=" + declaracion + ", url=" + url + ", docente=" + docente
+				+ ", estado=" + estado + "]";
+	}
+	public Leg_Extras(String estado,int id) {
+		super();
+		this.estado = estado;           
+		this.id = id;
+		
+	}
+	    
+	       	 
 	
 	    
 }
