@@ -42,7 +42,7 @@ public class Leg_FilosofiaDaoImp implements Leg_FiloDao {
 		jdbcCall.addDeclaredParameter(new SqlOutParameter("lista", OracleTypes.VARCHAR));   
 		Map<String,Object> leg= jdbcCall.execute(l.getNombre(),l.getTipo_filosofia(),l.getUrl(),l.getDocumento(),l.getEstado(),l.getDocente()); 
 		String resultado=(String) leg.get("lista");
-		return resultado;   
+		return resultado;    
 		// TODO Auto-generated method stub
 		//return leg_filosofiamision.update("call crear_LEG_FILMISI(?,?,?,?,?,?)",l.getNombre(),l.getTipo_filosofia(),l.getUrl(),l.getDocumento(),l.getEstado(),l.getDocente());  
 	}  

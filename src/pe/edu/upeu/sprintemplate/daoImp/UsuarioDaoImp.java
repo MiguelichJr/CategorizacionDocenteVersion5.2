@@ -44,7 +44,7 @@ public class UsuarioDaoImp implements UsuarioDao {
 		return listo;                 
 	}
 
-	@Override
+	@Override 
 	public List<Map<String, Object>> readAllModulos(Usuario u) {
 		List<Map<String,Object>> listo;
 		String sql="LISTAR_MODULOS_PORIDROL";
@@ -57,13 +57,13 @@ public class UsuarioDaoImp implements UsuarioDao {
 	}
 
 	@Override
-	public List<Map<String, Object>> readAllPrivilegios(Usuario u) {
+	public List<Map<String, Object>> readAllPrivilegios(int id) {
 		List<Map<String,Object>> listo;
 		String sql="LISTAR_PRIVILEGIOS";           
 		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(jdbcTemplate).withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("a",OracleTypes.INTEGER));
 		jdbcCall.addDeclaredParameter(new SqlOutParameter("lista", OracleTypes.CURSOR));
-		Map<String,Object> leg= jdbcCall.execute(u.getIdmodulo());     
+		Map<String,Object> leg= jdbcCall.execute(id);           
 		listo=(List<Map<String,Object>>) leg.get("lista");
 		return listo;
 	}     

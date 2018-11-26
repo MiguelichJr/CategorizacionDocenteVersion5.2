@@ -2,10 +2,10 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <spring:url value="/" var="urlRoot" />
 <!DOCTYPE html>
-<html lang="es">  
+<html lang="es">   
   <head>
     <title>Menu Estatico</title>   
-    <meta charset="utf-8">     
+    <meta charset="utf-8">              
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">   
@@ -16,17 +16,17 @@
   <body class="app sidebar-mini rtl">   
   <!-- Navbar-->        
            
-       
+         
     <!-- Sidebar menu--> 
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>        
-    <aside class="app-sidebar">                        
+    <aside class="app-sidebar" >                        
                                
-      <ul class="app-menu">           
+      <ul class="app-menu" id="menussssss_cargar">            
                            
       	    
       
-  		                                   
-        
+  		     <!--                                
+        	
         	<li><a class="treeview-item" href="docpersonal"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Documentos Personales</a></li>
             <li><a class="treeview-item" href="gra"><i class="app-menu__icon fas fa-book" style="margin-left:3%"></i>Formación Académica Profesional y Docente</a></li>
             
@@ -54,15 +54,15 @@
             <li><a class="treeview-item" href="serviii"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Servicio Aprendizaje</a></li> 
             <li><a class="treeview-item" href="ex"><i class="icon fa fa-circle-o" style="margin-left:3%"></i>Logros Extras</a></li>   
                
-          
+              
              
+         -->         
         
-        
-                           
+                             
       </ul>  
               
     </aside>         
-                             
+                               
     
       
     
@@ -73,6 +73,7 @@
     <script src="${urlrecursos}/js/popper.min.js"></script>
     <script src="${urlrecursos}/js/bootstrap.min.js"></script>
     <script src="${urlrecursos}/js/main.js"></script>
+    <script src="${urlrecursos}/js/privilegio.js"></script>  
     <!-- The javascript plugin to display page loading on top-->
     <script src="${urlrecursos}/js/plugins/pace.min.js"></script>
     <!-- Page specific javascripts-->

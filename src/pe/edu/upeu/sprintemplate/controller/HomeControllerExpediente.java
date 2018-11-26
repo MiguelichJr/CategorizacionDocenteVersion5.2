@@ -56,6 +56,7 @@ import pe.edu.upeu.sprintemplate.daoImp.Leg_PubliDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_ReconociDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.UsuarioDaoImp;
+import pe.edu.upeu.sprintemplate.entity.Institucion;
 import pe.edu.upeu.sprintemplate.entity.Leg;
 import pe.edu.upeu.sprintemplate.entity.Leg2;
 import pe.edu.upeu.sprintemplate.entity.Leg3;
@@ -140,10 +141,12 @@ public class HomeControllerExpediente {
 		return "main";       
 	}
 	*/ 
+	
+	// metodos para el login
 	@RequestMapping(path="/home",method=RequestMethod.POST) 
 	public String home4(HttpSession session, @RequestParam("nom_user") String nom_user, @RequestParam("clave") String clave) {
 		System.out.println("si llega al controlador del login pues owen");
-		  
+		 
 		 String retornar= ""; 
 		 Usuario usuuuuu=new Usuario(nom_user,clave);
 		 List<Map<String,Object>> lista = (usuarioDao.readAllLogin(usuuuuu));
@@ -151,20 +154,27 @@ public class HomeControllerExpediente {
 		 if(lista.size()==0) {
 			 System.out.println("Usuario/Contraseña incorrecto");
 			 retornar="redirect:/";   
-		 }else {  
+		 }else {     
 			 System.out.println("si entra en el controlador");
-			 	for (Map<String,Object> mm :lista) {
+			 	for (Map<String,Object> mm :lista) { 
 			 		System.out.println("llego al ciclo for");
 			 		session.setAttribute("nombre", mm.get("NOMBRE"));
 			 		session.setAttribute("apellido", mm.get("APELLIDO"));
-			 		String a= (String) mm.get("NOMBRE");
-			 		System.out.println(a);
-			 		String b= mm.get("IDROL").toString();
-			 		 int numero=Integer.parseInt(b);
-			 		 System.out.println(numero); 
-			 		 Usuario usucontructor=new Usuario(numero);
-			 		List<Map<String,Object>> listamodulos=(usuarioDao.readAllModulos(usucontructor));
-			 		System.out.println(listamodulos);     
+			 		session.setAttribute("nu", mm.get("NOM_USER")); 
+			 		session.setAttribute("cl", mm.get("CLAVE")); 
+			 		String a= (String) mm.get("NOMBRE");      
+			 		System.out.println(a);          
+			 		String b= mm.get("IDROL").toString();  
+			 		String c= mm.get("IDDOCON").toString(); 
+			 		 int idroll=Integer.parseInt(b); 
+			 		int iddoceconvo=Integer.parseInt(c); 
+			 		 System.out.println(idroll); 
+			 		 System.out.println(iddoceconvo);      
+			 		session.setAttribute("roles", idroll);   
+			 		session.setAttribute("iddocenteconvocatoria", iddoceconvo);
+			 		 //Usuario usucontructor=new Usuario(numero);
+			 		//List<Map<String,Object>> listamodulos=(usuarioDao.readAllModulos(usucontructor));
+			 		//System.out.println(listamodulos);     
 			 		//int numero=Integer.parseInt(b);       
 			 		//int numero=Integer.valueOf(((Integer) mm.get("IDROL")).intValue()); 
 			 		//System.out.println("El numero que trae del idro es:"+numero);
@@ -178,10 +188,76 @@ public class HomeControllerExpediente {
 		 }
 		return retornar;         
 	}  
- 
+  
+	//metodo para listar los modulos por rol
+	@RequestMapping(path="/listar_modulos_rol", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String ListarModulos(HttpServletRequest request) {
+		int b=Integer.parseInt(request.getParameter("b")); 
+		System.out.println("si trajo el id del rol: " + b);
+		Usuario u= new Usuario(b);
+		Gson g= new Gson();      
+		List<Map<String,Object>> listamodulos=(usuarioDao.readAllModulos(u));
+		System.out.println(listamodulos);    
+		return 	g.toJson(listamodulos);      
+	} 
+	   
+	@RequestMapping(value="/enviarelidmodulopepepe", method = RequestMethod.POST)
+    
+	public String Idmofulosjah(@RequestParam("valormo") String id, 
+			HttpServletResponse response,  HttpServletRequest request,HttpSession
+			sesion) throws IOException {
+		ServletContext cntx = request.getServletContext();
+		System.out.println("si entra en el controlador de el id del modulo "+id);
+		int r=Integer.parseInt(id);
+		String retor="";
+		if(r>0) {
+			System.out.println("el id es mayor que cero");   
+			sesion.setAttribute("idmodulo_menu", r);  
+			retor="main_jsp";    
+		}else {
+			System.out.println("el id es menor que cero");
+			retor="/";         
+		}
+		return retor;       
+	} 
+	
+	
+	@RequestMapping(path="/listar_menu_modulo", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String listar_menu_modulo(HttpServletRequest request) {
+		int x=Integer.parseInt(request.getParameter("x")); 
+		System.out.println("si trajo el id del modulo para el menu: " + x);
+		//Usuario u= new Usuario(x); 
+		Institucion i= new Institucion(x);     
+		Gson g= new Gson();        
+		List<Map<String,Object>> listamenus=(institucionDao.readAllPrivilegios(i));
+		System.out.println(listamenus);     
+		return 	g.toJson(listamenus);      
+	}   
+	  
 	
 	
 	
+	
+	/*
+	//enviar a la vista de menu
+	@RequestMapping(path="/enviar_vista_menu", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public String enviar_vista_menu(HttpServletRequest request) { 
+		System.out.println("si entra en el controlador jaj  de la vista del menu: "); 
+		Gson g= new Gson();
+		String a="main_jsp.jsp";  
+		return 	g.toJson(a);                   
+	}*/ 
+	
+	 
+	 
+	
+	
+////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////7
+	/////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////7
+	//////////////////////////////////////////////////////////////////////////////77  
 	
 //tabla grados y titulos   
 @RequestMapping(path="/guardar_grados_titulos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -63,6 +63,8 @@ public class Usuario {
 		super();
 		this.idmodulo = idmodulo;
 	}
+
+	  
 	
 	
 	

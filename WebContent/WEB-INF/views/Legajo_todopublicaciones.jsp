@@ -402,7 +402,7 @@ ik<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 					<th scope="col">Editorial</th>   
 					<th scope="col">ISBN</th>   
 					<th scope="col">N° de Páginas</th>   
-					<th scope="col">Archivo</th>                
+					<th scope="col">Archivo</th>                 
 					<th scope="col" colspan="2">Acción</th>  
 				</tr>
 			</thead>
@@ -413,9 +413,10 @@ ik<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 </div> 
 
-      
-	<input type="text" id="idprofe" value="1">     	
-	</main>
+      <input  type="hidden" value="<%=(Integer) session.getAttribute("idmodulo_menu")%>" id="idmodulooooo" class="form-control" style="width:100px;"/>
+	  
+	<input  type="hidden" id="idprofe" value="<%=(Integer) session.getAttribute("iddocenteconvocatoria")%>">     	
+	</main>     
 	<!-- Essential javascripts for application to work-->
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>

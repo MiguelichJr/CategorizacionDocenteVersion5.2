@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title> 
+<title>Login CDO</title>   
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <spring:url value="/recursos" var="urlrecursos"></spring:url> 
@@ -23,7 +23,7 @@
 		</div>        
 		<div class="login-box" style="border-radius:20px"       >  
 			<form class="login-form" action="home" method="POST">
-				<h3 class="login-head" style="text-align:center">
+				<h3 class="login-head" style="text-align:center"> 
 					<i class="fa fa-lg fa-fw fa-user" style="color:#992e45"></i>Login SCDO      
 				</h3>
 				<div class="form-group" style="text-align:center">

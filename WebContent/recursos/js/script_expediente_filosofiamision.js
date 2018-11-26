@@ -228,7 +228,7 @@ $("#registrar_extras").click(function() {
 		docu:docu,
 		archi:archi,        
 		x:x         
-		               
+		                 
 	},function(data){ 
 		if(data!=null){     
 			swal("Registro Exitoso", "", "success");    
@@ -238,7 +238,7 @@ $("#registrar_extras").click(function() {
 			$("#id_logro_extra").val(data);     
 			$("#enviar_archivo").click();
 
-			
+			   
 		}else{   
 			alert("Ops ocurrio un error"); 
 		}

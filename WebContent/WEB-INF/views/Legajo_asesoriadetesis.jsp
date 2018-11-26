@@ -197,13 +197,17 @@
 			</tbody>
 		</table>
 	</div>      
-	<input type="text" id="idprofe" value="1">     	
+	<input type="hidden" id="idprofe" value="<%=(Integer) session.getAttribute("iddocenteconvocatoria")%>">
+	<input type="hidden" value="<%=(Integer) session.getAttribute("idmodulo_menu")%>" id="idmodulooooo" class="form-control" style="width:100px;"/>
+	              	
 	</main>
 	<!-- Essential javascripts for application to work-->
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
-	<script src="${urlrecursos}/js/main.js"></script>            
+	<script src="${urlrecursos}/js/main.js"></script>  
+	
+    <script src="${urlrecursos}/js/privilegio.js"></script>             
 	<script src="${urlrecursos}/js/script_expediente_investigacionyaporte.js"></script>
 	<!-- The javascript plugin to display page loading on top-->
 	<script src="${urlrecursos}/js/plugins/pace.min.js"></script>
