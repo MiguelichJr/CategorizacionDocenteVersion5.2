@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login CDO</title>   
+<title>Login SCD</title>   
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <spring:url value="/recursos" var="urlrecursos"></spring:url> 
 <link href="${urlrecursos}/css/template.css" rel="stylesheet">
-
+   
 </head>
 <body>  
 	<section class="material-half-bg" >  
@@ -24,9 +24,9 @@
 		<div class="login-box" style="border-radius:20px"       >  
 			<form class="login-form" action="home" method="POST">
 				<h3 class="login-head" style="text-align:center"> 
-					<i class="fa fa-lg fa-fw fa-user" style="color:#992e45"></i>Login SCDO      
+					<i class="fa fa-lg fa-fw fa-user" style="color:#992e45"></i>Login SCD      
 				</h3>
-				<div class="form-group" style="text-align:center">
+				<div class="form-group" style="text-align:center"> 
 					<label class="control-label" >USUARIO</label> 
 					<input	class="form-control" type="text" name="nom_user" style="text-align:center">
 				</div>            
