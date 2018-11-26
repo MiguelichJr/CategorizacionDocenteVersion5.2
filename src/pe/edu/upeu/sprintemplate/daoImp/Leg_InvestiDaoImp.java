@@ -31,7 +31,7 @@ public class Leg_InvestiDaoImp implements Leg_InvestiDao {
 	@Override
 	public String create(Leg_Investi l) {
 		String sql="crear_LEG_INVESTI";  
-		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_investi).withProcedureName(sql);
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_investi).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("anio2",OracleTypes.INTEGER));
 		jdbcCall.addDeclaredParameter(new SqlParameter("nombre2",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("nureso",OracleTypes.INTEGER));

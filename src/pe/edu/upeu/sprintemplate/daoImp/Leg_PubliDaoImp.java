@@ -30,7 +30,7 @@ public class Leg_PubliDaoImp implements Leg_PubliDao {
 	@Override
 	public String create(Leg_Publi l) {
 		String sql="crear_LEG_PUBLI";
-		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_publi).withProcedureName(sql);
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_publi).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("ano2",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("nombre2",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("nombremedio",OracleTypes.VARCHAR));

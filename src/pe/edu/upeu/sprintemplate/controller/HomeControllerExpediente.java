@@ -2435,9 +2435,21 @@ public @ResponseBody void eliminarDocente(HttpServletRequest request) {
 	      
 
 	@GetMapping("/auto")
-	public String auto123() {
+	public String auto123() { 
 
 		return "Legajo_autoevaluacion";
+	}
+	
+	@GetMapping("/pares")
+	public String apres123() {
+
+		return "Legajo_EvaluacionPares";     
+	}
+	
+	@GetMapping("/adminis")
+	public String apreadminiss123() {
+
+		return "Legajo_EvaluacionAdministradores";     
 	}
 
 }

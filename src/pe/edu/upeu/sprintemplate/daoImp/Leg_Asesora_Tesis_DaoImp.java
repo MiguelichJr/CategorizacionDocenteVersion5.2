@@ -28,9 +28,9 @@ public class Leg_Asesora_Tesis_DaoImp implements Leg_Asesora_TesisDao {
 	}
 
 	@Override  
-	public String create(Leg_Asesora_Tesis l) {
+	public String create(Leg_Asesora_Tesis l) { 
 		String sql="crear_LEG_ASETESIS";
-		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_tesis).withProcedureName(sql);
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_tesis).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("anio2",OracleTypes.INTEGER));
 		jdbcCall.addDeclaredParameter(new SqlParameter("nombre2",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("autor",OracleTypes.VARCHAR));

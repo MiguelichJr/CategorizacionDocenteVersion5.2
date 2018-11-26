@@ -30,8 +30,8 @@ public class Leg7DaoImp implements Leg7Dao{
 
 	@Override 
 	public String create(Leg7 l) { 
-		String sql="crear_LEG7_EXTN_CUL";
-		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_extension).withProcedureName(sql);
+		String sql="crear_LEG7_EXTN_CUL";  
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_extension).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("anio2",OracleTypes.INTEGER));
 		jdbcCall.addDeclaredParameter(new SqlParameter("nombre2",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("pobla",OracleTypes.VARCHAR));

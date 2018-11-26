@@ -47,7 +47,7 @@
       </ul>                   
       <form class="login-form" action="home" method="POST">
 				
-				
+				     
 					   
 					<input value="<%=(String) session.getAttribute("nu")%>"	class="form-control" type="hidden" name="nom_user" style="text-align:center" />
 			           

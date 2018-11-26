@@ -28,9 +28,9 @@ public class LegExtraDaoImp implements Leg_ExtraDao {
 
 	@Override 
 	public String create(Leg_Extras l) {
-		 
-		String sql="CREAR_LEG_LOGEXTS";
-		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_extrassss).withProcedureName(sql);
+		   
+		String sql="CREAR_LEG_LOGEXTS";      
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_extrassss).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("decla",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("URL2",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("doce",OracleTypes.INTEGER));

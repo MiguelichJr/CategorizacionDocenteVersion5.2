@@ -30,7 +30,7 @@ public class Leg_ReconociDaoImp implements Leg_ReconociDao {
 	@Override
 	public String create(Leg_Reconocimientos l) {
 		String sql="crear_LGRECONOCI";
-		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_reconocimiento).withProcedureName(sql);
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_reconocimiento).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("fecha",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("anio2",OracleTypes.INTEGER));
 		jdbcCall.addDeclaredParameter(new SqlParameter("labor2",OracleTypes.VARCHAR));

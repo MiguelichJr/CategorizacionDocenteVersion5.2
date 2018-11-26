@@ -35,7 +35,7 @@ public class Leg5DaoImp implements Leg5Dao {
 		// TODO Auto-generated method stub   
 		//return leg5.update("call crear_LEG5(?,?,?,?,?,?,?,?,?,?,?,?)",l.getAnio(),l.getFecha(),l.getNombre_evento(),l.getHoras(),l.getCreditos(),l.getLugar(),l.getEstado(),l.getFecha_termino(),l.getTipo(),l.getUrl(),l.getInstitucion(),l.getDoce()); 
 		String sql="crear_LEG5";  
-		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg5).withProcedureName(sql);
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg5).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("an2",OracleTypes.INTEGER));
 		jdbcCall.addDeclaredParameter(new SqlParameter("fecha2",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("nombre2",OracleTypes.VARCHAR));

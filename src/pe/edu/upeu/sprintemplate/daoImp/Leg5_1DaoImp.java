@@ -31,7 +31,7 @@ public class Leg5_1DaoImp implements Leg5_1Dao {
 	@Override
 	public String create(Leg5_1 l) {
 		String sql="crear_LEG5_1"; 
-		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg5_1).withProcedureName(sql);
+		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg5_1).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("anio2",OracleTypes.INTEGER));
 		jdbcCall.addDeclaredParameter(new SqlParameter("nombre2",OracleTypes.VARCHAR));
 		jdbcCall.addDeclaredParameter(new SqlParameter("horas2",OracleTypes.INTEGER));
