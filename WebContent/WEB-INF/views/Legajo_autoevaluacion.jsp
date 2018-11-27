@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>AutoEvaluacion</title>   
+<title>AutoEvaluacion</title>     
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,8 +56,8 @@
 			considerando que 0=Nada, 1=Raras veces, 2=A veces, 3=A menudo, 4=Casi
 			siempre y 5=Siempre.</div>
 			
-		<h5>Perspectiva: Misión y visión</h5>
-
+		<h5>Perspectiva: Misión y visión</h5>  
+  
 
 		<hr>
 		<form class="nas" novalidate>  
@@ -79,10 +79,10 @@
 				lograrlo ok ? que paso ?   .</th>         
 			<th><input class="form-control" type="text" class="validar"
 				maxlength="1" style="text-align: center;" 
-				onKeypress="if (event.keyCode < 40 || event.keyCode > 53) event.returnValue = true;" id="autom1" required="required">
-				<div class="valid-feedback">
+				onKeypress="if (event.keyCode < 97 || event.keyCode > 101) event.returnValue = true;" id="autom1" required="required">
+				<div class="valid-feedback">      
         			          
-             </div>    
+             </div>       
              <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -93,7 +93,7 @@
 					alineadas a los objetivos.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom2" required="required">
+				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autom2" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -104,7 +104,7 @@
 					colegas, y conozco sus metas personales y profesionales.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom3"  required="required">
+				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autom3"  required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -115,10 +115,10 @@
 					colegas.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom4" required="required">
+				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autom4" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
-        </div> 
+        </div>  
 				</th>
 			<tr>
 				<th>5</th>

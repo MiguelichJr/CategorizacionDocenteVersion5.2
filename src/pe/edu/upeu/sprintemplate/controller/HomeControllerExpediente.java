@@ -156,6 +156,7 @@ public class HomeControllerExpediente {
 			 retornar="redirect:/";   
 		 }else {     
 			 System.out.println("si entra en el controlador");
+			 String jajaja = null; 
 			 	for (Map<String,Object> mm :lista) { 
 			 		System.out.println("llego al ciclo for");
 			 		session.setAttribute("nombre", mm.get("NOMBRE"));
@@ -165,13 +166,30 @@ public class HomeControllerExpediente {
 			 		String a= (String) mm.get("NOMBRE");      
 			 		System.out.println(a);          
 			 		String b= mm.get("IDROL").toString();  
-			 		String c= mm.get("IDDOCON").toString(); 
+			 		String c= mm.get("IDDOCON").toString();
+			 		String estadoconvoca= mm.get("ESTADO").toString(); 
 			 		 int idroll=Integer.parseInt(b); 
-			 		int iddoceconvo=Integer.parseInt(c); 
+			 		int iddoceconvo=Integer.parseInt(c);  
 			 		 System.out.println(idroll); 
-			 		 System.out.println(iddoceconvo);      
+			 		 System.out.println(iddoceconvo);
+			 		 System.out.println(estadoconvoca);
 			 		session.setAttribute("roles", idroll);   
 			 		session.setAttribute("iddocenteconvocatoria", iddoceconvo);
+			 		int u;
+			 		jajaja=estadoconvoca;     
+			 		System.out.println(jajaja+" si le da valor al jajaja");
+			 		String valor="activo";  
+			 		if(jajaja==valor) {              
+			 			System.out.println("bien bien bien");
+			 			retornar="redirect:/";              
+			 		}else {
+			 			System.out.println(" mal mal mal");           
+			 			retornar="redirect:/";         
+			 		}
+			 		
+			 		
+			 		
+			 		   
 			 		 //Usuario usucontructor=new Usuario(numero);
 			 		//List<Map<String,Object>> listamodulos=(usuarioDao.readAllModulos(usucontructor));
 			 		//System.out.println(listamodulos);     
@@ -181,10 +199,13 @@ public class HomeControllerExpediente {
 			 		//System.out.println(a);     
 			 		//String num= (String) mm.get("IDROL");
 			 		//int nnn=Integer.parseInt(num);
-			 		//System.out.println("El id del rol es:"+nnn);          
+			 		//System.out.println("El id del rol es:"+nnn); 
+			 		                       
 			 	}
-			 retornar="main";
-			 
+			 	
+			 	
+			
+			    
 		 }
 		return retornar;         
 	}  
@@ -199,7 +220,7 @@ public class HomeControllerExpediente {
 		List<Map<String,Object>> listamodulos=(usuarioDao.readAllModulos(u));
 		//System.out.println(listamodulos);    
 		return 	g.toJson(listamodulos);      
-	} 
+	}  
 	   
 	@RequestMapping(value="/enviarelidmodulopepepe", method = RequestMethod.POST)
     
