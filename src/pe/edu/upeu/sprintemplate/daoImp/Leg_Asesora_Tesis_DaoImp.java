@@ -61,24 +61,32 @@ public class Leg_Asesora_Tesis_DaoImp implements Leg_Asesora_TesisDao {
 			System.out.println("Error: " + e);
 		}
 		return x;
-	}
+	} 
 
 	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Leg_Asesora_Tesis l) {  
+		int x = 0;    
+		String sql = "update LEG_ASETESIS set estado=? where IDLGTESIS=?";
+		try {          
+			leg_tesis.update(sql, new Object[] { l.getEstado(),l.getIdlegtesis()}); 
+			x = 1;     
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error: " + e);
+		}
+		return x; 
 	}
 
-	@Override
+	@Override 
 	public Leg_Asesora_Tesis read(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
       
-	@Override
+	@Override 
 	public List<Map<String, Object>> readAllLegAsesoraTesisss(int id) {
 		// TODO Auto-generated method stub
-		return leg_tesis.queryForList("select l.ANIO,l.TITULO,l.AUTOR,l.ANIO_1,l.RESOLUCION,l.ESTADO,l.URL,e.NOMBRE_ESPECIALIDAD,"
+		return leg_tesis.queryForList("select l.IDLGTESIS,l.ANIO,l.TITULO,l.AUTOR,l.ANIO_1,l.RESOLUCION,l.ESTADO,l.URL,e.NOMBRE_ESPECIALIDAD,"
 				+ "l.DOCE_POR_CONV_IDDOCON,a.NOMBRE_ATRIBUTO from leg_asetesis l,ATRIBUTOS a, ESPECIALIDAD e where "
 				+ "l.ESPECIALIDAD_IDESPC=e.IDESPC and l.estado='completado' "  
 				+ "and l.CAATRI=a.IDATRI and l.DOCE_POR_CONV_IDDOCON="+id);

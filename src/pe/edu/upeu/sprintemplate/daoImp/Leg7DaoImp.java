@@ -27,7 +27,7 @@ public class Leg7DaoImp implements Leg7Dao{
 	public void setLeg_extension(JdbcTemplate leg_extension) {
 		this.leg_extension = leg_extension;
 	}
-
+  
 	@Override 
 	public String create(Leg7 l) { 
 		String sql="crear_LEG7_EXTN_CUL";  
@@ -63,12 +63,20 @@ public class Leg7DaoImp implements Leg7Dao{
 			System.out.println("Error: " + e);
 		}
 		return x;
-	} 
+	}      
 
 	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Leg7 l) {     
+		int x = 0;       
+		String sql = "update LEG7_EXTN_CUL set estado=? where ID_LEG7=?";
+		try {    
+			leg_extension.update(sql, new Object[] { l.getEstado(),l.getIdleg7()}); 
+			x = 1;      
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error: " + e);
+		}
+		return x;
 	}
 
 	@Override
@@ -77,10 +85,10 @@ public class Leg7DaoImp implements Leg7Dao{
 		return null;
 	}
      
-	@Override
+	@Override       
 	public List<Map<String, Object>> readAllLeg7ExtensionCultural(int id) { 
-		// TODO Auto-generated method stub
-		return leg_extension.queryForList("select l.ANIO,l.TITULO,l.POBLACION_OBJETIVA,l.LUGAR,l.NPARTICIPANTES,"
+		// TODO Auto-generated method stub                   
+		return leg_extension.queryForList("select l.ID_LEG7,l.ANIO,l.TITULO,l.POBLACION_OBJETIVA,l.LUGAR,l.NPARTICIPANTES,"
 				+ "l.ESTADO,l.TIPO,l.URL,l.DOCE_POR_CONV_IDDOCON  from leg7_extn_cul l where l.estado='completado' and  l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 }

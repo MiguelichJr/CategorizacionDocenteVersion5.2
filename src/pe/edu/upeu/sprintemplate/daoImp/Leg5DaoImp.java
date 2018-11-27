@@ -69,13 +69,21 @@ public class Leg5DaoImp implements Leg5Dao {
 	}
 
 	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Leg5 l) {
+		int x = 0;    
+		String sql = "update LEG5 set estado=? where IDLG5=?";
+		try {   
+			leg5.update(sql, new Object[] { l.getEstado(),l.getIdlg5()}); 
+			x = 1;
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error: " + e);
+		}
+		return x; 
 	}
 
 	@Override
-	public Leg5 read(int id) {
+	public Leg5 read(int id) {    
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -83,13 +91,13 @@ public class Leg5DaoImp implements Leg5Dao {
 	@Override 
 	public List<Map<String, Object>> readAllCyPOrganizaciondeEventos(int id) {
 		// TODO Auto-generated method stub
-		return leg5.queryForList("select l.ANIOS,l.FECHA,l.NOMBRE_EVENTO,i.NOMBRE_INSTITUCION,l.HORAS,l.CREDITOS,l.lugar,l.url from institucion i,leg5 l where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT and l.TIPO='C y P OrgaEventos' and  l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg5.queryForList("select l.IDLG5,l.ANIOS,l.FECHA,l.NOMBRE_EVENTO,i.NOMBRE_INSTITUCION,l.HORAS,l.CREDITOS,l.lugar,l.url from institucion i,leg5 l where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT and l.TIPO='C y P OrgaEventos' and  l.DOCE_POR_CONV_IDDOCON="+id);
 	}
  
 	@Override
 	public List<Map<String, Object>> readAllCapacitacionenlaDocencia(int id) {
 		// TODO Auto-generated method stub
-		return leg5.queryForList("select l.ANIOS,l.FECHA,l.NOMBRE_EVENTO,i.NOMBRE_INSTITUCION,l.HORAS,l.CREDITOS,l.lugar,l.url from institucion i,leg5 l where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT and l.TIPO='Capa en la Docencia' and  l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg5.queryForList("select l.IDLG5,l.ANIOS,l.FECHA,l.NOMBRE_EVENTO,i.NOMBRE_INSTITUCION,l.HORAS,l.CREDITOS,l.lugar,l.url from institucion i,leg5 l where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT and l.TIPO='Capa en la Docencia' and  l.DOCE_POR_CONV_IDDOCON="+id);
 	}       
 
 }

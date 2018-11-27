@@ -61,9 +61,17 @@ public class Leg_InvestiDaoImp implements Leg_InvestiDao {
 	}
 
 	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Leg_Investi l) { 
+		int x = 0;        
+		String sql = "update LEG_INVESTI set estado=? where ID_LEG_INVESTIGACIONES=?";
+		try {    
+			leg_investi.update(sql, new Object[] {l.getEstado(),l.getIdleg_investigaciones()}); 
+			x = 1;      
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error: " + e);
+		}
+		return x;
 	}
 
 	@Override

@@ -3,7 +3,7 @@ $(document).ready(function() {
 	listartipsproyeccionscial();
 	listartipsreconocmieintos();
 }); 
- 
+  
 // tabla de proyeccions social tipos 
 $("#registrar_proyectosdeproyeccion").click(function() {
 	alert("si funka el boton de extension cultural en la parte de los tipos");   
@@ -65,12 +65,31 @@ function listartipsproyeccionscial() {
 	//alert("hola si funciona el funciton");
 	$.get("listartiposproyeccion", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
-		for(var i in datita){                                          
-			$("#tabletiposproyeccionsocial tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].TIPO+"</td><td>"+datita[i].TITULO+"</td><td>"+datita[i].POBLACION_OBJETIVA+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NPARTICIPANTES+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
-		}  
-		    
-	});          
+		for(var i in datita){                                              
+			$("#tabletiposproyeccionsocial").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].TIPO+"</td><td>"+datita[i].TITULO+"</td><td>"+datita[i].POBLACION_OBJETIVA+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NPARTICIPANTES+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' onclick='CambiarEstadoProyeccionSocial("+datita[i].ID_LEG7+")' ><i class='fa fa-trash-o'></i></td></tr>");
+		}             
+		      
+	});           
 }  
+
+
+
+function CambiarEstadoProyeccionSocial(id){
+	alert("si entra en el cambiar de estado en proyeccion social: "+id);  
+
+	$.post("cambiarestado_proyeccionsocial", {
+		
+		id:id               
+		               
+	},function(data){  
+		$("#tabletiposproyeccionsocial tbody tr").remove();
+		listartipsproyeccionscial();    
+		//listartipsreconocmieintos();        
+		//listarLogrosExtrasaas();       
+	});                   
+}
+
+
 
 
 // tabla  reconocimientos
@@ -138,10 +157,24 @@ function listartipsreconocmieintos() {
 	alert(x+"listar reconocimientos");  
 	//alert("hola si funciona el funciton");
 	$.get("listarreconooo", {idprofe:x}, function(datita) {
-		//alert(datita);                                             
+		//alert(datita);                                              
 		for(var i in datita){                                          
-			$("#tablereconocimientosss tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].TIPO+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].FECHA+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].LABOR+"</td><td>"+datita[i].RECONOCIMIENTO_DESCRIPCION+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
-		}  
-		    
-	});          
-}  
+			$("#tablereconocimientosss").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].TIPO+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].FECHA+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].LABOR+"</td><td>"+datita[i].RECONOCIMIENTO_DESCRIPCION+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' onclick='CambiarEstadoReconocimientos("+datita[i].IDRECONO+")'><i class='fa fa-trash-o'></i></td></tr>");
+		}   
+		         
+	});              
+}              
+ 
+function CambiarEstadoReconocimientos(id){
+	alert("si entra en el cambiar de estado en reconocimientos: "+id);  
+
+	$.post("cambiarestado_recono", {
+		
+		id:id         
+		               
+	},function(data){  
+		$("#tablereconocimientosss tbody tr").remove();
+		listartipsreconocmieintos();        
+		//listarLogrosExtrasaas();       
+	});                   
+}

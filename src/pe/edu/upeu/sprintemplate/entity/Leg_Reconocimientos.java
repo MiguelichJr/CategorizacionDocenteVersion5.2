@@ -97,6 +97,12 @@ public class Leg_Reconocimientos {
 		this.idreconoci = idreconoci;
 		this.url = url;
 	}
+	public Leg_Reconocimientos( String estado, int idreconoci) {
+		super();
+		
+		this.estado = estado;
+		this.idreconoci = idreconoci;       
+	}
 	 
 	  
 }

@@ -197,7 +197,7 @@ public class HomeControllerExpediente {
 		Usuario u= new Usuario(b);
 		Gson g= new Gson();      
 		List<Map<String,Object>> listamodulos=(usuarioDao.readAllModulos(u));
-		System.out.println(listamodulos);    
+		//System.out.println(listamodulos);    
 		return 	g.toJson(listamodulos);      
 	} 
 	   
@@ -228,7 +228,7 @@ public class HomeControllerExpediente {
 		System.out.println("si trajo el id del modulo para el menu: " + x);
 		//Usuario u= new Usuario(x); 
 		Institucion i= new Institucion(x);     
-		Gson g= new Gson();        
+		Gson g= new Gson();         
 		List<Map<String,Object>> listamenus=(institucionDao.readAllPrivilegios(i));
 		System.out.println(listamenus);     
 		return 	g.toJson(listamenus);      
@@ -590,6 +590,17 @@ public @ResponseBody void guardar_DominiosTecnologia5(HttpServletRequest request
 }   
 
 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////7
+///////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+ // A PARTIR DE ACA ESTA TODO LA PARTE DE ACTUALIZAR CON IMAGENES  
+
+
 //tabla de organizacion de eventos academicos 
     
 @RequestMapping(path="/guardar_eventosacademicos", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -829,6 +840,32 @@ public String CapacitacionDocenciapjaja_PE_Imagenes(@RequestParam("archi15") Lis
 	//System.out.println(result);
 	return result;
 }
+
+@RequestMapping(path = "/cambiarestadoglobal5", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void cambiarestadoglobal5(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson();      
+	System.out.println("si entra el id en el controlador de global5 : "+id);
+	String es="incompleto";
+	Leg5 leg=new Leg5(es, id);
+	leg5Dao.delete(leg);      
+	//Leg_Investi leg=new Leg_Investi(es, id);
+	//legInvestiDao.delete(leg);         
+	//Leg_Publi leg=new Leg_Publi(es, id);
+	//legPubliDao.delete(leg);           
+	
+	//Leg_Asesora_Tesis leg=new Leg_Asesora_Tesis(es, id);
+	//legAsesotaTesisDao.delete(leg);         
+	//Leg7 leg=new Leg7(es, id);
+	//legExtensionCulturalDao.delete(leg);     
+	//Leg_Reconocimientos legg= new Leg_Reconocimientos(es, id);
+	//leg_ReconciDao.delete(legg);   
+	//g_Extras l=new Leg_Extras(es, id);           
+	//ystem.out.println(l.toString());        
+	//leg_extraDao.delete(l);  
+	//return g.toJson();   
+}
+
 
 
 
@@ -1101,6 +1138,32 @@ public String ormalCertificada_PE_Imagenes(@RequestParam("archi20") List<Multipa
 	return result;
 } 
 
+@RequestMapping(path = "/cambiarestadoglobal5_1", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void cambiarestadoglobal5_1987(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson();      
+	System.out.println("si entra el id en el controlador de global5 5.1111 : "+id);
+	String es="incompleto";
+	Leg5_1 leg=new Leg5_1(es, id);
+	leg5_1Dao.delete(leg);      
+	//Leg5 leg=new Leg5(es, id);
+	//leg5Dao.delete(leg);      
+	//Leg_Investi leg=new Leg_Investi(es, id);
+	//legInvestiDao.delete(leg);         
+	//Leg_Publi leg=new Leg_Publi(es, id);
+	//legPubliDao.delete(leg);           
+	
+	//Leg_Asesora_Tesis leg=new Leg_Asesora_Tesis(es, id);
+	//legAsesotaTesisDao.delete(leg);         
+	//Leg7 leg=new Leg7(es, id);
+	//legExtensionCulturalDao.delete(leg);     
+	//Leg_Reconocimientos legg= new Leg_Reconocimientos(es, id);
+	//leg_ReconciDao.delete(legg);   
+	//g_Extras l=new Leg_Extras(es, id);           
+	//ystem.out.println(l.toString());        
+	//leg_extraDao.delete(l);  
+	//return g.toJson();   
+}
 
 
 
@@ -1215,8 +1278,29 @@ public String Inevtaigacioens_PE_Imagenes(@RequestParam("archi13") List<Multipar
 	//System.out.println(result);
 	return result;
 }
-
-
+ 
+@RequestMapping(path = "/cambiarestado_investigaciones", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void cambiarestado_investigaciones87(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson();      
+	System.out.println("si entra el id en el controlador de investigaciones : "+id);
+	String es="incompleto";
+	Leg_Investi leg=new Leg_Investi(es, id);
+	legInvestiDao.delete(leg);         
+	//Leg_Publi leg=new Leg_Publi(es, id);
+	//legPubliDao.delete(leg);           
+	
+	//Leg_Asesora_Tesis leg=new Leg_Asesora_Tesis(es, id);
+	//legAsesotaTesisDao.delete(leg);         
+	//Leg7 leg=new Leg7(es, id);
+	//legExtensionCulturalDao.delete(leg);     
+	//Leg_Reconocimientos legg= new Leg_Reconocimientos(es, id);
+	//leg_ReconciDao.delete(legg);   
+	//g_Extras l=new Leg_Extras(es, id);           
+	//ystem.out.println(l.toString());        
+	//leg_extraDao.delete(l);  
+	//return g.toJson();   
+} 
 
 
 
@@ -1471,7 +1555,26 @@ public String Librososos_Imagenes(@RequestParam("archi20") List<MultipartFile> f
 }
 
 
-
+@RequestMapping(path = "/cambiarestado_globalpubli", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void cambiarestado_globalpubli(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson();      
+	System.out.println("si entra el id en el controlador de publicaiones : "+id);
+	String es="incompleto";
+	Leg_Publi leg=new Leg_Publi(es, id);
+	legPubliDao.delete(leg);           
+	
+	//Leg_Asesora_Tesis leg=new Leg_Asesora_Tesis(es, id);
+	//legAsesotaTesisDao.delete(leg);         
+	//Leg7 leg=new Leg7(es, id);
+	//legExtensionCulturalDao.delete(leg);     
+	//Leg_Reconocimientos legg= new Leg_Reconocimientos(es, id);
+	//leg_ReconciDao.delete(legg);   
+	//g_Extras l=new Leg_Extras(es, id);           
+	//ystem.out.println(l.toString());        
+	//leg_extraDao.delete(l);  
+	//return g.toJson();   
+} 
 
 
 
@@ -1601,6 +1704,29 @@ public String AsesoramientoTesis_Imagenes(@RequestParam("archi21") List<Multipar
 	return result;
 }
 
+ 
+@RequestMapping(path = "/cambiarestado_asesoriatesis", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void cambiarestado_asesoriatesis(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson(); 
+	System.out.println("si entra el id en el controlador de asesoria de tesis: "+id);
+	String es="incompleto";
+	Leg_Asesora_Tesis leg=new Leg_Asesora_Tesis(es, id);
+	legAsesotaTesisDao.delete(leg);         
+	//Leg7 leg=new Leg7(es, id);
+	//legExtensionCulturalDao.delete(leg);     
+	//Leg_Reconocimientos legg= new Leg_Reconocimientos(es, id);
+	//leg_ReconciDao.delete(legg);   
+	//g_Extras l=new Leg_Extras(es, id);           
+	//ystem.out.println(l.toString());        
+	//leg_extraDao.delete(l);  
+	//return g.toJson();   
+} 
+
+
+
+
+
 
 
 
@@ -1719,15 +1845,29 @@ public String ProyeccionSocial_Imagenes(@RequestParam("archi22") List<MultipartF
 	//System.out.println(result);
 	return result;
 }
+  
+@RequestMapping(path = "/cambiarestado_proyeccionsocial", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void cambiarestado_proyeccionsocial(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson(); 
+	System.out.println("si entra el id en el controlador de proyeccion social: "+id);
+	String es="incompleto";
+	Leg7 leg=new Leg7(es, id);
+	legExtensionCulturalDao.delete(leg);     
+	//Leg_Reconocimientos legg= new Leg_Reconocimientos(es, id);
+	//leg_ReconciDao.delete(legg);   
+	//g_Extras l=new Leg_Extras(es, id);           
+	//ystem.out.println(l.toString());        
+	//leg_extraDao.delete(l);  
+	//return g.toJson();   
+} 
 
 
 
 
 
 
-
-
-
+    	
 	
 
 //tabla de reconocimientos
@@ -1841,12 +1981,24 @@ public String Reconocmimeintos_Imagenes(@RequestParam("archi24") List<MultipartF
 	return result;
 }
 
+@RequestMapping(path = "/cambiarestado_recono", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+public @ResponseBody void cambiarestado_recono(HttpServletRequest request) {
+    int id = Integer.parseInt(request.getParameter("id"));
+	Gson g = new Gson(); 
+	System.out.println("si entra el id en el controlador de recono: "+id);
+	String es="incompleto";
+	Leg_Reconocimientos legg= new Leg_Reconocimientos(es, id);
+	leg_ReconciDao.delete(legg);   
+	//g_Extras l=new Leg_Extras(es, id);           
+	//ystem.out.println(l.toString());        
+	//leg_extraDao.delete(l);  
+	//return g.toJson();   
+} 
 
 
 
 
-
-// tabla de cosmovision
+// tabla de cosmovision 
 
 @RequestMapping(path="/guardar_cosmovision", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody String guardar_cosmovision654(HttpServletRequest request) {
@@ -1869,7 +2021,7 @@ public @ResponseBody String guardar_cosmovision654(HttpServletRequest request) {
 	String tipo="Cosmovision"; 
 	String es="completado";                                     
 	System.out.println("si trajo el id: " + idprofesor+"pes owen cosmovision jajajajaj xd");
-    
+     
 	System.out.println(es);  
 	Leg_Filosofia_Mision leg= new Leg_Filosofia_Mision(decla,tipo,archi,docu,es,idprofesor);
 	
@@ -2145,8 +2297,8 @@ public String Servi_Imagenes(@RequestParam("archi98") List<MultipartFile> file, 
 	//System.out.println(result);
 	return result;
 } 
-
-@RequestMapping(path = "/cambiarestado_servicio", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+ 
+@RequestMapping(path = "/cambiarestado_globalfilo", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 public @ResponseBody void ELiminarServicio(HttpServletRequest request) {
     int id = Integer.parseInt(request.getParameter("id"));
 	Gson g = new Gson(); 
@@ -2160,7 +2312,7 @@ public @ResponseBody void ELiminarServicio(HttpServletRequest request) {
 	//System.out.println(l.toString());        
 	//leg_extraDao.delete(l); 
 	//return g.toJson();   
-}
+}   
 
 
 

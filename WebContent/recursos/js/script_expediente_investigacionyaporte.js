@@ -61,11 +61,28 @@ function listarInvestiaciones() {
 	$.get("listarcinevstigaaaa", {idprofe:x}, function(datita) {
 		//alert(datita);                                    
 		for(var i in datita){                                      
-			$("#tableinvestiiii tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].TITULO+"</td><td>"+datita[i].NUMERO_RESOLUCION+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tableinvestiiii ").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].TITULO+"</td><td>"+datita[i].NUMERO_RESOLUCION+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' onclick='CambiarEstadoInvestigaciones("+datita[i].ID_LEG_INVESTIGACIONES+")' ><i class='fa fa-trash-o'></i></td></tr>");
 		}  
 		    
 	});    
 } 
+
+
+function CambiarEstadoInvestigaciones(id){
+	alert("si entra en el cambiar de estado en investigaciones: "+id);  
+	   
+	$.post("cambiarestado_investigaciones", {
+		     
+		id:id         
+		                 
+	},function(data){  
+		$("#tableinvestiiii tbody tr").remove();
+		listarInvestiaciones();      
+		//listarasesorameinto();         
+		//listarLogrosExtrasaas();       
+	}); 
+	                   
+}  
 
 
 
@@ -137,7 +154,7 @@ function listarArticulos() {
 	$.get("listararticulos", {idprofe:x}, function(datita) {
 		//alert(datita);                                       
 		for(var i in datita){                                          
-			$("#tablearituclos tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO_PUBLICACION+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_PUBLICACION+"</td><td>"+datita[i].NOMBRE_MEDIO_COMUNICACION+"</td><td>"+datita[i].EDITORIAL+"</td><td>"+datita[i].ISBN+"</td><td>"+datita[i].NPAGINAS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tablearituclos").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO_PUBLICACION+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_PUBLICACION+"</td><td>"+datita[i].NOMBRE_MEDIO_COMUNICACION+"</td><td>"+datita[i].EDITORIAL+"</td><td>"+datita[i].ISBN+"</td><td>"+datita[i].NPAGINAS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' onclick='CambiarEstadoglobalpublicaiones("+datita[i].IDPUB+")'  ><i class='fa fa-trash-o'></i></td></tr>");
 		}      
 		    
 	});          
@@ -210,12 +227,33 @@ function listarLibros() {
 	$.get("listarlibrosss", {idprofe:x}, function(datita) {
 		//alert(datita);                                       
 		for(var i in datita){                                        
-			$("#tablelibros tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO_PUBLICACION+"</td><td>"+datita[i].NOMBRE_PUBLICACION+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].EDITORIAL+"</td><td>"+datita[i].ISBN+"</td><td>"+datita[i].NPAGINAS+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tablelibros").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO_PUBLICACION+"</td><td>"+datita[i].NOMBRE_PUBLICACION+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].EDITORIAL+"</td><td>"+datita[i].ISBN+"</td><td>"+datita[i].NPAGINAS+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' onclick='CambiarEstadoglobalpublicaiones("+datita[i].IDPUB+")' ><i class='fa fa-trash-o'></i></td></tr>");
 		}  
-		    
-	});          
+		     
+	});             
 }
-   
+ 
+
+function CambiarEstadoglobalpublicaiones(id){
+	alert("si entra en el cambiar de estado en publicaciones en global: "+id);  
+
+	$.post("cambiarestado_globalpubli", {
+		
+		id:id             
+		                 
+	},function(data){  
+		$("#tablelibros tbody tr").remove();
+		$("#tablearituclos tbody tr").remove();
+		listarLibros();     
+		listarArticulos();
+		
+		//listartipsreconocmieintos();        
+		//listarLogrosExtrasaas();       
+	});                   
+}
+
+
+
 
 // tabla asesora tesis
 
@@ -284,8 +322,23 @@ function listarasesorameinto() {
 	$.get("listarasesoramiento", {idprofe:x}, function(datita) {
 		//alert(datita);                                       
 		for(var i in datita){                                         
-			$("#tableasesoramiento tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].TITULO+"</td><td>"+datita[i].AUTOR+"</td><td>"+datita[i].NOMBRE_ESPECIALIDAD+"</td><td>"+datita[i].ANIO_1+"</td><td>"+datita[i].RESOLUCION+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tableasesoramiento").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].TITULO+"</td><td>"+datita[i].AUTOR+"</td><td>"+datita[i].NOMBRE_ESPECIALIDAD+"</td><td>"+datita[i].ANIO_1+"</td><td>"+datita[i].RESOLUCION+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' onclick='CambiarEstadoAsesoriaTesis("+datita[i].IDLGTESIS+")' ><i class='fa fa-trash-o'></i></td></tr>");
 		}  
-		    
+		       
 	});          
-}  
+} 
+
+function CambiarEstadoAsesoriaTesis(id){
+	alert("si entra en el cambiar de estado en reconocimientos: "+id);  
+	
+	$.post("cambiarestado_asesoriatesis", {
+		     
+		id:id         
+		                 
+	},function(data){  
+		$("#tableasesoramiento tbody tr").remove();
+		listarasesorameinto();         
+		//listarLogrosExtrasaas();       
+	}); 
+	                   
+}    

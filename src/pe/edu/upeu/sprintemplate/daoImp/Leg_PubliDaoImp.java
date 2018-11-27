@@ -66,9 +66,17 @@ public class Leg_PubliDaoImp implements Leg_PubliDao {
 	}
 
 	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Leg_Publi l) {
+		int x = 0;    
+		String sql = "update LEG_PUBLI set estado=? where IDPUB=?";      
+		try {      
+			leg_publi.update(sql, new Object[] { l.getEstado(),l.getIdpublicacion()}); 
+			x = 1;          
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error: " + e);
+		}
+		return x; 
 	}
 
 	@Override
@@ -77,10 +85,10 @@ public class Leg_PubliDaoImp implements Leg_PubliDao {
 		return null;
 	}  
        
-	@Override
+	@Override   
 	public List<Map<String, Object>> readAllLeg_Publi_Articulos(int id) {
 		// TODO Auto-generated method stub
-		return leg_publi.queryForList("select l.ANIO_PUBLICACION,a.NOMBRE_ATRIBUTO,l.NOMBRE_PUBLICACION,l.NOMBRE_MEDIO_COMUNICACION,"
+		return leg_publi.queryForList("select l.IDPUB,l.ANIO_PUBLICACION,a.NOMBRE_ATRIBUTO,l.NOMBRE_PUBLICACION,l.NOMBRE_MEDIO_COMUNICACION,"
 				+ "l.EDITORIAL,l.ISBN,l.NPAGINAS,l.LUGAR,l.TIPO,l.URL from leg_publi l, atributos a where "
 				+ "l.CATEATRI=a.IDATRI and l.TIPO='ARTICULOS' and l.estado='completado' "
 				+ "and l.DOCE_POR_CONV_IDDOCON="+id);
@@ -88,8 +96,8 @@ public class Leg_PubliDaoImp implements Leg_PubliDao {
      
 	@Override
 	public List<Map<String, Object>> readAllLeg_Publi_Libros(int id) {
-		// TODO Auto-generated method stub     
-		return leg_publi.queryForList("select l.ANIO_PUBLICACION,a.NOMBRE_ATRIBUTO,l.NOMBRE_PUBLICACION,l.NOMBRE_MEDIO_COMUNICACION,"
+		// TODO Auto-generated method stub        
+		return leg_publi.queryForList("select l.IDPUB,l.ANIO_PUBLICACION,a.NOMBRE_ATRIBUTO,l.NOMBRE_PUBLICACION,l.NOMBRE_MEDIO_COMUNICACION,"
 				+ "l.EDITORIAL,l.ISBN,l.NPAGINAS,l.LUGAR,l.TIPO,l.URL from leg_publi l, atributos a where "
 				+ "l.CATEATRI=a.IDATRI and l.TIPO='LIBROS' and l.estado='completado' "
 				+ "and l.DOCE_POR_CONV_IDDOCON="+id);

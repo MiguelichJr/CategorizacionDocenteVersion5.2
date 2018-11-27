@@ -71,7 +71,7 @@ public class Leg_FilosofiaDaoImp implements Leg_FiloDao {
 		} catch (Exception e) { 
 			// TODO: handle exception  
 			System.out.println("Error: " + e);
-		}  
+		}   
 		return x;   
 	}
 

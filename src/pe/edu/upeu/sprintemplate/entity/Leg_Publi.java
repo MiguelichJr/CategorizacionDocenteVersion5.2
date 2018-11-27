@@ -129,7 +129,13 @@ public class Leg_Publi {
 		this.idpublicacion = idpublicacion;
 		this.url = url;
 	}
+	public Leg_Publi( String estado , int idpublicacion) {
+		super();
+		
+		this.estado = estado;
+		this.idpublicacion = idpublicacion;      
+	}
 	
-	   
+	  
 	     
 }

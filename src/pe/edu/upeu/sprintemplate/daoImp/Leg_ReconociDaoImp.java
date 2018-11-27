@@ -64,9 +64,17 @@ public class Leg_ReconociDaoImp implements Leg_ReconociDao {
 	}
 
 	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Leg_Reconocimientos l) {
+		int x = 0; 
+		String sql = "update LGRECONOCI set estado=? where IDRECONO=?";
+		try {   
+			leg_reconocimiento.update(sql, new Object[] { l.getEstado(),l.getIdreconoci() }); 
+			x = 1;             
+		} catch (Exception e) {      
+			// TODO: handle exception  
+			System.out.println("Error: " + e);
+		}  
+		return x;   
 	}
 
 	@Override 
@@ -77,8 +85,8 @@ public class Leg_ReconociDaoImp implements Leg_ReconociDao {
   
 	@Override
 	public List<Map<String, Object>> readAllLeg_Reconocimientos(int id) { 
-		// TODO Auto-generated method stub
-		return leg_reconocimiento.queryForList("select l.FECHA,l.ANIO,l.LABOR,l.RECONOCIMIENTO_DESCRIPCION,l.LUGAR,l.ESTADO,"
+		// TODO Auto-generated method stub 
+		return leg_reconocimiento.queryForList("select l.IDRECONO,l.FECHA,l.ANIO,l.LABOR,l.RECONOCIMIENTO_DESCRIPCION,l.LUGAR,l.ESTADO,"
 				+ "l.TIPO,l.URL,i.NOMBRE_INSTITUCION,l.DOCE_POR_CONV_IDDOCON  from lgreconoci l,institucion i where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT "
 				+ "and l.DOCE_POR_CONV_IDDOCON="+id);
 	}

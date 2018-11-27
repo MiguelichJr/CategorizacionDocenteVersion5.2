@@ -108,6 +108,13 @@ public class Leg5_1 {
 		this.idlg5_1 = idlg5_1;
 		this.url = url;
 	}
+	public Leg5_1( String estado , int idlg5_1) {
+		super();
+		
+		this.estado = estado;
+		this.idlg5_1 = idlg5_1;   
+		
+	}
 	
 	  
 	    

@@ -67,9 +67,17 @@ public class Leg5_1DaoImp implements Leg5_1Dao {
 	}
 
 	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Leg5_1 l) { 
+		int x = 0; 
+		String sql = "update LEG5_1 set estado=? where IDLG51=?"; 
+		try {      
+			leg5_1.update(sql, new Object[] { l.getEstado(),l.getIdlg5_1()}); 
+			x = 1; 
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error: " + e);
+		}
+		return x;
 	}
 
 	@Override
@@ -81,13 +89,13 @@ public class Leg5_1DaoImp implements Leg5_1Dao {
 	@Override
 	public List<Map<String, Object>> readAllCyPPonenciasCongresos(int id) {
 		// TODO Auto-generated method stub
-		return leg5_1.queryForList("select l.ANIO ,a.nombre_atributo,l.NOMBRE_EVENTO,i.nombre_institucion,l.HORAS,l.CREDITOS,l.lugar,l.url from institucion i,leg5_1 l,ATRIBUTOS a where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT and l.CATEATRI=a.IDATRI and l.TIPO='Ponencia Congreso' and  l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg5_1.queryForList("select  l.IDLG51,l.ANIO ,a.nombre_atributo,l.NOMBRE_EVENTO,i.nombre_institucion,l.HORAS,l.CREDITOS,l.lugar,l.url from institucion i,leg5_1 l,ATRIBUTOS a where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT and l.CATEATRI=a.IDATRI and l.TIPO='Ponencia Congreso' and  l.DOCE_POR_CONV_IDDOCON="+id);
 	}
 
 	@Override
 	public List<Map<String, Object>> readAllCyPCapacitacionFormalCertificada(int id) {
 		// TODO Auto-generated method stub  
-		return leg5_1.queryForList("select l.ANIO ,a.nombre_atributo,l.NOMBRE_EVENTO,i.nombre_institucion,l.HORAS,l.CREDITOS,l.lugar,l.url from institucion i,leg5_1 l,ATRIBUTOS a where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT and l.CATEATRI=a.IDATRI and l.TIPO='Capa Formal Certifi' and  l.DOCE_POR_CONV_IDDOCON="+id);
+		return leg5_1.queryForList("select l.IDLG51,l.ANIO ,a.nombre_atributo,l.NOMBRE_EVENTO,i.nombre_institucion,l.HORAS,l.CREDITOS,l.lugar,l.url from institucion i,leg5_1 l,ATRIBUTOS a where l.estado='completado' and l.INSTITUCION_IDINT=i.IDINT and l.CATEATRI=a.IDATRI and l.TIPO='Capa Formal Certifi' and  l.DOCE_POR_CONV_IDDOCON="+id);
 	}
     
 }

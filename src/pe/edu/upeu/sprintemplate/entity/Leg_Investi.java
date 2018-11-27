@@ -65,6 +65,12 @@ public class Leg_Investi {
 		this.idleg_investigaciones = idleg_investigaciones;
 		this.url = url;
 	}
+	public Leg_Investi( String estado , int idleg_investigaciones) {
+		super();
+		
+		this.estado = estado;
+		this.idleg_investigaciones = idleg_investigaciones;  
+	}
 	
 	      
 	

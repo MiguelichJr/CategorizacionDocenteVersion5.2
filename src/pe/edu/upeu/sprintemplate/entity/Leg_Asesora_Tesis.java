@@ -96,7 +96,15 @@ public class Leg_Asesora_Tesis {
 		super();
 		this.idlegtesis = idlegtesis;
 		this.url = url;
+	}
+	public Leg_Asesora_Tesis(String estado , int idlegtesis) {
+		super();
+		
+		this.estado = estado;
+		this.idlegtesis = idlegtesis;   
 	} 
+	
+	
 	
 	      
 

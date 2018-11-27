@@ -89,6 +89,13 @@ public class Leg7 {
 		this.idleg7 = idleg7;
 		this.url = url;
 	}
+	public Leg7(String estado , int idleg7) {
+		super();
+		
+		this.estado = estado;
+		this.idleg7 = idleg7;  
+		
+	}
 	
 	  
 	 	

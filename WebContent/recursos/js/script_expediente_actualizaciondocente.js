@@ -67,7 +67,7 @@ function listarorganizacinodeeventosacademicso() {
 	$.get("listareventosSAcademicos", {idprofe:x}, function(datita) {
 		//alert(datita);                                    
 		for(var i in datita){                                    
-			$("#tableeventosacademicos tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIOS+"</td><td>"+datita[i].FECHA+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tableeventosacademicos").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIOS+"</td><td>"+datita[i].FECHA+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' onclick='CambiarEstadoglobal5("+datita[i].IDLG5+")' ><i class='fa fa-trash-o'></i></td></tr>");
 		}  
 		     
 	});      
@@ -96,7 +96,7 @@ $("#registrar_capcianios").click(function() {
 	alert(c);
 	alert(l);
 	alert(a15);      
-	alert(x);           
+	alert(x);               
                           
                
 	$.post("guardar_capacitaciones_aca", {i:i,ne15:ne15,fi:fi,ff:ff,h:h,c:c,l:l,a15:a15,x:x},
@@ -127,10 +127,28 @@ function listarcapacitacionenladocenciaenlosultimosanios() {
 	$.get("listarcapacitacionDocencia", {idprofe:x}, function(datita) {
 		//alert(datita);                                    
 		for(var i in datita){                                      
-			$("#tablecapacitaciones5anios tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].FECHA+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
+			$("#tablecapacitaciones5anios").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].FECHA+"</td><td>"+datita[i].FECHA_TERMINO+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' onclick='CambiarEstadoglobal5("+datita[i].IDLG5+")' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
 		}  
 		        
 	});       
+} 
+
+   
+function CambiarEstadoglobal5(id){
+	alert("si entra en el cambiar de estado en global leg5: "+id);  
+
+	$.post("cambiarestadoglobal5", {
+		
+		id:id          
+		               
+	},function(data){  
+		$("#tablecapacitaciones5anios tbody tr").remove();
+		$("#tableeventosacademicos tbody tr").remove();
+		listarcapacitacionenladocenciaenlosultimosanios();
+		listarorganizacinodeeventosacademicso();  
+		//listartipsreconocmieintos();        
+		//listarLogrosExtrasaas();       
+	});                   
 } 
 
 // tabla capacitacion  en ponencias o en congresos
@@ -186,10 +204,10 @@ function listarponenciasencongresos() {
 	$.get("listarponenciaaaaa", {idprofe:x}, function(datita) {
 		//alert(datita);                                    
 		for(var i in datita){                                      
-			$("#tableponencias tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
+			$("#tableponencias").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' onclick='CambiarEstadoglobal5_1("+datita[i].IDLG51+")' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
 		}      
 		        
-	});      
+	});       
 } 
 
 
@@ -247,11 +265,26 @@ function listarformalcertificadaaaa() {
 	$.get("listarforcertificada", {idprofe:x}, function(datita) {
 		//alert(datita);                                    
 		for(var i in datita){                                      
-			$("#tableforceertiiii tr:last").after("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
+			$("#tableforceertiiii").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].ANIO+"</td><td>"+datita[i].NOMBRE_ATRIBUTO+"</td><td>"+datita[i].NOMBRE_EVENTO+"</td><td>"+datita[i].NOMBRE_INSTITUCION+"</td><td>"+datita[i].HORAS+"</td><td>"+datita[i].CREDITOS+"</td><td>"+datita[i].LUGAR+"</td><td>"+datita[i].URL+"</td><td><button type='button' class='btn btn-danger' onclick='CambiarEstadoglobal5_1("+datita[i].IDLG51+")' ><i class='fa fa-trash-o' style='text-align:center'></i></td></tr>");
 		}      
 		         
 	});      
 }    
 
-
+function CambiarEstadoglobal5_1(id){
+	alert("si entra en el cambiar de estado en global leg5 5.1: "+id);  
+     
+	$.post("cambiarestadoglobal5_1", {
+		 
+		id:id                 
+		                 
+	},function(data){  
+		$("#tableforceertiiii tbody tr").remove();
+		$("#tableponencias tbody tr").remove();
+		listarformalcertificadaaaa();
+		listarponenciasencongresos();    
+		//listartipsreconocmieintos();        
+		//listarLogrosExtrasaas();       
+	});                   
+} 
          

@@ -57,7 +57,7 @@ function listarCOSMO() {
 	$.get("listarcosmovision", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
 		for(var i in datita){                                            
-			$("#tablecosmoooooo").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tablecosmoooooo").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' onclick='CambiarEstadoServicioAprendizaje("+datita[i].ID_FILOSOFIA+")'  ><i class='fa fa-trash-o'></i></td></tr>");
 		}    
 		    
 	});  
@@ -119,7 +119,7 @@ function listarIFE() {
 	$.get("listarife", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
 		for(var i in datita){                                            
-			$("#tableifeee").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' ><i class='fa fa-trash-o'></i></td></tr>");
+			$("#tableifeee").append("<tr><td>"+(parseInt(i)+1)+"</td><td>"+datita[i].NOMBRE+"</td><td>"+datita[i].DOCUMENTO_SI_NO+"</td><td>"+datita[i].URL+"</td><td><button style='text-align:center' type='button' class='btn btn-danger' onclick='CambiarEstadoServicioAprendizaje("+datita[i].ID_FILOSOFIA+")'  ><i class='fa fa-trash-o'></i></td></tr>");
 		}  
 		         
 	});  
@@ -186,17 +186,21 @@ function listarServicioApre() {
 	        
 }
 
-
+     
 
 function CambiarEstadoServicioAprendizaje(id){       
-	alert("si entra en el cambiar de estado servicio: "+id);  
-$.post("cambiarestado_servicio", {
+	alert("si entra en el cambiar de estado de filosofia global pe: "+id);  
+$.post("cambiarestado_globalfilo", { 
 		 
 		id:id         
 		               
 	},function(data){ 
 		$("#tableserviciope tbody tr").remove();
-		listarServicioApre();     
+		$("#tableifeee tbody tr").remove();                       
+		$("#tablecosmoooooo tbody tr").remove();
+		listarCOSMO();
+		listarIFE();
+		listarServicioApre();
 		//listarLogrosExtrasaas();       
 	});
 }             
