@@ -23,16 +23,22 @@ public class AutoevaluacionDaoImp implements AutoevaluacionDao {
 	@Autowired
 	private JdbcTemplate autoevaluacion;
 	
-   
+    
+	  
+
 	public JdbcTemplate getAutoevaluacion() {
 		return autoevaluacion;
 	}
 
 
+
+
 	public void setAutoevaluacion(JdbcTemplate autoevaluacion) {
 		this.autoevaluacion = autoevaluacion;
 	}
- 
+
+
+
 
 	@Override    
 	public String create(Autoevaluacion a)  {              
@@ -71,7 +77,7 @@ public class AutoevaluacionDaoImp implements AutoevaluacionDao {
 		return resultado;          
 	   		}
   
-	                
+	                      
    */ 
 }
  

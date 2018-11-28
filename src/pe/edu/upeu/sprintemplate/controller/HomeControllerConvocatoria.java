@@ -97,9 +97,9 @@ public class HomeControllerConvocatoria {
 	@GetMapping("/selec_docente")
 	public ModelAndView Listar_Docente() {
 		ModelAndView ma = new ModelAndView();
-		ma.setViewName("selec_docente");
-		ma.addObject("entra",personaS.buscarDocenEvalua());
-		ma.addObject("esta",cdp.readid());
+		ma.setViewName("selec_docente"); 
+//		ma.addObject("entra",personaS.buscarDocenEvalua());
+//		ma.addObject("esta",cdp.readid());
 		ma.addObject("cate",categoriaDao.list());
 		ma.addObject("lista",ds.readl());
 	return ma;

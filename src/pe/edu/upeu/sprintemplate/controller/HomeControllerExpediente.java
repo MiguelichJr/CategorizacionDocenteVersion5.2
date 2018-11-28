@@ -37,6 +37,7 @@ import pe.edu.upeu.sprintemplate.dao.Leg2Dao;
 import pe.edu.upeu.sprintemplate.dao.Leg3Dao;
 import pe.edu.upeu.sprintemplate.dao.LegDao;
 import pe.edu.upeu.sprintemplate.dao.Leg_FiloDao;
+import pe.edu.upeu.sprintemplate.daoImp.AutoevaluacionDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;  
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
@@ -56,6 +57,7 @@ import pe.edu.upeu.sprintemplate.daoImp.Leg_PubliDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_ReconociDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.UsuarioDaoImp;
+import pe.edu.upeu.sprintemplate.entity.Autoevaluacion;
 import pe.edu.upeu.sprintemplate.entity.Institucion;
 import pe.edu.upeu.sprintemplate.entity.Leg;
 import pe.edu.upeu.sprintemplate.entity.Leg2;
@@ -116,14 +118,15 @@ public class HomeControllerExpediente {
 	private Leg_Asesora_Tesis_DaoImp legAsesotaTesisDao;
 	@Autowired
 	private Leg7DaoImp legExtensionCulturalDao;
-	@Autowired
+	@Autowired 
 	private Leg_ReconociDaoImp leg_ReconciDao;
 	@Autowired
 	private Leg_FiloDao leg_FilosoDao;
 	@Autowired
 	private LegExtraDaoImp leg_extraDao; 
-	       
-  
+	@Autowired
+	private AutoevaluacionDaoImp evaluacionDao;  
+       
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
 	
@@ -2635,18 +2638,85 @@ public @ResponseBody void eliminarDocente(HttpServletRequest request) {
                 
 	    
 	//parte de abdiel autoevaluacion 
-	/*
-	public String Regitrar_Autoevaluacion(@RequestParam("idprofe") String idprofe,@RequestParam("iddocnte") String iddoce,@RequestParam("idinstrumento") String idinstru,        
-			HttpServletResponse response,  HttpServletRequest request) throws IOException {    
-	             
-		System.out.println("SI ENTRA EN EL CONTROLADOR DE AUTOEVAKUACION "+idprofe +" - "+iddoce+ " - "+idinstru);
-		       
-		return "auto";     
-	} 
-
 	
-	*/  
-
+	
+	@RequestMapping(path = "/registrarauto", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody void registrarauto(HttpServletRequest request) {
+	    int id = Integer.parseInt(request.getParameter("idprofe"));     
+	    String nota = (request.getParameter("nota"));    
+		Gson g = new Gson();    
+		System.out.println("si entra el id en el controlador de autoevaluacion: "+id);
+		String es="incompleto";
+		System.out.println(nota);
+		double a= Double.parseDouble(nota);    
+		int bb=(int) Math.round(a);
+		System.out.println(bb);       
+		//double b=Math.rint(nota)/1000;   
+//		double a=Double.parseDouble(nota);		
+//		System.out.println(a);   
+//		Math.round(a);        
+//		System.out.println(a);        
+		//Math.max(nota, 1);           
+//		Leg_Extras l=new Leg_Extras(es, id);           
+//		System.out.println(l.toString());        
+//		leg_extraDao.delete(l);            
+		//return g.toJson();
+		Autoevaluacion ha= new Autoevaluacion(id,1,bb , id);
+		evaluacionDao.create(ha);                        
+	} 
+	
+	
+	@RequestMapping(path = "/registraradminis", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody void registraradminis(HttpServletRequest request) {
+	    int id = Integer.parseInt(request.getParameter("idprofe"));     
+	    String nota = (request.getParameter("nota"));      
+		Gson g = new Gson();    
+		System.out.println("si entra el id en el controlador de autoevaluacion: "+id);
+		String es="incompleto";
+		System.out.println(nota);
+		double a= Double.parseDouble(nota);    
+		int bb=(int) Math.round(a);
+		System.out.println(bb);       
+		//double b=Math.rint(nota)/1000;   
+//		double a=Double.parseDouble(nota);		
+//		System.out.println(a);   
+//		Math.round(a);        
+//		System.out.println(a);        
+		//Math.max(nota, 1);           
+//		Leg_Extras l=new Leg_Extras(es, id);           
+//		System.out.println(l.toString());        
+//		leg_extraDao.delete(l);            
+		//return g.toJson();
+		Autoevaluacion ha= new Autoevaluacion(id,3,bb , id);
+		evaluacionDao.create(ha);                              
+	}
+       
+	
+	@RequestMapping(path = "/registrarpares", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody void registrarpares(HttpServletRequest request) {
+	    int id = Integer.parseInt(request.getParameter("idprofe"));     
+	    String nota = (request.getParameter("nota"));      
+		Gson g = new Gson();    
+		System.out.println("si entra el id en el controlador de autoevaluacion: "+id);
+		String es="incompleto";
+		System.out.println(nota);
+		double a= Double.parseDouble(nota);    
+		int bb=(int) Math.round(a);
+		System.out.println(bb);       
+		//double b=Math.rint(nota)/1000;   
+//		double a=Double.parseDouble(nota);		
+//		System.out.println(a);   
+//		Math.round(a);        
+//		System.out.println(a);        
+		//Math.max(nota, 1);           
+//		Leg_Extras l=new Leg_Extras(es, id);           
+//		System.out.println(l.toString());        
+//		leg_extraDao.delete(l);            
+		//return g.toJson();
+		Autoevaluacion ha= new Autoevaluacion(id,2,bb , id);
+		evaluacionDao.create(ha);                                   
+	} 
+	
 }
 
  

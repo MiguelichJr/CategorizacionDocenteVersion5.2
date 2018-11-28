@@ -24,12 +24,14 @@
 	<main class="app-content">  
 	<div class="app-title"> 
 		<div>
-			<h1>Bienvenido a la convocatoria UPeu</h1>
-  
-		</div>
+			<h1>Bienvenido a la convocatoria UPeu 2018-2</h1>
+       
+		</div>  
 		  <input type="hidden" value="<%=(Integer) session.getAttribute("idmodulo_menu")%>" id="idmodulooooo" class="form-control" style="width:100px;"/>
 	     
-	</div>
+	</div>        
+	<img src="./recursos/img/upeu-lima.jpg" style="width:1080px;margin-top:-10px;heigth:100px" />                  
+		                              
 	     
 	        
           

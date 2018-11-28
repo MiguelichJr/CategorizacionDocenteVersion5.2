@@ -282,7 +282,7 @@ function CambiarEstadoLogrosExtras(id){
 	//alert("si entra en el cambiar de estado: "+id);  
 $.post("cambiarestado_extra", {
 		
-		id:id         
+		id:id          
 		               
 	},function(data){ 
 		$("#tablelogrosextraspe tbody tr").remove();

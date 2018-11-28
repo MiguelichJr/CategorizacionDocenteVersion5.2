@@ -105,6 +105,10 @@
 	<bean id="leg_extraDao" class="pe.edu.upeu.sprintemplate.daoImp.LegExtraDaoImp">                   
 		<property name="leg_extrassss" ref="jdbcTemplate" />    
 	</bean>
+	<bean id="evaluacionDao"    
+		class="pe.edu.upeu.sprintemplate.daoImp.AutoevaluacionDaoImp">  
+		<property name="autoevaluacion" ref="jdbcTemplate" />         
+	</bean>          
 	
 <!-- Entada Nueva -->
 		
@@ -143,7 +147,9 @@
 	<bean id="designar_EvaluadoresDaImp" 
 		class="pe.edu.upeu.sprintemplate.daoImp.designar_EvaluadoresDaImp">  
 		<property name="jdbcTemplate" ref="jdbcTemplate" />  
-	</bean> 
+	</bean>
+	
+	 
 	<!-- Terminar -->
 	                    
 	 <!--               

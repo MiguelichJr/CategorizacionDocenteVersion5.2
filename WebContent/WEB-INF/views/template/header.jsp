@@ -71,7 +71,7 @@
           
             <li><a class="treeview-item" href="auto"><i class="fa fa-chevron-right" style="margin-left:3%"></i>Auto-Evaluación</a></li>         
                                                    
-        </li> 
+        </li>  
         
         
                            

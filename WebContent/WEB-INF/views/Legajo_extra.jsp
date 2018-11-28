@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <spring:url value="/recursos" var="urlrecursos"></spring:url>
-<link href="${urlrecursos}/css/template.css" rel="stylesheet">
+<link href="${urlrecursos}/css/template.css" rel="stylesheet">  
 </head>
 <body class="app sidebar-mini rtl">
 	<!-- Navbar-->
@@ -122,9 +122,8 @@
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group" style="text-align: center">
-
-									<button id="registrar_extras" class="btn btn-primary btn-block"
-										style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
+  
+									<button id="registrar_extras" class="btn btn-primary btn-block" style="background-color: #992e45; border-top: #992e45; border-right: #992e45; border-bottom: #992e45; border-left: #992e45">
 										REGISTRAR</button>
 								</div>
 							</div>
@@ -132,7 +131,7 @@
 						<div class="col-sm-4">
 							<div class="form-group" style="text-align: center"></div>
 						</div>
-
+    
 					</div>
 				</div>
 
@@ -141,7 +140,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-1"></div>
+		
 
 		<!--lista de todo los registros -->
 		<table id="tablelogrosextraspe" class="table table-bordered"
@@ -160,7 +159,7 @@
 		</table>
 	</div>
 	
-	
+	 
 	  
  <input  type="hidden" value="<%=(Integer) session.getAttribute("idmodulo_menu")%>" id="idmodulooooo" class="form-control" style="width:100px;"/>
 	  
@@ -169,7 +168,7 @@
 	<!-- Essential javascripts for application to work-->
 	<script src="${urlrecursos}/js/jquery-3.2.1.min.js"></script>
 	<script src="${urlrecursos}/js/popper.min.js"></script>
-	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
+	<script src="${urlrecursos}/js/bootstrap.min.js"></script>  
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>      
 	<script src="${urlrecursos}/js/main.js"></script>
 	<script src="${urlrecursos}/js/script_expediente_filosofiamision.js"></script>

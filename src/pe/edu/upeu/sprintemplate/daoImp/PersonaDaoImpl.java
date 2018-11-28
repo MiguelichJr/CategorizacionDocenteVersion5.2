@@ -38,10 +38,10 @@ public class PersonaDaoImpl implements PersonaDao {
 
 	@Override
 	public List<Persona> buscarDocenEvalua() {
-		String sql="select * from persona WHERE idpers NOT IN (select persona_idpers from doce_por_conv  where convocatoria_idcnvo=(SELECT idcnvo FROM convocatoria where estado='1') and doce_por_conv.estado='1')";
-		return this.jdbcTemplate.query(sql,new PersonaRowMapper());
-	}
-
+		String sql="select * from persona WHERE idpers NOT IN (select persona_idpers from doce_por_conv  where convocatoria_idcnvo=(SELECT idcnvo FROM convocatoria where estado='activo') and doce_por_conv.estado='1')";  
+		return this.jdbcTemplate.query(sql,new PersonaRowMapper());    
+	}         
+  
 
 
 	@Override
