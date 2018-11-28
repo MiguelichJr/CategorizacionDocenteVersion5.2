@@ -46,6 +46,32 @@
 		</div>
 
 	</div>
+	
+	
+	<input type="text"  class="form-control" maxlength="1" name="price"   onkeypress="return onKeyValidate(event,numeric);" />
+	<script>                             
+var numeric = "[1-5]";      
+                 
+function onKeyValidate(e,charVal){
+    var keynum;       
+    var keyChars = /[\x00\x08]/;
+    var validChars = new RegExp(charVal);
+    if(window.event)   
+    {
+        keynum = e.keyCode;
+    }
+    else if(e.which)
+    {
+        keynum = e.which;            
+    }
+    var keychar = String.fromCharCode(keynum);
+    if (!validChars.test(keychar) && !keyChars.test(keychar))   {
+        return false
+    } else{  
+        return keychar;
+    }
+}  
+</script>
 
 
       
@@ -79,7 +105,7 @@
 				lograrlo ok ? que paso ?   .</th>         
 			<th><input class="form-control" type="text" class="validar"
 				maxlength="1" style="text-align: center;" 
-				onKeypress="if (event.keyCode < 97 || event.keyCode > 101) event.returnValue = true;" id="autom1" required="required">
+			onkeypress="return onKeyValidate(event,numeric);"   id="autom1" required="required">
 				<div class="valid-feedback">      
         			          
              </div>       
@@ -93,7 +119,7 @@
 					alineadas a los objetivos.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autom2" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"   id="autom2" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -104,7 +130,7 @@
 					colegas, y conozco sus metas personales y profesionales.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autom3"  required="required">
+				onkeypress="return onKeyValidate(event,numeric);"   id="autom3"  required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -115,18 +141,18 @@
 					colegas.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autom4" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"   id="autom4"  required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div>  
-				</th>
+				</th> 
 			<tr>
 				<th>5</th>
 				<th>Asumo las consecuencias de las decisiones que tomo sin
 					culpar a otros de las consecuencias.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom5" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autom5" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -137,7 +163,7 @@
 					alumnos y colegas.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom6" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autom6" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -148,7 +174,7 @@
 					expreso claramente qué objetivos se deben lograr.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom7" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autom7" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -159,7 +185,7 @@
 					alumnos, y me involucro en el trabajo.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom8" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"   id="autom8" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -169,7 +195,7 @@
 				<th>Motivo el desarrollo espiritual de mis alumnos y colegas.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom9" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autom9" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -179,11 +205,11 @@
 				<th>Asumo un rol activo en las actividades eclesiales.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autom10" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autom10" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
-				</th>
+				</th>      
 			<tr>
 		</table>
 
@@ -198,7 +224,7 @@
 			<th>Sostengo mis puntos de vista.</th>
 			<th><input class="form-control" type="text" class="validar"
 				maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = true;" id="autor1" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor1" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -209,7 +235,7 @@
 					objetivos de la UPeU.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autor2" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor2" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -219,7 +245,7 @@
 				<th>Reconozco y estimulo los logros de mis colegas y alumnos.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autor3" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor3" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -229,7 +255,7 @@
 				<th>Al ser convocado(a) a una reunión asisto puntualmente.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autor4" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor4" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -240,7 +266,7 @@
 					disculpas.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autor5" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor5" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -250,7 +276,7 @@
 				<th>Escucho y tomo en cuenta a todos sin importar su jerarquía.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autor6" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor6" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -260,7 +286,7 @@
 				<th>Si me comentan una situación soy discreto(a).</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autor7" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor7" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -270,7 +296,7 @@
 				<th>No favorezco la crítica dentro de mis colaboradores.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autor8" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor8" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -281,7 +307,7 @@
 					los hago ver con una actitud positiva.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autor9" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autor9" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -302,7 +328,7 @@
 				motivar a mi equipo.</th>
 			<th><input class="form-control" type="text" class="validar"
 				maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau1" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoau1" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -313,7 +339,7 @@
 					busco alternativas de solución.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau2" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoau2" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -324,7 +350,7 @@
 					elegir la mejor alternativa.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau3" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoau3" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -335,7 +361,7 @@
 					corregir y sacar el mejor provecho sin enojarme.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau4" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoau4" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -346,7 +372,7 @@
 					llevar a ningún resultado.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau5" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"         id="autoau5" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -356,7 +382,7 @@
 				<th>Trabajo con mis colegas y alumnos en base a confianza.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau6" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoau6" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -367,7 +393,7 @@
 					propios.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau7" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoau7" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -377,7 +403,7 @@
 				<th>Controlo mi enojo en cualquier situación.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau8" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"   id="autoau8" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -388,7 +414,7 @@
 					colegas.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau9" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoau9" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -399,7 +425,7 @@
 					y procuro hacerlo, y motivo a que mis colegas y alumnos lo hagan.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoau10" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoau10" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -419,7 +445,7 @@
 				interrumpirlos constantemente.</th>
 			<th><input class="form-control" type="text" class="validar"
 				maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi1" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi1" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -429,7 +455,7 @@
 				<th>Controlo mis emociones y me muestro sereno.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi2" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi2" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -439,7 +465,7 @@
 				<th>Soy una persona disciplinada y organizada.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi3" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi3" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -449,7 +475,7 @@
 				<th>No justifico la mentira bajo ninguna circunstancia.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi4" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi4" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -459,7 +485,7 @@
 				<th>Soy puntual en la entrada al trabajo.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi5" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi5" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -470,7 +496,7 @@
 					de comprenderlos.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi6" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi6" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -481,7 +507,7 @@
 				<th>Expreso mi punto de vista con respeto.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi7" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi7" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -491,7 +517,7 @@
 				<th>Soy concreto y preciso en la exposición de mis ideas.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi8" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi8" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -501,7 +527,7 @@
 				<th>En el trabajo estoy alegre y disfruto.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi9" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi9" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -512,7 +538,7 @@
 					hago en privado y con respeto.</th>
 				<th><input class="form-control" type="text" class="validar"
 					maxlength="1" style="text-align: center;"
-				onKeypress="if (event.keyCode < 49 || event.keyCode > 53) event.returnValue = false;" id="autoequi10" required="required">
+				onkeypress="return onKeyValidate(event,numeric);"  id="autoequi10" required="required">
 				  <div class="invalid-feedback">
           Por favor introduzca un valor.
         </div> 
@@ -521,17 +547,21 @@
 		</table>                  
 <!-- 	  	<button  type="submit" class="btn btn-outline-success"   -->
 <!-- 			style="margin-left: 45%;" id="regis_eva_auto" id="Agregar">      -->
- 			<button type="submit" id="Agregar2"  class="btn btn-outline-success" style=" ">Registrar Evaluacion</button>                 
+ 			<button type="button"       id="Agregar2"  class="btn btn-outline-success" style="margin-left:45%; ">Registrar Evaluacion</button>                      
 <!-- <input type="submit" value="Registrar  Autoevaluacion"  class="btn btn-outline-success" id="Agregar2"/>       Registrar Autoevaluacion</button>  -->
 <!-- 			<button type="submit" id="enviar   _archivo" style="display:none;"></button> -->
+			    
+			    
+			    
+			    Resultado: <input type="text" value="" id="Resultado" name="Resultado" />                            
 			                       
-	</form>
+	</form>           
 	 
 	<input  type="hidden" value="<%=(Integer) session.getAttribute("idmodulo_menu")%>" id="idmodulooooo" class="form-control" style="width:100px;"/>                      
 	</div> 
 	<div>            
 	    
-Resultado: <input type="text" value="" id="Resultado" name="Resultado" />
+Resultado: <input type="text" value="" id="Resultado" name="Resultado" />                            
 <br /> 
 </div>  
 <!-- <button type="submit" value="Agregar2"  class="btn btn-outline-success" id="Agregar">nose</button>   -->
@@ -545,12 +575,13 @@ Resultado: <input type="text" value="" id="Resultado" name="Resultado" />
 	<script src="${urlrecursos}/js/popper.min.js"></script>
 	<script src="${urlrecursos}/js/bootstrap.min.js"></script>
 	<script src="${urlrecursos}/js/main.js"></script>  
-		<script src="${urlrecursos}/js/script_autoevaluacion.js"></script>     
-	   
-	<!-- The javascript plugin to display page loading on top-->
+<script src="${urlrecursos}/js/script_autoevaluacion.js"></script>   
+	             
+	<!-- The javascript plugin to display page loading on top-->          
 	<script src="${urlrecursos}/js/plugins/pace.min.js"></script>
 	<%-- 		<script src="${urlrecursos}/js/jquery.numeric.js"></script> --%>
 	<script src="${urlrecursos}/jquery.numeric.js"></script>
+	
 	<script type="text/javascript">
 	(function() {
 		'use strict';
@@ -569,11 +600,11 @@ Resultado: <input type="text" value="" id="Resultado" name="Resultado" />
 					form.classList.add('was-validated');
 				}, false);
 			});
-			alert("Kaido kun onewamaru 3");     
-		}, false);        
-	                 
+			alert("calulate");                      
+		}, false);         
+	                   
 	})();          
-	    
+	                    
 	$(document).ready(function() {
 				$("#Agregar2").click(function(e) {
 							var mat = $("#autom1").val();
@@ -581,99 +612,100 @@ Resultado: <input type="text" value="" id="Resultado" name="Resultado" />
 							var mat2 = $("#autom3").val();
 							var mat3 = $("#autom4").val();
 							var mat4 = $("#autom5").val();
-							var mat5 = $("#autom6").val();
+							var mat5 = $("#autom6").val(); 
 							var mat6 = $("#autom7").val();
 							var mat7 = $("#autom8").val();
-							var mat8 = $("#autom9").val();                       
-							var mat9 = $("#autom10").val();
-//							
-							var mate1 = $("#autor1").val();
-							var mate2 = $("#autor2").val();
-							var mate3 = $("#autor3").val();
-							var mate4 = $("#autor4").val();
-							var mate5 = $("#autor5").val();
-							var mate6 = $("#autor6").val();           
-							var mate7 = $("#autor7").val();         
-							var mate8 = $("#autor8").val();     
-							var mate9 = $("#autor9").val();  
+							var mat8 = $("#autom9").val();                        
+							var mat9 = $("#autom10").val();      
+
+							var mate1 = $("#autor1").val();         
+ 							var mate2 = $("#autor2").val();
+ 							var mate3 = $("#autor3").val();
+ 							var mate4 = $("#autor4").val();
+ 							var mate5 = $("#autor5").val();
+ 							var mate6 = $("#autor6").val();           
+ 							var mate7 = $("#autor7").val();         
+ 							var mate8 = $("#autor8").val();     
+ 							var mate9 = $("#autor9").val();  
 
 							 
-							var mates1 = $("#autoau1").val();
-							var mates2 = $("#autoau2").val();       
-							var mates3 = $("#autoau3").val();   
-							var mates4 = $("#autoau4").val();
-							var mates5 = $("#autoau5").val();        
-							var mates6 = $("#autoau6").val();
-							var mates7 = $("#autoau7").val();
-							var mates8 = $("#autoau8").val();
-							var mates9 = $("#autoau9").val();
-							var mates10 = $("#autoau10").val()
+ 							var mates1 = $("#autoau1").val();
+ 							var mates2 = $("#autoau2").val();       
+ 							var mates3 = $("#autoau3").val();   
+ 							var mates4 = $("#autoau4").val();
+ 							var mates5 = $("#autoau5").val();        
+ 							var mates6 = $("#autoau6").val();
+ 							var mates7 = $("#autoau7").val();
+ 							var mates8 = $("#autoau8").val();
+ 							var mates9 = $("#autoau9").val();
+ 							var mates10 = $("#autoau10").val()
 							
-							var matem1 = $("#autoequi1").val();
-							var matem2 = $("#autoequi2").val();
-							var matem3 = $("#autoequi3").val();     
-							var matem4 = $("#autoequi4").val();
-							var matem5 = $("#autoequi5").val();
-							var matem6 = $("#autoequi6").val();
-							var matem7 = $("#autoequi7").val();       
-							var matem8 = $("#autoequi8").val();
-							var matem9 = $("#autoequi9").val();
-							var matem10 = $("#autoequi10").val();
-	//
+ 							var matem1 = $("#autoequi1").val();
+ 							var matem2 = $("#autoequi2").val();
+ 							var matem3 = $("#autoequi3").val();     
+ 							var matem4 = $("#autoequi4").val();
+ 							var matem5 = $("#autoequi5").val();
+ 							var matem6 = $("#autoequi6").val();
+ 							var matem7 = $("#autoequi7").val();       
+ 							var matem8 = $("#autoequi8").val();
+ 							var matem9 = $("#autoequi9").val();
+ 							var matem10 = $("#autoequi10").val();
 
+    
 							
-							var resultado = parseFloat(mat) * 0.0256410256410256
-							+ parseFloat(mat1) * 0.0256410256410256
-							+ parseFloat(mat2) * 0.0256410256410256  
+							var resultado =  parseFloat(mat) * 0.0256410256410256
+    					+ parseFloat(mat1) * 0.0256410256410256
+							+ parseFloat(mat2) * 0.0256410256410256           
 							+ parseFloat(mat3) * 0.0256410256410256
-							+ parseFloat(mat4) * 0.0256410256410256
+							+ parseFloat(mat4) * 0.0256410256410256   
 							+ parseFloat(mat5) * 0.0256410256410256 
 							+ parseFloat(mat6) * 0.0256410256410256
-							+ parseFloat(mat7) * 0.0256410256410256
-							+ parseFloat(mat8) * 0.0256410256410256     
-							+ parseFloat(mat9) * 0.0256410256410256       
+							+ parseFloat(mat7) * 0.0256410256410256       
+							+ parseFloat(mat8) * 0.0256410256410256  
+							+ parseFloat(mat9) * 0.0256410256410256  
+
 							  
-						    + parseFloat(mate1) * 0.0256410256410256
-							+ parseFloat(mate2) * 0.0256410256410256
-							+ parseFloat(mate3) * 0.0256410256410256
-							+ parseFloat(mate4) * 0.0256410256410256
-							+ parseFloat(mate5) * 0.0256410256410256
-							+ parseFloat(mate6) * 0.0256410256410256
-							+ parseFloat(mate7) * 0.0256410256410256              
-							+ parseFloat(mate8) * 0.0256410256410256
-							+ parseFloat(mate9) * 0.0256410256410256          
+						    + parseFloat(mate1) * 0.0256410256410256   
+ 							+ parseFloat(mate2) * 0.0256410256410256
+ 							+ parseFloat(mate3) * 0.0256410256410256
+ 							+ parseFloat(mate4) * 0.0256410256410256
+ 							+ parseFloat(mate5) * 0.0256410256410256
+ 							+ parseFloat(mate6) * 0.0256410256410256
+ 							+ parseFloat(mate7) * 0.0256410256410256              
+ 							+ parseFloat(mate8) * 0.0256410256410256
+ 							+ parseFloat(mate9) * 0.0256410256410256          
 				       			
-							+ parseFloat(mates1) * 0.0256410256410256     
-							+ parseFloat(mates2) * 0.0256410256410256
-							+ parseFloat(mates3) * 0.0256410256410256
-							+ parseFloat(mates4) * 0.0256410256410256
-							+ parseFloat(mates5) * 0.0256410256410256
-							+ parseFloat(mates6) * 0.0256410256410256
-							+ parseFloat(mates7) * 0.0256410256410256
-							+ parseFloat(mates8) * 0.0256410256410256
-							+ parseFloat(mates9) * 0.0256410256410256
-							+ parseFloat(mates10) * 0.0256410256410256
+ 							+ parseFloat(mates1) * 0.0256410256410256     
+ 							+ parseFloat(mates2) * 0.0256410256410256
+ 							+ parseFloat(mates3) * 0.0256410256410256
+ 							+ parseFloat(mates4) * 0.0256410256410256
+ 							+ parseFloat(mates5) * 0.0256410256410256
+ 							+ parseFloat(mates6) * 0.0256410256410256
+ 							+ parseFloat(mates7) * 0.0256410256410256
+ 							+ parseFloat(mates8) * 0.0256410256410256
+ 							+ parseFloat(mates9) * 0.0256410256410256
+ 							+ parseFloat(mates10) * 0.0256410256410256
 							            
-							+ parseFloat(matem1) * 0.0256410256410256     
-							+ parseFloat(matem2) * 0.0256410256410256    
-							+ parseFloat(matem3) * 0.0256410256410256          
-						    + parseFloat(matem4) * 0.0256410256410256
-							+ parseFloat(matem5) * 0.0256410256410256
-							+ parseFloat(matem6) * 0.0256410256410256
-							+ parseFloat(matem7) * 0.0256410256410256
-							+ parseFloat(matem8) * 0.0256410256410256
-							+ parseFloat(matem9) * 0.0256410256410256        
-							+ parseFloat(matem10) * 0.0256410256410256
-							;                              
-	                                   
-							                                                                 
+ 							+ parseFloat(matem1) * 0.0256410256410256     
+ 							+ parseFloat(matem2) * 0.0256410256410256    
+ 							+ parseFloat(matem3) * 0.0256410256410256          
+ 						    + parseFloat(matem4) * 0.0256410256410256
+ 							+ parseFloat(matem5) * 0.0256410256410256
+ 							+ parseFloat(matem6) * 0.0256410256410256
+ 							+ parseFloat(matem7) * 0.0256410256410256
+ 							+ parseFloat(matem8) * 0.0256410256410256
+ 							+ parseFloat(matem9) * 0.0256410256410256        
+ 							+ parseFloat(matem10) * 0.0256410256410256
+ 							;                              
+	                                           
+							                                                                  
 //							 var resultado = resultado;        
-							 alert(resultado);                             
+							 alert(resultado);                                           
 							$("#Resultado").val(resultado);
 						});
 			});   
-	
-	
+	 
+	       
 	</script>
 	
 </body>

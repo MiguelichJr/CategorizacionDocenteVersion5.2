@@ -104,7 +104,11 @@
 	 
 	<bean id="leg_extraDao" class="pe.edu.upeu.sprintemplate.daoImp.LegExtraDaoImp">                   
 		<property name="leg_extrassss" ref="jdbcTemplate" />    
-	</bean> 
+	</bean>       
+	      
+   	<bean id="autoevaluacionDao" class="pe.edu.upeu.sprintemplate.daoImp.AutoevaluacionDaoImp">                   
+		<property name="autoevaluacion" ref="jdbcTemplate" />      
+	</bean>
 	                 
 	 <!--               
 	 <bean id="leg2Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp">              

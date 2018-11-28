@@ -33,10 +33,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import pe.edu.upeu.sprintemplate.dao.AutoevaluacionDao;
 import pe.edu.upeu.sprintemplate.dao.Leg2Dao;
 import pe.edu.upeu.sprintemplate.dao.Leg3Dao;
 import pe.edu.upeu.sprintemplate.dao.LegDao;
 import pe.edu.upeu.sprintemplate.dao.Leg_FiloDao;
+import pe.edu.upeu.sprintemplate.daoImp.AutoevaluacionDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.EspecialidadDaoImp;  
 import pe.edu.upeu.sprintemplate.daoImp.GradosDaoImp;
@@ -56,6 +58,7 @@ import pe.edu.upeu.sprintemplate.daoImp.Leg_PubliDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.Leg_ReconociDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.TipoAtributoDaoImp;
 import pe.edu.upeu.sprintemplate.daoImp.UsuarioDaoImp;
+import pe.edu.upeu.sprintemplate.entity.Autoevaluacion;
 import pe.edu.upeu.sprintemplate.entity.Institucion;
 import pe.edu.upeu.sprintemplate.entity.Leg;
 import pe.edu.upeu.sprintemplate.entity.Leg2;
@@ -118,12 +121,13 @@ public class HomeControllerExpediente {
 	private Leg7DaoImp legExtensionCulturalDao;
 	@Autowired
 	private Leg_ReconociDaoImp leg_ReconciDao;
-	@Autowired
+	@Autowired  
 	private Leg_FiloDao leg_FilosoDao;
 	@Autowired
 	private LegExtraDaoImp leg_extraDao; 
-	       
-  
+	//@Autowired
+	//private AutoevaluacionDaoImp autoevaluacionDao;   
+    
 	//recuerda que los nombres de las clases tiene que ser iguales a las del beans
 	
 	
@@ -179,13 +183,7 @@ public class HomeControllerExpediente {
 			 		jajaja=estadoconvoca;     
 			 		System.out.println(jajaja+" si le da valor al jajaja");
 			 		String valor="activo";  
-			 		if(jajaja==valor) {              
-			 			System.out.println("bien bien bien");
-			 			retornar="redirect:/";              
-			 		}else {
-			 			System.out.println(" mal mal mal");           
-			 			retornar="redirect:/";         
-			 		}
+			 		
 			 		
 			 		
 			 		
@@ -203,9 +201,9 @@ public class HomeControllerExpediente {
 			 		                       
 			 	}
 			 	
-			 	
-			
-			    
+			 	 
+			retornar="main";
+			          
 		 }
 		return retornar;         
 	}  
@@ -2624,6 +2622,38 @@ public @ResponseBody void eliminarDocente(HttpServletRequest request) {
 
 		return "Legajo_EvaluacionAdministradores";     
 	}
+	
+	
+	/*
+	@RequestMapping(path="/guardar_autoevaluacion", method= RequestMethod.POST, produces =MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody void guardar_autoevaluacion2(HttpServletRequest request) {
+		
+
+		System.out.println("SI LLEGA LA CONTROLADOR DE AUTOEVALUACOP");
+		  
+		int result=Integer.parseInt(request.getParameter("result"));
+		System.out.println(result); 
+		  
+		int y =Integer.parseInt(request.getParameter("y")); 
+		System.out.println(y); 
+ 
+		
+		int z=Integer.parseInt(request.getParameter("z")); 
+		System.out.println(z);   
+		
+		int idprofesor=Integer.parseInt(request.getParameter("x"));  
+		System.out.println(idprofesor);                           	
+//		String es="completado";                                     
+//		System.out.println("si trajo el id: " + idprofesor+"pes owen logros extras jajajajaj xd");
+//	     
+//		System.out.println(es);  
+		Autoevaluacion aut= new Autoevaluacion(result,y,z,idprofesor);
+		
+		//autoevaluacionDao.create(aut);          
+		 	                           
+	   
+		 	                            
+	} */          
 
 }
 

@@ -30,7 +30,7 @@ public class Leg_FilosofiaDaoImp implements Leg_FiloDao {
  
 	@Override
 	public String create(Leg_Filosofia_Mision l) {
- 
+  
 		String sql="crear_LEG_FILMISI";
 		SimpleJdbcCall jdbcCall= new SimpleJdbcCall(leg_filosofiamision).withCatalogName("PKG_LEGAJO").withProcedureName(sql);
 		jdbcCall.addDeclaredParameter(new SqlParameter("decla",OracleTypes.VARCHAR));
