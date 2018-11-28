@@ -379,7 +379,7 @@
 			<tbody>
 
 			</tbody>
-		</table>
+		</table> 
 
 
 
@@ -569,6 +569,6 @@
 	<!-- Google analytics script-->
 	<script type="text/javascript">
 		   
-	</script>
+	</script>  
 </body>
 </html>

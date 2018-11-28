@@ -1,5 +1,5 @@
 $(document).ready(function() {  
-	alert("si funciona el script  de filosfia y mision piii xd");
+	//alert("si funciona el script  de filosfia y mision piii xd");
 	listarCOSMO();
 	listarIFE();
 	listarServicioApre();
@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 // tabla filsofia misio pero en cosmovision
 $("#registrar_cosmovision").click(function() {
-	alert("si funka el boton de cosmovision sin acciones");   
+	//alert("si funka el boton de cosmovision sin acciones");   
 	var decla = $("#decla").val();      
 	var docu=$("#documento33").val();
 	var archi=$("#archi33").val();
@@ -17,12 +17,12 @@ $("#registrar_cosmovision").click(function() {
                   
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(decla);
-	alert(docu);
-	alert(archi); 
+//	alert(decla);
+//	alert(docu);
+//	alert(archi); 
 	        
 	 
-	alert("el id del prode es: "+x);   
+	//alert("el id del prode es: "+x);   
 	   
 	          
 	$.post("guardar_cosmovision", {
@@ -52,7 +52,7 @@ $("#registrar_cosmovision").click(function() {
   
 function listarCOSMO() {
 	var x = parseInt($("#idprofe").val()); 
-	alert(x+"listar tipos cosmovision");  
+	//alert(x+"listar tipos cosmovision");  
 	//alert("hola si funciona el funciton");
 	$.get("listarcosmovision", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
@@ -67,7 +67,7 @@ function listarCOSMO() {
 // tabla integracion fe enseñanza
 
 $("#registrar_ife").click(function() {
-	alert("si funka el boton de integracion dfe enseñanza");   
+	//alert("si funka el boton de integracion dfe enseñanza");   
 	var decla = $("#ifee").val();   
 	var docu=$("#formacion").val();
 	var archi=$("#archi45").val();
@@ -75,12 +75,12 @@ $("#registrar_ife").click(function() {
                   
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(decla);
-	alert(docu);
-	alert(archi); 
+//	alert(decla);
+//	alert(docu);
+//	alert(archi); 
 	      
 	 
-	alert("el id del prode es: "+x);   
+	//alert("el id del prode es: "+x);   
 	          
 	          
 	$.post("guardar_ife", {
@@ -114,7 +114,7 @@ $("#registrar_ife").click(function() {
 
 function listarIFE() {
 	var x = parseInt($("#idprofe").val()); 
-	alert(x+"listar ifeeeeeeeeeeee");   
+	//alert(x+"listar ifeeeeeeeeeeee");   
 	//alert("hola si funciona el funciton");
 	$.get("listarife", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
@@ -129,7 +129,7 @@ function listarIFE() {
 // tabla servicios aprendeizaje
 
 $("#registrar_servicio").click(function() {
-	alert("si funka el boton de servicio");   
+	//alert("si funka el boton de servicio");   
 	var decla = $("#servicio").val();   
 	var docu=$("#formacion34").val();
 	var archi=$("#archi98").val();
@@ -137,13 +137,13 @@ $("#registrar_servicio").click(function() {
                   
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(decla);   
-	alert(docu);
-	alert(archi); 
-	      
-	 
-	alert("el id del prode es: "+x);   
-	          
+//	alert(decla);   
+//	alert(docu);
+//	alert(archi); 
+//	      
+//	 
+//	alert("el id del prode es: "+x);   
+//	          
 	          
 	$.post("guardar_servicio", {
 		decla:decla,
@@ -174,7 +174,7 @@ $("#registrar_servicio").click(function() {
 
 function listarServicioApre() {
 	var x = parseInt($("#idprofe").val());  
-	alert(x+"listar serviciooooo");   
+	//alert(x+"listar serviciooooo");   
 	//alert("hola si funciona el funciton");
 	$.get("listarserviii", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
@@ -189,10 +189,10 @@ function listarServicioApre() {
      
 
 function CambiarEstadoServicioAprendizaje(id){       
-	alert("si entra en el cambiar de estado de filosofia global pe: "+id);  
+	//alert("si entra en el cambiar de estado de filosofia global pe: "+id);  
 $.post("cambiarestado_globalfilo", { 
 		 
-		id:id         
+		id:id           
 		               
 	},function(data){ 
 		$("#tableserviciope tbody tr").remove();
@@ -210,7 +210,7 @@ $.post("cambiarestado_globalfilo", {
 // table de logros extras peeee aca nomas jajajja xd
  
 $("#registrar_extras").click(function() {
-	alert("si funka el boton de logros extras");     
+	//alert("si funka el boton de logros extras");     
 	  
 	var docu=$("#declaextra").val();
 	var archi=$("#urlextra").val();
@@ -220,11 +220,11 @@ $("#registrar_extras").click(function() {
 	var x = parseInt($("#idprofe").val()); 
 
   
-	alert(docu);
-	alert(archi); 
-	      
-	 
-	alert("el id del prode es: "+x);   
+//	alert(docu);
+//	alert(archi); 
+//	      
+//	 
+//	alert("el id del prode es: "+x);   
 	            
 	          
 	$.post("guardar_extras", {
@@ -258,7 +258,7 @@ $("#registrar_extras").click(function() {
 function listarLogrosExtrasaas() {
 	 
 	var x = parseInt($("#idprofe").val());  
-	alert(x+"listar logros extras solo cuando el estado es completado");      
+	//alert(x+"listar logros extras solo cuando el estado es completado");      
 	//alert("hola si funciona el funciton");  
 	$.get("listarextrasssssssssssssssssss", {idprofe:x}, function(datita) {
 		//alert(datita);                                            
@@ -279,7 +279,7 @@ function limpiarLegExtras(){
 
 
 function CambiarEstadoLogrosExtras(id){
-	alert("si entra en el cambiar de estado: "+id);  
+	//alert("si entra en el cambiar de estado: "+id);  
 $.post("cambiarestado_extra", {
 		
 		id:id         

@@ -46,7 +46,7 @@ public class AutoevaluacionDaoImp implements AutoevaluacionDao {
 		String resultado=(String) auto.get("lista");    
 		return resultado;
 	}
-	/*
+	/*    
 	@Autowired
 	private JdbcTemplate autoevaluacion;
 

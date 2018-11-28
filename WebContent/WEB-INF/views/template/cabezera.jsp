@@ -41,8 +41,8 @@
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i>Perfil</a></li>
             <li><a class="dropdown-item" onclick="devolver()"><i class="fa fa-sign-out fa-lg"></i>Modulos</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out fa-lg"></i>Cerrar Sesión</a></li> 
-          </ul>         
+            <li><a class="dropdown-item" href="inicio"><i class="fa fa-sign-out fa-lg"></i>Cerrar Sesión</a></li>     
+          </ul>                    
         </li>
       </ul>                   
       <form class="login-form" action="home" method="POST">

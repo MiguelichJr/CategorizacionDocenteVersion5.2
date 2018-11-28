@@ -1,12 +1,12 @@
 $(document).ready(function() {  
-	alert("si funciona el script  de extension cultural piii xd");
+	//alert("si funciona el script  de extension cultural piii xd");
 	listartipsproyeccionscial();
 	listartipsreconocmieintos();
 }); 
   
 // tabla de proyeccions social tipos 
 $("#registrar_proyectosdeproyeccion").click(function() {
-	alert("si funka el boton de extension cultural en la parte de los tipos");   
+	//alert("si funka el boton de extension cultural en la parte de los tipos");   
 	var tp = $("#tipo_proyeccion22").val();   
 	var t=$("#titulo22").val();
 	var po=$("#poblacion_objetiva22").val();
@@ -17,13 +17,15 @@ $("#registrar_proyectosdeproyeccion").click(function() {
                   
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(tp);
-	alert(t);
-	alert(po);  
-	alert(l);
-	alert(anio);
-	alert(nparticipantes);   
-	alert(u4);      
+
+
+//		alert(tp);
+//	alert(t);
+//	alert(po);
+//	alert(l); 
+//	alert(anio);
+//	alert(nparticipantes);
+//	alert(u4);      
 	      
 	 
 	alert("el id del prode es: "+x);   
@@ -61,7 +63,7 @@ $("#registrar_proyectosdeproyeccion").click(function() {
    
 function listartipsproyeccionscial() {
 	var x = parseInt($("#idprofe").val()); 
-	alert(x+"listar tipos de proyeccions social"); 
+	//alert(x+"listar tipos de proyeccions social"); 
 	//alert("hola si funciona el funciton");
 	$.get("listartiposproyeccion", {idprofe:x}, function(datita) {
 		//alert(datita);                                          
@@ -75,7 +77,7 @@ function listartipsproyeccionscial() {
 
 
 function CambiarEstadoProyeccionSocial(id){
-	alert("si entra en el cambiar de estado en proyeccion social: "+id);  
+	//alert("si entra en el cambiar de estado en proyeccion social: "+id);  
 
 	$.post("cambiarestado_proyeccionsocial", {
 		
@@ -95,7 +97,7 @@ function CambiarEstadoProyeccionSocial(id){
 // tabla  reconocimientos
 
 $("#registrar_reconociemitnos").click(function() {
-	alert("si funka el boton de reconocimientos");   
+	//alert("si funka el boton de reconocimientos");   
 	var t = $("#tipo24").val();     
 	var a=$("#anio24").val();
 	var f=$("#fecha24").val();
@@ -107,17 +109,17 @@ $("#registrar_reconociemitnos").click(function() {
                   
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(t);   
-	alert(a);
-	alert(f);  
-	alert(i);
-	alert(c);
-	alert(r);
-	alert(l); 
-	alert(u4);      
+//	alert(t);   
+//	alert(a);
+//	alert(f);  
+//	alert(i);
+//	alert(c);
+//	alert(r);
+//	alert(l); 
+//	alert(u4);      
 	      
 	 
-	alert("el id del prode es: "+x);   
+	//alert("el id del prode es: "+x);   
 	   
 	          
 	$.post("guardar_reconocimientos", {
@@ -154,7 +156,7 @@ $("#registrar_reconociemitnos").click(function() {
        
 function listartipsreconocmieintos() {
 	var x = parseInt($("#idprofe").val()); 
-	alert(x+"listar reconocimientos");  
+	//alert(x+"listar reconocimientos");  
 	//alert("hola si funciona el funciton");
 	$.get("listarreconooo", {idprofe:x}, function(datita) {
 		//alert(datita);                                              
@@ -166,15 +168,15 @@ function listartipsreconocmieintos() {
 }              
  
 function CambiarEstadoReconocimientos(id){
-	alert("si entra en el cambiar de estado en reconocimientos: "+id);  
+	//alert("si entra en el cambiar de estado en reconocimientos: "+id);  
 
 	$.post("cambiarestado_recono", {
 		
-		id:id         
+		id:id          
 		               
 	},function(data){  
 		$("#tablereconocimientosss tbody tr").remove();
 		listartipsreconocmieintos();        
 		//listarLogrosExtrasaas();       
 	});                   
-}
+}  

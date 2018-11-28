@@ -132,7 +132,7 @@ public class HomeControllerExpediente {
 	    
 	
 	@GetMapping("/")
-	public String index() {
+	public String index() { 
 		return "index";     
 	}
 	/*
@@ -162,7 +162,8 @@ public class HomeControllerExpediente {
 			 		session.setAttribute("nombre", mm.get("NOMBRE"));
 			 		session.setAttribute("apellido", mm.get("APELLIDO"));
 			 		session.setAttribute("nu", mm.get("NOM_USER")); 
-			 		session.setAttribute("cl", mm.get("CLAVE")); 
+			 		session.setAttribute("cl", mm.get("CLAVE"));
+			 		session.setAttribute("idpersona", mm.get("PERSONA_IDPERS")); 
 			 		String a= (String) mm.get("NOMBRE");      
 			 		System.out.println(a);          
 			 		String b= mm.get("IDROL").toString();  
@@ -193,7 +194,7 @@ public class HomeControllerExpediente {
 			 		//System.out.println(a);     
 			 		//String num= (String) mm.get("IDROL");
 			 		//int nnn=Integer.parseInt(num);
-			 		//System.out.println("El id del rol es:"+nnn); 
+			 		//System.out.println("El id del rol es:"+nnn);  inicio 
 			 		                       
 			 	}
 		 	 	
@@ -249,7 +250,14 @@ public class HomeControllerExpediente {
 		return 	g.toJson(listamenus);      
 	}   
 	  
-	
+	@RequestMapping(value="/inicio", method=RequestMethod.GET)        
+	public String inicio(HttpServletRequest request) {
+      HttpSession sesion=request.getSession();
+      sesion.invalidate();          
+		  
+		
+		return "redirect:/";               
+	}
 	
 	
 	
@@ -2606,7 +2614,7 @@ public @ResponseBody void eliminarDocente(HttpServletRequest request) {
 
 		return "Legajo_autoevaluacion";
 	}
-	
+	   
 	@GetMapping("/pares")
 	public String apres123() {
 
@@ -2618,6 +2626,26 @@ public @ResponseBody void eliminarDocente(HttpServletRequest request) {
 
 		return "Legajo_EvaluacionAdministradores";     
 	}
+	
+	@GetMapping("/repor")      
+	public String reportespeid() {
+  
+		return "ReportesDocente";     
+	}
+                
+	    
+	//parte de abdiel autoevaluacion 
+	/*
+	public String Regitrar_Autoevaluacion(@RequestParam("idprofe") String idprofe,@RequestParam("iddocnte") String iddoce,@RequestParam("idinstrumento") String idinstru,        
+			HttpServletResponse response,  HttpServletRequest request) throws IOException {    
+	             
+		System.out.println("SI ENTRA EN EL CONTROLADOR DE AUTOEVAKUACION "+idprofe +" - "+iddoce+ " - "+idinstru);
+		       
+		return "auto";     
+	} 
+
+	
+	*/  
 
 }
 

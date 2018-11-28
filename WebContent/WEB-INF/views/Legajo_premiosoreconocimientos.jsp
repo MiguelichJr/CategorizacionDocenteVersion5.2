@@ -35,7 +35,7 @@
 		style="border-radius: 20px; background-color: white; padding: 10px; margin-top: 20px">
 		<!-- Form Name -->
 		<legend style="text-align: center">Premios o Reconocimientos</legend>
-		<hr>
+		<hr> 
 		<!-- Text input-->
 		<div class="row">
 			<div class="col-1"></div>

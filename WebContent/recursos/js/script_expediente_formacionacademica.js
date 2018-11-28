@@ -1,6 +1,6 @@
 
 $(document).ready(function() {  
-	alert("si funciona el script  de formacion academica xd");
+	//alert("si funciona el script  de formacion academica xd");
 	// $("#valor_tesis").attr('disabled','true');
 	listarLeg_Grados();   
 	listarExperienciaProfesional();
@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 //tabla de grados y estudios
 $("#registrar_grados").click(function() {
-	alert("si funka el boton");
+	//alert("si funka el boton");
 	var g = $("#grado1").val();
 	var e = $("#espe1").val();
 	var i = $("#insti1").val();
@@ -27,14 +27,14 @@ $("#registrar_grados").click(function() {
 	var u2 = $("#url1").val();
 	var x = parseInt($("#idprofe").val());
 
-	alert(g);
-	alert(e);
-	alert(i);
-	alert(ft);
-	alert(u1);
-	alert(t);
-	alert(u2);
-	alert("El id del profesor es: "+x)     
+//	alert(g);
+//	alert(e);
+//	alert(i);
+//	alert(ft);
+//	alert(u1);
+//	alert(t);
+//	alert(u2);
+//	alert("El id del profesor es: "+x)     
 
 	$.post("guardar_grados_titulos", {
 		g : g,
@@ -71,7 +71,7 @@ function listarLeg_Grados() {
 //tabla experiencia profesional
 
 $("#registrar_experiencia_profesional").click(function() {
-	alert("si funka el boton de experiencia profesional");
+	//alert("si funka el boton de experiencia profesional");
 	var i = $("#insti2").val();
 	var c = $("#cargo2").val();
 	var td = $("#td2").val();
@@ -85,17 +85,17 @@ $("#registrar_experiencia_profesional").click(function() {
  
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(i);
-	alert(c);
-	alert(td);
-	alert(fi);
-	alert(ft);
-	alert(a);
-	alert(m);
-	alert(d);
-	alert(l);
-	alert(a2);
-	
+//	alert(i);
+//	alert(c);
+//	alert(td);
+//	alert(fi);
+//	alert(ft);
+//	alert(a);
+//	alert(m);
+//	alert(d);
+//	alert(l);
+//	alert(a2);
+//	
 	
 	$.post("guardar_experiencia_profesional", {
 		i : i,
@@ -123,8 +123,8 @@ $("#registrar_experiencia_profesional").click(function() {
 
 function listarExperienciaProfesional() {
 	var x = parseInt($("#idprofe").val());
-	alert(x);    
-	alert("hola si funciona el funciton  para listar experiencia profesinoal");
+	//alert(x);    
+	//alert("hola si funciona el funciton  para listar experiencia profesinoal");
 	$.get("listarExProfe", {idprofe:x}, function(datita) {
 		//alert(datita);   
 		for(var i in datita){          
@@ -141,7 +141,7 @@ function listarExperienciaProfesional() {
 //tabla experiencia academico administrativa
 
 $("#registrar_experiencia_academico_profesional").click(function() {
-	alert("si funka el boton academico expereincia acaemico profesional");
+	//alert("si funka el boton academico expereincia acaemico profesional");
 	var i = $("#insti3").val();
 	var c = $("#cargo3").val();
 	var r = $("#regimen3").val();
@@ -153,17 +153,17 @@ $("#registrar_experiencia_academico_profesional").click(function() {
   
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(i);
-	alert(c);
-	alert(r);
-	alert(fi);
-	alert(ft);
-	alert(re);
-	alert(l);
-	alert(u3);
-	      
-	
-	alert("el id del profe es: "+x);
+//	alert(i);
+//	alert(c);
+//	alert(r);
+//	alert(fi);
+//	alert(ft);
+//	alert(re);
+//	alert(l);
+//	alert(u3);
+//	      
+//	
+//	alert("el id del profe es: "+x);
 	
 	
 	$.post("guardar_experiencia_academico", {
@@ -178,7 +178,7 @@ $("#registrar_experiencia_academico_profesional").click(function() {
 		x:x
 		             
 	},function(data){
-		alert(data);  
+		//alert(data);  
 		//listarLeg_Grados();   
 	});
 	
@@ -187,7 +187,7 @@ $("#registrar_experiencia_academico_profesional").click(function() {
   
 function listarExperienciaAcademico() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar academico ");
+	//alert(x+"listar academico ");
 	//alert("hola si funciona el funciton");
 	$.get("listarExperienciaAcademico", {idprofe:x}, function(datita) {
 		//alert(datita);       
@@ -209,7 +209,7 @@ function listarExperienciaAcademico() {
  
 
 $("#registrar_categoriadocente").click(function() {
-	alert("si funka el boton categoria academico");
+	//alert("si funka el boton categoria academico");
 	var i = $("#insti4").val();
 	var c = $("#cate4").val();
 	var fi = $("#fi4").val();
@@ -222,18 +222,18 @@ $("#registrar_categoriadocente").click(function() {
   
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(i);
-	alert(c);
-	alert(fi);
-	alert(ft);
-	alert(a);
-	alert(m);
-	alert(d);  
-	alert(l);
-	alert(u4); 
-	      
-	
-	alert("el id del prode es: "+x);
+//	alert(i);
+//	alert(c);
+//	alert(fi);
+//	alert(ft);
+//	alert(a);
+//	alert(m);
+//	alert(d);  
+//	alert(l);
+//	alert(u4); 
+//	      
+//	
+//	alert("el id del prode es: "+x);
 	 
 	  
 	$.post("guardar_categoriadocente", {
@@ -259,7 +259,7 @@ $("#registrar_categoriadocente").click(function() {
 
 function listarCategoriaDocente() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar categoria docente ");
+	//alert(x+"listar categoria docente ");
 	//alert("hola si funciona el funciton");
 	$.get("listarCategoriaDoo", {idprofe:x}, function(datita) {
 		//alert(datita);       
@@ -274,7 +274,7 @@ function listarCategoriaDocente() {
 //tabla en ED presenciales
 
 $("#registrar_ED_presenciales").click(function() {
-	alert("si funka el boton expe docencia en presenciales");
+	//alert("si funka el boton expe docencia en presenciales");
 	var i = $("#insti6").val(); 
 	var c = $("#cate6").val();  
 	var fi = $("#fi6").val();
@@ -287,19 +287,19 @@ $("#registrar_ED_presenciales").click(function() {
            
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(i);
-	alert(c);
-	alert(fi);
-	alert(ft);
-	alert(a);
-	alert(m);
-	alert(d);  
-	alert(l);
-	alert(u4); 
-	      
-	
-	alert("el id del prode es: "+x);
-	 
+//	alert(i);
+//	alert(c);
+//	alert(fi);
+//	alert(ft);
+//	alert(a);
+//	alert(m);
+//	alert(d);  
+//	alert(l);
+//	alert(u4); 
+//	      
+//	
+//	alert("el id del prode es: "+x);
+//	 
 	  
 	$.post("guardar_EDrpesenciales", {
 		i : i,
@@ -324,7 +324,7 @@ $("#registrar_ED_presenciales").click(function() {
 
 function listarEnPresenciales() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar presenciales docente ");
+	//alert(x+"listar presenciales docente ");
 	//alert("hola si funciona el funciton");
 	$.get("listarpresen", {idprofe:x}, function(datita) {
 		//alert(datita);         
@@ -341,7 +341,7 @@ function listarEnPresenciales() {
 //tabla en entornos virtuales
 
 $("#registrar_ED_EntornosVirtusld").click(function() {
-	alert("si funka el boton expe docencia en ENTORNOS VIRTUALES"); 
+	//alert("si funka el boton expe docencia en ENTORNOS VIRTUALES"); 
 	var i = $("#insti9").val();  
 	var fi = $("#fi9").val();
 	var ft = $("#ff9").val();
@@ -352,18 +352,18 @@ $("#registrar_ED_EntornosVirtusld").click(function() {
 	var u4 = $("#archi9").val();
              
 	var x = parseInt($("#idprofe").val()); 
-
-	alert(i);
-	alert(fi);
-	alert(ft);
-	alert(a);
-	alert(m);
-	alert(d);  
-	alert(l);
-	alert(u4);    
-	      
-	
-	alert("el id del prode es: "+x);
+//
+//	alert(i);
+//	alert(fi);
+//	alert(ft);
+//	alert(a);
+//	alert(m);
+//	alert(d);  
+//	alert(l);
+//	alert(u4);    
+//	      
+//	
+//	alert("el id del prode es: "+x);
 	 
 	   
 	$.post("guardar_EDentornosVirtuales", {
@@ -388,7 +388,7 @@ $("#registrar_ED_EntornosVirtusld").click(function() {
 
 function listarEnEntornosVirtuales() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar entornos virtuales docente ");
+	//alert(x+"listar entornos virtuales docente ");
 	//alert("hola si funciona el funciton");
 	$.get("listarvirtuales", {idprofe:x}, function(datita) {
 		//alert(datita);                  
@@ -404,7 +404,7 @@ function listarEnEntornosVirtuales() {
 
 
 $("#registrar_ED_DocenteComplementaria").click(function() {
-	alert("si funka el boton expe docencia en Docentecomplementaria");   
+	//alert("si funka el boton expe docencia en Docentecomplementaria");   
 	var i = $("#insti10").val();
 	var c=$("#cargo10").val();
 	var fi = $("#fi10").val();
@@ -414,15 +414,15 @@ $("#registrar_ED_DocenteComplementaria").click(function() {
              
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(i);
-	alert(c);
-	alert(fi);
-	alert(ft);   
-	alert(l);
-	alert(u4);    
-	      
-	
-	alert("el id del prode es: "+x);
+//	alert(i);
+//	alert(c);
+//	alert(fi);
+//	alert(ft);   
+//	alert(l);
+//	alert(u4);    
+//	      
+//	
+//	alert("el id del prode es: "+x); 
 	   
 	   
 	$.post("guardar_Docentecomplementaria", {
@@ -444,7 +444,7 @@ $("#registrar_ED_DocenteComplementaria").click(function() {
 
 function listarDocenteComplementaria() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar edocente complementaria ");
+	//alert(x+"listar edocente complementaria ");
 	//alert("hola si funciona el funciton");
 	$.get("listarcomplementaria", {idprofe:x}, function(datita) {
 		//alert(datita);                                    
@@ -461,7 +461,7 @@ function listarDocenteComplementaria() {
 //tabla idiomas
 
 $("#registrar_Idiomas").click(function() {
-	alert("si funka el boton en Idiomas ");       
+	//alert("si funka el boton en Idiomas ");       
 	var idiomas = $("#idioma11").val();
 	var nivel=$("#nivel11").val();
 	var dominio = $("#dominio11").val();
@@ -471,16 +471,16 @@ $("#registrar_Idiomas").click(function() {
              
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(idiomas);
-	alert(nivel);
-	alert(dominio);
-	alert(insti);   
-	alert(anio); 
-	alert(u4);    
-	      
-	
-	alert("el id del prode es: "+x);
-	   
+//	alert(idiomas);
+//	alert(nivel);
+//	alert(dominio);
+//	alert(insti);   
+//	alert(anio); 
+//	alert(u4);    
+//	      
+//	
+//	alert("el id del prode es: "+x);
+//	    
 	   
 	$.post("guardar_Idiomas", {
 		idiomas : idiomas,
@@ -508,7 +508,7 @@ $("#registrar_Idiomas").click(function() {
 
           
 $("#registrar_dominiosenlatecnologia").click(function() {
-	alert("si funka el boton en dominios en la tecnologia ");       
+	//alert("si funka el boton en dominios en la tecnologia ");       
 	var curso = $("#curso12").val();
 	var nivel=$("#nivel12").val();
 	var modalidad = $("#moda12").val();
@@ -517,14 +517,14 @@ $("#registrar_dominiosenlatecnologia").click(function() {
                
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(curso);
-	alert(nivel);
-	alert(modalidad);
-	alert(insti);
-	alert(u4);    
-	      
-	
-	alert("el id del prode es: "+x);
+//	alert(curso);
+//	alert(nivel);
+//	alert(modalidad);
+//	alert(insti);
+//	alert(u4);    
+//	      
+//	
+//	alert("el id del prode es: "+x);
 	   
 	   
 	$.post("guardar_DominiosTecnologia", {

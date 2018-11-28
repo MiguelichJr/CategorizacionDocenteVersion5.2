@@ -1,5 +1,5 @@
 $(document).ready(function() {  
-	alert("si funciona el script  de investigacion y aporte al conocimiento xd");
+	//alert("si funciona el script  de investigacion y aporte al conocimiento xd");
 	listarInvestiaciones();
 	listarArticulos();
 	listarLibros();
@@ -10,7 +10,7 @@ $(document).ready(function() {
 //tabla investigaciones en los ultimos 5 anios
 
 $("#registrar_Investigaciones_anios").click(function() {
-	alert("si funka el boton de invetsigaciones en los ultimos 5 años");   
+	//alert("si funka el boton de invetsigaciones en los ultimos 5 años");   
 	var anios = $("#anios13").val();  
 	var t=$("#titulo13").val();
 	var resolu = $("#resolucion13").val();
@@ -18,13 +18,13 @@ $("#registrar_Investigaciones_anios").click(function() {
                 
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(anios);
-	alert(t);
-	alert(resolu);  
-	alert(u4);    
-	      
-	
-	alert("el id del prode es: "+x);
+//	alert(anios);
+//	alert(t);
+//	alert(resolu);  
+//	alert(u4);    
+//	      
+//	
+//	alert("el id del prode es: "+x);
 	   
 	    
 	$.post("guardar_investigaciones_aniossssss", {
@@ -56,7 +56,7 @@ $("#registrar_Investigaciones_anios").click(function() {
 
 function listarInvestiaciones() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar einvestigaciones en los ultimos 5 anios");
+	//alert(x+"listar einvestigaciones en los ultimos 5 anios");
 	//alert("hola si funciona el funciton");
 	$.get("listarcinevstigaaaa", {idprofe:x}, function(datita) {
 		//alert(datita);                                    
@@ -69,7 +69,7 @@ function listarInvestiaciones() {
 
 
 function CambiarEstadoInvestigaciones(id){
-	alert("si entra en el cambiar de estado en investigaciones: "+id);  
+	//alert("si entra en el cambiar de estado en investigaciones: "+id);  
 	   
 	$.post("cambiarestado_investigaciones", {
 		     
@@ -89,7 +89,7 @@ function CambiarEstadoInvestigaciones(id){
 // tabla publicaciones articulos
 
 $("#registrar_articulos").click(function() {
-	alert("si funka el boton  de articulos");   
+	//alert("si funka el boton  de articulos");   
 	var anio = $("#anio15").val();
 	var cate = $("#categria_Atributo15").val();
 	var titulo = $("#titulo15").val();   
@@ -102,18 +102,18 @@ $("#registrar_articulos").click(function() {
                    
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(anio);
-	alert(cate);
-	alert(titulo);  
-	alert(nombremedio);
-	alert(edito); 
-	alert(isbn); 
-	alert(npagi); 
-	alert(lugar); 
-	alert(archi);        
-	      
-	 
-	alert("el id del prode es: "+x);
+//	alert(anio);
+//	alert(cate);
+//	alert(titulo);  
+//	alert(nombremedio);
+//	alert(edito); 
+//	alert(isbn); 
+//	alert(npagi); 
+//	alert(lugar); 
+//	alert(archi);        
+//	      
+//	 
+//	alert("el id del prode es: "+x);
 	   
 	   
 	$.post("guardar_articulos", {
@@ -149,7 +149,7 @@ $("#registrar_articulos").click(function() {
 });     
 function listarArticulos() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar articulos");
+	//alert(x+"listar articulos");
 	//alert("hola si funciona el funciton");
 	$.get("listararticulos", {idprofe:x}, function(datita) {
 		//alert(datita);                                       
@@ -166,7 +166,7 @@ function listarArticulos() {
 //tabla publicaciones libros  
 
 $("#registrar_libros").click(function() {
-	alert("si funka el boton  de libros");   
+	//alert("si funka el boton  de libros");   
 	var anio = $("#anio20").val();
 	var cate = $("#cate20").val();
 	var titulo = $("#titulo20").val();    
@@ -177,16 +177,16 @@ $("#registrar_libros").click(function() {
                    
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(anio);
-	alert(cate);
-	alert(titulo);  
-	alert(edito); 
-	alert(isbn); 
-	alert(npagi);  
-	alert(archi);        
-	      
-	 
-	alert("el id del prode es: "+x);
+//	alert(anio);
+//	alert(cate);
+//	alert(titulo);  
+//	alert(edito); 
+//	alert(isbn); 
+//	alert(npagi);  
+//	alert(archi);        
+//	      
+//	 
+//	alert("el id del prode es: "+x);
 	   
 	   
 	$.post("guardar_libros", {
@@ -222,7 +222,7 @@ $("#registrar_libros").click(function() {
 
 function listarLibros() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar libros");
+	//alert(x+"listar libros");
 	//alert("hola si funciona el funciton");
 	$.get("listarlibrosss", {idprofe:x}, function(datita) {
 		//alert(datita);                                       
@@ -235,7 +235,7 @@ function listarLibros() {
  
 
 function CambiarEstadoglobalpublicaiones(id){
-	alert("si entra en el cambiar de estado en publicaciones en global: "+id);  
+	//alert("si entra en el cambiar de estado en publicaciones en global: "+id);  
 
 	$.post("cambiarestado_globalpubli", {
 		
@@ -259,7 +259,7 @@ function CambiarEstadoglobalpublicaiones(id){
 
 
 $("#registrar_asesoramiento").click(function() {
-	alert("si funka el boton  de asesoramiento");   
+	//alert("si funka el boton  de asesoramiento");   
 	var anio = $("#anio21").val();
 	var cate = $("#cate21").val();
 	var titulo = $("#nombre21").val();
@@ -271,17 +271,17 @@ $("#registrar_asesoramiento").click(function() {
                       
 	var x = parseInt($("#idprofe").val()); 
 
-	alert(anio);
-	alert(cate);
-	alert(titulo);  
-	alert(autor); 
-	alert(espe);   
-	alert(anio2);
-	alert(reso);   
-	alert(archi);        
+//	alert(anio);
+//	alert(cate);
+//	alert(titulo);  
+//	alert(autor); 
+//	alert(espe);   
+//	alert(anio2);
+//	alert(reso);   
+//	alert(archi);        
 	      
 	 
-	alert("el id del prode es: "+x);
+	//alert("el id del prode es: "+x);
 	   
 	   
 	$.post("guardar_asesoramiento", {
@@ -317,7 +317,7 @@ $("#registrar_asesoramiento").click(function() {
  
 function listarasesorameinto() {
 	var x = parseInt($("#idprofe").val());
-	alert(x+"listar asesoramiento"); 
+	//alert(x+"listar asesoramiento"); 
 	//alert("hola si funciona el funciton");
 	$.get("listarasesoramiento", {idprofe:x}, function(datita) {
 		//alert(datita);                                       
@@ -329,7 +329,7 @@ function listarasesorameinto() {
 } 
 
 function CambiarEstadoAsesoriaTesis(id){
-	alert("si entra en el cambiar de estado en reconocimientos: "+id);  
+	//alert("si entra en el cambiar de estado en reconocimientos: "+id);  
 	
 	$.post("cambiarestado_asesoriatesis", {
 		     
@@ -339,6 +339,6 @@ function CambiarEstadoAsesoriaTesis(id){
 		$("#tableasesoramiento tbody tr").remove();
 		listarasesorameinto();         
 		//listarLogrosExtrasaas();       
-	}); 
+	});  
 	                   
 }    

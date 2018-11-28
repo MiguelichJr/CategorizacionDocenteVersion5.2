@@ -67,7 +67,7 @@ i:hover{
 	<jsp:include page="template/cabezera.jsp"></jsp:include> 
        
 	  <div                    
-		style="margin-left: 10%; margin-right: 1%; height: 100px;width: 1000px; margin-top: 15%; border-radius: 20px">
+		style="margin-left: 10%; margin-right: 1%; height: 100px;width: 1100px; margin-top: 15%; border-radius: 20px">
 		<input type="hidden" id="iddocenteconvo" 
 			value="<%=(Integer) session.getAttribute("iddocenteconvocatoria")%>"  style="text-align: center; text-transform: uppercase; font-family: serif; width: 200px"
 			class="form-control" /> 
@@ -76,8 +76,8 @@ i:hover{
 			class="form-control" /> 
 			<input type="hidden" value="<%=(String) session.getAttribute("nombre") + " " + (String) session.getAttribute("apellido")%>" style="text-align: center; text-transform: uppercase; font-family: serif; width: 200px"
 			class="form-control" />
-  
-		<div style="margin-left:28%" id="contenidoModulos"></div>    
+               
+		<div style="margin-left:5%;margin-top:5%" id="contenidoModulos"></div>    
      <form method="post" action="/cat/enviarelidmodulopepepe">    
 	<input type="hidden" id="valormo" name="valormo" class="form-control" style="width:100px;"/>
 	<button type="submit" id="dirigirpe" style="display:none"></button>        
