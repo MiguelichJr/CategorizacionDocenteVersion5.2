@@ -14,7 +14,7 @@ import pe.edu.upeu.sprintemplate.dao.Leg_PubliDao;
 import pe.edu.upeu.sprintemplate.entity.Leg_Publi;
 
 public class Leg_PubliDaoImp implements Leg_PubliDao {
-	       
+	
 	@Autowired
 	private JdbcTemplate leg_publi; 
 	
@@ -80,9 +80,9 @@ public class Leg_PubliDaoImp implements Leg_PubliDao {
 	}
 
 	@Override
-	public Leg_Publi read(Leg_Publi l) {    
+	public Leg_Publi read(int id) {    
 		// TODO Auto-generated method stub
-		return null; 
+		return null;
 	}  
        
 	@Override   

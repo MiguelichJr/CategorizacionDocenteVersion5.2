@@ -5,10 +5,10 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.sprintemplate.dao.CategoriaDao;
-@Repository
+import pe.edu.upeu.sprintemplate.entity.Categoria;
+
 public class CategoriaDaoImp implements CategoriaDao {
  
 	@Autowired
@@ -29,6 +29,13 @@ public class CategoriaDaoImp implements CategoriaDao {
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub 
 		return jca.queryForList("select * from categoria");
+	}
+
+
+	@Override
+	public List<Categoria> list() {
+		String sql="select * from CATEGORIA";
+		return jca.query(sql, new categoriaRowMapper());
 	}
 
 }

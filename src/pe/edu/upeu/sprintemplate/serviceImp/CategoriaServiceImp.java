@@ -10,14 +10,13 @@ import pe.edu.upeu.sprintemplate.service.CategoriaService;
 
 public class CategoriaServiceImp implements CategoriaService {
 
-	@Autowired
-	private CategoriaDao categoriaDao;
+	
 	
 	
 	@Override
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub
-		return categoriaDao.readAll();   
+		return null;   
 	}
 
 }

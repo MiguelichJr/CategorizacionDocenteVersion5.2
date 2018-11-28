@@ -104,11 +104,47 @@
 	 
 	<bean id="leg_extraDao" class="pe.edu.upeu.sprintemplate.daoImp.LegExtraDaoImp">                   
 		<property name="leg_extrassss" ref="jdbcTemplate" />    
-	</bean>       
-	      
-   	<bean id="autoevaluacionDao" class="pe.edu.upeu.sprintemplate.daoImp.AutoevaluacionDaoImp">                   
-		<property name="autoevaluacion" ref="jdbcTemplate" />      
 	</bean>
+	
+<!-- Entada Nueva -->
+		
+	<bean id="personaDaoImpl" class="pe.edu.upeu.sprintemplate.daoImp.PersonaDaoImpl"> 
+		<property name="jdbcTemplate" ref="jdbcTemplate" /> 
+	</bean>
+	
+	<bean id="instrumentoDaoImp" class="pe.edu.upeu.sprintemplate.daoImp.instrumentoDaoImp"> 
+		<property name="jdbcTemplate" ref="jdbcTemplate" /> 
+	</bean>
+	
+	<bean id="convocatoriaDaoImp"
+		class="pe.edu.upeu.sprintemplate.daoImp.convocatoriaDaoImp"> 
+		<property name="jdbcTemplate" ref="jdbcTemplate" /> 
+	</bean>
+	
+<!-- 	<bean id="CategoriaDaoImp"  -->
+<!-- 		class="pe.edu.upeu.sprintemplate.daoImp.CategoriaDaoImp">   -->
+<!-- 		<property name="jdbcTemplate" ref="jdbcTemplate" />   -->
+<!-- 	</bean>  -->
+
+	<bean id="docente_convocatoriaDaoImp" 
+		class="pe.edu.upeu.sprintemplate.daoImp.docente_convocatoriaDaoImp">  
+		<property name="jdbcTemplate" ref="jdbcTemplate" />  
+	</bean> 
+	
+	<bean id="seccionesDaoImp" 
+		class="pe.edu.upeu.sprintemplate.daoImp.seccionesDaoImp">  
+		<property name="jdbcTemplate" ref="jdbcTemplate" />  
+	</bean> 
+	<bean id="preguntasDaoImp" 
+		class="pe.edu.upeu.sprintemplate.daoImp.preguntasDaoImp">  
+		<property name="jdbcTemplate" ref="jdbcTemplate" />  
+	</bean>
+	
+	<bean id="designar_EvaluadoresDaImp" 
+		class="pe.edu.upeu.sprintemplate.daoImp.designar_EvaluadoresDaImp">  
+		<property name="jdbcTemplate" ref="jdbcTemplate" />  
+	</bean> 
+	<!-- Terminar -->
 	                 
 	 <!--               
 	 <bean id="leg2Dao" class="pe.edu.upeu.sprintemplate.daoImp.Leg2DaoImp">              
